@@ -13,13 +13,14 @@ instructions.
 
 | | |
 |---|---|
-| deposit package | **built and verified** |
-| Zenodo record | **not yet created** — `ZENODO_AUTHENTICATION_REQUIRED` |
-| DOI | **none** — not reserved, not published, not fabricated |
+| Zenodo record | **published**, 23 August 2026 |
+| record | https://zenodo.org/records/22065542 |
+| **version DOI** (v1.0.0) | **https://doi.org/10.5281/zenodo.22065542** |
+| **concept DOI** (latest) | **https://doi.org/10.5281/zenodo.22065541** |
+| licence | CC BY-NC-ND 4.0 |
 
-**Do not cite a DOI for this dataset yet.** When the Zenodo record is published, its DOI and
-version will be added here, to `CITATION.cff`, and to the manuscript's data-availability statement.
-Until then the correct statement is that the dataset *has been prepared for deposition*.
+Cite the **version DOI** when you need the exact file this manuscript used. Cite the **concept
+DOI** when you want whatever the current version is.
 
 ## What the deposit contains
 

@@ -483,11 +483,13 @@ retained.
 All inputs are public NCBI records and remain governed by NCBI's terms.
 
 **Data.** The occurrence-level dataset — 74,349 acquired resistance-gene occurrences with their
-replicon assignment and portability class — has been prepared for deposition in Zenodo together
-with a full data dictionary, denominator and evidence-level dictionaries, JSON Schemas for every
-table, a provenance map, pinned software and database versions, per-file SHA-256 checksums and a
-standalone verification script that re-derives every headline denominator from the archive alone.
-**The final DOI will be added upon publication of the deposit.**
+replicon assignment and portability class — is deposited in Zenodo at
+**https://doi.org/10.5281/zenodo.22065542** (version 1.0.0; concept DOI
+https://doi.org/10.5281/zenodo.22065541 resolves to the latest version). The deposit includes a
+full data dictionary defining every field, denominator and evidence-level dictionaries, JSON
+Schemas for every table, a provenance map, pinned software and database versions, per-file SHA-256
+checksums, and a standalone verification script that re-derives every headline denominator from the
+archive alone and reports its own disagreement count.
 
 Result and summary tables, frozen protocols, receipts and validation records are available now at
 https://github.com/piranfar/portabilityrisk, which also carries the deposit's dictionaries,
@@ -507,9 +509,8 @@ carrying accession.version with per-file digests and from the pinned environment
 Apache-2.0. Third-party data and software retain their own terms; no licence is applied to them by
 this work.
 
-**Outstanding before submission:** publication of the Zenodo deposit, and confirmation of
-journal-specific data and code availability wording, which could not be retrieved from an official
-page.
+**Outstanding before submission:** confirmation of journal-specific data and code availability
+wording, which could not be retrieved from an official page.
 
 ## Licence
 

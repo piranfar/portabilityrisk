@@ -1,0 +1,76 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/headline_recomputation.tsv",
+ "title": "headline_recomputation.tsv",
+ "description": "Row schema for headline_recomputation.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "gene_family": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Determinant family."
+  },
+  "independent_n_plasmid": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Plasmid count from the independent re-implementation."
+  },
+  "pipeline_n_plasmid": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Plasmid count from the pipeline."
+  },
+  "independent_n_chromosome": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Chromosomal count, independent."
+  },
+  "pipeline_n_chromosome": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Chromosomal count, pipeline."
+  },
+  "independent_odds_ratio": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Odds ratio, independent."
+  },
+  "pipeline_odds_ratio": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Odds ratio, pipeline."
+  },
+  "agreement": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Whether the two agree."
+  }
+ },
+ "required": [
+  "gene_family",
+  "independent_n_plasmid",
+  "pipeline_n_plasmid",
+  "independent_n_chromosome",
+  "pipeline_n_chromosome",
+  "independent_odds_ratio",
+  "pipeline_odds_ratio",
+  "agreement"
+ ],
+ "additionalProperties": false
+}

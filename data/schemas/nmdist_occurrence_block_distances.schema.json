@@ -1,0 +1,212 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmdist_occurrence_block_distances.tsv",
+ "title": "nmdist_occurrence_block_distances.tsv",
+ "description": "Row schema for nmdist_occurrence_block_distances.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "occurrence_id": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Composite occurrence key: assembly|replicon|determinant|start|end."
+  },
+  "block_id": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Shared chromosomal context block identifier."
+  },
+  "assembly_version": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "NCBI assembly accession with version."
+  },
+  "replicon_accession": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "NCBI nucleotide accession of the replicon."
+  },
+  "bioproject_accession": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "NCBI BioProject accession; the bootstrap cluster."
+  },
+  "organism_harmonized": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Species name after harmonisation."
+  },
+  "genus": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Genus."
+  },
+  "frozen_group": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Frozen species group for the distance analyses: A. baumannii, Klebsiella group, P. aeruginosa, or other."
+  },
+  "determinant_name": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "AMRFinderPlus determinant symbol."
+  },
+  "gene_family": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Determinant family."
+  },
+  "portability_class": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Frozen five-class portability state: A chromosomal no marker, B chromosomal MGE context, C plasmid no marker, D plasmid mobilizable, E plasmid conjugative."
+  },
+  "topology": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Replicon topology: circular or linear."
+  },
+  "wrapped_circular": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "1 if the window wraps the circular origin."
+  },
+  "truncated": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "1 if the window was truncated by a replicon end."
+  },
+  "block_n_args": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Number of ARG occurrences in the block."
+  },
+  "weight_block_balanced": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Block-balanced weight, 1/m for an occurrence in a block of m; weights sum to 21,955."
+  },
+  "s2_selected": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "1 if selected for sensitivity S2 (one genome per BioProject)."
+  },
+  "dist_any_bp": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Distance in bp to the nearest MGE marker of any class within the window; blank if censored."
+  },
+  "dist_is_bp": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Distance to the nearest IS/transposase marker."
+  },
+  "dist_integrase_bp": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Distance to the nearest integrase/integron marker."
+  },
+  "censored_any": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "1 if no marker of any class within 10 kb."
+  },
+  "censored_is": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "1 if no IS/transposase marker within 10 kb."
+  },
+  "censored_integrase": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "1 if no integrase marker within 10 kb."
+  },
+  "overlap_zero": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "1 if a marker directly overlaps the determinant."
+  },
+  "in_block_feature_beyond_window": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "1 if the block contains a marker that lies OUTSIDE this occurrence's own window. 111 occurrences; censored, not counted positive."
+  }
+ },
+ "required": [
+  "occurrence_id",
+  "block_id",
+  "assembly_version",
+  "replicon_accession",
+  "bioproject_accession",
+  "organism_harmonized",
+  "genus",
+  "frozen_group",
+  "determinant_name",
+  "gene_family",
+  "portability_class",
+  "topology",
+  "wrapped_circular",
+  "truncated",
+  "block_n_args",
+  "weight_block_balanced",
+  "s2_selected",
+  "dist_any_bp",
+  "dist_is_bp",
+  "dist_integrase_bp",
+  "censored_any",
+  "censored_is",
+  "censored_integrase",
+  "overlap_zero",
+  "in_block_feature_beyond_window"
+ ],
+ "additionalProperties": false
+}

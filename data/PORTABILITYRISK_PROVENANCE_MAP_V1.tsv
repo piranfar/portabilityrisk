@@ -1,0 +1,23 @@
+artefact	produced_by	frozen_protocol	principal_inputs	availability
+results/nmis_occurrence_endpoints.tsv	code/validation/nmis_score.py	protocols/NMIS_FROZEN_PROTOCOL_V1.json + amendment 001	ISEScan 1.7.3 census over 21,955 blocks; frozen class assignments; NM-DIST distances	public
+results/nmis_primary_estimates.tsv	code/validation/nmis_score.py	protocols/NMIS_FROZEN_PROTOCOL_V1.json	nmis_occurrence_endpoints.tsv	public
+results/nmis_species_contrasts.tsv	code/validation/nmis_score.py	protocols/NMIS_FROZEN_PROTOCOL_V1.json	nmis_occurrence_endpoints.tsv; BioProject cluster bootstrap B=2000 seed 20260822	public
+results/nmis_sensitivity_results.tsv	code/validation/nmis_score.py	protocols/NMIS_FROZEN_PROTOCOL_V1.json	nmis_occurrence_endpoints.tsv	public
+results/nmis_vs_nmdist_comparison.tsv	code/validation/nmis_score.py	protocols/NMIS_FROZEN_PROTOCOL_V1.json	nmis and nmdist endpoint tables over identical rows	public
+results/nmdist_occurrence_block_distances.tsv	code/validation/nmdist_score.py	protocols/NMDIST_FROZEN_PROTOCOL_V1.json	arg_mge_neighbourhood.tsv; shared_context_blocks.tsv; mge_feature_inventory.tsv	public
+results/nmdist_primary_estimates.tsv	code/validation/nmdist_score.py	protocols/NMDIST_FROZEN_PROTOCOL_V1.json	nmdist_occurrence_block_distances.tsv	public
+results/nmdist_species_contrasts.tsv	code/validation/nmdist_score.py	protocols/NMDIST_FROZEN_PROTOCOL_V1.json	nmdist_occurrence_block_distances.tsv	public
+results/nmdist_sensitivity_results.tsv	code/validation/nmdist_score.py	protocols/NMDIST_FROZEN_PROTOCOL_V1.json	nmdist_occurrence_block_distances.tsv	public
+results/summary/portability_class_reconciliation.tsv	code/context/pr_context_mobility_classes.py	protocols/frozen_portability_class_definitions.json	determinant_portability_classes.tsv (private deposit)	public
+results/summary/both_context_determinants.tsv	code/context/pr_context_statistics.py	protocols/FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json	determinant_occurrences.tsv (private deposit)	public
+results/summary/determinant_enrichment_species_adjusted.tsv	code/context/pr_context_strat_and_inference.py	protocols/FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json	determinant_occurrences.tsv; species strata (private deposit)	public
+results/summary/convergence_by_mobility_class.tsv	code/context/pr_context_convergence.py	protocols/FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json	plasmid_mobility_annotation.tsv; plasmid_convergence.tsv (private deposit)	public
+results/summary/genome_level_summary.tsv	code/context/pr_context_build_join.py	protocols/FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json	determinant_occurrences.tsv (private deposit)	public
+results/summary/evidence_layer_inventory.tsv	code/context/pr_context_build_join.py	protocols/FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json	AMRFinderPlus determinant layers (private deposit)	public
+results/summary/independent_verification_report_v2.tsv	code/context/pr_context_verify_v2.py	protocols/FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json	independent re-implementation of the denominator flow	public
+results/summary/headline_recomputation.tsv	code/context/pr_context_verify_v2.py	protocols/FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json	independent re-implementation of the family enrichment	public
+manuscript/figures/figure1..4,6..8	code/validation/portabilityrisk_figures.py	figure receipt records all 15 input digests	frozen summary tables; NMIS/NMDIST/NMV3/NMV4 receipts	public
+manuscript/figures/figure5_distance_to_mge	code/validation/nmdist_figure.py	protocols/NMDIST_FROZEN_PROTOCOL_V1.json	nmdist_curves.json	public
+determinant_occurrences.tsv (37 MB)	code/context/pr_context_build_join.py	protocols/FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json	NCBI closed assemblies	PRIVATE - pending deposit
+determinant_portability_classes.tsv (17 MB)	code/context/pr_context_mobility_classes.py	protocols/frozen_portability_class_definitions.json	determinant_occurrences.tsv	PRIVATE - pending deposit
+arg_mge_neighbourhood.tsv (8 MB)	code/context/pr_context_mge_annotate.py	protocols/FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json	mge_feature_inventory.tsv	PRIVATE - pending deposit

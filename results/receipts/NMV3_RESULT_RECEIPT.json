@@ -1,0 +1,185 @@
+{
+  "receipt": "NMV3_RESULT_RECEIPT",
+  "scorer": "nmv3_score_v1.0.0",
+  "utc": "2026-08-22T19:37:01Z",
+  "frozen_design_sha256": "8d96b72304a9580163132e07ecf16ede65cebe84760b0781a19d3e438f992a2d",
+  "arm_i_config_sha256": "2351be401b5b80b727b48f1703018c6b487b8d102d70d6d1d0c96739590b7619",
+  "census": {
+    "replicons": 6621,
+    "plasmid_side_occurrences": 39209,
+    "total_occurrences": 74349
+  },
+  "baseline_reproduction_of_frozen_run": {
+    "replicons": 6621,
+    "marker_triple_mismatches": 0,
+    "mobility_category_mismatches": 0,
+    "exact_reproduction": true,
+    "meaning": "the frozen mobility layer was re-derived from scratch on a clean machine and reproduced exactly; this is verification, not re-use"
+  },
+  "arms": {
+    "ARM_T_tool_3.1.8": {
+      "marker_call_mismatches": 0,
+      "PRIMARY_replicon_category_changes": 0,
+      "PRIMARY_replicon_change_pct": 0.0,
+      "SECONDARY_occurrence_changes": 0,
+      "SECONDARY_occurrence_change_pct": 0.0,
+      "bioproject_clustered_ci95_change_pct": [
+        0.0,
+        0.0
+      ],
+      "within_NM0_5pct_bound": true,
+      "transition_matrix_replicon": {
+        "C->C": 1473,
+        "D->D": 1211,
+        "E->E": 3937
+      }
+    },
+    "ARM_D_database_v2.0.0": {
+      "marker_call_mismatches": 0,
+      "PRIMARY_replicon_category_changes": 0,
+      "PRIMARY_replicon_change_pct": 0.0,
+      "SECONDARY_occurrence_changes": 0,
+      "SECONDARY_occurrence_change_pct": 0.0,
+      "bioproject_clustered_ci95_change_pct": [
+        0.0,
+        0.0
+      ],
+      "within_NM0_5pct_bound": true,
+      "transition_matrix_replicon": {
+        "C->C": 1473,
+        "D->D": 1211,
+        "E->E": 3937
+      }
+    }
+  },
+  "E1_E2": {
+    "baseline": {
+      "E1_occurrences": 16397,
+      "E2_occurrences": 9599,
+      "E_total": 25996,
+      "E1_replicons": 2828,
+      "E2_replicons": 1109,
+      "E2_pct_of_E": 36.924911524849975,
+      "E2_pct_of_plasmid_borne": 24.481624116911934,
+      "E_pct_of_plasmid_borne": 66.30110433828968
+    },
+    "ARM_T_tool_3.1.8": {
+      "E1_occurrences": 16397,
+      "E2_occurrences": 9599,
+      "E_total": 25996,
+      "identical_to_baseline": true
+    },
+    "ARM_D_database_v2.0.0": {
+      "E1_occurrences": 16397,
+      "E2_occurrences": 9599,
+      "E_total": 25996,
+      "identical_to_baseline": true
+    }
+  },
+  "arm_I": {
+    "reporting_rule": "CONCORDANCE ONLY - neither tool is a truth standard",
+    "oriT_covered": false,
+    "oriT_note": "CONJScan has no oriT model, so Arm I covers the FULL definition of class E (relaxase AND mpf) but only PARTIALLY covers C and D",
+    "parsing_correction_applied": true,
+    "replicons_with_arm_I_result": 6621,
+    "status_breakdown": {
+      "OK": 6621
+    },
+    "zero_cds_unresolved": 0,
+    "decayed_only_systems": 119,
+    "total_proteins": 1006053,
+    "partial_proteins": 5300,
+    "evaluable_replicons": 6621,
+    "relaxase_concordance": {
+      "mob_suite_positive": 4613,
+      "conjscan_positive": 4369,
+      "both_positive": 4322,
+      "both_negative": 1961,
+      "mob_suite_only": 291,
+      "conjscan_only": 47,
+      "raw_agreement": 0.9489503096209032,
+      "cohens_kappa": 0.8832081826051796
+    },
+    "mpf_concordance": {
+      "mob_suite_positive": 4378,
+      "conjscan_positive": 3657,
+      "both_positive": 3602,
+      "both_negative": 2188,
+      "mob_suite_only": 776,
+      "conjscan_only": 55,
+      "raw_agreement": 0.8744902582691436,
+      "cohens_kappa": 0.7402124826886654
+    },
+    "class_E_definition_concordance": {
+      "both_E": 3594,
+      "neither_E": 2621,
+      "mob_suite_only_E": 343,
+      "conjscan_only_E": 63,
+      "raw_agreement": 0.9386799577103156,
+      "cohens_kappa": 0.8748815899123542,
+      "mob_suite_E_replicons": 3937,
+      "conjscan_E_replicons": 3657
+    },
+    "class_E_occurrence_weighted": {
+      "occurrences_on_E_confirmed_by_both": 24012,
+      "occurrences_on_E_mob_suite_only": 1984,
+      "pct_of_plasmid_borne_confirmed_by_both": 61.24104159759239
+    }
+  },
+  "C09": {
+    "baseline": {
+      "conjugative_pct": 61.54432308864618,
+      "mobilizable_pct": 42.93971924029727,
+      "marker_negative_pct": 41.683638832315005,
+      "difference_conj_minus_negative": 19.860684256331176,
+      "bioproject_clustered_ci95": [
+        14.160375283429097,
+        25.4143619171572
+      ],
+      "direction_preserved": true,
+      "ci_excludes_zero": true
+    },
+    "ARM_T_tool_3.1.8": {
+      "conjugative_pct": 61.54432308864618,
+      "mobilizable_pct": 42.93971924029727,
+      "marker_negative_pct": 41.683638832315005,
+      "difference_conj_minus_negative": 19.860684256331176,
+      "bioproject_clustered_ci95": [
+        14.007130378184613,
+        25.43751906186875
+      ],
+      "direction_preserved": true,
+      "ci_excludes_zero": true
+    },
+    "ARM_D_database_v2.0.0": {
+      "conjugative_pct": 61.54432308864618,
+      "mobilizable_pct": 42.93971924029727,
+      "marker_negative_pct": 41.683638832315005,
+      "difference_conj_minus_negative": 19.860684256331176,
+      "bioproject_clustered_ci95": [
+        14.188382508776407,
+        25.655055125498478
+      ],
+      "direction_preserved": true,
+      "ci_excludes_zero": true
+    },
+    "VERDICT": "PASS",
+    "gate_verbatim": "the conjugative against marker-negative difference in three-or-more-drug-class carriage keeps the same direction and a CI excluding 0 under lineage-clustered resampling and under the alternative marker rule"
+  },
+  "headline_invariance": {
+    "occurrence_weighted_plasmid_share_pct": 52.736418781691754,
+    "plasmid_side_occurrences": 39209,
+    "total_occurrences": 74349,
+    "class_A": 18837,
+    "class_B": 16303,
+    "location_layer_changed": false,
+    "note": "no arm can alter a documented molecule designation; the location layer is not an output of MOB-suite and was not recomputed"
+  },
+  "C10": {
+    "gate_verbatim": "5 pct or fewer of plasmids change mobility category between database versions, and no headline direction reverses",
+    "worst_case_replicon_change_pct": 0.0,
+    "headline_direction_reversed": false,
+    "location_layer_changed": false,
+    "VERDICT": "PASS"
+  }
+}

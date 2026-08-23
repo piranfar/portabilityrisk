@@ -1,0 +1,195 @@
+{
+ "protocol": "NMIS_STRUCTURAL_IS_RECONSTRUCTION",
+ "version": "1.0.0",
+ "builder": "nmis_freeze_v1.0.0",
+ "frozen_utc": "2026-08-22T21:54:55Z",
+ "frozen_before_isescan_was_run_on_any_new_block": true,
+ "status": "OWNER-APPROVED STRENGTHENING ANALYSIS. Structural corroboration and sensitivity only. NOT a rescue analysis. No additional biological computation is required to support the already frozen Paper-1 claims.",
+ "primary_question": "Does the A. baumannii short-range spatial signature reported by NM-DIST remain when the endpoint is restricted to structurally resolved COMPLETE insertion sequences carrying a complete transposase ORF, bilateral terminal inverted repeats and valid element boundaries?",
+ "MUST_NOT_CHANGE": {
+  "primary_occurrences": 74349,
+  "class_assignments": "A-E unchanged",
+  "class_B": 16303,
+  "nmdist_homology_marker_results": "unchanged",
+  "in_block_out_of_window_censored": 111,
+  "occurrence_level_mge_positivity_pct": 46.39,
+  "block_level_mge_positivity_pct": 30.14,
+  "statement": "NMIS is structural corroboration and sensitivity analysis, not reclassification"
+ },
+ "input_scope": {
+  "blocks": 21955,
+  "census": "COMPLETE - includes the 1,283 blocks previously sampled in NM-V1, so the whole output is produced under one uniform environment",
+  "new_sequence_retrieval": "NOT AUTHORISED",
+  "window_limit": "no analysis extends beyond the frozen +/-10 kb occurrence windows",
+  "fasta_aggregate_sha256": "dc29553482c79f0add510a5dd80090bbd1a576b84a4419ba07e74cf2b20ec2e7",
+  "fasta_files": 21955,
+  "boundary_rule": "if an IS boundary extends outside available sequence: preserve the call as partial/boundary-limited; do NOT infer the missing boundary; do NOT retrieve flanking sequence; do NOT exclude the block"
+ },
+ "tool": {
+  "name": "ISEScan",
+  "version": "1.7.3",
+  "conda_package": "isescan-1.7.3-h7b50bb2_0.tar.bz2",
+  "conda_md5": "22cf959a984f2cd2d96606209f11a058",
+  "executable_sha256": "a6601aab75963dbde04d0100925711fb0f4d601fe85fa536558a21d3d5e16967",
+  "dependencies_matched_to_NM_V1": {
+   "hmmer": "3.3.2-hdbdd923_4 (md5 805f24f8e8109e5d3d16cfad6799af46)",
+   "blast": "2.17.0-h66d330f_0 (md5 405ce6d52eba06fcd48197ae1eb8f5a9)",
+   "fraggenescan": "1.32-h7b50bb2_1 (md5 af437ea81e5d02a58f4904bdaa622f6e)",
+   "biopython": "1.88-py314h5bd0f2a_0 (md5 da61549005699072c0a8ff45b110da8c)",
+   "python": "3.14.7"
+  },
+  "environment_lock": "env/isescan_v1.lock",
+  "models": {
+   "clusters.faa.hmm": {
+    "bytes": 40472487,
+    "sha256_prefix": "f5de1bf92059e39f"
+   },
+   "clusters.single.faa": {
+    "bytes": 100094,
+    "sha256_prefix": "da7b2b67f57394cc"
+   }
+  },
+  "command_line": "isescan.py --seqfile <block.fna> --output isescan_out --nthread 1",
+  "identical_to_NM_V1": true,
+  "DEPENDENCY_DIFFERENCE_FOUND_AND_CORRECTED": {
+   "what": "the default conda solve returned HMMER 3.4; NM-V1 used HMMER 3.3.2",
+   "why_it_matters": "HMMER drives ISEScan transposase-ORF detection, so it is a scientifically relevant dependency",
+   "action": "the environment was rebuilt pinned to hmmer=3.3.2, reproducing all five NM-V1 packages exactly; the isescan.py digest is byte-identical to NM-V1's",
+   "declared_here": "so the correction cannot be mistaken for a silent substitution"
+  },
+  "parsing_rule": "ISEScan .tsv output is parsed BY ITS OWN HEADER, never by a hard-coded column list. NM-V1 error register entry 11 records a defect caused by assuming 22 columns when ISEScan emits 24."
+ },
+ "structural_definitions": {
+  "complete_structural_IS": "an ISEScan element with type == 'c' AND a complete transposase ORF (orfLen > 0 with both orfBegin and orfEnd resolved) AND bilateral terminal inverted repeats (irLen > 0 with both flanks, start1/end1 and start2/end2, resolved)",
+  "complete_transposase_ORF": "orfBegin and orfEnd both present and orfLen > 0",
+  "bilateral_TIR_requirement": "both inverted-repeat flanks resolved: start1, end1, start2 and end2 all present, with irLen > 0",
+  "partial_element": "any ISEScan element that is not complete_structural_IS: type == 'p', or type == 'c' lacking a resolved ORF or lacking bilateral TIRs",
+  "boundary_limited_element": "an element whose interval touches the edge of the available window sequence (isBegin <= 1 or isEnd >= sequence length). Recorded as partial/boundary-limited and never excluded.",
+  "no_structurally_resolved_IS": "the block yielded no ISEScan element meeting complete_structural_IS",
+  "tool_failure": "ISEScan exited non-zero or produced no parseable output; recorded, never silently dropped or substituted"
+ },
+ "distance_and_membership": {
+  "occurrence_window_membership": "an element counts for an ARG occurrence only if it lies within that occurrence's own +/-10 kb window, exactly as in NM-DIST. Elements elsewhere in a larger shared block do not count.",
+  "distance": "0 when the ARG interval and the element interval overlap, otherwise the bp gap between nearest boundaries; topology-aware on circular replicons",
+  "right_censoring": "an occurrence with no qualifying complete structural IS within 10 kb is RIGHT-CENSORED at 10,000 bp; no distance beyond 10 kb is estimated",
+  "twenty_kb": "NOT EVALUABLE"
+ },
+ "primary_unit_and_weighting": {
+  "estimand": "block-balanced occurrence distribution, identical to NM-DIST",
+  "rule": "each block contributes total weight 1; an occurrence in a block of m occurrences receives weight 1/m"
+ },
+ "uncertainty": {
+  "method": "BioProject cluster bootstrap",
+  "resamples": 2000,
+  "seed": 20260822,
+  "intervals": "percentile 95 percent",
+  "note": "blocks nest within BioProjects, verified in NM-DIST"
+ },
+ "groups_and_contrasts": {
+  "groups": [
+   "A. baumannii",
+   "P. aeruginosa",
+   "Klebsiella group"
+  ],
+  "definitions": "identical to NM-DIST and NM-V4/NM-V4C",
+  "primary_contrasts": {
+   "N1": "A. baumannii versus Klebsiella group",
+   "N2": "A. baumannii versus P. aeruginosa"
+  },
+  "primary_landmarks_bp": [
+   1000,
+   2000,
+   5000,
+   10000
+  ],
+  "multiplicity": "Holm across the two primary contrasts at each landmark"
+ },
+ "gates": {
+  "SUCCESS": "for BOTH primary contrasts, the difference in F(d) is positive with a BioProject-bootstrap 95 percent CI excluding zero at BOTH 1 kb and 2 kb after Holm correction",
+  "REVISE": "direction preserved in both contrasts but at least one of the 1 kb or 2 kb intervals includes zero",
+  "FAIL": "the direction reverses at any primary landmark with a CI excluding zero",
+  "interpretation_of_a_smaller_subset": "a smaller structurally complete subset is EXPECTED and is not a failure"
+ },
+ "interpretation_rules": {
+  "prohibited": [
+   "treating HMM-only calls as false positives",
+   "treating partial ISEScan calls as biologically absent",
+   "treating structurally complete elements as proof of current transposition",
+   "any HGT, transfer, mobilization or phenotype claim",
+   "any distance beyond 10 kb"
+  ],
+  "required_separate_reporting": [
+   "structurally complete",
+   "partial/boundary-limited",
+   "no structurally resolved IS",
+   "tool failure"
+  ]
+ },
+ "execution_gates": {
+  "verify_fasta_hashes_locally": "done before transfer",
+  "two_sided_manifest": true,
+  "benchmark_blocks": 100,
+  "benchmark_selection": "deterministic: the 100 blocks with the smallest SHA-256 of block_id",
+  "proceed_automatically_if": "projected runtime <= 10 hours AND new disk use <= 20 GB",
+  "chunking": "deterministic, resumable, per-block .done markers",
+  "failures": "every failure preserved; no silent exclusion or substitution"
+ },
+ "stop_conditions": [
+  "the 21,955 FASTA set does not verify byte-for-byte on both sides",
+  "ISEScan settings cannot be reproduced as recorded for NM-V1",
+  "projected runtime exceeds 10 hours or projected new disk use exceeds 20 GB",
+  "any frozen NM-DIST or class-B quantity would change",
+  "a post-outcome change to endpoint, group, threshold or definition becomes necessary"
+ ],
+ "governance": {
+  "server": "[REDACTED:INSTANCE_AND_ADDRESS]",
+  "prohibited_hosts": "the two prohibited hosts must not be probed or accessed",
+  "prohibited": [
+   "commit",
+   "push",
+   "merge",
+   "branch deletion",
+   "manuscript rewrite",
+   "private-release rebuild",
+   "PlasmidCall",
+   "Paper 2",
+   "MicContext",
+   "new biological sequence retrieval"
+  ]
+ },
+ "input_digests": {
+  "audit/data/derived/pr_context/out/shared_context_blocks.tsv": {
+   "sha256": "ef76f266a36266b5fad98dab87d91a0bf995de983ef7162c10683045095e7b40",
+   "role": "the 21,955 frozen blocks"
+  },
+  "audit/data/derived/pr_context/out/arg_neighbourhood_windows.tsv": {
+   "sha256": "b9363c768993545392b45ea6baf98f54a882dd590337c373d52b9b294f731465",
+   "role": "occurrence to block key, ARG coordinates, topology, wrap and truncation flags"
+  },
+  "docs/nature_microbiology/nmdist_occurrence_block_distances.tsv": {
+   "sha256": "8d06ee836b5c7d0c05d3a58ba1f854005982d43a386bb9b9e8494c691a36916c",
+   "role": "NM-DIST occurrence table: species group, BioProject, block weights, censoring"
+  },
+  "docs/nature_microbiology/NMDIST_FROZEN_PROTOCOL_V1.json": {
+   "sha256": "226c0691cbd6ac9750fd8e816192420b3c0d40cadd4bb2ad05c7ca0089593a26",
+   "role": "the NM-DIST frozen design"
+  },
+  "docs/nature_microbiology/NMDIST_RESULT_RECEIPT_V1.json": {
+   "sha256": "a335adcafaf38027df3834948472864508599929e52f27c6b2b6518eb1ac3549",
+   "role": "the NM-DIST result being corroborated"
+  }
+ },
+ "__public_derivative__": {
+  "note": "This file is a REDACTED PUBLIC DERIVATIVE, not the canonical artefact. Infrastructure identifiers naming the compute instance have been replaced by [REDACTED:...] tokens. No scientific field, value, threshold, digest reference or protocol term was altered. Its SHA-256 therefore differs from the canonical private artefact BY DESIGN; the canonical digest is recorded below and is the one quoted throughout the manuscript.",
+  "canonical_private_artefact": "docs/nature_microbiology/NMIS_FROZEN_PROTOCOL_V1.json",
+  "canonical_private_sha256": "5438045a3b73d123347fcd60b2456779f050c2a8fae9cd016782b8b6168b03a3",
+  "redacted_fields": [
+   "governance.prohibited_hosts",
+   "governance.server"
+  ],
+  "redaction_categories": [
+   "cloud instance name and its public IPv4 address",
+   "address range of unrelated hosts"
+  ]
+ }
+}

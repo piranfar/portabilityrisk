@@ -1,0 +1,52 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmis_census_status.tsv",
+ "title": "nmis_census_status.tsv",
+ "description": "Row schema for nmis_census_status.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "block_id": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Shared chromosomal context block identifier."
+  },
+  "status": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Per-block census outcome; 'ok' for all 21,955."
+  },
+  "exit": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Tool exit code; 0 for all blocks."
+  },
+  "rows": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "ISEScan output rows for the block."
+  },
+  "ms": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Wall-clock milliseconds for the block."
+  }
+ },
+ "required": [
+  "block_id",
+  "status",
+  "exit",
+  "rows",
+  "ms"
+ ],
+ "additionalProperties": false
+}

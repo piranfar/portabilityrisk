@@ -1,0 +1,97 @@
+{
+  "receipt": "NMV1C_SCORING_RECEIPT",
+  "scorer": "nmv1c_score_v1.0.0",
+  "utc": "2026-08-22T16:11:08Z",
+  "protocol_sha256": "b2058877c0f7165f0ab7bf9be7adcb2cb3b5b4c8d2b81143d85ab03fe0f0c04c",
+  "key_sha256": "40e142e27978631da9ec437b9cdd7aeb8c5fda52bdecbbcda5f2fa2db8501efe",
+  "application_sha256": "56581a89c3e7acf0ce39b831c122bacd8d165ebfbdd7aa58a9d8dafda1eee41b",
+  "adjudication_sha256": "a572945c9c02d316e00b076ac6f881472be554f5b3dc068cfee0bbdcf24c6b75",
+  "engine_sha256": "ed5db383bb0afe1a1a8433886d6666fe72c324975de99c6763a37824d51c2bee",
+  "engine_unchanged": true,
+  "F3_threshold_unchanged": true,
+  "n": 120,
+  "primary_design_weighted_agreement": 0.9920385399022523,
+  "bootstrap": {
+    "method": "stratified, resampled within stratum",
+    "B": 2000,
+    "seed": 20260822,
+    "ci95": [
+      0.9761156197067566,
+      1.0
+    ]
+  },
+  "secondary_unweighted_agreement": 0.9916666666666667,
+  "agreed": 119,
+  "by_machine_state": {
+    "MOBILE": {
+      "n": 60,
+      "weighted": 0.9825089127462795,
+      "unweighted": 0.9833333333333333,
+      "agreed": 59,
+      "ci_unweighted": [
+        0.95,
+        1.0
+      ]
+    },
+    "QUIESCENT": {
+      "n": 60,
+      "weighted": 1.0,
+      "unweighted": 1.0,
+      "agreed": 60,
+      "ci_unweighted": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "by_stratum": {
+    "A": {
+      "n": 25,
+      "weight": 4.24,
+      "agreed": 25,
+      "unweighted": 1.0
+    },
+    "B": {
+      "n": 34,
+      "weight": 4.617647,
+      "agreed": 33,
+      "unweighted": 0.9705882352941176
+    },
+    "D": {
+      "n": 1,
+      "weight": 1.0,
+      "agreed": 1,
+      "unweighted": 1.0
+    },
+    "E": {
+      "n": 60,
+      "weight": 5.266667,
+      "agreed": 60,
+      "unweighted": 1.0
+    }
+  },
+  "confusion": {
+    "MOBILE->MOBILE": 59,
+    "MOBILE->QUIESCENT": 1,
+    "QUIESCENT->QUIESCENT": 60
+  },
+  "states_below_0.80_unweighted": [],
+  "gate_verdict": "SUCCESS",
+  "gate_rule_applied": "design-weighted agreement >= 0.90 AND bootstrap lower bound >= 0.80",
+  "gates_as_frozen": {
+    "SUCCESS": "design-weighted agreement >= 0.90 AND bootstrap lower bound >= 0.80",
+    "REVISE": "agreement 0.80 to 0.899, OR lower bound 0.65 to 0.799",
+    "FAIL": "agreement < 0.80, OR systematic disagreement within a sampled state",
+    "thresholds_carried_over_unchanged_from_the_original_frozen_gate": true,
+    "state_specific_agreement_reported": true,
+    "scope_of_failure": "a failure confined to one state revises that state only"
+  },
+  "structural_limitation": "this confirmatory audit can validate the MOBILE versus QUIESCENT discrimination ONLY. It cannot validate the NON_EVALUABLE state, and it cannot produce an integron-specific estimate.",
+  "prior_audit": {
+    "registered_result": "FAIL, 62/120, three-state agreement 0.5167",
+    "status": "retained as an instrument-failure diagnostic; not erased, not passed, not rescored, and not the definitive biological validation",
+    "no_adjudication_reused": true
+  },
+  "adjudications_reused_from_prior_packages": 0,
+  "command": "python nmv1c_score.py --dir docs/nature_microbiology"
+}

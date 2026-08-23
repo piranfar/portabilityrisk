@@ -1,0 +1,148 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmis_primary_estimates.tsv",
+ "title": "nmis_primary_estimates.tsv",
+ "description": "Row schema for nmis_primary_estimates.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "group": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Frozen species group."
+  },
+  "n_occurrences": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Occurrences contributing."
+  },
+  "n_observed": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Occurrences with a detection at or before 10 kb."
+  },
+  "n_censored_at_10kb": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Occurrences right-censored at 10 kb: no detection within the window. NOT evidence of absence."
+  },
+  "weight_total": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Sum of block-balanced weights."
+  },
+  "F_1000": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Weighted cumulative detection F(1000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 1000 bp, under right-censoring at 10 kb."
+  },
+  "F_2000": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Weighted cumulative detection F(2000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 2000 bp, under right-censoring at 10 kb."
+  },
+  "F_5000": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Weighted cumulative detection F(5000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 5000 bp, under right-censoring at 10 kb."
+  },
+  "F_10000": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Weighted cumulative detection F(10000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 10000 bp, under right-censoring at 10 kb."
+  },
+  "F_1000_ci95": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "95 % BioProject cluster bootstrap interval for F(1000 bp), as [lower, upper]."
+  },
+  "F_2000_ci95": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "95 % BioProject cluster bootstrap interval for F(2000 bp), as [lower, upper]."
+  },
+  "F_5000_ci95": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "95 % BioProject cluster bootstrap interval for F(5000 bp), as [lower, upper]."
+  },
+  "F_10000_ci95": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "95 % BioProject cluster bootstrap interval for F(10000 bp), as [lower, upper]."
+  },
+  "restricted_mean_distance_bp": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "E[min(D, 10000)]: restricted mean distance under censoring at 10 kb."
+  },
+  "restricted_mean_distance_bp_ci95": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "95 % BioProject cluster bootstrap interval for the restricted mean distance, as [lower, upper]."
+  },
+  "auc_detection_bp": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Area under the cumulative detection curve to 10 kb."
+  },
+  "median_distance_bp": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Median distance, or 'not reached' where F(10 kb) < 0.5."
+  }
+ },
+ "required": [
+  "group",
+  "n_occurrences",
+  "n_observed",
+  "n_censored_at_10kb",
+  "weight_total",
+  "F_1000",
+  "F_2000",
+  "F_5000",
+  "F_10000",
+  "F_1000_ci95",
+  "F_2000_ci95",
+  "F_5000_ci95",
+  "F_10000_ci95",
+  "restricted_mean_distance_bp",
+  "restricted_mean_distance_bp_ci95",
+  "auc_detection_bp",
+  "median_distance_bp"
+ ],
+ "additionalProperties": false
+}

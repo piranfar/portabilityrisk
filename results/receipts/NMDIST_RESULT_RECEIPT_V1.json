@@ -1,0 +1,390 @@
+{
+  "receipt": "NMDIST_RESULT_RECEIPT",
+  "version": "1.0.0",
+  "scorer": "nmdist_score_v1.0.0",
+  "utc": "2026-08-22T21:24:21Z",
+  "frozen_protocol_sha256": "226c0691cbd6ac9750fd8e816192420b3c0d40cadd4bb2ad05c7ca0089593a26",
+  "population": {
+    "occurrences": 35140,
+    "blocks": 21955,
+    "window_positive": 16303,
+    "censored_at_10kb": 18837,
+    "equals_class_B": true,
+    "in_block_feature_beyond_window_censored": 111,
+    "overlap_zero": 90,
+    "truncated_blocks": 5,
+    "wrapped_blocks": 57
+  },
+  "weights": {
+    "block_balanced_sum": 21955.0,
+    "n_blocks": 21955,
+    "blocks_nest_within_bioprojects": true
+  },
+  "bootstrap": {
+    "n_bioprojects": 2248,
+    "effective_1_over_HHI": 136.8994474662807,
+    "B": 2000,
+    "seed": 20260822
+  },
+  "primary_estimates": {
+    "A. baumannii": {
+      "n_occurrences": 8005,
+      "weight_total": 4138.0,
+      "n_observed": 6477,
+      "n_censored_at_10kb": 1528,
+      "F_1000": 0.5224207090235365,
+      "F_2000": 0.5877907885036934,
+      "F_5000": 0.5963589495730627,
+      "F_10000": 0.6322619623006284,
+      "restricted_mean_distance_bp": 4180.01275855113,
+      "auc_detection_bp": 5819.98724144887,
+      "median_distance_bp": 647.0,
+      "F_1000_ci95": [
+        0.4845184290676737,
+        0.5546896193826972
+      ],
+      "F_2000_ci95": [
+        0.5468753916953042,
+        0.6208879277667241
+      ],
+      "F_5000_ci95": [
+        0.5559283538831005,
+        0.6291322848604439
+      ],
+      "F_10000_ci95": [
+        0.5932240800518214,
+        0.66425428792764
+      ],
+      "restricted_mean_distance_bp_ci95": [
+        3863.7291815380827,
+        4567.150508865447
+      ],
+      "auc_detection_bp_ci95": [
+        5432.849491134553,
+        6136.270818461917
+      ]
+    },
+    "P. aeruginosa": {
+      "n_occurrences": 7150,
+      "weight_total": 4102.0,
+      "n_observed": 2861,
+      "n_censored_at_10kb": 4289,
+      "F_1000": 0.09934636101749704,
+      "F_2000": 0.1256285090390405,
+      "F_5000": 0.14095959230649624,
+      "F_10000": 0.17169894951464917,
+      "restricted_mean_distance_bp": 8594.702346860167,
+      "auc_detection_bp": 1405.2976531398326,
+      "median_distance_bp": "not reached",
+      "F_1000_ci95": [
+        0.0775336848402093,
+        0.12175408832294586
+      ],
+      "F_2000_ci95": [
+        0.09833749701189354,
+        0.15292837432764275
+      ],
+      "F_5000_ci95": [
+        0.10976335662879136,
+        0.1724204352540488
+      ],
+      "F_10000_ci95": [
+        0.1374662556602734,
+        0.20554938164669648
+      ],
+      "restricted_mean_distance_bp_ci95": [
+        8301.886928948055,
+        8889.556840645786
+      ],
+      "auc_detection_bp_ci95": [
+        1110.4431593542129,
+        1698.113071051944
+      ]
+    },
+    "Klebsiella group": {
+      "n_occurrences": 15568,
+      "weight_total": 10887.0,
+      "n_observed": 5325,
+      "n_censored_at_10kb": 10243,
+      "F_1000": 0.10386594730446723,
+      "F_2000": 0.12266024271923388,
+      "F_5000": 0.15332290546283092,
+      "F_10000": 0.23902360613575824,
+      "restricted_mean_distance_bp": 8365.280079061886,
+      "auc_detection_bp": 1634.7199209381142,
+      "median_distance_bp": "not reached",
+      "F_1000_ci95": [
+        0.08127816858820414,
+        0.1261367279299027
+      ],
+      "F_2000_ci95": [
+        0.0974405068739252,
+        0.14765682628537966
+      ],
+      "F_5000_ci95": [
+        0.12792833287353322,
+        0.17915902358003563
+      ],
+      "F_10000_ci95": [
+        0.21316386792867303,
+        0.26468635712539773
+      ],
+      "restricted_mean_distance_bp_ci95": [
+        8120.3274073444145,
+        8614.482351169765
+      ],
+      "auc_detection_bp_ci95": [
+        1385.517648830234,
+        1879.672592655585
+      ]
+    }
+  },
+  "contrasts": [
+    {
+      "contrast": "P1",
+      "kind": "primary",
+      "group_a": "A. baumannii",
+      "group_b": "Klebsiella group",
+      "landmark_bp": 1000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.5224207090235365,
+      "value_b": 0.10386594730446723,
+      "difference": 0.4185547617190693,
+      "ci_lo": 0.3720796285962805,
+      "ci_hi": 0.4589689699767709,
+      "p_bootstrap": 0.0005,
+      "p_holm": 0.001
+    },
+    {
+      "contrast": "P1",
+      "kind": "primary",
+      "group_a": "A. baumannii",
+      "group_b": "Klebsiella group",
+      "landmark_bp": 2000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.5877907885036934,
+      "value_b": 0.12266024271923388,
+      "difference": 0.4651305457844595,
+      "ci_lo": 0.4146276987793849,
+      "ci_hi": 0.5069142321999185,
+      "p_bootstrap": 0.0005,
+      "p_holm": 0.001
+    },
+    {
+      "contrast": "P1",
+      "kind": "primary",
+      "group_a": "A. baumannii",
+      "group_b": "Klebsiella group",
+      "landmark_bp": 5000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.5963589495730627,
+      "value_b": 0.15332290546283092,
+      "difference": 0.4430360441102318,
+      "ci_lo": 0.3928411102691984,
+      "ci_hi": 0.48462083638121584,
+      "p_bootstrap": 0.0005,
+      "p_holm": 0.001
+    },
+    {
+      "contrast": "P1",
+      "kind": "primary",
+      "group_a": "A. baumannii",
+      "group_b": "Klebsiella group",
+      "landmark_bp": 10000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.6322619623006284,
+      "value_b": 0.23902360613575824,
+      "difference": 0.39323835616487013,
+      "ci_lo": 0.34233504588230945,
+      "ci_hi": 0.4339478683642368,
+      "p_bootstrap": 0.0005,
+      "p_holm": 0.001
+    },
+    {
+      "contrast": "P1",
+      "kind": "primary",
+      "group_a": "A. baumannii",
+      "group_b": "Klebsiella group",
+      "landmark_bp": "RMD_0_10kb",
+      "estimand": "restricted mean distance",
+      "value_a": 4180.01275855113,
+      "value_b": 8365.280079061886,
+      "difference": -4185.267320510756,
+      "ci_lo": -4588.223113544649,
+      "ci_hi": -3696.117768028026,
+      "p_bootstrap": 0.0005,
+      "p_holm": ""
+    },
+    {
+      "contrast": "P2",
+      "kind": "primary",
+      "group_a": "A. baumannii",
+      "group_b": "P. aeruginosa",
+      "landmark_bp": 1000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.5224207090235365,
+      "value_b": 0.09934636101749704,
+      "difference": 0.4230743480060395,
+      "ci_lo": 0.3827739531668016,
+      "ci_hi": 0.45664791489126316,
+      "p_bootstrap": 0.0005,
+      "p_holm": 0.001
+    },
+    {
+      "contrast": "P2",
+      "kind": "primary",
+      "group_a": "A. baumannii",
+      "group_b": "P. aeruginosa",
+      "landmark_bp": 2000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.5877907885036934,
+      "value_b": 0.1256285090390405,
+      "difference": 0.4621622794646529,
+      "ci_lo": 0.41565226136456485,
+      "ci_hi": 0.5007864738779169,
+      "p_bootstrap": 0.0005,
+      "p_holm": 0.001
+    },
+    {
+      "contrast": "P2",
+      "kind": "primary",
+      "group_a": "A. baumannii",
+      "group_b": "P. aeruginosa",
+      "landmark_bp": 5000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.5963589495730627,
+      "value_b": 0.14095959230649624,
+      "difference": 0.45539935726656644,
+      "ci_lo": 0.4065180581839979,
+      "ci_hi": 0.49780571765509535,
+      "p_bootstrap": 0.0005,
+      "p_holm": 0.001
+    },
+    {
+      "contrast": "P2",
+      "kind": "primary",
+      "group_a": "A. baumannii",
+      "group_b": "P. aeruginosa",
+      "landmark_bp": 10000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.6322619623006284,
+      "value_b": 0.17169894951464917,
+      "difference": 0.4605630127859792,
+      "ci_lo": 0.41091116905072345,
+      "ci_hi": 0.5034412218832749,
+      "p_bootstrap": 0.0005,
+      "p_holm": 0.001
+    },
+    {
+      "contrast": "P2",
+      "kind": "primary",
+      "group_a": "A. baumannii",
+      "group_b": "P. aeruginosa",
+      "landmark_bp": "RMD_0_10kb",
+      "estimand": "restricted mean distance",
+      "value_a": 4180.01275855113,
+      "value_b": 8594.702346860167,
+      "difference": -4414.689588309037,
+      "ci_lo": -4804.727235012918,
+      "ci_hi": -3953.1918660549823,
+      "p_bootstrap": 0.0005,
+      "p_holm": ""
+    },
+    {
+      "contrast": "P3",
+      "kind": "secondary",
+      "group_a": "P. aeruginosa",
+      "group_b": "Klebsiella group",
+      "landmark_bp": 1000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.09934636101749704,
+      "value_b": 0.10386594730446723,
+      "difference": -0.00451958628697019,
+      "ci_lo": -0.03706762083053592,
+      "ci_hi": 0.026423041916795,
+      "p_bootstrap": 0.768,
+      "p_holm": ""
+    },
+    {
+      "contrast": "P3",
+      "kind": "secondary",
+      "group_a": "P. aeruginosa",
+      "group_b": "Klebsiella group",
+      "landmark_bp": 2000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.1256285090390405,
+      "value_b": 0.12266024271923388,
+      "difference": 0.002968266319806609,
+      "ci_lo": -0.03618378222032685,
+      "ci_hi": 0.03935579319381669,
+      "p_bootstrap": 0.93,
+      "p_holm": ""
+    },
+    {
+      "contrast": "P3",
+      "kind": "secondary",
+      "group_a": "P. aeruginosa",
+      "group_b": "Klebsiella group",
+      "landmark_bp": 5000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.14095959230649624,
+      "value_b": 0.15332290546283092,
+      "difference": -0.012363313156334682,
+      "ci_lo": -0.05425142759866963,
+      "ci_hi": 0.026954740989842498,
+      "p_bootstrap": 0.539,
+      "p_holm": ""
+    },
+    {
+      "contrast": "P3",
+      "kind": "secondary",
+      "group_a": "P. aeruginosa",
+      "group_b": "Klebsiella group",
+      "landmark_bp": 10000,
+      "estimand": "F(d) block-balanced",
+      "value_a": 0.17169894951464917,
+      "value_b": 0.23902360613575824,
+      "difference": -0.06732465662110906,
+      "ci_lo": -0.11242605043838214,
+      "ci_hi": -0.027579310664049343,
+      "p_bootstrap": 0.0005,
+      "p_holm": ""
+    },
+    {
+      "contrast": "P3",
+      "kind": "secondary",
+      "group_a": "P. aeruginosa",
+      "group_b": "Klebsiella group",
+      "landmark_bp": "RMD_0_10kb",
+      "estimand": "restricted mean distance",
+      "value_a": 8594.702346860167,
+      "value_b": 8365.280079061886,
+      "difference": 229.4222677982816,
+      "ci_lo": -131.5891199383159,
+      "ci_hi": 621.9894735070751,
+      "p_bootstrap": 0.232,
+      "p_holm": ""
+    }
+  ],
+  "influence_LOBO_P1_at_1kb": {
+    "baseline_difference": 0.4185547617190693,
+    "max_abs_change": 0.01403886066057164,
+    "most_influential_bioproject": "PRJNA812595",
+    "n_tested": 2248
+  },
+  "frozen_column_mismatches": 0,
+  "output_digests": {
+    "nmdist_occurrence_block_distances.tsv": "8d06ee836b5c7d0c05d3a58ba1f854005982d43a386bb9b9e8494c691a36916c",
+    "nmdist_primary_estimates.tsv": "905ee498db419347e74fca453a5ac006baacaf818f54772dc4b0a5f3907af683",
+    "nmdist_species_contrasts.tsv": "293fc60e3d5c4ed51933649d16617eefcc19b57c5e51c6cf3b2b490bce45e47c",
+    "nmdist_sensitivity_results.tsv": "aaf2b41494e00124a720bc1d8956f8916af74bbeaf36b79f9a71593257e0478f"
+  },
+  "prohibited_claims_observed": [
+    "no intact transposon claim",
+    "no demonstrated mobilization",
+    "no HGT",
+    "no transfer",
+    "no phenotype",
+    "no distance beyond 10 kb estimated"
+  ]
+}

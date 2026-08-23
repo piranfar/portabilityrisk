@@ -1,0 +1,173 @@
+{
+  "builder": "nmv4_run_v1.0.0",
+  "run_utc": "2026-08-22T00:49:34Z",
+  "frozen_design_sha256": "d06e1e68e9dd5a9303ed12c86748f687e71de7afbc594753da947a4a8c7357d9",
+  "protocol_sha256": "c968fb6d16a528a64d064d6f8bbac745390804df4ad0897c09b12de84ca3fbff",
+  "confirmation_species": [
+    "Enterobacter asburiae",
+    "Enterobacter cloacae",
+    "Enterobacter hormaechei",
+    "Klebsiella aerogenes",
+    "Klebsiella michiganensis",
+    "Klebsiella quasipneumoniae",
+    "Klebsiella variicola",
+    "Pseudomonas aeruginosa"
+  ],
+  "discovery_species": [
+    "Acinetobacter baumannii",
+    "Klebsiella pneumoniae"
+  ],
+  "per_species": {
+    "Enterobacter asburiae": {
+      "P": 0.4742489270386266,
+      "M": 0.2722222222222222,
+      "n_occ": 466,
+      "n_blocks": 180,
+      "lP": -0.10309550902697437,
+      "lM": -0.9833770250905252
+    },
+    "Enterobacter cloacae": {
+      "P": 0.6015325670498084,
+      "M": 0.28054298642533937,
+      "n_occ": 783,
+      "n_blocks": 221,
+      "lP": 0.4118549062069352,
+      "lM": -0.9417698171751399
+    },
+    "Enterobacter hormaechei": {
+      "P": 0.6674904942965779,
+      "M": 0.1585677749360614,
+      "n_occ": 5260,
+      "n_blocks": 1173,
+      "lP": 0.69685670114983,
+      "lM": -1.6689233657202802
+    },
+    "Klebsiella aerogenes": {
+      "P": 0.47767857142857145,
+      "M": 0.1346938775510204,
+      "n_occ": 672,
+      "n_blocks": 245,
+      "lP": -0.08934510033584998,
+      "lM": -1.860078713205532
+    },
+    "Klebsiella michiganensis": {
+      "P": 0.584958217270195,
+      "M": 0.2824858757062147,
+      "n_occ": 718,
+      "n_blocks": 177,
+      "lP": 0.34316122477200967,
+      "lM": -0.9321640810304451
+    },
+    "Klebsiella quasipneumoniae": {
+      "P": 0.5880661394680087,
+      "M": 0.14186046511627906,
+      "n_occ": 1391,
+      "n_blocks": 430,
+      "lP": 0.3559766198880077,
+      "lM": -1.799922779867216
+    },
+    "Klebsiella variicola": {
+      "P": 0.39906976744186046,
+      "M": 0.15368852459016394,
+      "n_occ": 1075,
+      "n_blocks": 488,
+      "lP": -0.409342584854585,
+      "lM": -1.7059594794247224
+    },
+    "Pseudomonas aeruginosa": {
+      "P": 0.12280701754385964,
+      "M": 0.17674305216967334,
+      "n_occ": 8151,
+      "n_blocks": 4102,
+      "lP": -1.966112856372833,
+      "lM": -1.5385713655308928
+    },
+    "Acinetobacter baumannii": {
+      "P": 0.13961736887360277,
+      "M": 0.6329144514258096,
+      "n_occ": 9304,
+      "n_blocks": 4138,
+      "lP": -1.8184716087602155,
+      "lM": 0.5447403419119392
+    },
+    "Klebsiella pneumoniae": {
+      "P": 0.6722781702490105,
+      "M": 0.25752066115702477,
+      "n_occ": 39918,
+      "n_blocks": 9075,
+      "lP": 0.7185070301616208,
+      "lM": -1.0588950894276405
+    }
+  },
+  "confirmation_P_range": [
+    0.12280701754385964,
+    0.6674904942965779
+  ],
+  "ab_P_inside_confirmation_range": true,
+  "T2": {
+    "intercept": -1.4211853903011737,
+    "slope": 0.0806312464924945,
+    "in_sample_r2": 0.027524444248430258,
+    "ab_observed_logitM": 0.5447403419119392,
+    "ab_predicted_logitM": -1.5678110228267217,
+    "ab_residual": 2.112551364738661,
+    "ab_observed_M": 0.6329144514258096,
+    "ab_predicted_M": 0.17252867167586336,
+    "kp_residual": 0.3043561834179813,
+    "bootstrap_median": 2.1193520648491755,
+    "bootstrap_ci": [
+      1.8064584808209452,
+      2.4375803954839754
+    ],
+    "excludes_zero": true
+  },
+  "T1": {
+    "loso_residuals": {
+      "Enterobacter asburiae": 0.5098604835240057,
+      "Enterobacter cloacae": 0.5426019886902209,
+      "Enterobacter hormaechei": -0.4071417888916702,
+      "Klebsiella aerogenes": -0.4933629213392603,
+      "Klebsiella michiganensis": 0.5520861079180998,
+      "Klebsiella quasipneumoniae": -0.48893813301618194,
+      "Klebsiella variicola": -0.29455211750294397,
+      "Pseudomonas aeruginosa": 0.2612874207778375
+    },
+    "loso_residual_sd": 0.48672438715709215,
+    "mean_within_species_se": 0.1319843765630741,
+    "sd_over_se": 3.6877424421858835,
+    "bootstrap_sd_ci": [
+      0.383966703762152,
+      0.866544560316411
+    ]
+  },
+  "T3": {
+    "pa_P": 0.12280701754385964,
+    "pa_M": 0.17674305216967334,
+    "ab_P": 0.13961736887360277,
+    "ab_M": 0.6329144514258096,
+    "M_gap_median": 0.4547693468589486,
+    "M_gap_ci": [
+      0.40208100213903875,
+      0.5038576868780699
+    ],
+    "excludes_zero": true
+  },
+  "bootstrap": {
+    "unit": "BioProject within species",
+    "seed": 20260821,
+    "n_requested": 2000,
+    "n_completed": 2000,
+    "slope_median": 0.08490281020411493,
+    "slope_ci": [
+      -0.05876343342286969,
+      0.22866862578324554
+    ]
+  },
+  "gate_verdict": "SUCCESS",
+  "statements": [
+    "The fit uses only the 8 confirmation species, none of which was used to articulate the discordance principle.",
+    "M is block-weighted, not occurrence-weighted.",
+    "No transfer, conjugation or HGT event was observed or is claimed.",
+    "No PortabilityEvent or PlasmidCall artefact was read."
+  ]
+}

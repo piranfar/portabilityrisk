@@ -1,0 +1,119 @@
+{
+ "receipt": "PORTABILITYRISK_FIGURE_RECEIPT",
+ "version": "1.0.0",
+ "generator": "portabilityrisk_figures.py",
+ "note": "Figure 5 is the NM-DIST four-panel figure, produced by nmdist_figure.py under the NM-DIST frozen protocol and reused unchanged.",
+ "recomputed_while_drawing": {
+  "families_significant_after_bh": 144,
+  "families_surviving_species_adjustment": 95,
+  "blocks_with_at_least_one_mge_feature": 6617,
+  "blocks_with_at_least_one_class_B_occurrence": 6616
+ },
+ "inputs_sha256": {
+  "evidence_layer_inventory.tsv": {
+   "path": "audit/data/derived/pr_context/out/evidence_layer_inventory.tsv",
+   "bytes": 672,
+   "sha256": "4a5f5ae05085f8003fd32c4a587f0625401433b1d77908a9fc67d31ebad456b7"
+  },
+  "portability_class_reconciliation.tsv": {
+   "path": "audit/data/derived/pr_context/out/portability_class_reconciliation.tsv",
+   "bytes": 126,
+   "sha256": "a6a421dce2fe24f49a2c33944ff9552ef5a02d2702f796c97e883b9f11538572"
+  },
+  "both_context_determinants.tsv": {
+   "path": "audit/data/derived/pr_context/out/both_context_determinants.tsv",
+   "bytes": 3830,
+   "sha256": "14692bb2021c9c128fa7a07cf9425cbca0131f9d44ccb856d6fa4d14c7f89925"
+  },
+  "determinant_enrichment_species_adjusted.tsv": {
+   "path": "audit/data/derived/pr_context/out/determinant_enrichment_species_adjusted.tsv",
+   "bytes": 33370,
+   "sha256": "eddcbe92d4403dba3d72c0cbf84355ccb7d3fdee0fb0d40e0a7bd642152826c4"
+  },
+  "arg_mge_neighbourhood.tsv": {
+   "path": "audit/data/derived/pr_context/out/arg_mge_neighbourhood.tsv",
+   "bytes": 7993228,
+   "sha256": "1270b3655c60045eee59dedda1edf9e24827f61a0044c770661174b993f3c722"
+  },
+  "shared_context_blocks.tsv": {
+   "path": "audit/data/derived/pr_context/out/shared_context_blocks.tsv",
+   "bytes": 2957236,
+   "sha256": "ef76f266a36266b5fad98dab87d91a0bf995de983ef7162c10683045095e7b40"
+  },
+  "mge_feature_inventory.tsv": {
+   "path": "audit/data/derived/pr_context/out/mge_feature_inventory.tsv",
+   "bytes": 6830913,
+   "sha256": "f5c8db3158f35477f752247cbf75c575e58a0e35c704b8864feed43bb3417bae"
+  },
+  "convergence_by_mobility_class.tsv": {
+   "path": "audit/data/derived/pr_context/out/convergence_by_mobility_class.tsv",
+   "bytes": 655,
+   "sha256": "03bb3a93122e54679401c2c31333e0b916ea53d6ef8e1c560339a6d6b574f760"
+  },
+  "plasmid_mobility_annotation.tsv": {
+   "path": "audit/data/derived/pr_context/out/plasmid_mobility_annotation.tsv",
+   "bytes": 1883822,
+   "sha256": "46ebe92aab1979c75b4981d06c111757187e317c371250029ec16e26e3064051"
+  },
+  "frozen_portability_class_definitions.json": {
+   "path": "audit/data/derived/pr_context/out/frozen_portability_class_definitions.json",
+   "bytes": 3974,
+   "sha256": "1a096bda8d05c3e6162478c187f859d83065a7c4770299effdf020507dc74b71"
+  },
+  "NMV3_RESULT_RECEIPT.json": {
+   "path": "docs/nature_microbiology/NMV3_RESULT_RECEIPT.json",
+   "bytes": 6148,
+   "sha256": "e4de8950db7f8a16275b1395e361c43a569a2581f534c00afc640e7f53a6c247"
+  },
+  "NMV4_RESULT_RECEIPT.json": {
+   "path": "docs/nature_microbiology/NMV4_RESULT_RECEIPT.json",
+   "bytes": 4972,
+   "sha256": "9e5c973d756f5689d0ccd054491ddc2139eee3af37eae05c998ff80094b8a62e"
+  },
+  "NMIS_RESULT_RECEIPT_V1.json": {
+   "path": "docs/nature_microbiology/NMIS_RESULT_RECEIPT_V1.json",
+   "bytes": 13172,
+   "sha256": "3725c18716ecd4228e5c5ca1cd261ffafb7d5e18d8ab2a93d72f765decc2b8cc"
+  },
+  "NMDIST_RESULT_RECEIPT_V1.json": {
+   "path": "docs/nature_microbiology/NMDIST_RESULT_RECEIPT_V1.json",
+   "bytes": 11256,
+   "sha256": "a335adcafaf38027df3834948472864508599929e52f27c6b2b6518eb1ac3549"
+  },
+  "nmis_occurrence_endpoints.tsv": {
+   "path": "docs/nature_microbiology/nmis_occurrence_endpoints.tsv",
+   "bytes": 6176080,
+   "sha256": "1fc2a6748f2a15a156d36ddb69d33b6d4225dd26798c2e680341f0df83a9c827"
+  }
+ },
+ "outputs_sha256": {
+  "docs/nature_microbiology/figures/manuscript/figure1_cohort_and_resolution.svg": "e211c120a268634eaedf98877b6f3082a19d453d7e3c4cb82f953b5362f08a96",
+  "docs/nature_microbiology/figures/manuscript/figure1_cohort_and_resolution.pdf": "769764bd203b8529dfd4918a1a9f9de10c8b11c8300ca894b71cda4265a836c3",
+  "docs/nature_microbiology/figures/manuscript/figure1_cohort_and_resolution.png": "154cdd9fbc52c54b0c4bfda7bfd7be45434f43ceb77b2e816f1294324dd68948",
+  "docs/nature_microbiology/figures/manuscript/figure1_cohort_and_resolution_600dpi.png": "72991c06d6e316531aaf3dee6c605946022795a45cfde065027043b9cee183bd",
+  "docs/nature_microbiology/figures/manuscript/figure2_five_class_architecture.svg": "1e2823a50856326043a5286055bd7573227d9afa43c41adfaaf044979976f0d9",
+  "docs/nature_microbiology/figures/manuscript/figure2_five_class_architecture.pdf": "8c2908bafedb952265b99d299254ee6f2374909b344aaea001ea8766f1d0c709",
+  "docs/nature_microbiology/figures/manuscript/figure2_five_class_architecture.png": "d7fc03c4f51b5abfeae2ae59e11ae61bfafbc103da0e152f62f1687a022b3c82",
+  "docs/nature_microbiology/figures/manuscript/figure2_five_class_architecture_600dpi.png": "f8cd3429f4a9b531ba98b16b0ebb48cb65fa3ec20c956c591d76fc21294bf746",
+  "docs/nature_microbiology/figures/manuscript/figure3_occurrence_not_gene.svg": "7b5ef34fb1e59462999adf28ec2a51cee9fcf18866598d9126f672e6640c05aa",
+  "docs/nature_microbiology/figures/manuscript/figure3_occurrence_not_gene.pdf": "c979a322d1f57a6dbde3111a74221dbc4728b4906c720070a7345d1ab6824b1d",
+  "docs/nature_microbiology/figures/manuscript/figure3_occurrence_not_gene.png": "ac98eb43e4b0744fe071e5ff5f72f448203b0530c58e69c0d21bb043cfcbef0b",
+  "docs/nature_microbiology/figures/manuscript/figure3_occurrence_not_gene_600dpi.png": "65f5d6c68078086f51ab06a3cfb6728cdb814930b66d1a99064435340bd722e8",
+  "docs/nature_microbiology/figures/manuscript/figure4_chromosomal_mobile_compartment.svg": "524a64aa5170782b2c7f6b5e3f5a24a92ad4c0f90c7e791abc68e61bb5743451",
+  "docs/nature_microbiology/figures/manuscript/figure4_chromosomal_mobile_compartment.pdf": "b7247cb13846726efd53eb08e2af45c2e33ac83f75e9f4589343bdfbe18dede9",
+  "docs/nature_microbiology/figures/manuscript/figure4_chromosomal_mobile_compartment.png": "f308e5c2e43ec6e72c558a472f3632e6f71811a31d1a80d63e7dea431162749d",
+  "docs/nature_microbiology/figures/manuscript/figure4_chromosomal_mobile_compartment_600dpi.png": "82a5a3d18d5e323d926edac5a1ed7e5618b2a3db811e115cda0245bf52007d21",
+  "docs/nature_microbiology/figures/manuscript/figure6_structural_is_endpoint.svg": "4a1da9507ce3ea5a9afb14bf13ce201f715697cfabc739e2a835f7884b741c2e",
+  "docs/nature_microbiology/figures/manuscript/figure6_structural_is_endpoint.pdf": "c6bc3f8eb2b465367431e750d9d83dc5216e81bbfcf5a55cc5cd14ba062b919f",
+  "docs/nature_microbiology/figures/manuscript/figure6_structural_is_endpoint.png": "6e99b0bc03cfd36228e0f946c6bce9c633d790bad737642166dd0bb620ad97f7",
+  "docs/nature_microbiology/figures/manuscript/figure6_structural_is_endpoint_600dpi.png": "a1749727d210d51b21069543c09e6dfb3f708144d25fa822cc34b9dc9e3c271a",
+  "docs/nature_microbiology/figures/manuscript/figure7_discordance_principle.svg": "c4e71b858e86485d62624a2be2d16ddca0b9fc76cdc5b2f71883b80106a62671",
+  "docs/nature_microbiology/figures/manuscript/figure7_discordance_principle.pdf": "88d86c21c185a30988028ab00460f3291f867e226bcd561bef7f09de94f4b094",
+  "docs/nature_microbiology/figures/manuscript/figure7_discordance_principle.png": "2dcd70410192d8b910f9ddcc3cc05f3c163162cb206e64ac10f95c81ee74aaaa",
+  "docs/nature_microbiology/figures/manuscript/figure7_discordance_principle_600dpi.png": "61001d83a41935bae842fe86c18954d6d911a9cdefd12d32f53d569bff286084",
+  "docs/nature_microbiology/figures/manuscript/figure8_convergence_by_mobility.svg": "c44c30c872e8dfd78a796cf8a248dacc9d3930b749fdccdfcf0dcd36cd656b22",
+  "docs/nature_microbiology/figures/manuscript/figure8_convergence_by_mobility.pdf": "237804f00dd82caec064c7c7bfa02ac7abab66740dad656c8bd21cf39c5e8291",
+  "docs/nature_microbiology/figures/manuscript/figure8_convergence_by_mobility.png": "56ad36743cf6ef0722db3f939973baa10672390e388b55f8adb338f0e96389aa",
+  "docs/nature_microbiology/figures/manuscript/figure8_convergence_by_mobility_600dpi.png": "82fe3ca84accddcd91cd507d72a6401792faa884b7dad78b41831341c1899a9d"
+ }
+}

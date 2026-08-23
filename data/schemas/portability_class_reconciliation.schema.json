@@ -1,0 +1,36 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/portability_class_reconciliation.tsv",
+ "title": "portability_class_reconciliation.tsv",
+ "description": "Row schema for portability_class_reconciliation.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "portability_class": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "A, B, C, D, E or __TOTAL__."
+  },
+  "n": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Occurrences in the class."
+  },
+  "pct_of_74349": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Percentage of the PRIMARY denominator."
+  }
+ },
+ "required": [
+  "portability_class",
+  "n",
+  "pct_of_74349"
+ ],
+ "additionalProperties": false
+}

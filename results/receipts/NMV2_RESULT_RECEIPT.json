@@ -1,0 +1,113 @@
+{
+  "builder": "nmv2_run_v1.0.0",
+  "run_utc": "2026-08-22T00:51:17Z",
+  "protocol_sha256": "c968fb6d16a528a64d064d6f8bbac745390804df4ad0897c09b12de84ca3fbff",
+  "seed": 20260821,
+  "baseline": {
+    "block_weighted_ratio": 2.4577229981554227,
+    "ab_M_block": 0.6329144514258096,
+    "kp_M_block": 0.25752066115702477,
+    "occurrence_weighted": {
+      "ratio": 2.2024341840032875,
+      "ab_M": 0.8091193004372267,
+      "kp_M": 0.3673750191102278
+    }
+  },
+  "collapses": {
+    "full cohort": {
+      "n_genomes_ab": 780,
+      "n_genomes_kp": 2822,
+      "ab_M": 0.6329144514258096,
+      "kp_M": 0.25752066115702477,
+      "ratio": 2.4577229981554227,
+      "ab_blocks": 4138,
+      "kp_blocks": 9075
+    },
+    "one genome per BioSample": {
+      "n_genomes_ab": 778,
+      "n_genomes_kp": 2822,
+      "ab_M": 0.6332364341085271,
+      "kp_M": 0.25752066115702477,
+      "ratio": 2.45897331601835,
+      "ab_blocks": 4128,
+      "kp_blocks": 9075
+    },
+    "one genome per BioProject": {
+      "n_genomes_ab": 269,
+      "n_genomes_kp": 945,
+      "ab_M": 0.5778108711839166,
+      "kp_M": 0.26869983948635634,
+      "ratio": 2.1503952971778975,
+      "ab_blocks": 1343,
+      "kp_blocks": 3115
+    }
+  },
+  "leave_one_bioproject_out": {
+    "n_tested": 1195,
+    "baseline_ratio": 2.4577229981554227,
+    "ratio_min": 2.322437122590142,
+    "ratio_max": 2.4832050247328414,
+    "max_relative_change": 0.05504520878342106,
+    "worst_bioproject": "PRJNA1098507",
+    "n_moving_more_than_15pct": 0
+  },
+  "bootstrap": {
+    "unit": "BioProject within species",
+    "n_requested": 2000,
+    "n_completed_full": 2000,
+    "n_completed_collapsed": 2000,
+    "full_median": 2.4378362134634375,
+    "full_ci": [
+      2.156480077477937,
+      2.8020892846740453
+    ],
+    "collapsed_median": 2.1497290747008573,
+    "collapsed_ci": [
+      2.0285562555616146,
+      2.282078336493582
+    ]
+  },
+  "four_denominators": {
+    "occurrence-weighted": {
+      "plasmid": 39209,
+      "total": 74349,
+      "pct": 52.736418781691754
+    },
+    "replicon-weighted": {
+      "plasmid": 6621,
+      "total": 12811,
+      "pct": 51.682148153930214
+    },
+    "genome-weighted": {
+      "plasmid": 3569,
+      "total": 9755,
+      "pct": 36.58636596617119
+    },
+    "BioProject-weighted": {
+      "plasmid": 1346,
+      "total": 3594,
+      "pct": 37.45130773511408
+    }
+  },
+  "balanced_species_weighting": {
+    "n_species_ge_40_genomes": 16,
+    "occurrence_weighted_pct": 52.736418781691754,
+    "unweighted_species_mean_pct": 53.37065852648263,
+    "species_median_pct": 58.651217836910185
+  },
+  "not_evaluable": {
+    "leave_one_major_lineage_out_chromosomal": "NOT EVALUABLE - no MLST, no SNP distance, no chromosomal lineage assignment exists in this cohort. Plasmid MOB clusters do not partition chromosomes and using them here would invent a key. Requires owner decision D-NM4."
+  },
+  "gate": {
+    "baseline_ratio_ge_1_5": true,
+    "bootstrap_lower_ci_gt_1": true,
+    "survives_bioproject_collapse": true,
+    "no_single_bioproject_moves_gt_15pct": true,
+    "verdict": "SUCCESS"
+  },
+  "statements": [
+    "No transfer, conjugation or HGT event was observed or is claimed.",
+    "No PortabilityEvent or PlasmidCall artefact was read.",
+    "The frozen PRIMARY denominator of 74,349 was not altered."
+  ]
+}

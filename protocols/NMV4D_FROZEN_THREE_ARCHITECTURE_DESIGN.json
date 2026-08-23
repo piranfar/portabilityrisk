@@ -1,0 +1,281 @@
+{
+  "design": "NM_V4D_FROZEN_THREE_ARCHITECTURE_DESIGN",
+  "version": "1.0.0",
+  "builder": "nmv4d_freeze_v1.0.0",
+  "frozen_utc": "2026-08-22T01:37:15Z",
+  "authorised_by": "owner, 2026-08-21, after NM-V4C acceptance and amendment 001",
+  "frozen_before_any_outcome_was_scored": true,
+  "supersedes_nothing": "NM-V4C stands unchanged. This module widens the model; it does not reinterpret NM-V4C after the fact.",
+  "provenance": {
+    "nmv4c_design_sha256": "8a3c76b157cbf2cd5279342cb2752e1974a2baac976b62455ea0c66f3de4495d",
+    "amendment": "NMV4C_AMENDMENT_001_COPRIMARY_GATE_CLARIFICATION.md",
+    "amendment_sha256": "fbce91b1bf194e00f86fa2c41423c5311b74ac5356ff8159abe57fce68086fa1",
+    "why_this_module_exists": "the NM-V4C focused contrast conditioned away class A, which is the axis on which Acinetobacter baumannii and Pseudomonas aeruginosa diverge. The two-route model is underspecified for these data."
+  },
+  "architectures": {
+    "definition": "three mutually exclusive architectures partitioning all 74,349 PRIMARY occurrences with nothing discarded",
+    "chromosomal_quiescent": {
+      "classes": [
+        "A"
+      ],
+      "meaning": "chromosomal, no MGE marker within 10 kb on current evidence",
+      "caution": "absence of a detected marker is not absence of mobility"
+    },
+    "chromosomal_mobile": {
+      "classes": [
+        "B"
+      ],
+      "meaning": "chromosomal, at least one MGE marker within 10 kb",
+      "caution": "proximity is co-location; no transposition or transfer was observed"
+    },
+    "plasmid_borne": {
+      "classes": [
+        "C",
+        "D",
+        "E"
+      ],
+      "meaning": "on a documented plasmid, any mobility-marker status",
+      "caution": "class C is retained inside this group and is never dropped; a marker-negative plasmid is not a non-mobilizable plasmid"
+    },
+    "class_C_retained": true,
+    "A_and_B_never_merged": true,
+    "secondary_full_five_class": "the complete A-E composition is reported per family x host and compared by total variation distance"
+  },
+  "primary_comparisons": [
+    {
+      "id": "PC1",
+      "hosts": [
+        "Acinetobacter baumannii",
+        "Pseudomonas aeruginosa"
+      ],
+      "contrast": [
+        "chromosomal_mobile",
+        "chromosomal_quiescent"
+      ],
+      "prespecified_direction": "Acinetobacter baumannii enriched for chromosomal_mobile",
+      "why": "the comparison NM-V4C could not represent; both hosts are plasmid-poor so the informative axis is B against A"
+    },
+    {
+      "id": "PC2",
+      "hosts": [
+        "Acinetobacter baumannii",
+        "Klebsiella"
+      ],
+      "contrast": [
+        "chromosomal_mobile",
+        "plasmid_borne"
+      ],
+      "prespecified_direction": "Acinetobacter baumannii enriched for chromosomal_mobile"
+    },
+    {
+      "id": "PC3",
+      "hosts": [
+        "Pseudomonas aeruginosa",
+        "Klebsiella"
+      ],
+      "contrast": [
+        "chromosomal_quiescent",
+        "plasmid_borne"
+      ],
+      "prespecified_direction": "Pseudomonas aeruginosa enriched for chromosomal_quiescent"
+    }
+  ],
+  "eligibility": {
+    "inherited_from_nmv4c": true,
+    "rule": ">=3 species AND >=10 BioProjects AND >=20 occurrences AND class B observable AND at least one of C, D, E observable",
+    "per_comparison_additional_rule": "a family enters a given comparison only if BOTH hosts have at least one occurrence in the union of the two architectures being contrasted; otherwise the stratum has a zero margin and contributes no information",
+    "n_eligible": 121,
+    "eligible_families": [
+      "aac(3)",
+      "aac(6')",
+      "aac(6')-Ib'",
+      "aac(6')-Ib-cr5",
+      "aac(6')-Ib3",
+      "aac(6')-Ib4",
+      "aacA16",
+      "aadA1",
+      "aadA11",
+      "aadA16",
+      "aadA2",
+      "aadA22",
+      "aadA5",
+      "ant(2'')",
+      "ant(3'')",
+      "aph(3'')",
+      "aph(3')",
+      "aph(4)",
+      "aph(6)",
+      "armA",
+      "arr",
+      "blaADC",
+      "blaAFM",
+      "blaCARB",
+      "blaCMY",
+      "blaCTX",
+      "blaCTX-M",
+      "blaDHA",
+      "blaGES",
+      "blaIMI",
+      "blaIMP",
+      "blaKPC",
+      "blaLAP",
+      "blaNDM",
+      "blaOXA",
+      "blaPDC",
+      "blaPER",
+      "blaSHV",
+      "blaTEM",
+      "blaVEB",
+      "blaVIM",
+      "ble",
+      "bleO",
+      "catA1",
+      "catA2",
+      "catB",
+      "catB2",
+      "catB3",
+      "catB8",
+      "cmlA",
+      "cmlA1",
+      "cmlA5",
+      "cmlA6",
+      "dfrA1",
+      "dfrA12",
+      "dfrA14",
+      "dfrA15",
+      "dfrA16",
+      "dfrA17",
+      "dfrA19",
+      "dfrA27",
+      "dfrA5",
+      "dfrB1",
+      "ere(A)",
+      "erm(B)",
+      "estX",
+      "floR",
+      "floR2",
+      "fosA",
+      "fosA3",
+      "fosA5",
+      "fosZ",
+      "lnu(F)",
+      "mcr-1.1",
+      "mcr-10.1",
+      "mph(A)",
+      "mph(E)",
+      "mrx(A)",
+      "msr(E)",
+      "oqxA",
+      "oqxB",
+      "qnrA1",
+      "qnrB",
+      "qnrB1",
+      "qnrB19",
+      "qnrB2",
+      "qnrB4",
+      "qnrB52",
+      "qnrB6",
+      "qnrS",
+      "qnrS1",
+      "qnrVC1",
+      "qnrVC6",
+      "rmtB1",
+      "rmtC",
+      "sat2",
+      "sul1",
+      "sul2",
+      "sul3",
+      "tet(39)",
+      "tet(A)",
+      "tet(B)",
+      "tet(C)",
+      "tet(D)",
+      "tet(G)",
+      "tet(M)",
+      "tet(X3)",
+      "tet(X4)",
+      "tet(X5)",
+      "tet(Y)",
+      "tmexC",
+      "tmexC1",
+      "tmexC2",
+      "tmexC3",
+      "tmexD",
+      "tmexD1",
+      "tmexD2",
+      "tmexD3",
+      "toprJ",
+      "toprJ1",
+      "toprJ2"
+    ]
+  },
+  "primary_analysis": {
+    "method": "BioProject-balanced, family-stratified Mantel-Haenszel odds ratio with Robins-Breslow-Greenland variance",
+    "bioproject_balancing_rule": "within each (family, host, BioProject) cell the architecture counts are normalised to unit mass, so every BioProject contributes exactly 1 unit to its (family, host) stratum regardless of how many genomes it sequenced. Effective sample size is therefore the NUMBER OF BIOPROJECTS, not the number of occurrences.",
+    "why": "an occurrence-level analysis lets one heavily sequenced project inside one host dominate a family stratum. Balancing deliberately produces WIDER intervals than the occurrence-level analysis; that is the conservative choice and it is chosen here before any result is seen.",
+    "model_prespecified": "Mantel-Haenszel, the method already established in this project for stratified adjustment. No model will be selected on the basis of effect strength, and no alternative model will be substituted if MH gives a weaker answer."
+  },
+  "sensitivity_analyses": [
+    {
+      "id": "S1",
+      "name": "occurrence-level",
+      "rule": "raw occurrence counts, unbalanced"
+    },
+    {
+      "id": "S2",
+      "name": "one genome per BioProject",
+      "rule": "deterministic selection of the assembly with the smallest SHA-256 of its accession within each BioProject"
+    },
+    {
+      "id": "S3",
+      "name": "family-weighted summary",
+      "rule": "unweighted mean of per-family log odds ratios, so each family counts once regardless of its occurrence count; reported beside the MH pooled estimate"
+    },
+    {
+      "id": "S4",
+      "name": "leave-one-family-out",
+      "rule": "every eligible family removed once"
+    },
+    {
+      "id": "S5",
+      "name": "leave-one-BioProject-out",
+      "rule": "every BioProject removed once"
+    },
+    {
+      "id": "S6",
+      "name": "permutation",
+      "rule": "host labels permuted over BioProjects within family strata, 2000 permutations, seed 20260821, two-sided on |ln OR|"
+    }
+  ],
+  "success_criteria": {
+    "SC1": "PC1 odds ratio greater than 1 with a 95 per cent CI excluding 1 - Acinetobacter baumannii enriched for chromosomal_mobile against chromosomal_quiescent relative to Pseudomonas aeruginosa",
+    "SC2": "PC2 odds ratio greater than 1 with a 95 per cent CI excluding 1 - Acinetobacter baumannii enriched for chromosomal_mobile against plasmid_borne relative to Klebsiella",
+    "SC3": "PC3 odds ratio greater than 1 with a 95 per cent CI excluding 1 - Pseudomonas aeruginosa enriched for chromosomal_quiescent against plasmid_borne relative to Klebsiella",
+    "SC4": "all three directions hold in the BioProject-balanced primary AND in the occurrence-level sensitivity S1 AND in the one-genome-per-BioProject sensitivity S2",
+    "SC5": "no single family or BioProject controls any principal comparison: leave-one-out relative change in pooled ln odds ratio no greater than 0.20, and the largest single family carries no more than 30 per cent of the MH weight",
+    "SC6": "the full five-class composition is coherent with the three-class result in direction for all three comparisons",
+    "SC7": "an independent verifier reproduces every exported cell and every headline effect from the exported TSVs",
+    "effect_sizes_need_not_match_across_families": true,
+    "influence_threshold_relative_log_or": 0.2,
+    "max_single_family_weight_share": 0.3
+  },
+  "permitted_headline_if_all_criteria_pass": "Across matched resistance-gene families, bacterial hosts segregate the same determinants into three distinct portability architectures: plasmid-conjugative, chromosomal-mobile and chromosomal-quiescent.",
+  "terminology_binding": {
+    "preferred": "Identical resistance determinants are routed into distinct plasmid-conjugative, chromosomal-mobile and chromosomal-quiescent architectures across bacterial hosts.",
+    "permitted": "Portability architecture is a host-associated property of the determinant-host combination.",
+    "host_determines": "usable descriptively ONLY if immediately defined as statistical association and not causal control"
+  },
+  "prohibited_interpretations": [
+    "observed horizontal transfer",
+    "causal host control",
+    "demonstrated conjugation",
+    "transfer rate",
+    "clinical risk"
+  ],
+  "standing_conditionality": "every chromosomal_mobile (class B) conclusion remains conditional on NM-V1 validation of the MGE layer, which has not been run",
+  "input_digests": {
+    "determinant_portability_classes.tsv": "ce0c99d61ba8435895135b2cfa6c8a48aa41a03c07e1540c87092d3c1332617b",
+    "genome_level_summary.tsv": "5dd5b0fca08152a5b7017dbaea2fa084c8620446e20ac4e6e481a163ed4cb57f",
+    "both_context_determinants.tsv": "14692bb2021c9c128fa7a07cf9425cbca0131f9d44ccb856d6fa4d14c7f89925"
+  }
+}

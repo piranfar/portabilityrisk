@@ -1,0 +1,148 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/convergence_by_mobility_class.tsv",
+ "title": "convergence_by_mobility_class.tsv",
+ "description": "Row schema for convergence_by_mobility_class.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "mobility_category": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "predicted_conjugative (relaxase and MPF), predicted_mobilizable (relaxase only), or nonconjugative_or_no_mobility_markers_detected."
+  },
+  "n_plasmids": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "ARG-bearing plasmids in the category."
+  },
+  "pct_multi_arg_ge2": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Percentage of ARG-bearing plasmids in this mobility category that carry 2 or more acquired resistance genes. Co-location on one replicon, NOT co-transfer."
+  },
+  "n_multi_arg_ge2": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Count of ARG-bearing plasmids in this mobility category that carry 2 or more acquired resistance genes."
+  },
+  "pct_multi_class_ge2": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Percentage of ARG-bearing plasmids in this mobility category that carry resistance genes of 2 or more drug classes. Co-location on one replicon, NOT co-transfer."
+  },
+  "n_multi_class_ge2": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Count of ARG-bearing plasmids in this mobility category that carry resistance genes of 2 or more drug classes."
+  },
+  "pct_multi_class_ge3": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Percentage of ARG-bearing plasmids in this mobility category that carry resistance genes of 3 or more drug classes. Co-location on one replicon, NOT co-transfer."
+  },
+  "n_multi_class_ge3": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Count of ARG-bearing plasmids in this mobility category that carry resistance genes of 3 or more drug classes."
+  },
+  "pct_arg_plus_metal": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Percentage of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a metal-tolerance determinant. Co-location on one replicon, NOT co-transfer."
+  },
+  "n_arg_plus_metal": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Count of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a metal-tolerance determinant."
+  },
+  "pct_arg_plus_biocide": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Percentage of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a biocide-tolerance determinant. Co-location on one replicon, NOT co-transfer."
+  },
+  "n_arg_plus_biocide": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Count of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a biocide-tolerance determinant."
+  },
+  "pct_arg_plus_virulence": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Percentage of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a virulence determinant. Co-location on one replicon, NOT co-transfer."
+  },
+  "n_arg_plus_virulence": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Count of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a virulence determinant."
+  },
+  "pct_arg_stress_virulence_triple": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Percentage of ARG-bearing plasmids in this mobility category that carry resistance, stress and virulence determinants together. Co-location on one replicon, NOT co-transfer."
+  },
+  "n_arg_stress_virulence_triple": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Count of ARG-bearing plasmids in this mobility category that carry resistance, stress and virulence determinants together."
+  },
+  "median_arg_per_plasmid": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Median ARG count per plasmid."
+  }
+ },
+ "required": [
+  "mobility_category",
+  "n_plasmids",
+  "pct_multi_arg_ge2",
+  "n_multi_arg_ge2",
+  "pct_multi_class_ge2",
+  "n_multi_class_ge2",
+  "pct_multi_class_ge3",
+  "n_multi_class_ge3",
+  "pct_arg_plus_metal",
+  "n_arg_plus_metal",
+  "pct_arg_plus_biocide",
+  "n_arg_plus_biocide",
+  "pct_arg_plus_virulence",
+  "n_arg_plus_virulence",
+  "pct_arg_stress_virulence_triple",
+  "n_arg_stress_virulence_triple",
+  "median_arg_per_plasmid"
+ ],
+ "additionalProperties": false
+}

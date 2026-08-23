@@ -1,0 +1,110 @@
+{
+  "design": "NM_V4_FROZEN_DESIGN",
+  "version": "1.0.0",
+  "builder": "nmv4_freeze_v1.0.0",
+  "frozen_utc": "2026-08-22T00:48:01Z",
+  "authorised_by": "owner, D-NM1 approved 2026-08-21",
+  "protocol_sha256": "c968fb6d16a528a64d064d6f8bbac745390804df4ad0897c09b12de84ca3fbff",
+  "frozen_before_any_outcome_was_computed": true,
+  "what_this_file_deliberately_does_not_contain": "the plasmid-borne fraction and the chromosomal MGE fraction. Those are the two components of the outcome. Only genome counts and chromosomal ARG occurrence counts were read to build this design.",
+  "inclusion_floor": {
+    "min_genomes": 40,
+    "min_chromosomal_arg_occurrences": 200,
+    "source": "genome_level_summary.tsv and arg_mge_neighbourhood.tsv"
+  },
+  "discovery_species": [
+    "Acinetobacter baumannii",
+    "Klebsiella pneumoniae"
+  ],
+  "confirmation_species": [
+    "Enterobacter asburiae",
+    "Enterobacter cloacae",
+    "Enterobacter hormaechei",
+    "Klebsiella aerogenes",
+    "Klebsiella michiganensis",
+    "Klebsiella quasipneumoniae",
+    "Klebsiella variicola",
+    "Pseudomonas aeruginosa"
+  ],
+  "n_confirmation_species": 8,
+  "exposure_counts": {
+    "Acinetobacter baumannii": {
+      "genomes": 780,
+      "chromosomal_arg_occurrences": 8005,
+      "bioprojects": 269
+    },
+    "Enterobacter asburiae": {
+      "genomes": 55,
+      "chromosomal_arg_occurrences": 245,
+      "bioprojects": 38
+    },
+    "Enterobacter cloacae": {
+      "genomes": 73,
+      "chromosomal_arg_occurrences": 312,
+      "bioprojects": 47
+    },
+    "Enterobacter hormaechei": {
+      "genomes": 379,
+      "chromosomal_arg_occurrences": 1749,
+      "bioprojects": 129
+    },
+    "Klebsiella aerogenes": {
+      "genomes": 77,
+      "chromosomal_arg_occurrences": 351,
+      "bioprojects": 37
+    },
+    "Klebsiella michiganensis": {
+      "genomes": 66,
+      "chromosomal_arg_occurrences": 298,
+      "bioprojects": 49
+    },
+    "Klebsiella pneumoniae": {
+      "genomes": 2822,
+      "chromosomal_arg_occurrences": 13082,
+      "bioprojects": 945
+    },
+    "Klebsiella quasipneumoniae": {
+      "genomes": 142,
+      "chromosomal_arg_occurrences": 573,
+      "bioprojects": 83
+    },
+    "Klebsiella variicola": {
+      "genomes": 161,
+      "chromosomal_arg_occurrences": 646,
+      "bioprojects": 62
+    },
+    "Pseudomonas aeruginosa": {
+      "genomes": 884,
+      "chromosomal_arg_occurrences": 7150,
+      "bioprojects": 425
+    }
+  },
+  "index_definition": {
+    "per_species_plasmid_fraction_P": "occurrence-weighted: n_plasmid_args / n_arg_occurrences, from genome_level_summary.tsv",
+    "per_species_chromosomal_MGE_fraction_M": "BLOCK-weighted: blocks carrying >=1 MGE feature / all context blocks on that species chromosomes. Block-weighted, not occurrence-weighted, because marker-positive blocks carry 2.46 ARGs against 1.23 and occurrence weighting would manufacture discordance.",
+    "discordance_index_D": "D = logit(M) - logit(P)",
+    "logit_guard": "proportions are clamped to [0.5/n, 1 - 0.5/n] with n the species denominator, a Haldane-style guard applied identically to every species and declared here before any value is seen"
+  },
+  "tests": {
+    "T1_general_principle": "leave-one-species-out within the CONFIRMATION set: regress logit(M) on logit(P) over confirmation species minus one, predict the held-out species, and test whether residuals are systematically larger than sampling noise. If P alone predicted M, residuals would be null.",
+    "T2_discovery_species_as_holdout": "fit logit(M) ~ logit(P) on the CONFIRMATION set only -- species never used to articulate the principle -- then predict Acinetobacter baumannii from its plasmid fraction alone and report the residual. This is the non-circular confirmation: the relationship is learned without the discovery species and then applied to it.",
+    "T3_low_plasmid_control": "Pseudomonas aeruginosa sits in the confirmation set and has a plasmid fraction close to Acinetobacter baumannii. If D were a mechanical consequence of a low plasmid fraction the two would score alike. They must not."
+  },
+  "uncertainty": {
+    "method": "BioProject-clustered bootstrap within species: resample BioProjects with replacement inside each species, recompute P and M from the resampled genomes, refit, 2000 resamples",
+    "seed": 20260821,
+    "why": "genomes within a BioProject are not independent"
+  },
+  "prespecified_direction": "a species with a low plasmid fraction AND an AbaR-like chromosomal architecture is predicted to have POSITIVE D. A low plasmid fraction alone is NOT predicted to produce positive D.",
+  "gates": {
+    "success": "the T2 residual for Acinetobacter baumannii is positive with a BioProject-clustered bootstrap CI excluding 0, AND T3 holds (Pseudomonas aeruginosa does not score like Acinetobacter baumannii), AND T1 shows residuals systematically non-zero",
+    "revise": "the residual is in the predicted direction but its CI includes 0. Report the principle as supported-but-underpowered, name the number of species that would be needed, and demote it from the abstract to the results",
+    "failure": "the residual is null or reverses direction, or Pseudomonas aeruginosa scores like Acinetobacter baumannii. Withdraw the general principle, demote to Tier 3, retain the Acinetobacter baumannii observation as a species-level finding, and change destination"
+  },
+  "input_digests": {
+    "genome_level_summary.tsv": "5dd5b0fca08152a5b7017dbaea2fa084c8620446e20ac4e6e481a163ed4cb57f",
+    "arg_mge_neighbourhood.tsv": "1270b3655c60045eee59dedda1edf9e24827f61a0044c770661174b993f3c722",
+    "shared_context_blocks.tsv": "ef76f266a36266b5fad98dab87d91a0bf995de983ef7162c10683045095e7b40",
+    "mge_feature_inventory.tsv": "f5c8db3158f35477f752247cbf75c575e58a0e35c704b8864feed43bb3417bae"
+  }
+}

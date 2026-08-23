@@ -1,0 +1,124 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv",
+ "title": "PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv",
+ "description": "Row schema for PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "module": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Validation module, e.g. NM-V1C, NM-DIST, NMIS."
+  },
+  "scientific_question": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "The question the module was registered to answer."
+  },
+  "frozen_design_sha256": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "SHA-256 of the protocol frozen before any outcome was read."
+  },
+  "population_or_sample": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "What the module ran over."
+  },
+  "primary_estimand": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "The registered primary quantity."
+  },
+  "result": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "The measured result."
+  },
+  "uncertainty": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Interval and resampling scheme."
+  },
+  "gate": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "The registered success condition."
+  },
+  "verdict": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "PASS, FAIL, QUALIFIED, PARTIAL, SUCCESS or CORROBORATION."
+  },
+  "scope_of_what_passed": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Exactly what the verdict licenses."
+  },
+  "what_was_not_tested": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Explicit limits of the module."
+  },
+  "dependencies": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Frozen inputs the module consumed."
+  },
+  "known_defects_or_deviations": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Deviations recorded during execution."
+  },
+  "manuscript_use": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "How the result may be used in the manuscript."
+  }
+ },
+ "required": [
+  "module",
+  "scientific_question",
+  "frozen_design_sha256",
+  "population_or_sample",
+  "primary_estimand",
+  "result",
+  "uncertainty",
+  "gate",
+  "verdict",
+  "scope_of_what_passed",
+  "what_was_not_tested",
+  "dependencies",
+  "known_defects_or_deviations",
+  "manuscript_use"
+ ],
+ "additionalProperties": false
+}

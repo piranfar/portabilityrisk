@@ -1,0 +1,274 @@
+table	column	storage_type	semantic_type	definition	denominator	nullable	curation_state
+MANIFEST.tsv	relative_path	text	identifier	Path within this repository.	-	no	curated
+MANIFEST.tsv	bytes	integer	integer	File size in bytes.	-	no	curated
+MANIFEST.tsv	sha256	text	identifier	Full 64-character SHA-256 of the file.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	table	text	identifier	Basename of the table the row describes.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	column	text	identifier	Column name within that table.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	storage_type	text	category	Inferred storage type: integer, number, array or text.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	semantic_type	text	category	Curated semantic type: identifier, category, number, integer, boolean, array or text.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	definition	text	text	What the column means.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	denominator	text	category	Which denominator the column is counted against.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	nullable	text	category	yes if empty values occur in the sampled rows.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	curation_state	text	category	curated or uncurated.	-	no	curated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	denominator	text	category	Which denominator the column is counted against.	-	no	curated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	size	integer	integer	Number of units in the denominator.	-	no	curated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	definition	text	text	What the column means.	-	no	curated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	question_it_answers	text	text	The question this denominator is the right one for.	-	no	curated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	notes	text	text	Cautions, and the values computed on this denominator.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	evidence_level	text	category	Name of the evidence level.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	layer	text	category	Which analysis layer the evidence level belongs to.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	definition	text	text	What the column means.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	basis	text	text	What the level is established by, and how it was validated.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	what_it_establishes	text	text	The claim the level licenses.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	what_it_does_not_establish	text	text	The claims it does NOT license.	-	no	curated
+PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv	relative_path	text	identifier	Path within this repository.	-	no	curated
+PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv	rows	integer	integer	Data rows excluding the header.	-	no	curated
+PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv	columns	integer	integer	Number of columns.	-	no	curated
+PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv	sha256	text	identifier	Full 64-character SHA-256 of the file as published.	-	no	curated
+PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv	grain	text	category	One row represents one unit of this kind.	-	no	curated
+PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv	availability	text	category	public, or private-only pending deposit.	-	no	curated
+nmdist_occurrence_block_distances.tsv	occurrence_id	text	identifier	Composite occurrence key: assembly|replicon|determinant|start|end.	occurrence	no	curated
+nmdist_occurrence_block_distances.tsv	block_id	text	identifier	Shared chromosomal context block identifier.	context block	no	curated
+nmdist_occurrence_block_distances.tsv	assembly_version	text	identifier	NCBI assembly accession with version.	genome	no	curated
+nmdist_occurrence_block_distances.tsv	replicon_accession	text	identifier	NCBI nucleotide accession of the replicon.	replicon	no	curated
+nmdist_occurrence_block_distances.tsv	bioproject_accession	text	identifier	NCBI BioProject accession; the bootstrap cluster.	BioProject	no	curated
+nmdist_occurrence_block_distances.tsv	organism_harmonized	text	category	Species name after harmonisation.	genome	no	curated
+nmdist_occurrence_block_distances.tsv	genus	text	category	Genus.	genome	no	curated
+nmdist_occurrence_block_distances.tsv	frozen_group	text	category	Frozen species group for the distance analyses: A. baumannii, Klebsiella group, P. aeruginosa, or other.	occurrence	no	curated
+nmdist_occurrence_block_distances.tsv	determinant_name	text	category	AMRFinderPlus determinant symbol.	occurrence	no	curated
+nmdist_occurrence_block_distances.tsv	gene_family	text	category	Determinant family.	occurrence	no	curated
+nmdist_occurrence_block_distances.tsv	portability_class	text	category	Frozen five-class portability state: A chromosomal no marker, B chromosomal MGE context, C plasmid no marker, D plasmid mobilizable, E plasmid conjugative.	occurrence	no	curated
+nmdist_occurrence_block_distances.tsv	topology	text	category	Replicon topology: circular or linear.	replicon	no	curated
+nmdist_occurrence_block_distances.tsv	wrapped_circular	text	boolean	1 if the window wraps the circular origin.	context block	no	curated
+nmdist_occurrence_block_distances.tsv	truncated	text	boolean	1 if the window was truncated by a replicon end.	context block	no	curated
+nmdist_occurrence_block_distances.tsv	block_n_args	integer	integer	Number of ARG occurrences in the block.	context block	no	curated
+nmdist_occurrence_block_distances.tsv	weight_block_balanced	number	number	Block-balanced weight, 1/m for an occurrence in a block of m; weights sum to 21,955.	context block	no	curated
+nmdist_occurrence_block_distances.tsv	s2_selected	integer	boolean	1 if selected for sensitivity S2 (one genome per BioProject).	BioProject	no	curated
+nmdist_occurrence_block_distances.tsv	dist_any_bp	integer	integer	Distance in bp to the nearest MGE marker of any class within the window; blank if censored.	occurrence	yes	curated
+nmdist_occurrence_block_distances.tsv	dist_is_bp	integer	integer	Distance to the nearest IS/transposase marker.	occurrence	yes	curated
+nmdist_occurrence_block_distances.tsv	dist_integrase_bp	integer	integer	Distance to the nearest integrase/integron marker.	occurrence	yes	curated
+nmdist_occurrence_block_distances.tsv	censored_any	integer	boolean	1 if no marker of any class within 10 kb.	occurrence	no	curated
+nmdist_occurrence_block_distances.tsv	censored_is	integer	boolean	1 if no IS/transposase marker within 10 kb.	occurrence	no	curated
+nmdist_occurrence_block_distances.tsv	censored_integrase	integer	boolean	1 if no integrase marker within 10 kb.	occurrence	no	curated
+nmdist_occurrence_block_distances.tsv	overlap_zero	integer	boolean	1 if a marker directly overlaps the determinant.	occurrence	no	curated
+nmdist_occurrence_block_distances.tsv	in_block_feature_beyond_window	integer	boolean	1 if the block contains a marker that lies OUTSIDE this occurrence's own window. 111 occurrences; censored, not counted positive.	occurrence	no	curated
+nmdist_primary_estimates.tsv	group	text	category	Frozen species group.	occurrence	no	curated
+nmdist_primary_estimates.tsv	n_occurrences	integer	integer	Occurrences contributing.	occurrence	no	curated
+nmdist_primary_estimates.tsv	weight_total	number	number	Sum of block-balanced weights.	context block	no	curated
+nmdist_primary_estimates.tsv	n_observed	integer	integer	Occurrences with a detection at or before 10 kb.	occurrence	no	curated
+nmdist_primary_estimates.tsv	n_censored_at_10kb	integer	integer	Occurrences right-censored at 10 kb: no detection within the window. NOT evidence of absence.	occurrence	no	curated
+nmdist_primary_estimates.tsv	F_1000	number	number	Weighted cumulative detection F(1000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 1000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmdist_primary_estimates.tsv	F_2000	number	number	Weighted cumulative detection F(2000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 2000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmdist_primary_estimates.tsv	F_5000	number	number	Weighted cumulative detection F(5000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 5000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmdist_primary_estimates.tsv	F_10000	number	number	Weighted cumulative detection F(10000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 10000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmdist_primary_estimates.tsv	F_1000_ci95	array	array	95 % BioProject cluster bootstrap interval for F(1000 bp), as [lower, upper].	BioProject	no	curated
+nmdist_primary_estimates.tsv	F_2000_ci95	array	array	95 % BioProject cluster bootstrap interval for F(2000 bp), as [lower, upper].	BioProject	no	curated
+nmdist_primary_estimates.tsv	F_5000_ci95	array	array	95 % BioProject cluster bootstrap interval for F(5000 bp), as [lower, upper].	BioProject	no	curated
+nmdist_primary_estimates.tsv	F_10000_ci95	array	array	95 % BioProject cluster bootstrap interval for F(10000 bp), as [lower, upper].	BioProject	no	curated
+nmdist_primary_estimates.tsv	restricted_mean_distance_bp	number	number	E[min(D, 10000)]: restricted mean distance under censoring at 10 kb.	-	no	curated
+nmdist_primary_estimates.tsv	restricted_mean_distance_bp_ci95	array	array	95 % BioProject cluster bootstrap interval for the restricted mean distance, as [lower, upper].	BioProject	no	curated
+nmdist_primary_estimates.tsv	auc_detection_bp	number	number	Area under the cumulative detection curve to 10 kb.	-	no	curated
+nmdist_primary_estimates.tsv	auc_detection_bp_ci95	array	array	95 % BioProject cluster bootstrap interval for the detection AUC.	BioProject	no	curated
+nmdist_primary_estimates.tsv	median_distance_bp	number	number	Median distance, or 'not reached' where F(10 kb) < 0.5.	-	no	curated
+nmdist_sensitivity_results.tsv	sensitivity	text	category	Prespecified sensitivity-analysis label.	-	no	curated
+nmdist_sensitivity_results.tsv	description	text	text	Human-readable description of the sensitivity.	-	no	curated
+nmdist_sensitivity_results.tsv	group	text	category	Frozen species group.	occurrence	no	curated
+nmdist_sensitivity_results.tsv	n_occurrences	integer	integer	Occurrences contributing.	occurrence	no	curated
+nmdist_sensitivity_results.tsv	weight_total	number	number	Sum of block-balanced weights.	context block	no	curated
+nmdist_sensitivity_results.tsv	n_observed	integer	integer	Occurrences with a detection at or before 10 kb.	occurrence	no	curated
+nmdist_sensitivity_results.tsv	n_censored_at_10kb	integer	integer	Occurrences right-censored at 10 kb: no detection within the window. NOT evidence of absence.	occurrence	no	curated
+nmdist_sensitivity_results.tsv	F_1000	number	number	Weighted cumulative detection F(1000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 1000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmdist_sensitivity_results.tsv	F_2000	number	number	Weighted cumulative detection F(2000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 2000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmdist_sensitivity_results.tsv	F_5000	number	number	Weighted cumulative detection F(5000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 5000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmdist_sensitivity_results.tsv	F_10000	number	number	Weighted cumulative detection F(10000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 10000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmdist_sensitivity_results.tsv	restricted_mean_distance_bp	number	number	E[min(D, 10000)]: restricted mean distance under censoring at 10 kb.	-	no	curated
+nmdist_sensitivity_results.tsv	auc_detection_bp	number	number	Area under the cumulative detection curve to 10 kb.	-	no	curated
+nmdist_sensitivity_results.tsv	median_distance_bp	number	number	Median distance, or 'not reached' where F(10 kb) < 0.5.	-	no	curated
+nmdist_species_contrasts.tsv	contrast	text	category	Registered contrast label.	-	no	curated
+nmdist_species_contrasts.tsv	kind	text	category	Whether the contrast is primary or secondary/sensitivity.	-	no	curated
+nmdist_species_contrasts.tsv	group_a	text	category	First group in the contrast.	-	no	curated
+nmdist_species_contrasts.tsv	group_b	text	category	Second group in the contrast.	-	no	curated
+nmdist_species_contrasts.tsv	landmark_bp	text	integer	Distance landmark in base pairs.	-	no	curated
+nmdist_species_contrasts.tsv	estimand	text	category	The quantity contrasted, e.g. cumulative detection at a landmark.	-	no	curated
+nmdist_species_contrasts.tsv	value_a	number	number	Estimate for group_a.	-	no	curated
+nmdist_species_contrasts.tsv	value_b	number	number	Estimate for group_b.	-	no	curated
+nmdist_species_contrasts.tsv	difference	number	number	value_a minus value_b.	-	no	curated
+nmdist_species_contrasts.tsv	ci_lo	number	number	Lower bound, 95 % BioProject cluster bootstrap.	BioProject	no	curated
+nmdist_species_contrasts.tsv	ci_hi	number	number	Upper bound, 95 % BioProject cluster bootstrap.	BioProject	no	curated
+nmdist_species_contrasts.tsv	p_bootstrap	number	number	Two-sided bootstrap p-value.	BioProject	no	curated
+nmdist_species_contrasts.tsv	p_holm	number	number	Holm-adjusted p-value across the registered contrast family.	BioProject	yes	curated
+nmis_occurrence_endpoints.tsv	occurrence_id	text	identifier	Composite occurrence key: assembly|replicon|determinant|start|end.	occurrence	no	curated
+nmis_occurrence_endpoints.tsv	block_id	text	identifier	Shared chromosomal context block identifier.	context block	no	curated
+nmis_occurrence_endpoints.tsv	bioproject_accession	text	identifier	NCBI BioProject accession; the bootstrap cluster.	BioProject	no	curated
+nmis_occurrence_endpoints.tsv	organism_harmonized	text	category	Species name after harmonisation.	genome	no	curated
+nmis_occurrence_endpoints.tsv	genus	text	category	Genus.	genome	no	curated
+nmis_occurrence_endpoints.tsv	frozen_group	text	category	Frozen species group for the distance analyses: A. baumannii, Klebsiella group, P. aeruginosa, or other.	occurrence	no	curated
+nmis_occurrence_endpoints.tsv	portability_class	text	category	Frozen five-class portability state: A chromosomal no marker, B chromosomal MGE context, C plasmid no marker, D plasmid mobilizable, E plasmid conjugative.	occurrence	no	curated
+nmis_occurrence_endpoints.tsv	weight_block_balanced	number	number	Block-balanced weight, 1/m for an occurrence in a block of m; weights sum to 21,955.	context block	no	curated
+nmis_occurrence_endpoints.tsv	nmdist_dist_any_bp	integer	integer	Homology-based distance carried over from NM-DIST, for the same row.	occurrence	yes	curated
+nmis_occurrence_endpoints.tsv	nmdist_censored	integer	boolean	1 if homology-censored.	occurrence	no	curated
+nmis_occurrence_endpoints.tsv	endpoint_state	text	category	Structural endpoint state, one of: complete_and_fully_contained (12,034); complete_in_shared_block_but_crosses_occurrence_window_boundary (716, censored); partial_or_boundary_limited (1,902); no_structurally_resolved_IS (20,488); tool failure (0).	occurrence	no	curated
+nmis_occurrence_endpoints.tsv	nmis_dist_bp	integer	integer	Distance to the nearest structurally complete, fully contained IS; blank if censored.	occurrence	yes	curated
+nmis_occurrence_endpoints.tsv	nmis_censored	integer	boolean	1 if no such element within 10 kb.	occurrence	no	curated
+nmis_occurrence_endpoints.tsv	n_complete_contained	integer	integer	Complete elements fully inside this window.	occurrence	no	curated
+nmis_occurrence_endpoints.tsv	n_complete_crossing	integer	integer	Complete elements in the block that cross this occurrence's window boundary.	occurrence	no	curated
+nmis_occurrence_endpoints.tsv	n_partial_or_boundary	integer	integer	Partial or boundary-limited elements.	occurrence	no	curated
+nmis_primary_estimates.tsv	group	text	category	Frozen species group.	occurrence	no	curated
+nmis_primary_estimates.tsv	n_occurrences	integer	integer	Occurrences contributing.	occurrence	no	curated
+nmis_primary_estimates.tsv	n_observed	integer	integer	Occurrences with a detection at or before 10 kb.	occurrence	no	curated
+nmis_primary_estimates.tsv	n_censored_at_10kb	integer	integer	Occurrences right-censored at 10 kb: no detection within the window. NOT evidence of absence.	occurrence	no	curated
+nmis_primary_estimates.tsv	weight_total	number	number	Sum of block-balanced weights.	context block	no	curated
+nmis_primary_estimates.tsv	F_1000	number	number	Weighted cumulative detection F(1000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 1000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmis_primary_estimates.tsv	F_2000	number	number	Weighted cumulative detection F(2000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 2000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmis_primary_estimates.tsv	F_5000	number	number	Weighted cumulative detection F(5000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 5000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmis_primary_estimates.tsv	F_10000	number	number	Weighted cumulative detection F(10000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 10000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmis_primary_estimates.tsv	F_1000_ci95	array	array	95 % BioProject cluster bootstrap interval for F(1000 bp), as [lower, upper].	BioProject	no	curated
+nmis_primary_estimates.tsv	F_2000_ci95	array	array	95 % BioProject cluster bootstrap interval for F(2000 bp), as [lower, upper].	BioProject	no	curated
+nmis_primary_estimates.tsv	F_5000_ci95	array	array	95 % BioProject cluster bootstrap interval for F(5000 bp), as [lower, upper].	BioProject	no	curated
+nmis_primary_estimates.tsv	F_10000_ci95	array	array	95 % BioProject cluster bootstrap interval for F(10000 bp), as [lower, upper].	BioProject	no	curated
+nmis_primary_estimates.tsv	restricted_mean_distance_bp	number	number	E[min(D, 10000)]: restricted mean distance under censoring at 10 kb.	-	no	curated
+nmis_primary_estimates.tsv	restricted_mean_distance_bp_ci95	array	array	95 % BioProject cluster bootstrap interval for the restricted mean distance, as [lower, upper].	BioProject	no	curated
+nmis_primary_estimates.tsv	auc_detection_bp	number	number	Area under the cumulative detection curve to 10 kb.	-	no	curated
+nmis_primary_estimates.tsv	median_distance_bp	text	number	Median distance, or 'not reached' where F(10 kb) < 0.5.	-	no	curated
+nmis_sensitivity_results.tsv	sensitivity	text	category	Prespecified sensitivity-analysis label.	-	no	curated
+nmis_sensitivity_results.tsv	group	text	category	Frozen species group.	occurrence	no	curated
+nmis_sensitivity_results.tsv	n_occurrences	integer	integer	Occurrences contributing.	occurrence	no	curated
+nmis_sensitivity_results.tsv	n_observed	integer	integer	Occurrences with a detection at or before 10 kb.	occurrence	no	curated
+nmis_sensitivity_results.tsv	n_censored_at_10kb	integer	integer	Occurrences right-censored at 10 kb: no detection within the window. NOT evidence of absence.	occurrence	no	curated
+nmis_sensitivity_results.tsv	F_1000	number	number	Weighted cumulative detection F(1000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 1000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmis_sensitivity_results.tsv	F_2000	number	number	Weighted cumulative detection F(2000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 2000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmis_sensitivity_results.tsv	F_5000	number	number	Weighted cumulative detection F(5000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 5000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmis_sensitivity_results.tsv	F_10000	number	number	Weighted cumulative detection F(10000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 10000 bp, under right-censoring at 10 kb.	context block	no	curated
+nmis_sensitivity_results.tsv	restricted_mean_distance_bp	number	number	E[min(D, 10000)]: restricted mean distance under censoring at 10 kb.	-	no	curated
+nmis_sensitivity_results.tsv	median_distance_bp	number	number	Median distance, or 'not reached' where F(10 kb) < 0.5.	-	no	curated
+nmis_species_contrasts.tsv	contrast	text	category	Registered contrast label.	-	no	curated
+nmis_species_contrasts.tsv	group_a	text	category	First group in the contrast.	-	no	curated
+nmis_species_contrasts.tsv	group_b	text	category	Second group in the contrast.	-	no	curated
+nmis_species_contrasts.tsv	landmark_bp	integer	integer	Distance landmark in base pairs.	-	no	curated
+nmis_species_contrasts.tsv	value_a	number	number	Estimate for group_a.	-	no	curated
+nmis_species_contrasts.tsv	value_b	number	number	Estimate for group_b.	-	no	curated
+nmis_species_contrasts.tsv	difference	number	number	value_a minus value_b.	-	no	curated
+nmis_species_contrasts.tsv	ci_lo	number	number	Lower bound, 95 % BioProject cluster bootstrap.	BioProject	no	curated
+nmis_species_contrasts.tsv	ci_hi	number	number	Upper bound, 95 % BioProject cluster bootstrap.	BioProject	no	curated
+nmis_species_contrasts.tsv	p_bootstrap	number	number	Two-sided bootstrap p-value.	BioProject	no	curated
+nmis_species_contrasts.tsv	p_holm	number	number	Holm-adjusted p-value across the registered contrast family.	BioProject	no	curated
+nmis_vs_nmdist_comparison.tsv	group	text	category	Frozen species group.	occurrence	no	curated
+nmis_vs_nmdist_comparison.tsv	landmark_bp	integer	integer	Distance landmark in base pairs.	-	no	curated
+nmis_vs_nmdist_comparison.tsv	homology_F	number	number	Cumulative detection under the homology endpoint.	-	no	curated
+nmis_vs_nmdist_comparison.tsv	structural_F	number	number	Cumulative detection under the structural endpoint.	-	no	curated
+nmis_vs_nmdist_comparison.tsv	ratio_structural_over_homology	number	number	structural_F / homology_F.	-	no	curated
+both_context_determinants.tsv	gene_family	text	category	Determinant family.	occurrence	no	curated
+both_context_determinants.tsv	n_plasmid	integer	integer	Plasmid-borne occurrences.	occurrence	no	curated
+both_context_determinants.tsv	n_chromosome	integer	integer	Chromosomal occurrences.	occurrence	no	curated
+both_context_determinants.tsv	n_total	integer	integer	Total occurrences of the family.	occurrence	no	curated
+both_context_determinants.tsv	minor_context_fraction	number	number	Share of the family's occurrences in whichever compartment is the minority for that family.	occurrence	no	curated
+convergence_by_mobility_class.tsv	mobility_category	text	category	predicted_conjugative (relaxase and MPF), predicted_mobilizable (relaxase only), or nonconjugative_or_no_mobility_markers_detected.	replicon	no	curated
+convergence_by_mobility_class.tsv	n_plasmids	integer	integer	ARG-bearing plasmids in the category.	replicon	no	curated
+convergence_by_mobility_class.tsv	pct_multi_arg_ge2	number	number	Percentage of ARG-bearing plasmids in this mobility category that carry 2 or more acquired resistance genes. Co-location on one replicon, NOT co-transfer.	replicon	no	curated
+convergence_by_mobility_class.tsv	n_multi_arg_ge2	integer	integer	Count of ARG-bearing plasmids in this mobility category that carry 2 or more acquired resistance genes.	replicon	no	curated
+convergence_by_mobility_class.tsv	pct_multi_class_ge2	number	number	Percentage of ARG-bearing plasmids in this mobility category that carry resistance genes of 2 or more drug classes. Co-location on one replicon, NOT co-transfer.	replicon	no	curated
+convergence_by_mobility_class.tsv	n_multi_class_ge2	integer	integer	Count of ARG-bearing plasmids in this mobility category that carry resistance genes of 2 or more drug classes.	replicon	no	curated
+convergence_by_mobility_class.tsv	pct_multi_class_ge3	number	number	Percentage of ARG-bearing plasmids in this mobility category that carry resistance genes of 3 or more drug classes. Co-location on one replicon, NOT co-transfer.	replicon	no	curated
+convergence_by_mobility_class.tsv	n_multi_class_ge3	integer	integer	Count of ARG-bearing plasmids in this mobility category that carry resistance genes of 3 or more drug classes.	replicon	no	curated
+convergence_by_mobility_class.tsv	pct_arg_plus_metal	number	number	Percentage of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a metal-tolerance determinant. Co-location on one replicon, NOT co-transfer.	replicon	no	curated
+convergence_by_mobility_class.tsv	n_arg_plus_metal	integer	integer	Count of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a metal-tolerance determinant.	replicon	no	curated
+convergence_by_mobility_class.tsv	pct_arg_plus_biocide	number	number	Percentage of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a biocide-tolerance determinant. Co-location on one replicon, NOT co-transfer.	replicon	no	curated
+convergence_by_mobility_class.tsv	n_arg_plus_biocide	integer	integer	Count of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a biocide-tolerance determinant.	replicon	no	curated
+convergence_by_mobility_class.tsv	pct_arg_plus_virulence	number	number	Percentage of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a virulence determinant. Co-location on one replicon, NOT co-transfer.	replicon	no	curated
+convergence_by_mobility_class.tsv	n_arg_plus_virulence	integer	integer	Count of ARG-bearing plasmids in this mobility category that carry at least one resistance gene AND a virulence determinant.	replicon	no	curated
+convergence_by_mobility_class.tsv	pct_arg_stress_virulence_triple	number	number	Percentage of ARG-bearing plasmids in this mobility category that carry resistance, stress and virulence determinants together. Co-location on one replicon, NOT co-transfer.	replicon	no	curated
+convergence_by_mobility_class.tsv	n_arg_stress_virulence_triple	integer	integer	Count of ARG-bearing plasmids in this mobility category that carry resistance, stress and virulence determinants together.	replicon	no	curated
+convergence_by_mobility_class.tsv	median_arg_per_plasmid	integer	number	Median ARG count per plasmid.	replicon	no	curated
+determinant_enrichment_species_adjusted.tsv	gene_family	text	category	Determinant family.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	n_occurrences	integer	integer	Occurrences contributing.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	n_plasmid	integer	integer	Plasmid-borne occurrences.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	n_chromosome	integer	integer	Chromosomal occurrences.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	pct_plasmid	number	number	Percentage of occurrences that are plasmid-borne.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	crude_odds_ratio	number	number	Unadjusted plasmid-vs-chromosome odds ratio for the family against all other families.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	crude_ci_lo	number	number	Lower bound of the crude 95 % interval.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	crude_ci_hi	number	number	Upper bound of the crude 95 % interval.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	crude_fisher_p	number	number	Fisher exact two-sided p-value, unadjusted.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	species_adjusted_MH_or	number	number	Mantel-Haenszel odds ratio pooled across species strata; blank where not estimable.	occurrence	yes	curated
+determinant_enrichment_species_adjusted.tsv	species_adjusted_ci_lo	number	number	Lower bound of the MH 95 % interval.	occurrence	yes	curated
+determinant_enrichment_species_adjusted.tsv	species_adjusted_ci_hi	number	number	Upper bound of the MH 95 % interval.	occurrence	yes	curated
+determinant_enrichment_species_adjusted.tsv	n_species_strata	integer	integer	Species strata the family appears in.	genome	no	curated
+determinant_enrichment_species_adjusted.tsv	n_species_with_within_estimate	integer	integer	Strata yielding a within-species estimate.	genome	no	curated
+determinant_enrichment_species_adjusted.tsv	within_species_all_same_direction	text	category	yes if every within-species estimate points the same way.	genome	yes	curated
+determinant_enrichment_species_adjusted.tsv	within_species_detail	text	text	Per-species n and OR, semicolon separated.	genome	yes	curated
+determinant_enrichment_species_adjusted.tsv	unique_plasmids_carrying	integer	integer	Distinct plasmid replicons carrying the family.	replicon	no	curated
+determinant_enrichment_species_adjusted.tsv	unique_genomes_carrying	integer	integer	Distinct genomes carrying the family.	genome	no	curated
+determinant_enrichment_species_adjusted.tsv	unique_bioprojects_carrying	integer	integer	Distinct BioProjects carrying the family.	BioProject	no	curated
+determinant_enrichment_species_adjusted.tsv	largest_mob_cluster_share_pct	number	number	Share of the family's plasmid occurrences in its largest MOB cluster; a clonality warning.	replicon	yes	curated
+determinant_enrichment_species_adjusted.tsv	lineage_dominated_flag	text	category	yes if one lineage dominates; such families are reported flagged, never as independent findings.	replicon	no	curated
+determinant_enrichment_species_adjusted.tsv	crude_bh_q	number	number	Benjamini-Hochberg q-value over the crude p-values.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	significant_after_bh	text	category	yes if BH q < 0.05.	occurrence	no	curated
+determinant_enrichment_species_adjusted.tsv	survives_species_adjustment	text	category	yes if the MH interval still excludes 1. 95 of 144 significant families do. 'not_estimable' where no stratum supports an estimate.	occurrence	no	curated
+evidence_layer_inventory.tsv	evidence_layer	text	category	Determinant layer as called by AMRFinderPlus.	-	no	curated
+evidence_layer_inventory.tsv	n_rows	integer	integer	Records in the layer before denominator construction.	-	no	curated
+evidence_layer_inventory.tsv	counted_as_acquired_arg	text	category	yes only for the PRIMARY acquired_amr layer.	occurrence	no	curated
+evidence_layer_inventory.tsv	note	text	text	Why the layer is or is not in the PRIMARY denominator.	-	no	curated
+genome_level_summary.tsv	assembly_version	text	identifier	NCBI assembly accession with version.	genome	no	curated
+genome_level_summary.tsv	biosample_accession	text	identifier	NCBI BioSample accession.	genome	no	curated
+genome_level_summary.tsv	bioproject_accession	text	identifier	NCBI BioProject accession; the bootstrap cluster.	BioProject	no	curated
+genome_level_summary.tsv	organism	text	category	Species name as recorded.	genome	no	curated
+genome_level_summary.tsv	genus	text	category	Genus.	genome	no	curated
+genome_level_summary.tsv	n_arg_occurrences	integer	integer	ARG occurrences in the genome.	occurrence	no	curated
+genome_level_summary.tsv	n_plasmid_args	integer	integer	Plasmid-borne ARG occurrences.	occurrence	no	curated
+genome_level_summary.tsv	n_chromosomal_args	integer	integer	Chromosomal ARG occurrences.	occurrence	no	curated
+genome_level_summary.tsv	pct_plasmid	number	number	Per-genome plasmid percentage. NOTE: the mean of this column is 35.932 %, which is NOT the 36.586 % genome-collapsed event share. See the denominator dictionary.	genome	no	curated
+genome_level_summary.tsv	n_distinct_families	integer	integer	Distinct gene families in the genome.	genome	no	curated
+genome_level_summary.tsv	n_arg_bearing_replicons	integer	integer	Replicons carrying at least one ARG.	replicon	no	curated
+genome_level_summary.tsv	n_arg_bearing_plasmids	integer	integer	Plasmids carrying at least one ARG.	replicon	no	curated
+headline_recomputation.tsv	gene_family	text	category	Determinant family.	occurrence	no	curated
+headline_recomputation.tsv	independent_n_plasmid	integer	integer	Plasmid count from the independent re-implementation.	occurrence	no	curated
+headline_recomputation.tsv	pipeline_n_plasmid	integer	integer	Plasmid count from the pipeline.	occurrence	no	curated
+headline_recomputation.tsv	independent_n_chromosome	integer	integer	Chromosomal count, independent.	occurrence	no	curated
+headline_recomputation.tsv	pipeline_n_chromosome	integer	integer	Chromosomal count, pipeline.	occurrence	no	curated
+headline_recomputation.tsv	independent_odds_ratio	number	number	Odds ratio, independent.	occurrence	no	curated
+headline_recomputation.tsv	pipeline_odds_ratio	number	number	Odds ratio, pipeline.	occurrence	no	curated
+headline_recomputation.tsv	agreement	text	category	Whether the two agree.	-	no	curated
+independent_verification_report_v2.tsv	check	text	text	Name of the independent verification check.	-	no	curated
+independent_verification_report_v2.tsv	independent_value	integer	text	Value from the independent re-implementation.	-	no	curated
+independent_verification_report_v2.tsv	pipeline_value	integer	text	Value from the pipeline under test.	-	no	curated
+independent_verification_report_v2.tsv	agreement	text	category	Whether the two values agree.	-	no	curated
+portability_class_reconciliation.tsv	portability_class	text	category	A, B, C, D, E or __TOTAL__.	occurrence	no	curated
+portability_class_reconciliation.tsv	n	integer	integer	Occurrences in the class.	occurrence	no	curated
+portability_class_reconciliation.tsv	pct_of_74349	number	number	Percentage of the PRIMARY denominator.	occurrence	no	curated
+PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv	claim_id	text	identifier	Stable claim identifier, C01..C20.	-	no	curated
+PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv	claim	text	text	The claim in one sentence.	-	no	curated
+PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv	tier_proposed	text	category	Evidence tier proposed for the manuscript.	-	no	curated
+PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv	evidence_class	text	category	Kind of evidence supporting the claim.	-	no	curated
+PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv	supporting_module	text	category	Validation module that supports it.	-	no	curated
+PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv	status	text	category	HEADLINE READY, supported, blocked, withdraw or not evaluated.	-	no	curated
+PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv	reason	text	text	Why the claim holds the status it does.	-	no	curated
+PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv	affects_central_narrative	text	category	Whether the central argument depends on it.	-	no	curated
+PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv	required_qualifier	text	text	Wording that MUST accompany the claim.	-	no	curated
+PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv	nmdist_effect	text	text	How NM-DIST and NMIS changed the claim's standing.	-	no	curated
+PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv	seq	integer	integer	Sequential entry number.	-	no	curated
+PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv	date_detected	text	text	Date the defect was detected (ISO).	-	no	curated
+PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv	item	text	text	What the defect was.	-	no	curated
+PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv	detected_by	text	text	How it was found.	-	no	curated
+PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv	affected_a_reported_result	text	category	Whether a reported result was affected.	-	no	curated
+PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv	corrective_artefact	text	text	The artefact created to correct it.	-	no	curated
+PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv	correction_timing	text	category	pre-outcome, during execution, or post-outcome.	-	no	curated
+PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv	residual_scientific_consequence	text	text	What consequence remains, if any.	-	no	curated
+PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv	disclosure_level	text	category	Where the defect is disclosed.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	module	text	category	Validation module, e.g. NM-V1C, NM-DIST, NMIS.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	scientific_question	text	text	The question the module was registered to answer.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	frozen_design_sha256	text	identifier	SHA-256 of the protocol frozen before any outcome was read.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	population_or_sample	text	text	What the module ran over.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	primary_estimand	text	text	The registered primary quantity.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	result	text	text	The measured result.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	uncertainty	text	text	Interval and resampling scheme.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	gate	text	text	The registered success condition.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	verdict	text	category	PASS, FAIL, QUALIFIED, PARTIAL, SUCCESS or CORROBORATION.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	scope_of_what_passed	text	text	Exactly what the verdict licenses.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	what_was_not_tested	text	text	Explicit limits of the module.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	dependencies	text	text	Frozen inputs the module consumed.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	known_defects_or_deviations	text	text	Deviations recorded during execution.	-	no	curated
+PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv	manuscript_use	text	text	How the result may be used in the manuscript.	-	no	curated
+nmis_census_status.tsv	block_id	text	identifier	Shared chromosomal context block identifier.	context block	no	curated
+nmis_census_status.tsv	status	text	category	Per-block census outcome; 'ok' for all 21,955.	context block	no	curated
+nmis_census_status.tsv	exit	integer	integer	Tool exit code; 0 for all blocks.	context block	no	curated
+nmis_census_status.tsv	rows	integer	integer	ISEScan output rows for the block.	context block	no	curated
+nmis_census_status.tsv	ms	integer	integer	Wall-clock milliseconds for the block.	context block	no	curated

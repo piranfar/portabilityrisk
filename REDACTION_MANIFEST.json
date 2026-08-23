@@ -1,0 +1,74 @@
+{
+ "manifest": "PORTABILITYRISK_PUBLIC_REDACTION_MANIFEST",
+ "version": "1.0.0",
+ "explanation": "This file is a REDACTED PUBLIC DERIVATIVE, not the canonical artefact. Infrastructure identifiers naming the compute instance have been replaced by [REDACTED:...] tokens. No scientific field, value, threshold, digest reference or protocol term was altered. Its SHA-256 therefore differs from the canonical private artefact BY DESIGN; the canonical digest is recorded below and is the one quoted throughout the manuscript.",
+ "rule": "The canonical private artefacts are NEVER modified. Their digests remain the ones quoted in the manuscript, receipts and verification reports. Each public file below is a derivative with its own digest.",
+ "records": [
+  {
+   "public_path": "protocols/NMIS_FROZEN_PROTOCOL_V1.json",
+   "canonical_private_path": "docs/nature_microbiology/NMIS_FROZEN_PROTOCOL_V1.json",
+   "canonical_private_sha256": "5438045a3b73d123347fcd60b2456779f050c2a8fae9cd016782b8b6168b03a3",
+   "public_derivative_sha256": "dad9129cb9d47894345cf284526073072bb77b918a051c76286748179cd23636",
+   "redactions": [
+    {
+     "token": "[REDACTED:INSTANCE_AND_ADDRESS]",
+     "occurrences": 1,
+     "category": "cloud instance name and its public IPv4 address"
+    },
+    {
+     "token": "the two prohibited hosts",
+     "occurrences": 1,
+     "category": "address range of unrelated hosts"
+    }
+   ],
+   "scientific_content_altered": false
+  },
+  {
+   "public_path": "code/validation/nmis_freeze.py",
+   "canonical_private_path": "audit/ingest/assay_aware_emergence/v2/nm_validation/nmis_freeze.py",
+   "canonical_private_sha256": "f5a65fc6c1731b5d875264a12a6ab4229c81af49e766c6d9294139b21cfc2329",
+   "public_derivative_sha256": "6eb449a6bb688f864cce432f16dfda41301bddd1343655c763d773fd44532389",
+   "redactions": [
+    {
+     "token": "[REDACTED:INSTANCE_AND_ADDRESS]",
+     "occurrences": 1,
+     "category": "cloud instance name and its public IPv4 address"
+    },
+    {
+     "token": "the two prohibited hosts",
+     "occurrences": 1,
+     "category": "address range of unrelated hosts"
+    }
+   ],
+   "scientific_content_altered": false
+  },
+  {
+   "public_path": "validation/NMV3_RESULT_STATUS.md",
+   "canonical_private_path": "docs/nature_microbiology/NMV3_RESULT_STATUS.md",
+   "canonical_private_sha256": "5850bfd54e2c35c1edc233f5e9f734c46a74ff8b16cccb08eb85a248283f9874",
+   "public_derivative_sha256": "e9e8402b23caf5bb0f9b7608e85a3da3696a19f2c595c450a3a77b0b4a8c939f",
+   "redactions": [
+    {
+     "token": "[REDACTED:INSTANCE_NAME]",
+     "occurrences": 1,
+     "category": "cloud instance name"
+    }
+   ],
+   "scientific_content_altered": false
+  },
+  {
+   "public_path": "protocols/environments/isescan_v1.lock",
+   "canonical_private_path": "docs/nature_microbiology/nmis_census/isescan_v1.lock",
+   "canonical_private_sha256": "d21f1c44c1cba76b52a7b37a46fa1ff0d302aee96c074882361c1f87f536c9e5",
+   "public_derivative_sha256": "fc77f63daad1c330b2f0ce51213868eec3cdfd841289749dca4b6330d47aa7b9",
+   "redactions": [
+    {
+     "token": "[REDACTED:ENV_PREFIX]",
+     "occurrences": 1,
+     "category": "absolute environment prefix on the compute instance"
+    }
+   ],
+   "scientific_content_altered": false
+  }
+ ]
+}

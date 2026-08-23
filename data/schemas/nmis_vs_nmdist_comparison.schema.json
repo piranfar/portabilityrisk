@@ -1,0 +1,52 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmis_vs_nmdist_comparison.tsv",
+ "title": "nmis_vs_nmdist_comparison.tsv",
+ "description": "Row schema for nmis_vs_nmdist_comparison.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "group": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Frozen species group."
+  },
+  "landmark_bp": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Distance landmark in base pairs."
+  },
+  "homology_F": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Cumulative detection under the homology endpoint."
+  },
+  "structural_F": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Cumulative detection under the structural endpoint."
+  },
+  "ratio_structural_over_homology": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "structural_F / homology_F."
+  }
+ },
+ "required": [
+  "group",
+  "landmark_bp",
+  "homology_F",
+  "structural_F",
+  "ratio_structural_over_homology"
+ ],
+ "additionalProperties": false
+}

@@ -1,0 +1,44 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/independent_verification_report_v2.tsv",
+ "title": "independent_verification_report_v2.tsv",
+ "description": "Row schema for independent_verification_report_v2.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "check": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Name of the independent verification check."
+  },
+  "independent_value": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Value from the independent re-implementation."
+  },
+  "pipeline_value": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Value from the pipeline under test."
+  },
+  "agreement": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Whether the two values agree."
+  }
+ },
+ "required": [
+  "check",
+  "independent_value",
+  "pipeline_value",
+  "agreement"
+ ],
+ "additionalProperties": false
+}

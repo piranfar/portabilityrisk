@@ -1,0 +1,351 @@
+{
+  "builder": "nmv4d_score_v1.0.0",
+  "run_utc": "2026-08-22T01:40:28Z",
+  "frozen_design_sha256": "bfa88f6c55ec348c7f158af40326aeb17d18623f7f8d8a154bbbad4c9eeaafc5",
+  "primary_denominator_verified": 74349,
+  "class_reconciliation_five": {
+    "B": 16303,
+    "A": 18837,
+    "E": 25996,
+    "D": 6043,
+    "C": 7170
+  },
+  "three_architecture_partition": {
+    "chromosomal_quiescent": 18837,
+    "chromosomal_mobile": 16303,
+    "plasmid_borne": 39209
+  },
+  "denominator_flow": {
+    "primary": 74349,
+    "exclusions": {
+      "host_not_a_comparison_group": 10127,
+      "family_not_eligible": 5356
+    },
+    "retained": 58866
+  },
+  "results": {
+    "PC1__PRIMARY_bp_balanced": {
+      "pc": "PC1",
+      "hosts": [
+        "Acinetobacter baumannii",
+        "Pseudomonas aeruginosa"
+      ],
+      "contrast": [
+        "chromosomal_mobile",
+        "chromosomal_quiescent"
+      ],
+      "analysis": "PRIMARY_bp_balanced",
+      "n_families": 45,
+      "or": 16.536685303388285,
+      "ci_lo": 11.882405028277425,
+      "ci_hi": 23.01402453228287,
+      "ln_or": 2.805581264638062,
+      "excludes_1": true,
+      "direction_positive": true,
+      "families_gt_1": 22,
+      "families_lt_1": 20,
+      "I2_pct": 57.43505599941622,
+      "max_family_weight_share": 0.5050669952203007,
+      "family_weighted_mean_ln_or": 0.3469775704017201,
+      "family_weighted_or": 1.4147849919555242
+    },
+    "PC1__S1_occurrence_level": {
+      "pc": "PC1",
+      "hosts": [
+        "Acinetobacter baumannii",
+        "Pseudomonas aeruginosa"
+      ],
+      "contrast": [
+        "chromosomal_mobile",
+        "chromosomal_quiescent"
+      ],
+      "analysis": "S1_occurrence_level",
+      "n_families": 45,
+      "or": 15.319408062962708,
+      "ci_lo": 13.06451282952088,
+      "ci_hi": 17.963491364887997,
+      "ln_or": 2.7291205253781583,
+      "excludes_1": true,
+      "direction_positive": true,
+      "families_gt_1": 24,
+      "families_lt_1": 20,
+      "I2_pct": 78.57643752977104,
+      "max_family_weight_share": 0.49996282448509993,
+      "family_weighted_mean_ln_or": 0.5611091251449486,
+      "family_weighted_or": 1.7526152923873675
+    },
+    "PC1__S2_one_genome_per_bp": {
+      "pc": "PC1",
+      "hosts": [
+        "Acinetobacter baumannii",
+        "Pseudomonas aeruginosa"
+      ],
+      "contrast": [
+        "chromosomal_mobile",
+        "chromosomal_quiescent"
+      ],
+      "analysis": "S2_one_genome_per_bp",
+      "n_families": 33,
+      "or": 12.875326138615165,
+      "ci_lo": 9.957750246780792,
+      "ci_hi": 16.64773860233133,
+      "ln_or": 2.5553127773835476,
+      "excludes_1": true,
+      "direction_positive": true,
+      "families_gt_1": 19,
+      "families_lt_1": 14,
+      "I2_pct": 56.91663680762051,
+      "max_family_weight_share": 0.5426201790504465,
+      "family_weighted_mean_ln_or": 0.5517195329478495,
+      "family_weighted_or": 1.7362359674436196
+    },
+    "PC2__PRIMARY_bp_balanced": {
+      "pc": "PC2",
+      "hosts": [
+        "Acinetobacter baumannii",
+        "Klebsiella"
+      ],
+      "contrast": [
+        "chromosomal_mobile",
+        "plasmid_borne"
+      ],
+      "analysis": "PRIMARY_bp_balanced",
+      "n_families": 58,
+      "or": 24.426049383859553,
+      "ci_lo": 21.118098674378025,
+      "ci_hi": 28.25215933035778,
+      "ln_or": 3.1956501605211733,
+      "excludes_1": true,
+      "direction_positive": true,
+      "families_gt_1": 55,
+      "families_lt_1": 3,
+      "I2_pct": 72.88173434675258,
+      "max_family_weight_share": 0.09675158084109602,
+      "family_weighted_mean_ln_or": 3.1871612134647695,
+      "family_weighted_or": 24.219575556449648
+    },
+    "PC2__S1_occurrence_level": {
+      "pc": "PC2",
+      "hosts": [
+        "Acinetobacter baumannii",
+        "Klebsiella"
+      ],
+      "contrast": [
+        "chromosomal_mobile",
+        "plasmid_borne"
+      ],
+      "analysis": "S1_occurrence_level",
+      "n_families": 58,
+      "or": 50.291197319579155,
+      "ci_lo": 45.613838514438946,
+      "ci_hi": 55.44818437142123,
+      "ln_or": 3.9178300582038834,
+      "excludes_1": true,
+      "direction_positive": true,
+      "families_gt_1": 56,
+      "families_lt_1": 2,
+      "I2_pct": 83.62883004489396,
+      "max_family_weight_share": 0.1547090255637003,
+      "family_weighted_mean_ln_or": 3.7039912501597687,
+      "family_weighted_or": 40.60906226345097
+    },
+    "PC2__S2_one_genome_per_bp": {
+      "pc": "PC2",
+      "hosts": [
+        "Acinetobacter baumannii",
+        "Klebsiella"
+      ],
+      "contrast": [
+        "chromosomal_mobile",
+        "plasmid_borne"
+      ],
+      "analysis": "S2_one_genome_per_bp",
+      "n_families": 49,
+      "or": 21.95151201754105,
+      "ci_lo": 18.91680536935533,
+      "ci_hi": 25.473057973988706,
+      "ln_or": 3.0888360217747595,
+      "excludes_1": true,
+      "direction_positive": true,
+      "families_gt_1": 43,
+      "families_lt_1": 4,
+      "I2_pct": 75.64243571111776,
+      "max_family_weight_share": 0.15457237125504406,
+      "family_weighted_mean_ln_or": 2.8165077768260556,
+      "family_weighted_or": 16.718364348523917
+    },
+    "PC3__PRIMARY_bp_balanced": {
+      "pc": "PC3",
+      "hosts": [
+        "Pseudomonas aeruginosa",
+        "Klebsiella"
+      ],
+      "contrast": [
+        "chromosomal_quiescent",
+        "plasmid_borne"
+      ],
+      "analysis": "PRIMARY_bp_balanced",
+      "n_families": 55,
+      "or": 347.77192438847754,
+      "ci_lo": 138.39211139794725,
+      "ci_hi": 873.9321206328448,
+      "ln_or": 5.851546875224486,
+      "excludes_1": true,
+      "direction_positive": true,
+      "families_gt_1": 52,
+      "families_lt_1": 3,
+      "I2_pct": 64.36056101575383,
+      "max_family_weight_share": 0.5160729757746841,
+      "family_weighted_mean_ln_or": 2.613557787023303,
+      "family_weighted_or": 13.647519548004176
+    },
+    "PC3__S1_occurrence_level": {
+      "pc": "PC3",
+      "hosts": [
+        "Pseudomonas aeruginosa",
+        "Klebsiella"
+      ],
+      "contrast": [
+        "chromosomal_quiescent",
+        "plasmid_borne"
+      ],
+      "analysis": "S1_occurrence_level",
+      "n_families": 55,
+      "or": 587.9095256710921,
+      "ci_lo": 266.9825395940446,
+      "ci_hi": 1294.6075458730786,
+      "ln_or": 6.37657306815344,
+      "excludes_1": true,
+      "direction_positive": true,
+      "families_gt_1": 52,
+      "families_lt_1": 2,
+      "I2_pct": 77.42475389420969,
+      "max_family_weight_share": 0.5339501050984596,
+      "family_weighted_mean_ln_or": 2.9646780211753647,
+      "family_weighted_or": 19.388459562937587
+    },
+    "PC3__S2_one_genome_per_bp": {
+      "pc": "PC3",
+      "hosts": [
+        "Pseudomonas aeruginosa",
+        "Klebsiella"
+      ],
+      "contrast": [
+        "chromosomal_quiescent",
+        "plasmid_borne"
+      ],
+      "analysis": "S2_one_genome_per_bp",
+      "n_families": 40,
+      "or": 594.7835011326747,
+      "ci_lo": 323.2611729824408,
+      "ci_hi": 1094.3702578189275,
+      "ln_or": 6.388197475688629,
+      "excludes_1": true,
+      "direction_positive": true,
+      "families_gt_1": 35,
+      "families_lt_1": 4,
+      "I2_pct": 70.59973247528559,
+      "max_family_weight_share": 0.5500516938173176,
+      "family_weighted_mean_ln_or": 2.224407160713011,
+      "family_weighted_or": 9.247998601545193
+    }
+  },
+  "influence": {
+    "PC1": {
+      "lofo_max": 0.41465203360666375,
+      "lofo_worst": "blaOXA",
+      "lofo_over": 2,
+      "lofo_n": 45,
+      "lobo_max": 0.03482544959012125,
+      "lobo_worst": "PRJNA729463",
+      "lobo_over": 0,
+      "lobo_n": 684
+    },
+    "PC2": {
+      "lofo_max": 0.038297336414270584,
+      "lofo_worst": "sul1",
+      "lofo_over": 0,
+      "lofo_n": 58,
+      "lobo_max": 0.010578761219067728,
+      "lobo_worst": "PRJNA750704",
+      "lobo_over": 0,
+      "lobo_n": 1403
+    },
+    "PC3": {
+      "lofo_max": 0.1334255005559337,
+      "lofo_worst": "tet(C)",
+      "lofo_over": 0,
+      "lofo_n": 55,
+      "lobo_max": 0.13815197342982594,
+      "lobo_worst": "PRJNA450216",
+      "lobo_over": 0,
+      "lobo_n": 1560
+    }
+  },
+  "permutation": {
+    "PC1": {
+      "n": 2000,
+      "ge": 0,
+      "p": 0.0004997501249375312
+    },
+    "PC2": {
+      "n": 2000,
+      "ge": 0,
+      "p": 0.0004997501249375312
+    },
+    "PC3": {
+      "n": 2000,
+      "ge": 0,
+      "p": 0.0004997501249375312
+    }
+  },
+  "five_class_by_host": {
+    "Acinetobacter baumannii": {
+      "A": 1518,
+      "B": 6465,
+      "C": 343,
+      "D": 330,
+      "E": 589
+    },
+    "Pseudomonas aeruginosa": {
+      "A": 3527,
+      "B": 2526,
+      "C": 786,
+      "D": 76,
+      "E": 71
+    },
+    "Klebsiella": {
+      "A": 8477,
+      "B": 4799,
+      "C": 4108,
+      "D": 4001,
+      "E": 21250
+    }
+  },
+  "five_class_coherence": {
+    "PC1": true,
+    "PC2": true,
+    "PC3": true
+  },
+  "success_criteria": {
+    "SC1": true,
+    "SC2": true,
+    "SC3": true,
+    "SC4": true,
+    "SC5": false,
+    "SC6": true,
+    "SC7": "deferred to nmv4d_verify.py"
+  },
+  "verdict_pending_verification": "NMV4D_PARTIAL_ARCHITECTURE_MODEL",
+  "outputs": {
+    "family_tsv": "311535603335250fbebc06d84c84a288a43fe55db6db179cde2eac9da159f7c2",
+    "summary_tsv": "5522f5ac03856d588820901c93d2c95f486399d8b3a40adf4d9b1ff598b59426"
+  },
+  "statements": [
+    "No transfer, conjugation or HGT event was observed or is claimed.",
+    "Host association is statistical, not causal control.",
+    "Class A and class C were both retained; A and B were never merged.",
+    "Every chromosomal_mobile conclusion is conditional on NM-V1.",
+    "No PortabilityEvent or PlasmidCall artefact was read."
+  ]
+}

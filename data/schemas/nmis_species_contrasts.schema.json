@@ -1,0 +1,100 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmis_species_contrasts.tsv",
+ "title": "nmis_species_contrasts.tsv",
+ "description": "Row schema for nmis_species_contrasts.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "contrast": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Registered contrast label."
+  },
+  "group_a": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "First group in the contrast."
+  },
+  "group_b": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Second group in the contrast."
+  },
+  "landmark_bp": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Distance landmark in base pairs."
+  },
+  "value_a": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Estimate for group_a."
+  },
+  "value_b": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Estimate for group_b."
+  },
+  "difference": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "value_a minus value_b."
+  },
+  "ci_lo": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Lower bound, 95 % BioProject cluster bootstrap."
+  },
+  "ci_hi": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Upper bound, 95 % BioProject cluster bootstrap."
+  },
+  "p_bootstrap": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Two-sided bootstrap p-value."
+  },
+  "p_holm": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Holm-adjusted p-value across the registered contrast family."
+  }
+ },
+ "required": [
+  "contrast",
+  "group_a",
+  "group_b",
+  "landmark_bp",
+  "value_a",
+  "value_b",
+  "difference",
+  "ci_lo",
+  "ci_hi",
+  "p_bootstrap",
+  "p_holm"
+ ],
+ "additionalProperties": false
+}

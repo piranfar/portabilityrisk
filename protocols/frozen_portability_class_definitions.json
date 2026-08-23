@@ -1,0 +1,82 @@
+{
+  "framework": "evidence-based portability class",
+  "version": "1.0.0",
+  "not_a_risk_score": "These classes describe WHAT WAS OBSERVED in sequence, nothing else. They are not a calibrated clinical risk score and must never be described as a measured transmission probability: no transmission outcome exists anywhere in this dataset.",
+  "dimensions_are_separate": [
+    "direct genomic location -- NCBI replicon designation on a closed replicon",
+    "nearby MGE signature -- sequence annotation in a fixed window",
+    "plasmid mobilization evidence -- MOB-suite relaxase / oriT",
+    "conjugation-associated evidence -- MOB-suite relaxase plus mate-pair formation",
+    "data completeness -- recorded explicitly, never imputed"
+  ],
+  "classes": {
+    "A": {
+      "definition": "direct chromosomal location AND no prespecified MGE feature detected in the frozen window",
+      "requires": [
+        "evidence_type == direct_chromosome",
+        "MGE annotation COMPLETED for this window",
+        "zero qualifying MGE features"
+      ]
+    },
+    "B": {
+      "definition": "direct chromosomal location AND at least one prespecified MGE feature in the frozen window",
+      "requires": [
+        "evidence_type == direct_chromosome",
+        "MGE annotation COMPLETED",
+        ">= 1 qualifying MGE feature"
+      ]
+    },
+    "C": {
+      "definition": "direct plasmid location, insufficient genomic evidence for mobilization",
+      "requires": [
+        "evidence_type == direct_plasmid",
+        "MOB-suite typed the replicon",
+        "no relaxase AND no oriT detected"
+      ]
+    },
+    "D": {
+      "definition": "direct plasmid location on a replicon with evidence consistent with mobilization",
+      "requires": [
+        "evidence_type == direct_plasmid",
+        "relaxase OR oriT detected",
+        "NOT the full conjugation combination required for class E"
+      ]
+    },
+    "E": {
+      "definition": "direct plasmid location on a replicon with combined evidence consistent with conjugation",
+      "requires": [
+        "evidence_type == direct_plasmid",
+        "relaxase detected AND mate-pair-formation type detected"
+      ]
+    }
+  },
+  "preserved_states": {
+    "UNRESOLVED_LOCATION": "no direct chromosome/plasmid designation for the occurrence",
+    "UNRESOLVED_MOBILITY": "plasmid location established but MOB-suite produced no usable record for that replicon",
+    "INCOMPLETE_ANNOTATION": "the dimension needed to separate two classes has not been computed yet for this occurrence. Never merged into A or B."
+  },
+  "mobility_categories": {
+    "predicted_conjugative": "relaxase AND mpf_type reported by MOB-suite",
+    "predicted_mobilizable": "relaxase OR oriT reported, without the full conjugation set",
+    "nonconjugative_or_no_mobility_markers_detected": "MOB-suite reported neither relaxase nor oriT. A DETECTION statement about a marker database, NOT a claim that the plasmid cannot be mobilized.",
+    "mobility_unresolved": "no usable MOB-suite record for the replicon"
+  },
+  "evidence_type_vocabulary": {
+    "detected_sequence_feature": "a sequence match was found at the stated thresholds",
+    "predicted_functional_mobility": "a database-based prediction about capability",
+    "experimentally_demonstrated_mobility": "NEVER assigned in this study. No transfer experiment exists here."
+  },
+  "software": {
+    "mob_typer_version": "3.1.9",
+    "mob_typer_sha256": "43408d898356cecc872589f33e8f8a2b551012f6f46eb4edb8bf190d7a66f954",
+    "database_recursive_sha256": "aae85a3bc4a51b1cc859d83e9b1c8b1abd337c9b5ee1b29d5c94af619c6624d5",
+    "database_size": "1.6 GB",
+    "blast": "2.15.0",
+    "mash": "2.3",
+    "invocation": "mob_typer --multi -n 1 -i <chunk.fna> -o <out> -d <db>",
+    "thresholds": "MOB-suite 3.1.9 defaults, unmodified",
+    "result_nature": "database-based prediction, not direct experimental evidence"
+  },
+  "created_utc": "2026-08-21T01:47:07Z",
+  "created_before_any_class_was_assigned": true
+}

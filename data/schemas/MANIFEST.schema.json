@@ -1,0 +1,36 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/MANIFEST.tsv",
+ "title": "MANIFEST.tsv",
+ "description": "Row schema for MANIFEST.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "relative_path": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Path within this repository."
+  },
+  "bytes": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "File size in bytes."
+  },
+  "sha256": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Full 64-character SHA-256 of the file."
+  }
+ },
+ "required": [
+  "relative_path",
+  "bytes",
+  "sha256"
+ ],
+ "additionalProperties": false
+}

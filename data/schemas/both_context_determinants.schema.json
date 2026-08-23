@@ -1,0 +1,52 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/both_context_determinants.tsv",
+ "title": "both_context_determinants.tsv",
+ "description": "Row schema for both_context_determinants.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "gene_family": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Determinant family."
+  },
+  "n_plasmid": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Plasmid-borne occurrences."
+  },
+  "n_chromosome": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Chromosomal occurrences."
+  },
+  "n_total": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Total occurrences of the family."
+  },
+  "minor_context_fraction": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Share of the family's occurrences in whichever compartment is the minority for that family."
+  }
+ },
+ "required": [
+  "gene_family",
+  "n_plasmid",
+  "n_chromosome",
+  "n_total",
+  "minor_context_fraction"
+ ],
+ "additionalProperties": false
+}

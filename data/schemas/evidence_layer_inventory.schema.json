@@ -1,0 +1,44 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/evidence_layer_inventory.tsv",
+ "title": "evidence_layer_inventory.tsv",
+ "description": "Row schema for evidence_layer_inventory.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "evidence_layer": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Determinant layer as called by AMRFinderPlus."
+  },
+  "n_rows": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Records in the layer before denominator construction."
+  },
+  "counted_as_acquired_arg": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "yes only for the PRIMARY acquired_amr layer."
+  },
+  "note": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Why the layer is or is not in the PRIMARY denominator."
+  }
+ },
+ "required": [
+  "evidence_layer",
+  "n_rows",
+  "counted_as_acquired_arg",
+  "note"
+ ],
+ "additionalProperties": false
+}

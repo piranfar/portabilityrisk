@@ -1,0 +1,92 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv",
+ "title": "PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv",
+ "description": "Row schema for PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "claim_id": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Stable claim identifier, C01..C20."
+  },
+  "claim": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "The claim in one sentence."
+  },
+  "tier_proposed": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Evidence tier proposed for the manuscript."
+  },
+  "evidence_class": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Kind of evidence supporting the claim."
+  },
+  "supporting_module": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Validation module that supports it."
+  },
+  "status": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "HEADLINE READY, supported, blocked, withdraw or not evaluated."
+  },
+  "reason": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Why the claim holds the status it does."
+  },
+  "affects_central_narrative": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Whether the central argument depends on it."
+  },
+  "required_qualifier": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Wording that MUST accompany the claim."
+  },
+  "nmdist_effect": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "How NM-DIST and NMIS changed the claim's standing."
+  }
+ },
+ "required": [
+  "claim_id",
+  "claim",
+  "tier_proposed",
+  "evidence_class",
+  "supporting_module",
+  "status",
+  "reason",
+  "affects_central_narrative",
+  "required_qualifier",
+  "nmdist_effect"
+ ],
+ "additionalProperties": false
+}

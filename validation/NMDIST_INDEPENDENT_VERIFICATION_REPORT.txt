@@ -1,0 +1,39 @@
+nmdist_verify_v1.0.0  (independent code path)
+
+  frozen protocol digest unchanged                           PASS 
+  exported table has 35,140 rows                             PASS 35140
+  exported table covers 21,955 blocks                        PASS 
+  nearest-any distances independently reproduced             PASS 0 mismatches
+  nearest IS/transposase distances reproduced                PASS 0
+  nearest integrase/integron distances reproduced            PASS 0
+  the 111 in-block-beyond-window occurrences are censored    PASS 111
+  every overlap flag corresponds to distance 0               PASS 90
+  window-positive == 16,303 == class B                       PASS 16303
+  censored at 10 kb == 18,837                                PASS 
+  no exported distance exceeds 10 kb                         PASS 
+  block-balanced weights sum to the block count              PASS 21955.000000
+  exported weights equal 1/m                                 PASS 
+  S2 selects exactly one occurrence per block                PASS 
+  S2 selection reproduces the frozen hash rule               PASS 0
+  frozen group membership reproduced                         PASS 0
+  group sizes 8,005 / 7,150 / 15,568                         PASS {'other': 4417, 'A. baumannii': 8005, 'Klebsiella group': 15568, 'P. aeruginosa': 7150}
+  all landmark and RMD estimates reproduced                  PASS max deviation 1.82e-16
+  contrast differences equal value_a minus value_b           PASS 0
+  Holm applied to the two primary contrasts at each landmark PASS 
+  secondary contrast P3 carries no Holm value                PASS 
+  BioProject count matches the receipt                       PASS 2248
+  blocks nest within BioProjects (weights invariant under resampling) PASS 
+  effective 1/HHI reproduced                                 PASS 136.90
+
+  REQUIRED SPOT CHECKS
+  20 ordinary positive occurrences recompute exactly         PASS 20/20
+  all circular-wrapped occurrences in frozen groups recompute PASS 103/103
+  all truncated-block occurrences recompute                  PASS 18/18
+  truncated blocks number exactly 5                          PASS 5
+  20 marker-negative occurrences confirm no feature within 10 kb PASS 20/20
+  20 distance-zero overlaps recompute as 0                   PASS 20/20
+  receipt output digests match the files on disk             PASS 
+  receipt population figures match the exported table        PASS 
+
+  checks run: 32   disagreements: 0
+  VERDICT: PASS - zero disagreements

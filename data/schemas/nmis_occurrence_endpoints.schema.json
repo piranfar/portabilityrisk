@@ -1,0 +1,140 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmis_occurrence_endpoints.tsv",
+ "title": "nmis_occurrence_endpoints.tsv",
+ "description": "Row schema for nmis_occurrence_endpoints.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "occurrence_id": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Composite occurrence key: assembly|replicon|determinant|start|end."
+  },
+  "block_id": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Shared chromosomal context block identifier."
+  },
+  "bioproject_accession": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "NCBI BioProject accession; the bootstrap cluster."
+  },
+  "organism_harmonized": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Species name after harmonisation."
+  },
+  "genus": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Genus."
+  },
+  "frozen_group": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Frozen species group for the distance analyses: A. baumannii, Klebsiella group, P. aeruginosa, or other."
+  },
+  "portability_class": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Frozen five-class portability state: A chromosomal no marker, B chromosomal MGE context, C plasmid no marker, D plasmid mobilizable, E plasmid conjugative."
+  },
+  "weight_block_balanced": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Block-balanced weight, 1/m for an occurrence in a block of m; weights sum to 21,955."
+  },
+  "nmdist_dist_any_bp": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Homology-based distance carried over from NM-DIST, for the same row."
+  },
+  "nmdist_censored": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "1 if homology-censored."
+  },
+  "endpoint_state": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Structural endpoint state, one of: complete_and_fully_contained (12,034); complete_in_shared_block_but_crosses_occurrence_window_boundary (716, censored); partial_or_boundary_limited (1,902); no_structurally_resolved_IS (20,488); tool failure (0)."
+  },
+  "nmis_dist_bp": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Distance to the nearest structurally complete, fully contained IS; blank if censored."
+  },
+  "nmis_censored": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "1 if no such element within 10 kb."
+  },
+  "n_complete_contained": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Complete elements fully inside this window."
+  },
+  "n_complete_crossing": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Complete elements in the block that cross this occurrence's window boundary."
+  },
+  "n_partial_or_boundary": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Partial or boundary-limited elements."
+  }
+ },
+ "required": [
+  "occurrence_id",
+  "block_id",
+  "bioproject_accession",
+  "organism_harmonized",
+  "genus",
+  "frozen_group",
+  "portability_class",
+  "weight_block_balanced",
+  "nmdist_dist_any_bp",
+  "nmdist_censored",
+  "endpoint_state",
+  "nmis_dist_bp",
+  "nmis_censored",
+  "n_complete_contained",
+  "n_complete_crossing",
+  "n_partial_or_boundary"
+ ],
+ "additionalProperties": false
+}

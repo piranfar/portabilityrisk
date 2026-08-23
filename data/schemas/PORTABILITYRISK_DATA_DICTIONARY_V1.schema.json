@@ -1,0 +1,76 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/PORTABILITYRISK_DATA_DICTIONARY_V1.tsv",
+ "title": "PORTABILITYRISK_DATA_DICTIONARY_V1.tsv",
+ "description": "Row schema for PORTABILITYRISK_DATA_DICTIONARY_V1.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "table": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Basename of the table the row describes."
+  },
+  "column": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Column name within that table."
+  },
+  "storage_type": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Inferred storage type: integer, number, array or text."
+  },
+  "semantic_type": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Curated semantic type: identifier, category, number, integer, boolean, array or text."
+  },
+  "definition": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "What the column means."
+  },
+  "denominator": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Which denominator the column is counted against."
+  },
+  "nullable": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "yes if empty values occur in the sampled rows."
+  },
+  "curation_state": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "curated or uncurated."
+  }
+ },
+ "required": [
+  "table",
+  "column",
+  "storage_type",
+  "semantic_type",
+  "definition",
+  "denominator",
+  "nullable",
+  "curation_state"
+ ],
+ "additionalProperties": false
+}

@@ -1,0 +1,64 @@
+{
+  "amendment": "NMIS_AMENDMENT_001_OCCURRENCE_WINDOW_CONTAINMENT",
+  "version": "1.0.0",
+  "dated_utc": "2026-08-22",
+  "amends": "NMIS_FROZEN_PROTOCOL_V1.json",
+  "amends_sha256": "5438045a3b73d123347fcd60b2456779f050c2a8fae9cd016782b8b6168b03a3",
+  "timing": "PRE-OUTCOME. Written and hashed BEFORE ISEScan was run on any benchmark or census block. No structural outcome existed when this was written.",
+  "nature": "clarification of an ambiguous field, not a post-hoc change of endpoint",
+
+  "why_this_amendment_is_needed": {
+    "existing_field": "distance_and_membership.occurrence_window_membership",
+    "existing_text": "an element counts for an ARG occurrence only if it lies within that occurrence's own +/-10 kb window, exactly as in NM-DIST. Elements elsewhere in a larger shared block do not count.",
+    "ambiguity": "the phrase 'lies within' does not distinguish an element FULLY CONTAINED in the occurrence window from one that merely OVERLAPS it. NM-DIST measured point-to-interval distance to homology markers, where containment of the whole feature was not at issue; NMIS measures structurally resolved elements whose completeness depends on both structural boundaries being present, so containment becomes decisive.",
+    "gap": "the frozen protocol defines no class for an element that is structurally complete within the merged shared block but whose interval crosses the boundary of a given occurrence's own window"
+  },
+
+  "BINDING_RULE": {
+    "primary_endpoint_containment": "For the PRIMARY structurally complete endpoint, the ENTIRE resolved ISEScan element interval - from its left structural boundary to its right structural boundary - must be FULLY CONTAINED within that ARG occurrence's own frozen +/-10 kb window.",
+    "rationale": "A complete element resolved only because the merged shared block contains sequence beyond the occurrence-specific window is not primary evidence for that occurrence.",
+    "per_occurrence_procedure": [
+      "1. Search for fully resolved complete IS elements ENTIRELY CONTAINED in that occurrence's own window.",
+      "2. Use the nearest eligible complete element.",
+      "3. If none exists, RIGHT-CENSOR at 10,000 bp.",
+      "4. Do NOT use an element lying wholly outside the occurrence window.",
+      "5. Do NOT truncate a complete element at the occurrence-window boundary and relabel it complete.",
+      "6. Preserve the previously identified 111 in-block / out-of-window cases as CENSORED unless a different, fully contained structural IS is found for that occurrence."
+    ]
+  },
+
+  "NEW_CLASS": {
+    "name": "complete_in_shared_block_but_crosses_occurrence_window_boundary",
+    "definition": "an ISEScan element meeting every structural criterion for complete_structural_IS within the merged shared block, whose interval is NOT fully contained within the occurrence's own +/-10 kb window",
+    "primary_endpoint": "EXCLUDED - such an element never enters the primary structural-distance endpoint for that occurrence",
+    "secondary_use": "MAY be reported in a clearly labelled secondary sensitivity analysis",
+    "counted_and_reported_separately": true,
+    "never": "never silently dropped, never merged into 'no structurally resolved IS'"
+  },
+
+  "containment_test": {
+    "linear": "element_start >= window_start AND element_end <= window_end",
+    "circular": "TOPOLOGY-AWARE. For a wrapped window on a circular replicon the window is the union of its two linear segments; containment is evaluated after mapping element coordinates into the same frame as the window, testing the element against that union. The artificial linearised origin is never treated as a structural boundary.",
+    "coordinate_conversion": "ISEScan reports coordinates relative to the FASTA record it was given, which is the block sequence. Element coordinates are converted to replicon coordinates using the block's own start offset before any containment or distance test against the occurrence window.",
+    "boundary_touching": "an element whose interval touches the edge of the available block sequence remains partial/boundary-limited under the frozen protocol and is therefore never eligible for the primary endpoint regardless of containment"
+  },
+
+  "unchanged_by_this_amendment": [
+    "the definition of complete_structural_IS: type == 'c' AND complete transposase ORF AND bilateral TIRs",
+    "the definitions of partial, boundary-limited, no structurally resolved IS and tool failure",
+    "right censoring at 10,000 bp and the prohibition on any distance beyond 10 kb",
+    "the block-balanced primary unit and the BioProject cluster bootstrap (B=2000, seed 20260822)",
+    "the species groups, the two primary contrasts and the four primary landmarks",
+    "the SUCCESS / REVISE / FAIL gates",
+    "every MUST_NOT_CHANGE quantity: 74,349 occurrences, A-E classes, class B = 16,303, the NM-DIST homology results, the 111 censored occurrences, 46.39 percent and 30.14 percent"
+  ],
+
+  "benchmark_verification_required_by_this_amendment": [
+    "circular-wrapped occurrence windows use topology-aware containment",
+    "full element coordinates are converted correctly into occurrence-window coordinates",
+    "boundary-touching elements remain partial/boundary-limited",
+    "the parser uses the emitted ISEScan header, never a hard-coded column list",
+    "projected full-run disk use remains <= 20 GB",
+    "projected runtime remains <= 10 hours"
+  ]
+}

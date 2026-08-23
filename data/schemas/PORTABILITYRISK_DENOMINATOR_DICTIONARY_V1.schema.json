@@ -1,0 +1,52 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv",
+ "title": "PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv",
+ "description": "Row schema for PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "denominator": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Which denominator the column is counted against."
+  },
+  "size": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Number of units in the denominator."
+  },
+  "definition": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "What the column means."
+  },
+  "question_it_answers": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "The question this denominator is the right one for."
+  },
+  "notes": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Cautions, and the values computed on this denominator."
+  }
+ },
+ "required": [
+  "denominator",
+  "size",
+  "definition",
+  "question_it_answers",
+  "notes"
+ ],
+ "additionalProperties": false
+}

@@ -1,0 +1,9 @@
+evidence_layer	n_rows	counted_as_acquired_arg	note
+acquired_amr	74349	yes	the frozen PRIMARY layer (core, non-EFFLUX) - the convergence denominator
+metal_stress	65355	NO	metal tolerance, NOT antibiotic resistance
+point_mutation	11424	NO	reduced denominator - only searched where an AMRFinderPlus organism flag existed
+virulence	11408	NO	virulence, NOT antibiotic resistance
+acquired_amr_efflux	9124	NO	EFFLUX class; sensitivity set S2 only
+biocide	5544	NO	biocide tolerance, NOT antibiotic resistance
+other_stress	5300	NO	heat/acid tolerance, NOT antibiotic resistance
+acquired_amr_plus_nonefflux	2034	NO	plus-scope non-EFFLUX; sensitivity set S1 only, NOT in the primary

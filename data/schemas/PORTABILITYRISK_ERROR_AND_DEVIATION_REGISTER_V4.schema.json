@@ -1,0 +1,84 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv",
+ "title": "PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv",
+ "description": "Row schema for PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "seq": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Sequential entry number."
+  },
+  "date_detected": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Date the defect was detected (ISO)."
+  },
+  "item": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "What the defect was."
+  },
+  "detected_by": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "How it was found."
+  },
+  "affected_a_reported_result": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Whether a reported result was affected."
+  },
+  "corrective_artefact": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "The artefact created to correct it."
+  },
+  "correction_timing": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "pre-outcome, during execution, or post-outcome."
+  },
+  "residual_scientific_consequence": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "What consequence remains, if any."
+  },
+  "disclosure_level": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Where the defect is disclosed."
+  }
+ },
+ "required": [
+  "seq",
+  "date_detected",
+  "item",
+  "detected_by",
+  "affected_a_reported_result",
+  "corrective_artefact",
+  "correction_timing",
+  "residual_scientific_consequence",
+  "disclosure_level"
+ ],
+ "additionalProperties": false
+}

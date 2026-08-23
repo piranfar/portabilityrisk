@@ -1,0 +1,4 @@
+mobility_category	n_plasmids	pct_multi_arg_ge2	n_multi_arg_ge2	pct_multi_class_ge2	n_multi_class_ge2	pct_multi_class_ge3	n_multi_class_ge3	pct_arg_plus_metal	n_arg_plus_metal	pct_arg_plus_biocide	n_arg_plus_biocide	pct_arg_plus_virulence	n_arg_plus_virulence	pct_arg_stress_virulence_triple	n_arg_stress_virulence_triple	median_arg_per_plasmid
+predicted_conjugative	3937	82.98	3267	78.41	3087	61.54	2423	44.42	1749	38.3	1508	6.15	242	4.55	179	5
+predicted_mobilizable	1211	68.13	825	62.01	751	42.94	520	27.99	339	25.76	312	0.66	8	0.5	6	4
+nonconjugative_or_no_mobility_markers_detected	1473	60.29	888	53.5	788	41.68	614	25.93	382	29.12	429	3.6	53	3.33	49	2

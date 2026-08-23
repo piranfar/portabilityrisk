@@ -1,0 +1,188 @@
+{
+  "protocol": "NMV1C_CORRECTED_CONFIRMATORY_AUDIT",
+  "version": "1.0.0",
+  "builder": "nmv1c_freeze_protocol_v1.0.0",
+  "frozen_utc": "2026-08-22T08:05:57Z",
+  "frozen_before_any_case_was_drawn": true,
+  "frozen_before_any_outcome_was_viewed": true,
+  "classifier_under_validation": {
+    "engine": "NMV1_RULE_ENGINE_FROZEN.json",
+    "sha256": "ed5db383bb0afe1a1a8433886d6666fe72c324975de99c6763a37824d51c2bee",
+    "unchanged": true,
+    "F3_threshold_unchanged": true,
+    "why": "revising F3 now, in light of the failed audit, would convert validation into model development. The 19/20 partial-only finding is recorded as a developmental finding for a future revised classifier and is not acted on here."
+  },
+  "defect_being_corrected": {
+    "defect": "Method X, the HMM path under test, was displayed to the adjudicator while the ground-truth engine was prohibited from using it",
+    "evidence_of_determinism": "of 47 engine-QUIESCENT cases, the 38 with a Method X marker drew 0 QUIESCENT calls and the 9 without one drew 9 of 9 QUIESCENT calls",
+    "correction": "Method X is removed from the instrument in every form"
+  },
+  "sampling_frame": {
+    "frame": "the frozen 1,283-block NM-V1 sample; the frame itself is NOT extended",
+    "exclusion": "every block delivered in any previous package - V1, V2, R2 or R3",
+    "previously_shown": 703,
+    "unused_population": 580,
+    "exclusion_components": {
+      "mandatory_adjudication_all_packages": 495,
+      "V1_QC": 80,
+      "V2_QC": 100,
+      "R2_audit": 120,
+      "R3_audit": 120,
+      "note": "components overlap; the union is the figure above"
+    }
+  },
+  "STRUCTURAL_LIMITATION_STATED_BEFORE_DRAWING": {
+    "finding": "the unused population contains ZERO NON_EVALUABLE blocks and ZERO integron-exclusive (rule C) blocks",
+    "cause": "all 114 indeterminate blocks and all 8 rule-C blocks were routed to MANDATORY adjudication by the frozen rules, so every one of them was delivered in the V1/V2 packages",
+    "consequence": "this confirmatory audit can validate the MOBILE versus QUIESCENT discrimination ONLY. It cannot validate the NON_EVALUABLE state, and it cannot produce an integron-specific estimate.",
+    "why_the_frame_was_not_extended": "sampling beyond the frozen 1,283 blocks would require running ISEScan and IntegronFinder on new sequence, extending the frozen frame. That is a larger deviation than the stated scope limitation.",
+    "what_this_does_and_does_not_test": {
+      "tested": "whether the engine's mobile/quiescent call agrees with an independent blinded expert seeing the same evidence - the discrimination class B rests on",
+      "not_tested": "the NON_EVALUABLE boundary, which is exactly where the deferred partial-element question lives"
+    }
+  },
+  "selection": {
+    "seed": 20260822,
+    "algorithm": "candidates sorted by SHA-256 of '<block_id>|<seed>|<stratum>', first n taken; strata processed in the fixed order A, B, D, E so selections are mutually exclusive",
+    "strata_are_frozen_machine_categories": true,
+    "strata_never_exposed_to_the_adjudicator": true,
+    "no_case_selected_on_apparent_ease_evidence_or_likely_agreement": true,
+    "allocation": {
+      "A": 25,
+      "B": 34,
+      "D": 1,
+      "E": 60
+    },
+    "pool_by_stratum": {
+      "A": 106,
+      "B": 157,
+      "C": 0,
+      "D": 1,
+      "E": 316,
+      "F1": 0,
+      "F2": 0,
+      "F3": 0,
+      "F4": 0
+    },
+    "sample_size": 120,
+    "balance": "MOBILE 60 (A 25 + B 34 + D 1) and QUIESCENT 60 (E 60), chosen for equal power in the two states that can be sampled"
+  },
+  "weighting": {
+    "method": "inverse probability of selection, weight = pool_size / allocated, per stratum",
+    "retained": true,
+    "why": "strata are sampled at different fractions, so unweighted estimates are biased"
+  },
+  "primary_metric": {
+    "mapping": {
+      "MOBILE": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "QUIESCENT": [
+        "E"
+      ],
+      "NON_EVALUABLE": [
+        "F1",
+        "F2",
+        "F3",
+        "F4"
+      ]
+    },
+    "metric": "design-weighted agreement between the adjudicator's three-state call and the rule-engine state",
+    "ci": "stratified bootstrap, 2000 resamples, seed 20260822",
+    "unweighted_reported_as_secondary": true
+  },
+  "gates": {
+    "SUCCESS": "design-weighted agreement >= 0.90 AND bootstrap lower bound >= 0.80",
+    "REVISE": "agreement 0.80 to 0.899, OR lower bound 0.65 to 0.799",
+    "FAIL": "agreement < 0.80, OR systematic disagreement within a sampled state",
+    "thresholds_carried_over_unchanged_from_the_original_frozen_gate": true,
+    "state_specific_agreement_reported": true,
+    "scope_of_failure": "a failure confined to one state revises that state only"
+  },
+  "indeterminate_handling": {
+    "adjudicator_may_still_choose_NON_EVALUABLE": true,
+    "reason_code_required_for_NON_EVALUABLE": true,
+    "scoring": "a NON_EVALUABLE call against a MOBILE or QUIESCENT machine label counts as a disagreement in the primary metric, and is additionally reported separately by reason code, since no NON_EVALUABLE ground truth exists in this sample",
+    "never_forced": "the adjudicator is never required to pick MOBILE or QUIESCENT"
+  },
+  "instrument": {
+    "form": "single-file offline HTML application",
+    "shows": [
+      "Method Y structural IS evidence",
+      "Method Z integron evidence",
+      "topology",
+      "boundary and truncation status",
+      "block-relative feature coordinates",
+      "an anonymous target interval",
+      "independent tool completion status"
+    ],
+    "removes_completely": [
+      "Method X feature tracks",
+      "Method X counts",
+      "HMM-derived coordinates",
+      "transposase or integrase hits originating from the tested HMM path",
+      "any hidden Method X text in HTML, JavaScript, metadata or exports"
+    ],
+    "withholds": [
+      "species",
+      "gene identity",
+      "BioProject",
+      "accession",
+      "stratum",
+      "machine classification",
+      "expected label",
+      "rule-engine label"
+    ],
+    "choices": [
+      "MOBILE",
+      "QUIESCENT",
+      "NON_EVALUABLE"
+    ],
+    "definitions": {
+      "MOBILE": "independent structural evidence supports a mobile-element context",
+      "QUIESCENT": "independent tools completed normally and no credible mobile-element evidence is present",
+      "NON_EVALUABLE": "independent evidence is incomplete, ambiguous, boundary-truncated, technically failed or insufficient to establish or exclude mobile context"
+    },
+    "reason": "optional for MOBILE and QUIESCENT; REQUIRED for NON_EVALUABLE using fixed reason codes",
+    "reason_codes": [
+      "INCOMPLETE_ELEMENT",
+      "AMBIGUOUS_EVIDENCE",
+      "BOUNDARY_TRUNCATED",
+      "TOOL_FAILURE",
+      "INSUFFICIENT_EVIDENCE"
+    ],
+    "features": [
+      "keyboard shortcuts",
+      "progress indicator",
+      "local autosave",
+      "export to TSV and JSON"
+    ]
+  },
+  "tool_versions_pinned": {
+    "isescan": "1.7.3",
+    "integron_finder": "2.0.6",
+    "hmmer": "3.3.2",
+    "prodigal": "2.6.3",
+    "infernal": "1.1.4",
+    "blast": "2.17.0",
+    "note": "no tool is rerun; the frozen outputs of the original run are reused"
+  },
+  "input_digests": {
+    "NMV1_RULE_ENGINE_FROZEN.json": "ed5db383bb0afe1a1a8433886d6666fe72c324975de99c6763a37824d51c2bee",
+    "NMV1_RULE_BASED_GROUND_TRUTH.tsv": "1beecaa39048f4df52a3235f2dbc538056af9adc6912ee057cbac8ca55b85897",
+    "nmv1_block_evidence_table.tsv": "0ec842974702364fd3fc852f8b14a11f344854ac39033a670d71179ed49cf2e1"
+  },
+  "prior_audit_disposition": {
+    "registered_result": "FAIL, 62/120, three-state agreement 0.5167",
+    "status": "retained as an instrument-failure diagnostic; not erased, not passed, not rescored, and not the definitive biological validation",
+    "no_adjudication_reused": true
+  },
+  "still_prohibited_until_the_completed_file_is_returned_and_frozen": [
+    "opening the confirmatory key",
+    "sensitivity, specificity, PPV, NPV, balanced accuracy",
+    "any NM-V1 gate verdict"
+  ]
+}

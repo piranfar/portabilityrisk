@@ -1,0 +1,86 @@
+NMIS PHASE-7 CONSOLIDATION - INDEPENDENT STRUCTURAL VERIFICATION
+checks: 43   disagreements: 0
+
+[PASS] 01 new deliverable written and predecessor retained: PORTABILITYRISK_FINAL_STATUS_AND_GAP_AUDIT_V4.md
+         new=9891 B  old=10169 B
+[PASS] 02 new deliverable written and predecessor retained: PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv
+         new=12689 B  old=10845 B
+[PASS] 03 new deliverable written and predecessor retained: PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv
+         new=10490 B  old=9452 B
+[PASS] 04 new deliverable written and predecessor retained: PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4.tsv
+         new=10031 B  old=8458 B
+[PASS] 05 new deliverable written and predecessor retained: PORTABILITYRISK_REMAINING_WORK_PLAN_V4.tsv
+         new=5412 B  old=4778 B
+[PASS] 06 new deliverable written and predecessor retained: PORTABILITYRISK_MANUSCRIPT_ASSET_INDEX_V2.tsv
+         new=2703 B  old=2206 B
+[PASS] 07 new deliverable written and predecessor retained: PORTABILITYRISK_CANONICAL_ARTEFACT_MANIFEST_V2.tsv
+         new=66868 B  old=60157 B
+[PASS] 08 V3 gap audit unmodified: digest quoted in V4 matches the file on disk
+         2f1db3f0e6fa7a439a38c131f5920d10ce7315ce84a841fb802ba02228e4a5e1
+[PASS] 09 ledger grew by exactly 1 row(s); no predecessor row dropped or reordered
+         14 -> 15  amended_in_place=none
+[PASS] 10 claim matrix grew by exactly 1 row(s); no predecessor row dropped or reordered
+         27 -> 28  amended_in_place=['C19']
+[PASS] 11 error register grew by exactly 3 row(s); no predecessor row dropped or reordered
+         27 -> 30  amended_in_place=none
+[PASS] 12 work plan grew by exactly 2 row(s); no predecessor row dropped or reordered
+         15 -> 17  amended_in_place=none
+[PASS] 13 asset index grew by exactly 2 row(s); no predecessor row dropped or reordered
+         15 -> 17  amended_in_place=none
+[PASS] 14 claim C20 registered as a measured NMIS result, HEADLINE READY
+         HEADLINE READY
+[PASS] 15 claim C19 updated to record structural corroboration by NMIS
+         NEW - reported by NM-DIST, structurally corroborated by NMIS
+[PASS] 16 deviations 28, 29 and 30 registered with unique sequential ids
+         28,29,30
+[PASS] 17 every NMIS deviation is pre-outcome or execution-scheduling only
+         timing column=correction_timing offending=[]
+[PASS] 18 element categories sum to the parsed element count
+         14426 == 14426
+[PASS] 19 occurrence endpoint states sum to the frozen occurrence total
+         35140 == 35140
+[PASS] 20 report quotes every element-category count from the receipt
+         [2384, 4119, 7923]
+[PASS] 21 report quotes every occurrence-state count from the receipt
+         [716, 1902, 12034, 20488]
+[PASS] 22 frozen class A / class B / blocks unchanged and quoted
+[PASS] 23 census complete with zero tool failures
+[PASS] 24 every F(d) landmark quoted in the report equals the receipt to 4 dp
+         mismatched=[]
+[PASS] 25 both primary contrasts positive with CI excluding zero at 1 kb and 2 kb
+         N1@1000 0.2898 [0.2564,0.3173], N1@2000 0.3221 [0.2837,0.3525], N2@1000 0.3255 [0.2994,0.3477], N2@2000 0.3463 [0.3163,0.3706]
+[PASS] 26 all eight contrasts exclude zero and every Holm p equals 0.001
+[PASS] 27 gate verdict in the receipt is SUCCESS and is reported as SUCCESS
+         SUCCESS
+[PASS] 28 the +0.2898 / +0.3255 headline differences equal the receipt contrasts
+         0.2898 0.3255
+[PASS] 29 endpoint table holds exactly one row per frozen occurrence
+         35140
+[PASS] 30 endpoint states recomputed from the table match the receipt
+         recomputed={'complete_and_fully_contained': 12034, 'partial_or_boundary_limited': 1902, 'no_structurally_resolved_IS': 20488, 'complete_in_shared_block_but_crosses_occurrence_window_boundary': 716}
+[PASS] 31 class B recomputed from the table equals the frozen 16,303
+         16303
+[PASS] 32 overall structural corroboration recomputed as 73.80 percent
+         12032/16303 = 73.80%
+[PASS] 33 A. baumannii corroboration 86.01 percent matches the receipt
+         86.0120
+[PASS] 34 IS6 structural retention 90.4 percent and the highest abundant family
+         4385/4848 = 90.4%
+[PASS] 35 86.9 percent of A. baumannii structural detections lie within 2 kb
+         86.86%
+[PASS] 36 every manifest V2 path exists with the recorded byte size
+         rows=354 missing=0 size_mismatch=0
+[PASS] 37 every NMIS class A/B/D manifest digest re-hashes to the recorded value
+         checked=14 mismatched=0
+[PASS] 38 no credential-class artefact and no key material inside the inventory
+         J=[] key=[]
+[PASS] 39 all five frozen portability-context inputs still present and readable
+         all present
+[PASS] 40 no file was staged, committed or pushed during consolidation
+         staged=0  untracked_or_modified=22
+[PASS] 41 exactly one predecessor row amended in place across all five tables, and it is C19
+         amended=['V5.tsv:C19']
+[PASS] 42 comparator 2 kb concentration figures 51.7 and 51.3 percent are correct and quoted
+         P.a=51.69%  Kleb=51.26%
+[PASS] 43 manifest snapshot covers every file under the walked roots except itself and this report
+         unlisted=['docs/nature_microbiology/PORTABILITYRISK_CANONICAL_ARTEFACT_MANIFEST_V2.tsv']

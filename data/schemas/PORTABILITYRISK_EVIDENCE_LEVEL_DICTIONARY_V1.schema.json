@@ -1,0 +1,60 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv",
+ "title": "PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv",
+ "description": "Row schema for PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "evidence_level": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Name of the evidence level."
+  },
+  "layer": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Which analysis layer the evidence level belongs to."
+  },
+  "definition": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "What the column means."
+  },
+  "basis": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "What the level is established by, and how it was validated."
+  },
+  "what_it_establishes": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "The claim the level licenses."
+  },
+  "what_it_does_not_establish": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "The claims it does NOT license."
+  }
+ },
+ "required": [
+  "evidence_level",
+  "layer",
+  "definition",
+  "basis",
+  "what_it_establishes",
+  "what_it_does_not_establish"
+ ],
+ "additionalProperties": false
+}

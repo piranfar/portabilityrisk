@@ -1,0 +1,11 @@
+gene_family	independent_n_plasmid	pipeline_n_plasmid	independent_n_chromosome	pipeline_n_chromosome	independent_odds_ratio	pipeline_odds_ratio	agreement
+dfrA50	353	353	1	1	319.2317	319.2317	MATCH
+qnrB6	130	130	1	1	116.8932	116.8932	MATCH
+qnrA1	126	126	1	1	113.2849	113.2849	MATCH
+qnrB91	53	53	0	0	96.0258	96.0258	MATCH
+blaCMY	100	100	1	1	89.8489	89.8489	MATCH
+oqxA	5	5	3277	3277	0.0012	0.0012	MATCH
+blaPDC	1	1	891	891	0.001	0.001	MATCH
+oqxB19	0	0	581	581	0.0008	0.0008	MATCH
+blaACT	0	0	602	602	0.0007	0.0007	MATCH
+catB7	0	0	871	871	0.0005	0.0005	MATCH

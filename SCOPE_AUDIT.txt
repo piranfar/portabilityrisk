@@ -1,0 +1,88 @@
+PORTABILITYRISK PUBLIC-REPOSITORY SCOPE AUDIT
+tree: <public repository root>   files: 187
+
+== 1. CLASSIFICATION ==
+  Paper 1 scientific artefact        178
+  repository boundary file           9
+  UNCLASSIFIED files: none
+
+== 2. SIBLING-PAPER MENTIONS ==
+  boundary statements : 49 in 18 files
+  needing review      : 1
+     code/context/pr_context_mobility_classes.py  [plasmidcall]  "evidence_layer_mge": ("mge_sequence_annotation" if mge_done                                    and et == "direct_chromosome" else ""),             "plasmidcall_predicted_location": ""})    
+
+== 3. UNRELATED CODE OR DATA ==
+  files classified UNCLASSIFIED: 0
+
+== 4. TABULAR FILES AND DICTIONARY COVERAGE ==
+  file                                                        cols  dictionary     uncovered
+  MANIFEST.tsv                                                   3  yes            
+  data/PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv        7  NO DICTIONARY  claim,manuscript_location,value,evidence_artefact,field,evidence_level
+  data/PORTABILITYRISK_DATA_DICTIONARY_V1.tsv                    8  yes            
+  data/PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv             5  yes            
+  data/PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv          6  yes            
+  data/PORTABILITYRISK_PROVENANCE_MAP_V1.tsv                     5  NO DICTIONARY  artefact,produced_by,frozen_protocol,principal_inputs,availability
+  data/PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv                    6  yes            
+  results/nmdist_occurrence_block_distances.tsv                 25  yes            
+  results/nmdist_primary_estimates.tsv                          18  yes            
+  results/nmdist_sensitivity_results.tsv                        14  yes            
+  results/nmdist_species_contrasts.tsv                          13  yes            
+  results/nmis_occurrence_endpoints.tsv                         16  yes            
+  results/nmis_primary_estimates.tsv                            17  yes            
+  results/nmis_sensitivity_results.tsv                          11  yes            
+  results/nmis_species_contrasts.tsv                            11  yes            
+  results/nmis_vs_nmdist_comparison.tsv                          5  yes            
+  results/summary/both_context_determinants.tsv                  5  yes            
+  results/summary/convergence_by_mobility_class.tsv             17  yes            
+  results/summary/determinant_enrichment_species_adjusted.ts    24  yes            
+  results/summary/evidence_layer_inventory.tsv                   4  yes            
+  results/summary/genome_level_summary.tsv                      12  yes            
+  results/summary/headline_recomputation.tsv                     8  yes            
+  results/summary/independent_verification_report_v2.tsv         4  yes            
+  results/summary/portability_class_reconciliation.tsv           3  yes            
+  validation/PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv         10  yes            
+  validation/PORTABILITYRISK_ERROR_AND_DEVIATION_REGISTER_V4     9  yes            
+  validation/PORTABILITYRISK_VALIDATION_LEDGER_V4.tsv           14  yes            
+  validation/nmis_census_status.tsv                              5  yes            
+
+== 5. SCRIPTS NEEDING INPUT ABSENT FROM THE PUBLIC TREE ==
+  scripts: 55 total, 48 reference at least one absent input
+  code/validation/nmv1_build_r3.py                     16  e.g. NMV1_ADJUDICATION_UNBLINDING_KEY_V2.tsv, NMV1_AUDIT_MANIFEST.json, NMV1_AUDIT_MANIFEST_R3.json, NMV1_AUDIT_UNBLINDING_KEY.tsv
+  code/context/pr_context_strat_and_inference.py       11  e.g. biosample_metadata.tsv, determinant_occurrences.tsv, plasmid_lineage_concentration.tsv, plasmid_mobility_annotation.tsv
+  code/validation/nmv1_build_package_v2.py             10  e.g. NMV1_ADJUDICATION_BLINDED_PACKAGE_V1_SUPERSEDED_INSUFFICIENT_EVIDENCE.tsv, NMV1_ADJUDICATION_UNBLINDING_KEY_V1_SUPERSEDED_INSUFFICIENT_EVIDENCE.tsv, NMV1_ADJUDICATION_UNBLINDING_KEY_V2.tsv, NMV1_PACKAGE_V2_RECEIPT.json
+  code/context/pr_context_verify.py                     9  e.g. _timing.tsv, determinant_occurrences.tsv, determinant_plasmid_enrichment.tsv, determinant_portability_classes.tsv
+  code/validation/nmv1_apply_rule_engine.py             9  e.g. NMV1_AUDIT_MANIFEST.json, NMV1_AUDIT_UNBLINDING_KEY.tsv, NMV1_RULE_BASED_GROUND_TRUTH.tsv, NMV1_RULE_ENGINE_APPLICATION_RECEIPT.json
+  code/validation/nmv1_build_groundtruth.py             9  e.g. NMV1_ADJUDICATION_BLINDED_PACKAGE.tsv, NMV1_ADJUDICATION_UNBLINDING_KEY.tsv, NMV1_GROUNDTRUTH_BUILD_RECEIPT.json, integronfinder_per_block.tsv
+  code/context/pr_context_statistics.py                 8  e.g. determinant_occurrences.tsv, determinant_plasmid_enrichment.tsv, direct_vs_unresolved_accounting.tsv, portability_by_drug_class.tsv
+  code/validation/nmv1c_build_instrument.py             8  e.g. NMV1C_ADJUDICATED_120.json, NMV1C_ADJUDICATED_120.tsv, NMV1_RULE_BASED_GROUND_TRUTH.tsv, arg_mge_neighbourhood.tsv
+  code/context/pr_context_convergence.py                7  e.g. _timing.tsv, determinant_occurrences.tsv, high_concern_plasmid_architectures.tsv, plasmid_convergence.tsv
+  code/context/pr_context_mobility_classes.py           7  e.g. arg_mge_neighbourhood.tsv, determinant_occurrences.tsv, determinant_portability_classes.tsv, plasmid_mobility_annotation.tsv
+  code/validation/nmv1_score.py                         7  e.g. NMV1_RESULT_RECEIPT.json, integronfinder_per_block.tsv, isescan_per_block.tsv, nmv1_adjudication_blinded.tsv
+  code/context/pr_context_build_join.py                 6  e.g. _timing.tsv, determinant_occurrences.tsv, determinant_replicon_join_audit.tsv, replicon_inventory.tsv
+  code/context/pr_context_mge_annotate.py               6  e.g. arg_mge_neighbourhood.tsv, determinant_occurrences.tsv, mge_annotation_receipts.tsv, mge_feature_inventory.tsv
+  code/context/pr_context_verify_v2.py                  6  e.g. _timing.tsv, arg_mge_neighbourhood.tsv, determinant_occurrences.tsv, determinant_portability_classes.tsv
+  code/validation/nmv1c_verify.py                       6  e.g. NMV1C_ADJUDICATED_120.json, NMV1C_ADJUDICATED_120.tsv, NMV1C_SAMPLE_MANIFEST%s.json, NMV1C_UNBLINDING_KEY.tsv
+  code/validation/nmv3_arm_r.py                         6  e.g. NMV3_ARM_R_RECEIPT.json, NMV3_ARM_R_TRANSITIONS.tsv, NMV3_FROZEN_DESIGN.json, determinant_portability_classes.tsv
+  code/validation/nmv3_freeze.py                        6  e.g. NM0_CLAIM_EVIDENCE_GAP_MATRIX.tsv, NM0_VALIDATION_PROTOCOL_V1.json, NMV3_CONCORDANCE.tsv, NMV3_HEADLINE_INVARIANCE.tsv
+  code/validation/nmv3_score.py                         6  e.g. NMV3_ARM_I_FROZEN_CONFIG.json, NMV3_FROZEN_DESIGN.json, NMV3_TRANSITION_MATRICES.tsv, determinant_portability_classes.tsv
+  code/validation/nmdist_freeze.py                      5  e.g. arg_mge_neighbourhood.tsv, arg_neighbourhood_windows.tsv, determinant_portability_classes.tsv, mge_feature_inventory.tsv
+  code/validation/nmdist_score.py                       5  e.g. arg_mge_neighbourhood.tsv, arg_neighbourhood_windows.tsv, determinant_portability_classes.tsv, mge_feature_inventory.tsv
+  code/context/pr_context_build_bundle.py               4  e.g. BUNDLE_EXCLUSIONS.tsv, BUNDLE_RECEIPT.json, manifest_local.tsv, manifest_server.tsv
+  code/context/pr_context_fetch_windows.py              4  e.g. arg_neighbourhood_manifest.tsv, arg_neighbourhood_windows.tsv, determinant_occurrences.tsv, shared_context_blocks.tsv
+  code/validation/nmv1_freeze_and_sample.py             4  e.g. arg_mge_neighbourhood.tsv, mge_feature_inventory.tsv, replicon_level_summary.tsv, shared_context_blocks.tsv
+  code/validation/nmv1_score_audit.py                   4  e.g. NMV1_AUDIT_SCORING_RECEIPT.json, NMV1_AUDIT_SCORING_SPECIFICATION.json, NMV1_AUDIT_UNBLINDING_KEY_R3.tsv, nmv1_audit_scored_cases.tsv
+  code/validation/nmv2_run.py                           4  e.g. arg_mge_neighbourhood.tsv, mge_feature_inventory.tsv, replicon_level_summary.tsv, shared_context_blocks.tsv
+  code/validation/nmv4c_freeze.py                       4  e.g. determinant_portability_classes.tsv, mge_feature_inventory.tsv, replicon_level_summary.tsv, shared_context_blocks.tsv
+  code/validation/portabilityrisk_figures.py            4  e.g. arg_mge_neighbourhood.tsv, mge_feature_inventory.tsv, plasmid_mobility_annotation.tsv, shared_context_blocks.tsv
+  code/context/pr_context_biosample_metadata.py         3  e.g. biosample_field_coverage.tsv, biosample_metadata.tsv, determinant_occurrences.tsv
+  code/context/pr_context_fetch_replicons.py            3  e.g. .tsv.run.json, replicon_inventory.tsv, replicon_inventory_receipt.json
+  code/validation/nmdist_verify.py                      3  e.g. arg_neighbourhood_windows.tsv, mge_feature_inventory.tsv, shared_context_blocks.tsv
+
+== 6. INTERNAL LINKS ==
+  broken: 2
+     README.md -> SCOPE_AUDIT.txt
+     README.md -> SCOPE_AUDIT.txt
+
+== 7. REPRODUCIBILITY MODE ==
+  executable from the public tree alone : 7 script(s)
+  documentation-only (needs the deposit): 48 script(s)

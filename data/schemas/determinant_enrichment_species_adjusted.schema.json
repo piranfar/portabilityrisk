@@ -1,0 +1,204 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/determinant_enrichment_species_adjusted.tsv",
+ "title": "determinant_enrichment_species_adjusted.tsv",
+ "description": "Row schema for determinant_enrichment_species_adjusted.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "gene_family": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Determinant family."
+  },
+  "n_occurrences": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Occurrences contributing."
+  },
+  "n_plasmid": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Plasmid-borne occurrences."
+  },
+  "n_chromosome": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Chromosomal occurrences."
+  },
+  "pct_plasmid": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Percentage of occurrences that are plasmid-borne."
+  },
+  "crude_odds_ratio": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Unadjusted plasmid-vs-chromosome odds ratio for the family against all other families."
+  },
+  "crude_ci_lo": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Lower bound of the crude 95 % interval."
+  },
+  "crude_ci_hi": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Upper bound of the crude 95 % interval."
+  },
+  "crude_fisher_p": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Fisher exact two-sided p-value, unadjusted."
+  },
+  "species_adjusted_MH_or": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Mantel-Haenszel odds ratio pooled across species strata; blank where not estimable."
+  },
+  "species_adjusted_ci_lo": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Lower bound of the MH 95 % interval."
+  },
+  "species_adjusted_ci_hi": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Upper bound of the MH 95 % interval."
+  },
+  "n_species_strata": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Species strata the family appears in."
+  },
+  "n_species_with_within_estimate": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Strata yielding a within-species estimate."
+  },
+  "within_species_all_same_direction": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "yes if every within-species estimate points the same way."
+  },
+  "within_species_detail": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Per-species n and OR, semicolon separated."
+  },
+  "unique_plasmids_carrying": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Distinct plasmid replicons carrying the family."
+  },
+  "unique_genomes_carrying": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Distinct genomes carrying the family."
+  },
+  "unique_bioprojects_carrying": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Distinct BioProjects carrying the family."
+  },
+  "largest_mob_cluster_share_pct": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Share of the family's plasmid occurrences in its largest MOB cluster; a clonality warning."
+  },
+  "lineage_dominated_flag": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "yes if one lineage dominates; such families are reported flagged, never as independent findings."
+  },
+  "crude_bh_q": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Benjamini-Hochberg q-value over the crude p-values."
+  },
+  "significant_after_bh": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "yes if BH q < 0.05."
+  },
+  "survives_species_adjustment": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "yes if the MH interval still excludes 1. 95 of 144 significant families do. 'not_estimable' where no stratum supports an estimate."
+  }
+ },
+ "required": [
+  "gene_family",
+  "n_occurrences",
+  "n_plasmid",
+  "n_chromosome",
+  "pct_plasmid",
+  "crude_odds_ratio",
+  "crude_ci_lo",
+  "crude_ci_hi",
+  "crude_fisher_p",
+  "species_adjusted_MH_or",
+  "species_adjusted_ci_lo",
+  "species_adjusted_ci_hi",
+  "n_species_strata",
+  "n_species_with_within_estimate",
+  "within_species_all_same_direction",
+  "within_species_detail",
+  "unique_plasmids_carrying",
+  "unique_genomes_carrying",
+  "unique_bioprojects_carrying",
+  "largest_mob_cluster_share_pct",
+  "lineage_dominated_flag",
+  "crude_bh_q",
+  "significant_after_bh",
+  "survives_species_adjustment"
+ ],
+ "additionalProperties": false
+}

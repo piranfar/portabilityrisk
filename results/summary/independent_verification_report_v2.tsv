@@ -1,0 +1,16 @@
+check	independent_value	pipeline_value	agreement
+total AMRFinderPlus rows	184538	184538	MATCH
+AMR/AMR rows	85507	85507	MATCH
+PRIMARY acquired ARG occurrences	74349	74349	MATCH
+directly mapped plasmid ARGs	39209	39209	MATCH
+directly mapped chromosomal ARGs	35140	35140	MATCH
+unresolved occurrences	0	0	MATCH
+unique genomes	6288	6288	MATCH
+unique ARG-bearing plasmids	6621	6621	MATCH
+unique ARG-bearing replicons	12811	12811	MATCH
+class rows == primary denominator	74349	74349	MATCH
+A+B == chromosomal (or A+B+INCOMPLETE)	35140	35140	MATCH
+C+D+E == plasmid	39209	39209	MATCH
+all classes sum to 74,349	74349	74349	MATCH
+chromosomal ARGs with nearby MGE	16303	16303	MATCH
+chromosomal ARGs annotated	35140	35140	MATCH

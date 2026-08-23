@@ -1,0 +1,108 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/genome_level_summary.tsv",
+ "title": "genome_level_summary.tsv",
+ "description": "Row schema for genome_level_summary.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "assembly_version": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "NCBI assembly accession with version."
+  },
+  "biosample_accession": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "NCBI BioSample accession."
+  },
+  "bioproject_accession": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "NCBI BioProject accession; the bootstrap cluster."
+  },
+  "organism": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Species name as recorded."
+  },
+  "genus": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Genus."
+  },
+  "n_arg_occurrences": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "ARG occurrences in the genome."
+  },
+  "n_plasmid_args": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Plasmid-borne ARG occurrences."
+  },
+  "n_chromosomal_args": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Chromosomal ARG occurrences."
+  },
+  "pct_plasmid": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Per-genome plasmid percentage. NOTE: the mean of this column is 35.932 %, which is NOT the 36.586 % genome-collapsed event share. See the denominator dictionary."
+  },
+  "n_distinct_families": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Distinct gene families in the genome."
+  },
+  "n_arg_bearing_replicons": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Replicons carrying at least one ARG."
+  },
+  "n_arg_bearing_plasmids": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Plasmids carrying at least one ARG."
+  }
+ },
+ "required": [
+  "assembly_version",
+  "biosample_accession",
+  "bioproject_accession",
+  "organism",
+  "genus",
+  "n_arg_occurrences",
+  "n_plasmid_args",
+  "n_chromosomal_args",
+  "pct_plasmid",
+  "n_distinct_families",
+  "n_arg_bearing_replicons",
+  "n_arg_bearing_plasmids"
+ ],
+ "additionalProperties": false
+}

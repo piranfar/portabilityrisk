@@ -1,0 +1,100 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmis_sensitivity_results.tsv",
+ "title": "nmis_sensitivity_results.tsv",
+ "description": "Row schema for nmis_sensitivity_results.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "sensitivity": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Prespecified sensitivity-analysis label."
+  },
+  "group": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Frozen species group."
+  },
+  "n_occurrences": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Occurrences contributing."
+  },
+  "n_observed": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Occurrences with a detection at or before 10 kb."
+  },
+  "n_censored_at_10kb": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Occurrences right-censored at 10 kb: no detection within the window. NOT evidence of absence."
+  },
+  "F_1000": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Weighted cumulative detection F(1000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 1000 bp, under right-censoring at 10 kb."
+  },
+  "F_2000": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Weighted cumulative detection F(2000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 2000 bp, under right-censoring at 10 kb."
+  },
+  "F_5000": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Weighted cumulative detection F(5000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 5000 bp, under right-censoring at 10 kb."
+  },
+  "F_10000": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Weighted cumulative detection F(10000 bp): the block-balanced share of occurrences whose nearest qualifying element lies within 10000 bp, under right-censoring at 10 kb."
+  },
+  "restricted_mean_distance_bp": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "E[min(D, 10000)]: restricted mean distance under censoring at 10 kb."
+  },
+  "median_distance_bp": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Median distance, or 'not reached' where F(10 kb) < 0.5."
+  }
+ },
+ "required": [
+  "sensitivity",
+  "group",
+  "n_occurrences",
+  "n_observed",
+  "n_censored_at_10kb",
+  "F_1000",
+  "F_2000",
+  "F_5000",
+  "F_10000",
+  "restricted_mean_distance_bp",
+  "median_distance_bp"
+ ],
+ "additionalProperties": false
+}

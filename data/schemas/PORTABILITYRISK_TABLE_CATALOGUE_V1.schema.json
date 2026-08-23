@@ -1,0 +1,60 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv",
+ "title": "PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv",
+ "description": "Row schema for PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "relative_path": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Path within this repository."
+  },
+  "rows": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Data rows excluding the header."
+  },
+  "columns": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Number of columns."
+  },
+  "sha256": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Full 64-character SHA-256 of the file as published."
+  },
+  "grain": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "One row represents one unit of this kind."
+  },
+  "availability": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "public, or private-only pending deposit."
+  }
+ },
+ "required": [
+  "relative_path",
+  "rows",
+  "columns",
+  "sha256",
+  "grain",
+  "availability"
+ ],
+ "additionalProperties": false
+}

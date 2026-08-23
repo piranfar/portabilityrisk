@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this manuscript, these protocols, results or code, please cite this repository."
+title: "PortabilityRisk: replicon-resolved, occurrence-level portability of acquired resistance genes in closed bacterial genomes"
+abstract: >-
+  Manuscript, frozen protocols, results, data resource, validation record and
+  analysis code for a study of resistance-gene portability in 6,288 closed
+  complete Gram-negative ESKAPE genomes. Each of 74,349 acquired
+  resistance-gene occurrences is assigned to a documented chromosome or plasmid
+  using NCBI molecule designations rather than prediction, and receives one of
+  five evidence-ranked portability classes. The study reports that portability
+  is a property of the occurrence rather than of the gene, that chromosomal
+  location is not fixity, and that plasmid fraction and chromosomal
+  mobile-element association are largely orthogonal dimensions. No transfer,
+  conjugation or horizontal-gene-transfer event is observed or claimed, and this
+  repository contains no trained model and no performance claim.
+type: software
+authors:
+  - family-names: Piranfar
+    given-names: Vahhab
+version: 1.1.0
+date-released: 2026-08-23
+license: Apache-2.0
+repository-code: "https://github.com/piranfar/portabilityrisk"
+keywords:
+  - antimicrobial resistance
+  - mobile genetic elements
+  - insertion sequences
+  - plasmid mobility
+  - closed genomes
+  - reproducibility
+  - provenance

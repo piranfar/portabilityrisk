@@ -1,0 +1,42 @@
+nmis_verify_v1.0.0  (independent code path)
+
+  frozen protocol digest unchanged                           PASS 
+  amendment 001 digest unchanged                             PASS 
+  status rows = 21,955                                       PASS 21955
+  status block ids unique                                    PASS 
+  tool failures = 0                                          PASS 
+  result files = 5,563                                       PASS 5563
+  result files exactly match OK blocks                       PASS 
+  single 24-column emitted header everywhere                 PASS 
+  elements = 14,426                                          PASS 14426
+  type c = 10,769, type p = 3,657                            PASS {'c': 10769, 'p': 3657}
+  exported endpoint table has 35,140 unique occurrences      PASS 35140
+  endpoint states independently reproduced                   PASS 0 mismatches
+  structural distances independently reproduced              PASS 0 mismatches
+  occurrence state counts match the receipt                  PASS {'complete_and_fully_contained': 12034, 'partial_or_boundary_limited': 1902, 'no_structurally_resolved_IS': 20488, 'complete_in_shared_block_but_crosses_occurrence_window_boundary': 716}
+  element categories match the receipt                       PASS {'complete_and_fully_contained': 7923, 'partial_or_boundary_limited': 4119, 'complete_in_shared_block_but_crosses_occurrence_window_boundary': 2384}
+  element categories sum to 14,426                           PASS 14426
+  class A = 18,837 and class B = 16,303 unchanged            PASS {'B': 16303, 'A': 18837}
+  blocks = 21,955                                            PASS 
+  every occurrence has exactly one endpoint state            PASS 
+  all landmark and RMD estimates reproduced                  PASS max dev 5.55e-17
+  contrast differences equal value_a minus value_b           PASS 
+  Holm value present on every contrast row                   PASS 
+  gate verdict follows from the 1 kb and 2 kb cells          PASS 
+  row uniqueness: nmis_occurrence_endpoints.tsv              PASS 35140 rows
+  row uniqueness: nmis_primary_estimates.tsv                 PASS 3 rows
+  row uniqueness: nmis_species_contrasts.tsv                 PASS 8 rows
+  row uniqueness: nmis_sensitivity_results.tsv               PASS 6 rows
+  row uniqueness: nmis_vs_nmdist_comparison.tsv              PASS 12 rows
+  receipt output digests match files on disk                 PASS 
+
+  DETERMINISTIC SPOT CHECKS
+  spot: ordinary linear containment                          PASS ('blk000123', '5830', '8351', [(421875, 424396)], 1650)
+  spot: circular wrapped containment                         PASS ('blk000689', '11272', '12358', [(11272, 12358)], 5102)
+  spot: boundary-touching element stays partial              PASS ('blk001323', '1', '699', 20444, 'p')
+  spot: complete element crossing the occurrence window      PASS ('blk000003', '22619', '25194', [(1427810, 1430385)], [(1405192, 14257
+  spot: partial element                                      PASS ('blk000002', '11116', '12382', 'p')
+  spot: block with no ISEScan output                         PASS ('blk000004', 'GCA_059696525.1|AP019685.1|blaOXA-66|2265084|2265905')
+
+  checks run: 35   disagreements: 0
+  VERDICT: PASS - zero disagreements

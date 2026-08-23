@@ -50,7 +50,7 @@ python verify_deposit.py
 ```
 
 Archive SHA-256 of the prepared package:
-`eb11e09dc0c0f1cba1e8c4ff6563758b16d4b5218169f72da8db7e45a3e936fa`
+`990b13da5f0b8794a571eb06f969a17b07ac4e3e3c4a214f172ab838c58196eb`
 
 `verify_deposit.py` needs only the Python standard library. It re-derives the denominators from the
 dataset rather than reading them from a summary, validates each table against its schema, re-hashes

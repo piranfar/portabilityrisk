@@ -21,4 +21,4 @@ portabilityrisk_nmv5_dataset_v1/schemas/PORTABILITYRISK_PROVENANCE_MAP_V1.schema
 portabilityrisk_nmv5_dataset_v1/schemas/PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.schema.json	1310			schema	CC-BY-NC-ND-4.0	ffc139b39144dbc7098f6f766803569b5e670fb561ccff0396a2e933886dc9e5
 portabilityrisk_nmv5_dataset_v1/schemas/portabilityrisk_occurrence_portability_v1.schema.json	3789			schema	CC-BY-NC-ND-4.0	57247752a4bd8df3844f5ba9bca16fa634b06989c136167a07831191e1c87b89
 portabilityrisk_nmv5_dataset_v1/verify_deposit.py	9499			software	Apache-2.0	ada2f89206d93b0d336b2dd588f02aee2af38b2d63970e4ada7277815e6b5ef9
-portabilityrisk_nmv5_dataset_v1.tar.gz	1203405			archive	CC-BY-NC-ND-4.0	eb11e09dc0c0f1cba1e8c4ff6563758b16d4b5218169f72da8db7e45a3e936fa
+portabilityrisk_nmv5_dataset_v1.tar.gz	1202650			archive	CC-BY-NC-ND-4.0	990b13da5f0b8794a571eb06f969a17b07ac4e3e3c4a214f172ab838c58196eb

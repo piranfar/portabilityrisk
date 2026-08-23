@@ -1,15 +1,14 @@
 PORTABILITYRISK PUBLIC-REPOSITORY SCOPE AUDIT
-tree: <public repository root>   files: 220
+tree: <public repository root>   files: 219
 
 == 1. CLASSIFICATION ==
   Paper 1 scientific artefact        206
-  repository boundary file           14
+  repository boundary file           13
   UNCLASSIFIED files: none
 
 == 2. SIBLING-PAPER MENTIONS ==
-  boundary statements : 53 in 22 files
-  needing review      : 2
-     SCOPE_AUDIT.txt  [plasmidcall]  smidcall]  "evidence_layer_mge": ("mge_sequence_annotation" if mge_done                                    and et == "direct_chromosome" else ""),             "plasmidcall_predicted_location
+  boundary statements : 52 in 21 files
+  needing review      : 1
      code/context/pr_context_mobility_classes.py  [plasmidcall]  "evidence_layer_mge": ("mge_sequence_annotation" if mge_done                                    and et == "direct_chromosome" else ""),             "plasmidcall_predicted_location": ""})    
 
 == 3. UNRELATED CODE OR DATA ==
@@ -88,7 +87,9 @@ tree: <public repository root>   files: 220
   code/validation/nmdist_verify.py                      3  e.g. arg_neighbourhood_windows.tsv, mge_feature_inventory.tsv, shared_context_blocks.tsv
 
 == 6. INTERNAL LINKS ==
-  broken: 0
+  broken: 2
+     README.md -> SCOPE_AUDIT.txt
+     README.md -> SCOPE_AUDIT.txt
 
 == 7. REPRODUCIBILITY MODE ==
   executable from the public tree alone : 7 script(s)

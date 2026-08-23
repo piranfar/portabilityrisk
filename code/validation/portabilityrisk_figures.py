@@ -34,6 +34,11 @@ plt.rcParams.update({
     "axes.spines.top": False, "axes.spines.right": False,
     "figure.dpi": 300, "savefig.dpi": 300,
     "pdf.fonttype": 42, "svg.fonttype": "none",
+    # matplotlib derives SVG clip-path element ids from a random salt, so two
+    # runs over identical data produced different bytes and a clean-room
+    # rebuild could not be shown to reproduce the figure. Pinning the salt makes
+    # the SVG byte-deterministic; it affects element ids only.
+    "svg.hashsalt": "portabilityrisk",
 })
 
 
@@ -89,9 +94,12 @@ def save(fig, stem):
     """SVG and PDF as vector masters, PNG at 300 dpi for review and 600 dpi for
     print. A journal asking for 600 should not force a regeneration."""
     paths = []
-    for ext in ("svg", "pdf"):
+    # matplotlib stamps a creation date into SVG and PDF metadata, so identical
+    # inputs produced different bytes and a clean-room rebuild could not be
+    # shown to be identical. Suppress it -- reproducibility is the whole point.
+    for ext, meta in (("svg", {"Date": None}), ("pdf", {"CreationDate": None})):
         p = os.path.join(FIGD, "%s.%s" % (stem, ext))
-        fig.savefig(p, format=ext)
+        fig.savefig(p, format=ext, metadata=meta)
         paths.append(p)
     for dpi in (300, 600):
         p = os.path.join(FIGD, "%s%s.png" % (stem, "" if dpi == 300 else "_600dpi"))

@@ -1,6 +1,0 @@
-# Every protocol, receipt and result table here publishes a full 64-character
-# SHA-256, and MANIFEST.tsv lists one per file. Git's default text=auto stores
-# LF and checks out CRLF on Windows, which would change the hash of every
-# line-oriented artefact and make MANIFEST.tsv wrong on half the machines that
-# clone this. No end-of-line conversion, anywhere.
-* -text

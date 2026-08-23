@@ -1,6 +1,0 @@
-# This repository is assembled, not worked in. Nothing should appear here that
-# was not placed by the builder and listed in MANIFEST.tsv.
-__pycache__/
-*.py[cod]
-.DS_Store
-Thumbs.db

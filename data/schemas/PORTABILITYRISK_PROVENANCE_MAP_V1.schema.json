@@ -1,0 +1,52 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/PORTABILITYRISK_PROVENANCE_MAP_V1.tsv",
+ "title": "PORTABILITYRISK_PROVENANCE_MAP_V1.tsv",
+ "description": "Row schema for PORTABILITYRISK_PROVENANCE_MAP_V1.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "type": "object",
+ "properties": {
+  "artefact": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "UNCURATED: type inferred from data."
+  },
+  "produced_by": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "UNCURATED: type inferred from data."
+  },
+  "governing_frozen_protocol": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "UNCURATED: type inferred from data."
+  },
+  "principal_inputs": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "UNCURATED: type inferred from data."
+  },
+  "notes": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Cautions, and the values computed on this denominator."
+  }
+ },
+ "required": [
+  "artefact",
+  "produced_by",
+  "governing_frozen_protocol",
+  "principal_inputs",
+  "notes"
+ ],
+ "additionalProperties": false
+}

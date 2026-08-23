@@ -1,0 +1,122 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmv5/portabilityrisk_occurrence_portability_v1.tsv",
+ "title": "portabilityrisk_occurrence_portability_v1.tsv",
+ "description": "Row schema for portabilityrisk_occurrence_portability_v1.tsv. Tab-separated, UTF-8, LF line endings, header row required.",
+ "type": "object",
+ "properties": {
+  "assembly_version": {
+   "type": "string",
+   "description": "Version suffix matters: a re-versioned assembly is a different record."
+  },
+  "biosample_accession": {
+   "type": "string",
+   "description": "6,285 distinct BioSamples across 6,288 assemblies: a few samples have more than one assembly."
+  },
+  "bioproject_accession": {
+   "type": "string",
+   "description": "2,283 projects, but effective count by 1/HHI is 136.9 \u2014 the nominal count overstates independence."
+  },
+  "organism_harmonized": {
+   "type": "string",
+   "description": "Harmonised, so it may differ in spelling from the raw submission."
+  },
+  "genus": {
+   "type": "string",
+   "description": "-"
+  },
+  "replicon_accession": {
+   "type": "string",
+   "description": "12,811 distinct replicons. Unique only within a versioned assembly."
+  },
+  "replicon_molecule_type": {
+   "type": "string",
+   "description": "DOCUMENTATION, not prediction. This is why the location layer has no error rate: 0 unmatched, 0 ambiguous, 0 missing coordinates. It holds only because every genome is closed."
+  },
+  "determinant_name": {
+   "type": "string",
+   "description": "A symbol, not a proven phenotype. No MIC or susceptibility data exists here."
+  },
+  "gene_family": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Empty where AMRFinderPlus assigns no family."
+  },
+  "drug_class": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Association as annotated by the database, not measured resistance."
+  },
+  "gene_start": {
+   "type": "integer",
+   "description": "1-based inclusive. Part of the primary key."
+  },
+  "gene_end": {
+   "type": "integer",
+   "description": "1-based inclusive. Part of the primary key."
+  },
+  "strand": {
+   "type": "string",
+   "description": "Not used in any distance or class computation."
+  },
+  "location_evidence": {
+   "type": "string",
+   "description": "The whole cohort resolves by direct join; no prediction step exists in this dataset."
+  },
+  "portability_class": {
+   "type": "string",
+   "description": "OPERATIONAL, not biological. Class A is not 'immobile' and class C is not 'non-mobilizable' \u2014 both are statements about what a marker database returned."
+  },
+  "mobility_category": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Empty for chromosomal rows by construction. 'Predicted' means marker-consistent; no conjugation was performed."
+  },
+  "evidence_layer_location": {
+   "type": "string",
+   "description": "-"
+  },
+  "evidence_layer_mobility": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Empty for all 35,140 chromosomal rows (47.26 %) by construction, not by missing data."
+  },
+  "evidence_layer_mge": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Empty for all 39,209 plasmid rows (52.74 %) by construction, not by missing data. The two mobility/MGE emptiness counts are exactly complementary and sum to 74,349."
+  }
+ },
+ "required": [
+  "assembly_version",
+  "biosample_accession",
+  "bioproject_accession",
+  "organism_harmonized",
+  "genus",
+  "replicon_accession",
+  "replicon_molecule_type",
+  "determinant_name",
+  "gene_family",
+  "drug_class",
+  "gene_start",
+  "gene_end",
+  "strand",
+  "location_evidence",
+  "portability_class",
+  "mobility_category",
+  "evidence_layer_location",
+  "evidence_layer_mobility",
+  "evidence_layer_mge"
+ ],
+ "additionalProperties": false
+}

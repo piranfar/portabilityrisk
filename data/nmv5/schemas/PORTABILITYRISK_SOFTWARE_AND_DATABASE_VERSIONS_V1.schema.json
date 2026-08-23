@@ -1,0 +1,68 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmv5/PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv",
+ "title": "PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv",
+ "description": "Row schema for PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv. Tab-separated, UTF-8, LF line endings, header row required.",
+ "type": "object",
+ "properties": {
+  "software": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "version": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "database_version": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "role": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "url": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "licence": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "notes": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  }
+ },
+ "required": [
+  "software",
+  "version",
+  "database_version",
+  "role",
+  "url",
+  "licence",
+  "notes"
+ ],
+ "additionalProperties": false
+}

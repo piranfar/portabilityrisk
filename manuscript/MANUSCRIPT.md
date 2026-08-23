@@ -480,15 +480,51 @@ retained.
 
 ## Data and code availability
 
-All inputs are public NCBI records. Derived occurrence-, replicon-, genome- and
-species/BioProject-level tables, the frozen class definitions and a data dictionary are deposited
-as a versioned archive with per-file SHA-256. Analysis code is versioned and hashed with the exact
-commands. Sequence caches are not deposited; they are regenerable from receipts carrying
-accession.version and per-file digests.
+All inputs are public NCBI records and remain governed by NCBI's terms.
 
-**Outstanding before submission:** the NM-V5 deposit and data dictionary, and confirmation of
-journal-specific data/code availability wording, which could not be retrieved from an official
-page (see `PORTABILITYRISK_REMAINING_WORK_PLAN_V4.tsv`).
+**Data.** The occurrence-level dataset — 74,349 acquired resistance-gene occurrences with their
+replicon assignment and portability class — has been prepared for deposition in Zenodo together
+with a full data dictionary, denominator and evidence-level dictionaries, JSON Schemas for every
+table, a provenance map, pinned software and database versions, per-file SHA-256 checksums and a
+standalone verification script that re-derives every headline denominator from the archive alone.
+**The final DOI will be added upon publication of the deposit.**
+
+Result and summary tables, frozen protocols, receipts and validation records are available now at
+https://github.com/piranfar/portabilityrisk, which also carries the deposit's dictionaries,
+schemas, checksums and access instructions. The occurrence-level dataset itself is not held in
+that repository.
+
+**Code.** Analysis code is at the same repository, versioned and hashed, with the exact commands.
+Each module follows a freeze / score / verify structure: the protocol is hashed before any outcome
+is read, the scorer aborts on a digest mismatch, and an independent verifier re-derives the
+published numbers. Of 61 published scripts, 7 run against that repository alone; the remainder
+require the Zenodo deposit and are published as the method of record.
+
+Sequence caches and conda environments are not deposited; both are regenerable, from receipts
+carrying accession.version with per-file digests and from the pinned environment lock.
+
+**Licence.** The dataset and its metadata are licensed CC BY-NC-ND 4.0. Analysis code is licensed
+Apache-2.0. Third-party data and software retain their own terms; no licence is applied to them by
+this work.
+
+**Outstanding before submission:** publication of the Zenodo deposit, and confirmation of
+journal-specific data and code availability wording, which could not be retrieved from an official
+page.
+
+## Licence
+
+This preprint is made available under the Creative Commons Attribution-NonCommercial-NoDerivatives
+4.0 International licence.
+
+## Funding
+
+This research received no specific grant from any funding agency in the public, commercial or
+not-for-profit sectors. Cloud-computing resources were supported through promotional credits
+provided by Oracle Cloud Infrastructure.
+
+## Competing interests
+
+The author declares no competing interests.
 
 ---
 

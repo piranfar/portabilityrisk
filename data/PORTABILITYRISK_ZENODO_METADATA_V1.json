@@ -1,0 +1,46 @@
+{
+ "metadata": {
+  "title": "PortabilityRisk: occurrence-level portability architecture of acquired antimicrobial resistance determinants across complete bacterial genomes",
+  "upload_type": "dataset",
+  "description": "<p>Occurrence-level computational assignments for acquired antimicrobial\nresistance determinants across complete closed bacterial genomes.</p>\n\n<p><strong>74,349 acquired antimicrobial resistance gene occurrences</strong> in 6,288 closed\ncomplete Gram-negative genomes. One row is one determinant call at one coordinate interval on one\nreplicon in one assembly.</p>\n\n<p><strong>Direct chromosome/plasmid replicon resolution.</strong> Every occurrence is assigned to\na documented chromosome or plasmid using NCBI molecule designations rather than prediction:\n100&nbsp;% resolution, 0 unmatched, 0 ambiguous, 0 missing coordinates. This is documentation, not\ninference, and it holds because every genome in the cohort is closed. It does not transfer to\ndraft assemblies.</p>\n\n<p><strong>An operational five-class A&ndash;E framework.</strong> A chromosomal with no\nmobile-element marker within &plusmn;10&nbsp;kb (18,837); B chromosomal with at least one marker\n(16,303); C plasmid with no mobility marker (7,170); D plasmid relaxase-positive (6,043);\nE plasmid relaxase and MPF positive (25,996). A+B = 35,140 chromosomal; C+D+E = 39,209 plasmid.\nThe classes are operational, not biological: class A is not &quot;immobile&quot; and class C is\nnot &quot;non-mobilizable&quot; &mdash; both are statements about what a marker database\nreturned.</p>\n\n<p><strong>Homology-based and structural evidence are recorded as distinct levels.</strong>\nHomology-based mobile-element proximity means a profile-homology marker lies within an\noccurrence's own &plusmn;10&nbsp;kb window. Structurally resolved complete insertion-sequence\ndetection means a complete transposase open reading frame with bilateral resolved terminal\ninverted repeats lies fully inside that window. The two are never conflated, and the accompanying\nevidence-level dictionary states what each does <em>not</em> establish.</p>\n\n<p><strong>No transfer experiment, conjugation phenotype or active transposition was\nmeasured.</strong> There is no mating assay, no transposition assay and no phenotype in this\ndataset. Claims of demonstrated transfer, observed horizontal gene transfer, active transposition\nor mobilization are not supported by it.</p>\n\n<p><strong>Accompanying schemas, dictionaries and checksums are included.</strong> A full data\ndictionary defining every field; denominator and evidence-level dictionaries; pinned software and\ndatabase versions; a provenance map; a claim-to-evidence crosswalk; JSON Schema for every table;\nSHA-256 checksums and a per-file manifest; and a standalone verification script that re-derives\nevery headline denominator from the archive alone and reports its own disagreement count.</p>\n\n<p><strong>Funding.</strong> This research received no specific grant from any funding agency in the public, commercial or not-for-profit sectors. Cloud-computing resources were supported through promotional credits provided by Oracle Cloud Infrastructure.</p>\n\n<p><strong>Licence note.</strong> Analysis code is licensed separately under Apache-2.0 and is\npublished in the linked repository. Source genome records from NCBI remain governed by NCBI's\nterms; this dataset contains accessions and computed values derived from them, not redistributed\nsequence.</p>",
+  "creators": [
+   {
+    "name": "Piranfar, Vahhab"
+   }
+  ],
+  "license": "cc-by-nc-nd-4.0",
+  "version": "1.0.0",
+  "language": "eng",
+  "keywords": [
+   "antimicrobial resistance",
+   "plasmid",
+   "chromosome",
+   "mobile genetic element",
+   "insertion sequence",
+   "host-conditioned portability",
+   "complete bacterial genomes",
+   "AMR genomics",
+   "Acinetobacter baumannii"
+  ],
+  "related_identifiers": [
+   {
+    "identifier": "https://github.com/piranfar/portabilityrisk",
+    "relation": "isSupplementTo",
+    "resource_type": "software",
+    "scheme": "url"
+   }
+  ],
+  "notes": "This research received no specific grant from any funding agency in the public, commercial or not-for-profit sectors. Cloud-computing resources were supported through promotional credits provided by Oracle Cloud Infrastructure."
+ },
+ "_agent_notes": {
+  "orcid": "NOT SUPPLIED — no ORCID is recorded anywhere in this project and none was invented. Add it in the Zenodo form if the owner has one.",
+  "affiliation": "NOT SUPPLIED — none is recorded in this project and none was invented.",
+  "co_authors": "NONE — the manuscript has a single author.",
+  "publication_date": "OMITTED — Zenodo sets it at publication. Do not pre-set it.",
+  "doi": "NOT SET — no DOI is fabricated. A reserved DOI, if Zenodo issues one, is RESERVED_NOT_PUBLISHED and must not be cited as active.",
+  "manuscript_doi": "OMITTED from related_identifiers because no preprint DOI exists yet. Add it as isSupplementTo after the preprint is posted.",
+  "private_repository": "DELIBERATELY ABSENT from related_identifiers.",
+  "funding": "Oracle promotional credits are NOT a grant. No funder/award entry is made; the acknowledgement is carried in the description and notes, and in the deposit README. Do not add a grant number.",
+  "license_check": "cc-by-nc-nd-4.0 is Zenodo's identifier for CC-BY-NC-ND-4.0. If the Zenodo form offers or defaults to anything else, STOP."
+ }
+}

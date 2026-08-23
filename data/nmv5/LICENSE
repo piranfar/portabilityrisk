@@ -1,0 +1,58 @@
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+(CC BY-NC-ND 4.0)
+
+SPDX-License-Identifier: CC-BY-NC-ND-4.0
+
+Copyright (c) 2026 Vahhab Piranfar
+
+This dataset and its accompanying metadata are licensed under the Creative
+Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+
+The authoritative licence text is published by Creative Commons at:
+
+    https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+    Human-readable summary: https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+SUMMARY OF TERMS (the legal code above governs; this summary does not)
+
+  You are free to SHARE -- copy and redistribute the material in any medium or
+  format -- provided you follow the terms below.
+
+  ATTRIBUTION. You must give appropriate credit, provide a link to the licence,
+  and indicate if changes were made. Cite the Zenodo record with its DOI and
+  version, and the accompanying manuscript. The provenance fields in this
+  dataset must travel with the values.
+
+  NONCOMMERCIAL. You may not use the material for commercial purposes.
+
+  NODERIVATIVES. If you remix, transform or build upon the material, you may
+  not distribute the modified material.
+
+WHAT THIS DOES NOT RESTRICT
+
+  Verification. Downloading this dataset, re-running the published checks,
+  re-deriving the denominators and reporting a disagreement are reading, not
+  adapting. Nothing in this licence impedes checking the work.
+
+  Quoting under fair dealing or fair use, citing, and peer review.
+
+WHAT REQUIRES PERMISSION
+
+  Publishing a modified or derived table; pooling this dataset into an
+  aggregated public resource that redistributes a harmonised copy; and any
+  commercial use. Contact the author.
+
+SEPARATE TERMS APPLY TO
+
+  Analysis code, which is licensed Apache-2.0 and published at
+  https://github.com/piranfar/portabilityrisk. Running Apache-2.0 code over
+  this data does not place the output under Apache-2.0.
+
+  Source genome data. NCBI Assembly, BioSample and BioProject records remain
+  governed by NCBI's terms. This dataset contains accessions and computed
+  values derived from them, not redistributed sequence. No licence is applied
+  to third-party data or software by this deposit.
+
+  Third-party software and reference databases named in
+  PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv, which retain their
+  own licences.

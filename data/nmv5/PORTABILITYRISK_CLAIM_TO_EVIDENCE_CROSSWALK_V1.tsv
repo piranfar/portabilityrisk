@@ -1,0 +1,9 @@
+claim	manuscript_location	value	evidence_artefact	field	evidence_level
+total denominator	Results R1	74,349 acquired ARG occurrences	portabilityrisk_occurrence_portability_v1.tsv	row count	documented replicon location
+compartment split	Results R1	39,209 plasmid / 35,140 chromosome	portabilityrisk_occurrence_portability_v1.tsv	replicon_molecule_type	documented replicon location
+plasmid share, occurrence	Results R1	52.736 %	portabilityrisk_occurrence_portability_v1.tsv	replicon_molecule_type	documented replicon location
+plasmid share, genome-collapsed	Results R1	3,569 / 9,755 = 36.586 %	portabilityrisk_occurrence_portability_v1.tsv	distinct (assembly_version, replicon_molecule_type) pairs	documented replicon location
+five-class reconciliation	Results R2	A 18,837 / B 16,303 / C 7,170 / D 6,043 / E 25,996 = 74,349	portabilityrisk_occurrence_portability_v1.tsv	portability_class	mixed
+chromosomal MGE association	Results R4	46.39 % (16,303 / 35,140)	portabilityrisk_occurrence_portability_v1.tsv	portability_class == B over chromosomal rows	homology-based MGE proximity
+plasmid mobility architecture	Results R9	conjugative / mobilizable / marker-negative	portabilityrisk_occurrence_portability_v1.tsv	mobility_category	plasmid conjugative-potential evidence
+PROHIBITED	throughout	no transfer, conjugation, transposition or HGT event was observed or is claimed	PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	experimental transfer row	NOT MEASURED

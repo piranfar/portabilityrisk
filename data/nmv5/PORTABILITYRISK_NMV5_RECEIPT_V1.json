@@ -1,0 +1,39 @@
+{
+ "receipt": "PORTABILITYRISK_NMV5_RECEIPT",
+ "version": "1.0.0",
+ "date": "2026-08-23",
+ "owner": "Vahhab Piranfar",
+ "package": "portabilityrisk_nmv5_dataset_v1",
+ "dataset": {
+  "filename": "portabilityrisk_occurrence_portability_v1.tsv",
+  "rows": 74349,
+  "columns": 19,
+  "sha256": "957e529ae56c79593f85c45fe95cb8592fc111ffadb6dbfc1b22857faa88d564"
+ },
+ "canonical_source": {
+  "relative_path": "audit/data/derived/pr_context/out/determinant_portability_classes.tsv",
+  "sha256": "ce0c99d61ba8435895135b2cfa6c8a48aa41a03c07e1540c87092d3c1332617b",
+  "status": "PRIVATE, unchanged"
+ },
+ "reconciliation": {
+  "occurrences": 74349,
+  "chromosome": 35140,
+  "plasmid": 39209,
+  "A": 18837,
+  "B": 16303,
+  "C": 7170,
+  "D": 6043,
+  "E": 25996
+ },
+ "denominator_terminology": {
+  "genome_collapsed_event_share": "3569/9755 = 36.586 %",
+  "arithmetic_mean_of_per_genome_percentages": "35.932096 %",
+  "note": "distinct statistics; neither value changed, the terminology was corrected"
+ },
+ "licences": {
+  "dataset": "CC-BY-NC-ND-4.0",
+  "metadata": "CC-BY-NC-ND-4.0",
+  "code": "Apache-2.0"
+ },
+ "funding_statement": "This research received no specific grant from any funding agency in the public, commercial or not-for-profit sectors. Cloud-computing resources were supported through promotional credits provided by Oracle Cloud Infrastructure."
+}

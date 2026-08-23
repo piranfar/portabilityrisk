@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite this Zenodo record and the accompanying manuscript."
+title: "PortabilityRisk: occurrence-level portability architecture of acquired antimicrobial resistance determinants across complete bacterial genomes"
+abstract: >-
+  Occurrence-level computational assignments for 74,349 acquired antimicrobial
+  resistance gene occurrences across 6,288 closed complete Gram-negative
+  bacterial genomes. Each occurrence is resolved to a documented chromosome or
+  plasmid using NCBI molecule designations rather than prediction, and receives
+  one of five operational portability classes (A-E) combining documented
+  location, plasmid mobilization machinery and chromosomal mobile-element
+  context. Homology-based mobile-element proximity and structurally resolved
+  complete insertion-sequence detection are recorded as distinct evidence
+  levels. No transfer experiment, conjugation phenotype or active transposition
+  was measured. Data dictionaries, denominator and evidence-level dictionaries,
+  JSON schemas, a provenance map, software and database versions, checksums and
+  a standalone verification script are included.
+type: dataset
+version: 1.0.0
+license: CC-BY-NC-ND-4.0
+authors:
+  - family-names: Piranfar
+    given-names: Vahhab
+keywords:
+  - antimicrobial resistance
+  - plasmid
+  - chromosome
+  - mobile genetic element
+  - insertion sequence
+  - host-conditioned portability
+  - complete bacterial genomes
+  - AMR genomics
+  - Acinetobacter baumannii
+repository-code: "https://github.com/piranfar/portabilityrisk"

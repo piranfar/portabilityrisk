@@ -1,0 +1,60 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmv5/PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv",
+ "title": "PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv",
+ "description": "Row schema for PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv. Tab-separated, UTF-8, LF line endings, header row required.",
+ "type": "object",
+ "properties": {
+  "claim": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "manuscript_location": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "value": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "evidence_artefact": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "field": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "evidence_level": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  }
+ },
+ "required": [
+  "claim",
+  "manuscript_location",
+  "value",
+  "evidence_artefact",
+  "field",
+  "evidence_level"
+ ],
+ "additionalProperties": false
+}

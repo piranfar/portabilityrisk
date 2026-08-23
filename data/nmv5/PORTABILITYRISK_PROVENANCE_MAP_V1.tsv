@@ -1,0 +1,8 @@
+artefact	produced_by	governing_frozen_protocol	principal_inputs	notes
+portabilityrisk_occurrence_portability_v1.tsv	nmv5_build_derivative.py	frozen_portability_class_definitions.json + FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json	determinant_portability_classes.tsv (canonical, private)	public deposit derivative; one 100 %-empty column dropped, nothing else changed
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	nmv5_build_package.py	n/a	the field specification and the frozen protocols	curated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	nmv5_build_package.py	n/a	frozen protocols and recomputation from the dataset	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	nmv5_build_package.py	n/a	frozen protocols and validation receipts	curated
+PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv	nmv5_build_package.py	n/a	frozen protocols and the pinned environment lock	curated
+schemas/*.schema.json	nmv5_build_package.py	n/a	the dictionary and the deposited tables	generated
+verify_deposit.py	nmv5_build_package.py	n/a	n/a	standalone verifier a reader can run against the extracted archive

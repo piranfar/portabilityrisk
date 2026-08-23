@@ -1,0 +1,14 @@
+software	version	database_version	role	url	licence	notes
+AMRFinderPlus	4.2.7	2026-08-07.1	determinant calling	https://github.com/ncbi/amr	NCBI, public domain / see upstream	Produced the 184,538 raw records reduced to the 74,349 PRIMARY occurrences.
+MOB-suite (mob_typer)	3.1.9	v3.1.8 (frozen baseline)	plasmid relaxase / MPF / oriT typing	https://github.com/phac-nml/mob-suite	see upstream	Defines classes C, D, E. 3.1.9 is the newest release that exists; the robustness arm therefore tested BACKWARD to 3.1.8 plus an independent implementation.
+MOB-suite database	v2.0.0 (robustness arm)	v2.0.0	database-version sensitivity arm	https://github.com/phac-nml/mob-suite	see upstream	0.0000 % class transitions against the frozen baseline.
+CONJScan / MacSyFinder	as installed for NM-V3 Arm I	bundled models	independent implementation of conjugative-system detection	https://github.com/gem-pasteur/macsyfinder	see upstream	Concordance only; neither tool is treated as a truth standard. kappa 0.875 on the class E definition. Has no oriT model, so it covers class E fully and classes C and D only in part.
+ISEScan	1.7.3	bundled pHMMs	structural insertion-sequence detection	https://github.com/xiezhq/ISEScan	see upstream	Census over all 21,955 blocks, one thread per block, 0 tool failures.
+HMMER	3.3.2	n/a	profile HMM search inside ISEScan	http://hmmer.org	BSD-3-Clause	PINNED. The default environment solve returned 3.4; the environment was rebuilt to 3.3.2 before the census because NM-V1 had used 3.3.2 and transposase-ORF detection is sensitive to it.
+BLAST+	2.17.0	n/a	sequence search inside ISEScan and MOB-suite	https://blast.ncbi.nlm.nih.gov	NCBI, public domain	-
+FragGeneScan	1.32	n/a	ORF prediction inside ISEScan	https://sourceforge.net/projects/fraggenescan/	see upstream	-
+Biopython	1.88	n/a	sequence handling	https://biopython.org	Biopython licence	-
+Python	3.14.7 (NMIS) / 3.14.6 (NM-DIST)	n/a	analysis runtime	https://python.org	PSF	Two minor versions across modules; recorded rather than harmonised retrospectively.
+matplotlib	3.11.1	n/a	figure generation	https://matplotlib.org	matplotlib licence	SVG hash salt pinned and creation date suppressed so figures are byte-reproducible.
+NumPy	2.5.0	n/a	numerics	https://numpy.org	BSD-3-Clause	-
+SciPy	1.18.0	n/a	statistics	https://scipy.org	BSD-3-Clause	-

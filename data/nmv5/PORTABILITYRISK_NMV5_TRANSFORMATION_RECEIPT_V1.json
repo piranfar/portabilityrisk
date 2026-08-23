@@ -1,0 +1,54 @@
+{
+ "receipt": "PORTABILITYRISK_NMV5_TRANSFORMATION_RECEIPT",
+ "version": "1.0.0",
+ "date": "2026-08-23",
+ "transformation_script": "tools/public_release/nmv5_build_derivative.py",
+ "source": {
+  "relative_path": "audit/data/derived/pr_context/out/determinant_portability_classes.tsv",
+  "sha256": "ce0c99d61ba8435895135b2cfa6c8a48aa41a03c07e1540c87092d3c1332617b",
+  "bytes": 17826223,
+  "rows": 74349,
+  "columns": 20,
+  "status": "CANONICAL \u2014 retained privately, byte-for-byte unchanged"
+ },
+ "derivative": {
+  "filename": "portabilityrisk_occurrence_portability_v1.tsv",
+  "sha256": "957e529ae56c79593f85c45fe95cb8592fc111ffadb6dbfc1b22857faa88d564",
+  "bytes": 17751843,
+  "rows": 74349,
+  "columns": 19,
+  "status": "PUBLIC DEPOSIT DERIVATIVE \u2014 its digest differs from the canonical BY DESIGN and must never be quoted as the canonical digest"
+ },
+ "fields_removed": [
+  {
+   "name": "plasmidcall_predicted_location",
+   "empty_in_all_rows": true,
+   "reason": "reserved boundary column, 100 % empty across all 74,349 rows, and named for a sibling paper. Carrying an entirely empty column that names another manuscript into a public deposit adds no data and invites misreading."
+  }
+ ],
+ "fields_renamed": [],
+ "rows_removed": 0,
+ "rows_reordered": false,
+ "values_altered": false,
+ "proof": {
+  "row_count": true,
+  "no_extra_rows": true,
+  "every_retained_cell_identical": true,
+  "compartments": true,
+  "classes": true,
+  "A_plus_B": true,
+  "C_plus_D_plus_E": true,
+  "only_expected_column_dropped": true,
+  "no_column_renamed": true
+ },
+ "denominators_after_transformation": {
+  "total_occurrences": 74349,
+  "chromosome": 35140,
+  "plasmid": 39209,
+  "A": 18837,
+  "B": 16303,
+  "C": 7170,
+  "D": 6043,
+  "E": 25996
+ }
+}

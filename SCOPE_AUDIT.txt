@@ -1,14 +1,15 @@
 PORTABILITYRISK PUBLIC-REPOSITORY SCOPE AUDIT
-tree: <public repository root>   files: 189
+tree: <public repository root>   files: 220
 
 == 1. CLASSIFICATION ==
-  Paper 1 scientific artefact        178
-  repository boundary file           11
+  Paper 1 scientific artefact        206
+  repository boundary file           14
   UNCLASSIFIED files: none
 
 == 2. SIBLING-PAPER MENTIONS ==
-  boundary statements : 49 in 18 files
-  needing review      : 1
+  boundary statements : 53 in 22 files
+  needing review      : 2
+     SCOPE_AUDIT.txt  [plasmidcall]  smidcall]  "evidence_layer_mge": ("mge_sequence_annotation" if mge_done                                    and et == "direct_chromosome" else ""),             "plasmidcall_predicted_location
      code/context/pr_context_mobility_classes.py  [plasmidcall]  "evidence_layer_mge": ("mge_sequence_annotation" if mge_done                                    and et == "direct_chromosome" else ""),             "plasmidcall_predicted_location": ""})    
 
 == 3. UNRELATED CODE OR DATA ==
@@ -17,12 +18,20 @@ tree: <public repository root>   files: 189
 == 4. TABULAR FILES AND DICTIONARY COVERAGE ==
   file                                                        cols  dictionary     uncovered
   MANIFEST.tsv                                                   3  yes            
-  data/PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv        7  NO DICTIONARY  claim,manuscript_location,value,evidence_artefact,field,evidence_level
+  data/PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv        7  partial        evidence_artefact_sha256
   data/PORTABILITYRISK_DATA_DICTIONARY_V1.tsv                    8  yes            
   data/PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv             5  yes            
   data/PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv          6  yes            
-  data/PORTABILITYRISK_PROVENANCE_MAP_V1.tsv                     5  NO DICTIONARY  artefact,produced_by,frozen_protocol,principal_inputs,availability
+  data/PORTABILITYRISK_PROVENANCE_MAP_V1.tsv                     5  partial        frozen_protocol,availability
   data/PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv                    6  yes            
+  data/PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv            7  yes            
+  data/nmv5/MANIFEST.tsv                                         7  yes            
+  data/nmv5/PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.t     6  yes            
+  data/nmv5/PORTABILITYRISK_DATA_DICTIONARY_V1.tsv              12  yes            
+  data/nmv5/PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv        5  yes            
+  data/nmv5/PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv     6  yes            
+  data/nmv5/PORTABILITYRISK_PROVENANCE_MAP_V1.tsv                5  yes            
+  data/nmv5/PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V     7  yes            
   results/nmdist_occurrence_block_distances.tsv                 25  yes            
   results/nmdist_primary_estimates.tsv                          18  yes            
   results/nmdist_sensitivity_results.tsv                        14  yes            
@@ -46,7 +55,7 @@ tree: <public repository root>   files: 189
   validation/nmis_census_status.tsv                              5  yes            
 
 == 5. SCRIPTS NEEDING INPUT ABSENT FROM THE PUBLIC TREE ==
-  scripts: 55 total, 48 reference at least one absent input
+  scripts: 56 total, 49 reference at least one absent input
   code/validation/nmv1_build_r3.py                     16  e.g. NMV1_ADJUDICATION_UNBLINDING_KEY_V2.tsv, NMV1_AUDIT_MANIFEST.json, NMV1_AUDIT_MANIFEST_R3.json, NMV1_AUDIT_UNBLINDING_KEY.tsv
   code/context/pr_context_strat_and_inference.py       11  e.g. biosample_metadata.tsv, determinant_occurrences.tsv, plasmid_lineage_concentration.tsv, plasmid_mobility_annotation.tsv
   code/validation/nmv1_build_package_v2.py             10  e.g. NMV1_ADJUDICATION_BLINDED_PACKAGE_V1_SUPERSEDED_INSUFFICIENT_EVIDENCE.tsv, NMV1_ADJUDICATION_UNBLINDING_KEY_V1_SUPERSEDED_INSUFFICIENT_EVIDENCE.tsv, NMV1_ADJUDICATION_UNBLINDING_KEY_V2.tsv, NMV1_PACKAGE_V2_RECEIPT.json
@@ -79,10 +88,8 @@ tree: <public repository root>   files: 189
   code/validation/nmdist_verify.py                      3  e.g. arg_neighbourhood_windows.tsv, mge_feature_inventory.tsv, shared_context_blocks.tsv
 
 == 6. INTERNAL LINKS ==
-  broken: 2
-     README.md -> SCOPE_AUDIT.txt
-     README.md -> SCOPE_AUDIT.txt
+  broken: 0
 
 == 7. REPRODUCIBILITY MODE ==
   executable from the public tree alone : 7 script(s)
-  documentation-only (needs the deposit): 48 script(s)
+  documentation-only (needs the deposit): 49 script(s)

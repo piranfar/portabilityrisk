@@ -1,23 +1,23 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "$id": "portabilityrisk/MANIFEST.tsv",
- "title": "MANIFEST.tsv",
- "description": "Row schema for MANIFEST.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "$id": "portabilityrisk/PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv",
+ "title": "PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv",
+ "description": "Row schema for PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv. Tab-separated, UTF-8, LF, header row required.",
  "type": "object",
  "properties": {
-  "relative_path": {
+  "upload_path": {
    "type": [
     "string",
     "null"
    ],
-   "description": "Path within this repository."
+   "description": "UNCURATED: type inferred from data."
   },
   "bytes": {
    "type": [
     "integer",
     "null"
    ],
-   "description": "File size in bytes."
+   "description": "UNCURATED: type inferred from data."
   },
   "rows": {
    "type": [
@@ -52,11 +52,11 @@
     "string",
     "null"
    ],
-   "description": "Full 64-character SHA-256 of the file."
+   "description": "Full 64-character SHA-256 of the file as published."
   }
  },
  "required": [
-  "relative_path",
+  "upload_path",
   "bytes",
   "rows",
   "columns",

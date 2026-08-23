@@ -1,0 +1,52 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "portabilityrisk/nmv5/PORTABILITYRISK_PROVENANCE_MAP_V1.tsv",
+ "title": "PORTABILITYRISK_PROVENANCE_MAP_V1.tsv",
+ "description": "Row schema for PORTABILITYRISK_PROVENANCE_MAP_V1.tsv. Tab-separated, UTF-8, LF line endings, header row required.",
+ "type": "object",
+ "properties": {
+  "artefact": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "produced_by": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "governing_frozen_protocol": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "principal_inputs": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  },
+  "notes": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "See the data dictionary."
+  }
+ },
+ "required": [
+  "artefact",
+  "produced_by",
+  "governing_frozen_protocol",
+  "principal_inputs",
+  "notes"
+ ],
+ "additionalProperties": false
+}

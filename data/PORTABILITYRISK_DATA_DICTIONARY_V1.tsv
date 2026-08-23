@@ -27,6 +27,61 @@ PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv	columns	integer	integer	Number of columns
 PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv	sha256	text	identifier	Full 64-character SHA-256 of the file as published.	-	no	curated
 PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv	grain	text	category	One row represents one unit of this kind.	-	no	curated
 PORTABILITYRISK_TABLE_CATALOGUE_V1.tsv	availability	text	category	public, or private-only pending deposit.	-	no	curated
+PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv	upload_path	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv	bytes	integer	integer	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv	rows	integer	integer	Data rows excluding the header.	-	yes	curated
+PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv	columns	integer	integer	Number of columns.	-	yes	curated
+PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv	role	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv	licence	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_ZENODO_DEPOSIT_MANIFEST_V1.tsv	sha256	text	identifier	Full 64-character SHA-256 of the file as published.	-	no	curated
+MANIFEST.tsv	relative_path	text	identifier	Path within this repository.	-	no	curated
+MANIFEST.tsv	bytes	integer	integer	File size in bytes.	-	no	curated
+MANIFEST.tsv	rows	integer	integer	Data rows excluding the header.	-	yes	curated
+MANIFEST.tsv	columns	integer	integer	Number of columns.	-	yes	curated
+MANIFEST.tsv	role	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+MANIFEST.tsv	licence	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+MANIFEST.tsv	sha256	text	identifier	Full 64-character SHA-256 of the file.	-	no	curated
+PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv	claim	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv	manuscript_location	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv	value	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv	evidence_artefact	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv	field	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_CLAIM_TO_EVIDENCE_CROSSWALK_V1.tsv	evidence_level	text	category	Name of the evidence level.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	table	text	identifier	Basename of the table the row describes.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	column	text	identifier	Column name within that table.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	data_type	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	nullable	text	category	yes if empty values occur in the sampled rows.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	units	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	permitted_values	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	denominator	text	category	Which denominator the column is counted against.	-	no	curated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	derivation	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	source	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	interpretation	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	caveats	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_DATA_DICTIONARY_V1.tsv	observation_status	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	denominator	text	category	Which denominator the column is counted against.	-	no	curated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	size	text	integer	Number of units in the denominator.	-	no	curated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	definition	text	text	What the column means.	-	no	curated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	question_it_answers	text	text	The question this denominator is the right one for.	-	no	curated
+PORTABILITYRISK_DENOMINATOR_DICTIONARY_V1.tsv	notes	text	text	Cautions, and the values computed on this denominator.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	evidence_level	text	category	Name of the evidence level.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	layer	text	category	Which analysis layer the evidence level belongs to.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	definition	text	text	What the column means.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	basis	text	text	What the level is established by, and how it was validated.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	what_it_establishes	text	text	The claim the level licenses.	-	no	curated
+PORTABILITYRISK_EVIDENCE_LEVEL_DICTIONARY_V1.tsv	what_it_does_not_establish	text	text	The claims it does NOT license.	-	no	curated
+PORTABILITYRISK_PROVENANCE_MAP_V1.tsv	artefact	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_PROVENANCE_MAP_V1.tsv	produced_by	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_PROVENANCE_MAP_V1.tsv	governing_frozen_protocol	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_PROVENANCE_MAP_V1.tsv	principal_inputs	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_PROVENANCE_MAP_V1.tsv	notes	text	text	Cautions, and the values computed on this denominator.	-	no	curated
+PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv	software	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv	version	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv	database_version	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv	role	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv	url	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv	licence	text	text	UNCURATED: type inferred from data; no definition asserted.	-	no	uncurated
+PORTABILITYRISK_SOFTWARE_AND_DATABASE_VERSIONS_V1.tsv	notes	text	text	Cautions, and the values computed on this denominator.	-	no	curated
 nmdist_occurrence_block_distances.tsv	occurrence_id	text	identifier	Composite occurrence key: assembly|replicon|determinant|start|end.	occurrence	no	curated
 nmdist_occurrence_block_distances.tsv	block_id	text	identifier	Shared chromosomal context block identifier.	context block	no	curated
 nmdist_occurrence_block_distances.tsv	assembly_version	text	identifier	NCBI assembly accession with version.	genome	no	curated

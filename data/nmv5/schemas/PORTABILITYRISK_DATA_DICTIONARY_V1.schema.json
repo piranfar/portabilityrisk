@@ -1,8 +1,8 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "$id": "portabilityrisk/PORTABILITYRISK_DATA_DICTIONARY_V1.tsv",
+ "$id": "portabilityrisk/nmv5/PORTABILITYRISK_DATA_DICTIONARY_V1.tsv",
  "title": "PORTABILITYRISK_DATA_DICTIONARY_V1.tsv",
- "description": "Row schema for PORTABILITYRISK_DATA_DICTIONARY_V1.tsv. Tab-separated, UTF-8, LF, header row required.",
+ "description": "Row schema for PORTABILITYRISK_DATA_DICTIONARY_V1.tsv. Tab-separated, UTF-8, LF line endings, header row required.",
  "type": "object",
  "properties": {
   "table": {
@@ -10,84 +10,84 @@
     "string",
     "null"
    ],
-   "description": "Basename of the table the row describes."
+   "description": "See the data dictionary."
   },
   "column": {
    "type": [
     "string",
     "null"
    ],
-   "description": "Column name within that table."
+   "description": "See the data dictionary."
   },
   "data_type": {
    "type": [
     "string",
     "null"
    ],
-   "description": "UNCURATED: type inferred from data."
+   "description": "See the data dictionary."
   },
   "nullable": {
    "type": [
     "string",
     "null"
    ],
-   "description": "yes if empty values occur in the sampled rows."
+   "description": "See the data dictionary."
   },
   "units": {
    "type": [
     "string",
     "null"
    ],
-   "description": "UNCURATED: type inferred from data."
+   "description": "See the data dictionary."
   },
   "permitted_values": {
    "type": [
     "string",
     "null"
    ],
-   "description": "UNCURATED: type inferred from data."
+   "description": "See the data dictionary."
   },
   "denominator": {
    "type": [
     "string",
     "null"
    ],
-   "description": "Which denominator the column is counted against."
+   "description": "See the data dictionary."
   },
   "derivation": {
    "type": [
     "string",
     "null"
    ],
-   "description": "UNCURATED: type inferred from data."
+   "description": "See the data dictionary."
   },
   "source": {
    "type": [
     "string",
     "null"
    ],
-   "description": "UNCURATED: type inferred from data."
+   "description": "See the data dictionary."
   },
   "interpretation": {
    "type": [
     "string",
     "null"
    ],
-   "description": "UNCURATED: type inferred from data."
+   "description": "See the data dictionary."
   },
   "caveats": {
    "type": [
     "string",
     "null"
    ],
-   "description": "UNCURATED: type inferred from data."
+   "description": "See the data dictionary."
   },
   "observation_status": {
    "type": [
     "string",
     "null"
    ],
-   "description": "UNCURATED: type inferred from data."
+   "description": "See the data dictionary."
   }
  },
  "required": [

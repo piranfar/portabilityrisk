@@ -1,9 +1,9 @@
 PORTABILITYRISK PUBLIC-REPOSITORY SCOPE AUDIT
-tree: <public repository root>   files: 187
+tree: <public repository root>   files: 189
 
 == 1. CLASSIFICATION ==
   Paper 1 scientific artefact        178
-  repository boundary file           9
+  repository boundary file           11
   UNCLASSIFIED files: none
 
 == 2. SIBLING-PAPER MENTIONS ==

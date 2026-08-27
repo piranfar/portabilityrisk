@@ -1,0 +1,108 @@
+{
+ "receipt": "leverage diagnostic for the eight-species discordance fit",
+ "why": "the published T1 test reports leave-one-species-out residuals only. A referee will ask whether one point determines the slope, and the answer should be in the paper rather than in their notes.",
+ "source": "the eight-species table in the Supplementary discordance section, which is the published record of the fit",
+ "fit_reproduced_from_published_table": true,
+ "full_fit": {
+  "intercept": -1.421204,
+  "slope": 0.08064,
+  "r2": 0.027533,
+  "sxx": 4.879371,
+  "ssr": 1.120711
+ },
+ "published_fit": {
+  "intercept": -1.421185,
+  "slope": 0.080631,
+  "r2": 0.027524
+ },
+ "per_species": [
+  {
+   "species": "Enterobacter asburiae",
+   "logit_P": -0.1031,
+   "logit_M": -0.9834,
+   "hat": 0.125,
+   "residual": 0.4461,
+   "cooks_distance": 0.087,
+   "slope_without": 0.0815,
+   "r2_without": 0.035
+  },
+  {
+   "species": "Enterobacter cloacae",
+   "logit_P": 0.4119,
+   "logit_M": -0.9418,
+   "hat": 0.1777,
+   "residual": 0.4462,
+   "cooks_distance": 0.14,
+   "slope_without": 0.0243,
+   "r2_without": 0.0031
+  },
+  {
+   "species": "Enterobacter hormaechei",
+   "logit_P": 0.6969,
+   "logit_M": -1.6689,
+   "hat": 0.2535,
+   "residual": -0.3039,
+   "cooks_distance": 0.1125,
+   "slope_without": 0.1467,
+   "r2_without": 0.0825
+  },
+  {
+   "species": "Klebsiella aerogenes",
+   "logit_P": -0.0893,
+   "logit_M": -1.8601,
+   "hat": 0.125,
+   "residual": -0.4317,
+   "cooks_distance": 0.0815,
+   "slope_without": 0.0812,
+   "r2_without": 0.0342
+  },
+  {
+   "species": "Klebsiella michiganensis",
+   "logit_P": 0.3432,
+   "logit_M": -0.9322,
+   "hat": 0.1643,
+   "residual": 0.4613,
+   "cooks_distance": 0.1341,
+   "slope_without": 0.0311,
+   "r2_without": 0.0052
+  },
+  {
+   "species": "Klebsiella quasipneumoniae",
+   "logit_P": 0.356,
+   "logit_M": -1.7999,
+   "hat": 0.1667,
+   "residual": -0.4074,
+   "cooks_distance": 0.1066,
+   "slope_without": 0.1258,
+   "r2_without": 0.0739
+  },
+  {
+   "species": "Klebsiella variicola",
+   "logit_P": -0.4093,
+   "logit_M": -1.706,
+   "hat": 0.1452,
+   "residual": -0.2518,
+   "cooks_distance": 0.0337,
+   "slope_without": 0.0617,
+   "r2_without": 0.017
+  },
+  {
+   "species": "Pseudomonas aeruginosa",
+   "logit_P": -1.9661,
+   "logit_M": -1.5386,
+   "hat": 0.8425,
+   "residual": 0.0412,
+   "cooks_distance": 0.154,
+   "slope_without": 0.1809,
+   "r2_without": 0.0252
+  }
+ ],
+ "headline": {
+  "P_aeruginosa_hat": 0.8425,
+  "P_aeruginosa_cooks_distance": 0.154,
+  "slope_all_eight": 0.0806,
+  "slope_without_P_aeruginosa": 0.1809,
+  "r2_without_P_aeruginosa": 0.0252,
+  "interpretation": "one point carries most of the leverage and the slope more than doubles without it. The conclusion is unchanged - R² stays near zero and the slope interval covers zero either way - but the fit is not stable and the paper must say so."
+ }
+}

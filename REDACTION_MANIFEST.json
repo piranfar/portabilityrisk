@@ -254,6 +254,28 @@
       "names": "this repository"
      }
     ]
+   },
+   {
+    "script": "nmc1_lineage_weighted_null.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_C1_DIR",
+      "names": "the genome-wide census working directory"
+     },
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4d_leverage_diagnostic.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
    }
   ]
  }

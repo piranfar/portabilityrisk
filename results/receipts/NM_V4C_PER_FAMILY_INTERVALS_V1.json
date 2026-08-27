@@ -1,0 +1,588 @@
+{
+ "receipt": "per-family Wald intervals for the matched-family contrast",
+ "why": "Figure 1's legend said these were never computed or stored. The exported table carries ln(OR) and its variance, so the interval is exp(lnOR +/- 1.96*sqrt(var)) - arithmetic on an existing artefact, not a new analysis.",
+ "source": "nmv4c_family_host_vehicle.tsv",
+ "stored_variance_reproduces_woolf_from_counts": "58 of 58",
+ "families": [
+  {
+   "gene_family": "aac(3)",
+   "or": 23.2411,
+   "ci_lo": 15.9139,
+   "ci_hi": 33.942,
+   "excludes_1": true,
+   "stored_var": 0.037338,
+   "woolf_var_from_counts": 0.037338,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aac(6')",
+   "or": 19.5249,
+   "ci_lo": 10.2205,
+   "ci_hi": 37.2996,
+   "excludes_1": true,
+   "stored_var": 0.109066,
+   "woolf_var_from_counts": 0.109066,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aac(6')-Ib'",
+   "or": 2265.0,
+   "ci_lo": 198.953,
+   "ci_hi": 25786.1109,
+   "excludes_1": true,
+   "stored_var": 1.539956,
+   "woolf_var_from_counts": 1.539956,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aac(6')-Ib3",
+   "or": 12.5758,
+   "ci_lo": 2.6335,
+   "ci_hi": 60.0526,
+   "excludes_1": true,
+   "stored_var": 0.636291,
+   "woolf_var_from_counts": 0.636291,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aac(6')-Ib4",
+   "or": 5.3,
+   "ci_lo": 0.6666,
+   "ci_hi": 42.1371,
+   "excludes_1": false,
+   "stored_var": 1.118868,
+   "woolf_var_from_counts": 1.118868,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aacA16",
+   "or": 315.0,
+   "ci_lo": 5.463,
+   "ci_hi": 18163.1795,
+   "excludes_1": true,
+   "stored_var": 4.279365,
+   "woolf_var_from_counts": 4.279365,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aadA1",
+   "or": 2877.4737,
+   "ci_lo": 844.6522,
+   "ci_hi": 9802.6791,
+   "excludes_1": true,
+   "stored_var": 0.391099,
+   "woolf_var_from_counts": 0.391099,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aadA16",
+   "or": 85.9412,
+   "ci_lo": 3.2568,
+   "ci_hi": 2267.8372,
+   "excludes_1": true,
+   "stored_var": 2.788421,
+   "woolf_var_from_counts": 2.788421,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aadA2",
+   "or": 5.4015,
+   "ci_lo": 2.6344,
+   "ci_hi": 11.075,
+   "excludes_1": true,
+   "stored_var": 0.134204,
+   "woolf_var_from_counts": 0.134204,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aadA5",
+   "or": 505.9091,
+   "ci_lo": 26.7184,
+   "ci_hi": 9579.3303,
+   "excludes_1": true,
+   "stored_var": 2.25154,
+   "woolf_var_from_counts": 2.25154,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "ant(2'')",
+   "or": 12.5809,
+   "ci_lo": 6.0237,
+   "ci_hi": 26.2759,
+   "excludes_1": true,
+   "stored_var": 0.141189,
+   "woolf_var_from_counts": 0.141189,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aph(3'')",
+   "or": 99.1349,
+   "ci_lo": 68.7352,
+   "ci_hi": 142.9798,
+   "excludes_1": true,
+   "stored_var": 0.034912,
+   "woolf_var_from_counts": 0.034912,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aph(3')",
+   "or": 63.6813,
+   "ci_lo": 46.4552,
+   "ci_hi": 87.295,
+   "excludes_1": true,
+   "stored_var": 0.025895,
+   "woolf_var_from_counts": 0.025895,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aph(4)",
+   "or": 2.5758,
+   "ci_lo": 0.1007,
+   "ci_hi": 65.8664,
+   "excludes_1": false,
+   "stored_var": 2.735116,
+   "woolf_var_from_counts": 2.735116,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "aph(6)",
+   "or": 107.041,
+   "ci_lo": 73.9758,
+   "ci_hi": 154.8855,
+   "excludes_1": true,
+   "stored_var": 0.035535,
+   "woolf_var_from_counts": 0.035535,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "armA",
+   "or": 152.0381,
+   "ci_lo": 80.3951,
+   "ci_hi": 287.5247,
+   "excludes_1": true,
+   "stored_var": 0.105684,
+   "woolf_var_from_counts": 0.105684,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "arr",
+   "or": 10.4981,
+   "ci_lo": 4.8369,
+   "ci_hi": 22.7851,
+   "excludes_1": true,
+   "stored_var": 0.156313,
+   "woolf_var_from_counts": 0.156313,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "blaCARB",
+   "or": 3.1667,
+   "ci_lo": 0.4473,
+   "ci_hi": 22.4168,
+   "excludes_1": false,
+   "stored_var": 0.997076,
+   "woolf_var_from_counts": 0.997076,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "blaCMY",
+   "or": 573.0,
+   "ci_lo": 8.2652,
+   "ci_hi": 39724.2694,
+   "excludes_1": true,
+   "stored_var": 4.677138,
+   "woolf_var_from_counts": 4.677138,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "blaCTX-M",
+   "or": 58.3647,
+   "ci_lo": 3.3257,
+   "ci_hi": 1024.2794,
+   "excludes_1": true,
+   "stored_var": 2.136717,
+   "woolf_var_from_counts": 2.136717,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "blaGES",
+   "or": 1.8696,
+   "ci_lo": 0.0348,
+   "ci_hi": 100.5413,
+   "excludes_1": false,
+   "stored_var": 4.133468,
+   "woolf_var_from_counts": 4.133468,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "blaIMP",
+   "or": 15.25,
+   "ci_lo": 0.9431,
+   "ci_hi": 246.6019,
+   "excludes_1": false,
+   "stored_var": 2.016393,
+   "woolf_var_from_counts": 2.016393,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "blaNDM",
+   "or": 44.4375,
+   "ci_lo": 22.2763,
+   "ci_hi": 88.6454,
+   "excludes_1": true,
+   "stored_var": 0.124134,
+   "woolf_var_from_counts": 0.124134,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "blaOXA",
+   "or": 44.2922,
+   "ci_lo": 35.0008,
+   "ci_hi": 56.05,
+   "excludes_1": true,
+   "stored_var": 0.014429,
+   "woolf_var_from_counts": 0.014429,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "blaPER",
+   "or": 1.7895,
+   "ci_lo": 0.1486,
+   "ci_hi": 21.542,
+   "excludes_1": false,
+   "stored_var": 1.611455,
+   "woolf_var_from_counts": 1.611455,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "blaSHV",
+   "or": 11.7483,
+   "ci_lo": 0.6051,
+   "ci_hi": 228.0887,
+   "excludes_1": false,
+   "stored_var": 2.29001,
+   "woolf_var_from_counts": 2.29001,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "blaTEM",
+   "or": 1341.7095,
+   "ci_lo": 577.6936,
+   "ci_hi": 3116.1589,
+   "excludes_1": true,
+   "stored_var": 0.184837,
+   "woolf_var_from_counts": 0.184837,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "ble",
+   "or": 43.1605,
+   "ci_lo": 21.2328,
+   "ci_hi": 87.7336,
+   "excludes_1": true,
+   "stored_var": 0.130992,
+   "woolf_var_from_counts": 0.130992,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "catA1",
+   "or": 792.5676,
+   "ci_lo": 46.3939,
+   "ci_hi": 13539.7865,
+   "excludes_1": true,
+   "stored_var": 2.096748,
+   "woolf_var_from_counts": 2.096748,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "catB2",
+   "or": 23.0,
+   "ci_lo": 0.823,
+   "ci_hi": 642.7394,
+   "excludes_1": false,
+   "stored_var": 2.886957,
+   "woolf_var_from_counts": 2.886957,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "catB3",
+   "or": 31.3542,
+   "ci_lo": 3.6237,
+   "ci_hi": 271.2925,
+   "excludes_1": true,
+   "stored_var": 1.212078,
+   "woolf_var_from_counts": 1.212078,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "catB8",
+   "or": 432.6,
+   "ci_lo": 17.3548,
+   "ci_hi": 10783.3604,
+   "excludes_1": true,
+   "stored_var": 2.692187,
+   "woolf_var_from_counts": 2.692187,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "cmlA",
+   "or": 39.0,
+   "ci_lo": 1.2772,
+   "ci_hi": 1190.9132,
+   "excludes_1": true,
+   "stored_var": 3.042735,
+   "woolf_var_from_counts": 3.042735,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "cmlA1",
+   "or": 32.8889,
+   "ci_lo": 2.7186,
+   "ci_hi": 397.886,
+   "excludes_1": true,
+   "stored_var": 1.617868,
+   "woolf_var_from_counts": 1.617868,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "cmlA5",
+   "or": 132.6585,
+   "ci_lo": 7.4834,
+   "ci_hi": 2351.6336,
+   "excludes_1": true,
+   "stored_var": 2.151741,
+   "woolf_var_from_counts": 2.151741,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "dfrA1",
+   "or": 12.8333,
+   "ci_lo": 4.981,
+   "ci_hi": 33.0646,
+   "excludes_1": true,
+   "stored_var": 0.23316,
+   "woolf_var_from_counts": 0.23316,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "dfrA12",
+   "or": 43.2609,
+   "ci_lo": 1.7299,
+   "ci_hi": 1081.888,
+   "excludes_1": true,
+   "stored_var": 2.697662,
+   "woolf_var_from_counts": 2.697662,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "dfrA14",
+   "or": 62.1304,
+   "ci_lo": 2.4853,
+   "ci_hi": 1553.2207,
+   "excludes_1": true,
+   "stored_var": 2.697052,
+   "woolf_var_from_counts": 2.697052,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "dfrA16",
+   "or": 0.7778,
+   "ci_lo": 0.0187,
+   "ci_hi": 32.3738,
+   "excludes_1": false,
+   "stored_var": 3.619048,
+   "woolf_var_from_counts": 3.619048,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "dfrA17",
+   "or": 137.0,
+   "ci_lo": 6.3372,
+   "ci_hi": 2961.7123,
+   "excludes_1": true,
+   "stored_var": 2.459043,
+   "woolf_var_from_counts": 2.459043,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "dfrA19",
+   "or": 40.0,
+   "ci_lo": 3.4181,
+   "ci_hi": 468.0895,
+   "excludes_1": true,
+   "stored_var": 1.575,
+   "woolf_var_from_counts": 1.575,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "dfrA27",
+   "or": 87.3529,
+   "ci_lo": 3.3104,
+   "ci_hi": 2305.0014,
+   "excludes_1": true,
+   "stored_var": 2.788354,
+   "woolf_var_from_counts": 2.788354,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "dfrB1",
+   "or": 65.0,
+   "ci_lo": 0.9918,
+   "ci_hi": 4259.7957,
+   "excludes_1": false,
+   "stored_var": 4.553846,
+   "woolf_var_from_counts": 4.553846,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "erm(B)",
+   "or": 10.8333,
+   "ci_lo": 0.5989,
+   "ci_hi": 195.9568,
+   "excludes_1": false,
+   "stored_var": 2.182051,
+   "woolf_var_from_counts": 2.182051,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "floR",
+   "or": 32.0197,
+   "ci_lo": 14.9662,
+   "ci_hi": 68.5051,
+   "excludes_1": true,
+   "stored_var": 0.150574,
+   "woolf_var_from_counts": 0.150574,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "floR2",
+   "or": 685.0,
+   "ci_lo": 11.1481,
+   "ci_hi": 42089.9654,
+   "excludes_1": true,
+   "stored_var": 4.414599,
+   "woolf_var_from_counts": 4.414599,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "fosA3",
+   "or": 79.3636,
+   "ci_lo": 2.8924,
+   "ci_hi": 2177.6677,
+   "excludes_1": true,
+   "stored_var": 2.855358,
+   "woolf_var_from_counts": 2.855358,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "mph(E)",
+   "or": 57.7453,
+   "ci_lo": 34.2791,
+   "ci_hi": 97.2757,
+   "excludes_1": true,
+   "stored_var": 0.070796,
+   "woolf_var_from_counts": 0.070796,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "msr(E)",
+   "or": 69.4991,
+   "ci_lo": 40.1143,
+   "ci_hi": 120.409,
+   "excludes_1": true,
+   "stored_var": 0.078623,
+   "woolf_var_from_counts": 0.078623,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "rmtC",
+   "or": 21.0,
+   "ci_lo": 0.6573,
+   "ci_hi": 670.9439,
+   "excludes_1": false,
+   "stored_var": 3.12381,
+   "woolf_var_from_counts": 3.12381,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "sat2",
+   "or": 6.1364,
+   "ci_lo": 1.3281,
+   "ci_hi": 28.3533,
+   "excludes_1": true,
+   "stored_var": 0.609764,
+   "woolf_var_from_counts": 0.609764,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "sul1",
+   "or": 25.1951,
+   "ci_lo": 19.1573,
+   "ci_hi": 33.1359,
+   "excludes_1": true,
+   "stored_var": 0.019538,
+   "woolf_var_from_counts": 0.019538,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "sul2",
+   "or": 54.0583,
+   "ci_lo": 37.8671,
+   "ci_hi": 77.1726,
+   "excludes_1": true,
+   "stored_var": 0.032987,
+   "woolf_var_from_counts": 0.032987,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "tet(39)",
+   "or": 0.0667,
+   "ci_lo": 0.0009,
+   "ci_hi": 4.6934,
+   "excludes_1": false,
+   "stored_var": 4.711111,
+   "woolf_var_from_counts": 4.711111,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "tet(A)",
+   "or": 617.1849,
+   "ci_lo": 36.743,
+   "ci_hi": 10367.0733,
+   "excludes_1": true,
+   "stored_var": 2.071868,
+   "woolf_var_from_counts": 2.071868,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "tet(B)",
+   "or": 37.5848,
+   "ci_lo": 17.8511,
+   "ci_hi": 79.1333,
+   "excludes_1": true,
+   "stored_var": 0.144297,
+   "woolf_var_from_counts": 0.144297,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "tet(G)",
+   "or": 228.3333,
+   "ci_lo": 7.3178,
+   "ci_hi": 7124.5322,
+   "excludes_1": true,
+   "stored_var": 3.081265,
+   "woolf_var_from_counts": 3.081265,
+   "var_agrees": true
+  },
+  {
+   "gene_family": "tet(M)",
+   "or": 3.2857,
+   "ci_lo": 0.0545,
+   "ci_hi": 197.9722,
+   "excludes_1": false,
+   "stored_var": 4.372671,
+   "woolf_var_from_counts": 4.372671,
+   "var_agrees": true
+  }
+ ]
+}

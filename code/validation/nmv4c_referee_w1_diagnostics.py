@@ -45,9 +45,9 @@ import sys
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-REPO = "" + _dir("PORTABILITYRISK_REPO_DIR") + ""
+REPO = _dir("PORTABILITYRISK_REPO_DIR")
 NM = REPO + "docs/nature_microbiology/"
-TABLE = ("" + _dir("PORTABILITYRISK_DEPOSIT_DIR") + ""
+TABLE = (_dir("PORTABILITYRISK_DEPOSIT_DIR")
          "portabilityrisk_occurrence_portability_v1.tsv")
 MLST = NM + "NM_V4C_MLST_CALLS_V1.tsv"
 AMRPROT = REPO + ".cache/model2_g_a/amrfinder_db/2026-08-07.1/AMRProt.fa"

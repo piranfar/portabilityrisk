@@ -1,0 +1,20 @@
+{
+ "amendment": "NM-C1-008",
+ "arm": {
+  "estimator": "unchanged; observed and expected read from the saved null matrices c1_4_matrices.npz, only the weights differ",
+  "name": "lineage-balanced",
+  "rule": "each chromosomal occurrence is weighted by 1/k, where k is the number of occurrences sharing its (host, sequence type). A heavily sequenced clone then contributes the same total weight as a singleton lineage.",
+  "untypeable": "a genome whose scheme returns ST '-' is its own singleton lineage, not pooled, because pooling them would create one artificial mega-lineage out of the most divergent genomes"
+ },
+ "decision_rule": {
+  "effect_is_lineage_artefact_if": "A. baumannii lineage-balanced enrichment falls below 8.46, or the A. baumannii / Klebsiella ratio below 1.5",
+  "no_threshold_may_move": true,
+  "reported_regardless": "the arm and the two NOT EVALUABLE groups, whatever it shows",
+  "thresholds_reused_from": "NM-C1-006 and NM-C1-007, deliberately, rather than chosen now"
+ },
+ "frozen_before_any_outcome_was_scored": true,
+ "raised_by": "the paper argues BioProject balancing is not lineage adjustment, then does not offer a lineage-balanced weighting for its own primary enrichment",
+ "scope_limit": "sequence types exist only for the 4,240 genomes of the primary contrast. P. aeruginosa and Enterobacter were never typed and are reported NOT EVALUABLE for this weighting.",
+ "sha256_of_body": "26517b920be48018910ab5a74903250d3115e0f1948cdab7457ae9160df8ed88",
+ "title": "Lineage-balanced weighting of the genome-wide background null"
+}

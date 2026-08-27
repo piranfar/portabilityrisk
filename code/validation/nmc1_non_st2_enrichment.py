@@ -50,7 +50,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 NM = _dir("PORTABILITYRISK_REPO_DIR") + "docs/nature_microbiology/"
 AMEND = NM + "NM_C1_NON_ST2_ENRICHMENT_AMENDMENT_007.json"
-MATS = "" + _dir("PORTABILITYRISK_C1_DIR") + "c1_4_matrices.npz"
+MATS = _dir("PORTABILITYRISK_C1_DIR") + "c1_4_matrices.npz"
 MLST = NM + "NM_V4C_MLST_CALLS_V1.tsv"
 OUT = NM + "NM_C1_NON_ST2_ENRICHMENT_RESULTS_V1.json"
 

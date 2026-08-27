@@ -1,0 +1,44 @@
+{
+ "receipt": "NM-C1-008 lineage-balanced weighting of the background null",
+ "amendment_sha256_of_body": "26517b920be48018910ab5a74903250d3115e0f1948cdab7457ae9160df8ed88",
+ "amendment_sha256_of_file": "f12f4dd0221677d23f63add63ab81322c2039d2735960fad7e08e7b5185ea935",
+ "inputs": {
+  "null_matrices": "8fe3f580447ae72d66f95b8b7dee5d4fe520ec079cf9174bb2c3b031f5db86d8",
+  "mlst_calls": "89dcfb39733e8afd9094ec91393c95a89aa967a1067bd1839a17e9d938965abd"
+ },
+ "results": {
+  "A. baumannii": {
+   "n": 8005,
+   "effective_lineages": 145,
+   "observed": 0.2719,
+   "expected": 0.0352,
+   "enrichment": 7.72
+  },
+  "Klebsiella group": {
+   "n": 15568,
+   "effective_lineages": 1128,
+   "observed": 0.0283,
+   "expected": 0.0156,
+   "enrichment": 1.81
+  },
+  "P. aeruginosa": {
+   "status": "NOT EVALUABLE",
+   "why": "no sequence types were called for this group"
+  },
+  "Enterobacter group": {
+   "status": "NOT EVALUABLE",
+   "why": "no sequence types were called for this group"
+  }
+ },
+ "summary": {
+  "AB_enrichment": 7.72,
+  "AB_over_Klebsiella": 4.265
+ },
+ "decision_rule": {
+  "effect_is_lineage_artefact_if": "A. baumannii lineage-balanced enrichment falls below 8.46, or the A. baumannii / Klebsiella ratio below 1.5",
+  "no_threshold_may_move": true,
+  "reported_regardless": "the arm and the two NOT EVALUABLE groups, whatever it shows",
+  "thresholds_reused_from": "NM-C1-006 and NM-C1-007, deliberately, rather than chosen now"
+ },
+ "effect_is_lineage_artefact": true
+}

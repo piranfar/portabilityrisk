@@ -28,11 +28,11 @@ import sys
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-REPO = "" + _dir("PORTABILITYRISK_REPO_DIR") + ""
+REPO = _dir("PORTABILITYRISK_REPO_DIR")
 NM = REPO + "docs/nature_microbiology/"
 AMEND = NM + "NM_V4C_REFEREE_ANALYSES_AMENDMENT_004.json"
 MLST = NM + "NM_V4C_MLST_CALLS_V1.tsv"
-TABLE = ("" + _dir("PORTABILITYRISK_DEPOSIT_DIR") + ""
+TABLE = (_dir("PORTABILITYRISK_DEPOSIT_DIR")
          "portabilityrisk_occurrence_portability_v1.tsv")
 OUT = NM + "NM_V4C_REFEREE_ANALYSES_RESULTS_V1.json"
 

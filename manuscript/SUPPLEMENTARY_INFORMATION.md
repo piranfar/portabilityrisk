@@ -9,7 +9,7 @@ Vahhab Piranfar
 
 # Supplementary Methods
 
-## Supplementary Method 1 | Blinded expert adjudication of the chromosomal mobile-element layer
+## Supplementary Method 1 | Blinded internal adjudication of the chromosomal mobile-element layer
 
 **Design.** 120 chromosomal context blocks were drawn from a frozen 1,283-block sampling frame under
 a stratified design registered before any block was drawn. Strata and allocations were: A (106
@@ -56,8 +56,7 @@ panel showed one complete element at 17,922–19,125 with bilateral 20 bp invert
 internal open reading frame, in a 20,858 bp circular block with no boundary problem and normal tool
 completion.
 
-**Scope limitation, binding.** This audit validates the MOBILE versus QUIESCENT discrimination only.
-It cannot validate the NON_EVALUABLE state and cannot produce an integron-specific estimate, because
+**Scope limitation, binding.** This audit establishes rubric consistency for the MOBILE versus QUIESCENT discrimination only, and is not a validation: the adjudicator built neither the pipeline nor the scoring code but is the author. It cannot establish consistency for the NON_EVALUABLE state and cannot produce an integron-specific estimate, because
 the unused population contained zero NON_EVALUABLE and zero integron-exclusive blocks. Any sentence
 citing the 0.9920 figure carries that boundary.
 
@@ -800,7 +799,96 @@ not addressed by it.
 ---
 
 
-## Supplementary Result 14 | The matched-family analysis in full
+## Supplementary Result 14 | Accessory context: a local null and an island stratification
+
+Registered in `NM_C1_ACCESSORY_CONTEXT_AMENDMENT_009.json` before either arm was computed,
+reusing the contrast floor of 1.5 already registered for the composite-element, non-ST2
+and lineage-balanced arms rather than choosing a new one.
+
+The registered null relocates an occurrence anywhere on its own chromosome. That preserves the
+chromosome's element density exactly, but not the occurrence's *position within* the chromosome:
+resistance genes sit in accessory regions, insertion sequences accumulate in the same regions,
+and a chromosome-wide null will mostly place an occurrence in core sequence where elements are
+sparse. The enrichment could then be a statement about where accessory DNA is rather than about
+where resistance genes are within it.
+
+### ARM LOC — a local relocation null
+
+Identical to the registered null in every respect except the relocation range: each
+occurrence moves uniformly within ±*R* of its own start instead of anywhere on the
+chromosome. Interval length, chromosome, genome, species and BioProject identity are
+preserved; circular chromosomes wrap; linear chromosomes exclude positions whose ±10 kb
+window would run past an end. *R* = 50 kb and *R* = 100 kb were registered together, so
+neither could be chosen after seeing the other. 2,000 permutations, seed 20260827, seeded
+per chromosome. ISEScan was not rerun.
+
+One deliberate difference from the registered null: relocated intervals are not forced to be
+mutually non-overlapping. Inside a ±50 kb window around a cluster of resistance genes that
+constraint is often unsatisfiable, and it does not enter this estimator — each occurrence's
+distance depends only on its own interval and the frozen element coordinates, never on where
+the other occurrences landed.
+
+| group | *n* | observed | expected | enrichment | excludes null |
+|---|---:|---:|---:|---:|---|
+| **±100 kb** | | | | | |
+| *A. baumannii* | 8,005 | 0.5786 | 0.0804 | **7.19** | yes |
+| *Klebsiella group* | 15,568 | 0.1206 | 0.0366 | **3.30** | yes |
+| *P. aeruginosa* | 7,150 | 0.0958 | 0.0274 | **3.50** | yes |
+| *Enterobacter group* | 3,099 | 0.0720 | 0.0282 | **2.55** | yes |
+| **±50 kb** | | | | | |
+| *A. baumannii* | 8,005 | 0.5786 | 0.1321 | **4.38** | yes |
+| *Klebsiella group* | 15,568 | 0.1206 | 0.0465 | **2.59** | yes |
+| *P. aeruginosa* | 7,150 | 0.0958 | 0.0442 | **2.17** | yes |
+| *Enterobacter group* | 3,099 | 0.0720 | 0.0403 | **1.78** | yes |
+
+**The accessory explanation is real and large, and it is not the whole effect.** The
+expected detection fraction for *A. baumannii* rises from 0.034 under the chromosome-wide
+null to 0.0804 at ±100 kb and 0.1321 at ±50 kb: the neighbourhoods around resistance genes are
+far more element-dense than their chromosomes are. The enrichment falls with it, 16.91 to
+7.19 to 4.38. It does not vanish. Every group still excludes its null interval, and the
+*A. baumannii* / *Klebsiella* contrast holds at 2.18 and 1.69, above the registered floor of 1.5
+but below every previous adjustment. **1.69 is the new minimum of the reported contrast range.**
+
+### ARM ISL — a resistance-island stratification
+
+Occurrences on a replicon were single-linkage clustered at a 10,000 bp gap; a cluster of ≥3
+occurrences was treated as a resistance island. 9,498 of 35,140 occurrences (27.0%) fall in one.
+The enrichment was then recomputed within each stratum from the existing null matrices, with
+no new permutation.
+
+| group | stratum | *n* | observed | expected | enrichment |
+|---|---|---:|---:|---:|---:|
+| *A. baumannii* | island | 4,384 | 0.6307 | 0.0344 | **18.32** |
+| *A. baumannii* | isolated | 3,621 | 0.5156 | 0.0340 | **15.18** |
+| *Klebsiella group* | island | 1,612 | 0.4721 | 0.0228 | **20.69** |
+| *Klebsiella group* | isolated | 13,956 | 0.0800 | 0.0188 | **4.26** |
+| *P. aeruginosa* | island | 2,457 | 0.2475 | 0.0138 | **17.92** |
+| *P. aeruginosa* | isolated | 4,693 | 0.0164 | 0.0089 | **1.85** |
+| *Enterobacter group* | island | 327 | 0.4618 | 0.0187 | **24.73** |
+| *Enterobacter group* | isolated | 2,772 | 0.0260 | 0.0139 | **1.87** |
+
+**The two hosts behave differently, and that is the result.** *Klebsiella*'s enrichment is
+largely an island phenomenon — 20.69 inside multi-gene islands against 4.26 outside. *A. baumannii*'s
+is not — 18.32 against 15.18. The contrast therefore *rises* outside islands, to 3.56, against
+2.69 unstratified. *P. aeruginosa* and the *Enterobacter* group behave like *Klebsiella*
+(1.85 and 1.87 outside islands).
+
+### What this is not
+
+ARM ISL is a **structural proxy**. It is not a core-versus-accessory partition, and it does
+not identify AbaR or AbGRI islands by their backbone or their *comM* insertion site; it
+identifies multi-gene resistance clusters, which is a broader and cruder category. ARM LOC is
+an **approximation** to an accessory-restricted null, not that null: no core-genome
+alignment exists in this project, so the true accessory partition cannot be drawn from any
+tracked artefact. Both are reported as what they are.
+
+Coding versus intergenic position, local gene density and recombination hotspots remain
+unaddressed by either arm.
+
+---
+
+
+## Supplementary Result 15 | The matched-family analysis in full
 
 Matched-family contrasts ask whether the *same* gene family occupies different routes in different
 hosts, which removes gene-composition differences between species as an explanation. Two frozen
@@ -879,7 +967,7 @@ threshold. Cochran's *Q* is reported by NM-V4C but not by the three-architecture
 stores *I*² only. These are limitations of the frozen runs and are stated rather than filled in.
 
 
-## Supplementary Result 15 | Per-family intervals for the matched-family contrast
+## Supplementary Result 16 | Per-family intervals for the matched-family contrast
 
 An earlier revision of Figure 1 drew no per-family interval and said they had never been computed
 or stored. That was wrong. The exported table `nmv4c_family_host_vehicle.tsv` carries `ln_or` and
@@ -899,7 +987,7 @@ they are would have been.
 ---
 
 
-## Supplementary Result 16 | Why the within-chromosome contrast is not reported
+## Supplementary Result 17 | Why the within-chromosome contrast is not reported
 
 Registered in `NM_V4C_REFEREE_ANALYSES_AMENDMENT_004.json` and
 `NM_V4C_MARGINAL_ADJACENCY_AMENDMENT_005.json`. This section reports an analysis that
@@ -951,7 +1039,7 @@ next person does not have to rediscover it.
 ---
 
 
-## Supplementary Result 17 | Leverage in the eight-species fit
+## Supplementary Result 18 | Leverage in the eight-species fit
 
 The discordance argument rests on an ordinary least-squares fit of logit(*M*) on logit(*P*) over
 eight confirmation species. *P. aeruginosa* sits at logit(*P*) = −1.97 while the other seven lie
@@ -982,7 +1070,7 @@ diagnostic describes the fit the paper reports and not a re-fit of it.
 
 ---
 
-## Supplementary Result 18 | The discordance analysis in full
+## Supplementary Result 19 | The discordance analysis in full
 
 ### The registered design
 
@@ -1079,7 +1167,7 @@ and the fit is unweighted ordinary least squares on eight points; it establishes
 across these species and does not extrapolate to Gram-negative bacteria at large.
 
 
-## Supplementary Result 19 | Cargo convergence is confounded with replicon length
+## Supplementary Result 20 | Cargo convergence is confounded with replicon length
 
 Conjugation-consistent replicons are larger, and larger replicons carry more of everything.
 The unstratified difference in the share carrying three or more drug classes is **+19.86
@@ -1107,7 +1195,7 @@ confounded, not by how much.
 ---
 
 
-## Supplementary Result 20 | Lineage adjustment of the matched-family contrast
+## Supplementary Result 21 | Lineage adjustment of the matched-family contrast
 
 Registered in `NM_V4C_LINEAGE_ADJUSTMENT_AMENDMENT_002.json` before any arm was computed,
 including the three outcomes the result could take and what each would require of the
@@ -1185,13 +1273,12 @@ was not performed.
 
 ---
 
-## Supplementary Result 21 | Robustness and validation
+## Supplementary Result 22 | Robustness and internal audits
 
 **Blinded adjudication.** See Supplementary Method 1 for the full design. Design-weighted agreement
 between the rule-engine state and the adjudication was **0.9920** (95% CI 0.9761–1.0000) on 120
 stratified blocks, against a registered gate of ≥0.90 with a bootstrap lower bound ≥0.80. Raw
-agreement was 119 of 120. This result validates the MOBILE versus QUIESCENT discrimination only; it
-cannot validate the NON_EVALUABLE state and cannot produce an integron-specific estimate.
+agreement was 119 of 120. This audit establishes rubric consistency for the MOBILE versus QUIESCENT discrimination only; it is not an independent validation, and it cannot establish consistency for the NON_EVALUABLE state and cannot produce an integron-specific estimate.
 
 **Tool and database version invariance.** Re-running the plasmid mobility layer under a different
 MOB-suite version and a different marker database produced **no class transitions**.
@@ -1210,7 +1297,7 @@ at 1 kb by at most 0.0140 on a baseline of 0.4186.
 **Independent re-derivation.** 35 checks re-derived the published structural quantities from raw
 tool output; 15 further checks re-derived the denominator flow. Both returned zero disagreements.
 
-## Supplementary Result 22 | Denominators, and why three correct numbers differ
+## Supplementary Result 23 | Denominators, and why three correct numbers differ
 
 Three plasmid-share figures appear in this study. All three are correct and they answer different
 questions; the denominator must be quoted with the number.
@@ -1231,7 +1318,7 @@ weighting counts the same neighbourhood once per gene in it; block weighting cou
 are reported throughout, and the contrast between species is robust to the choice while the absolute
 level is not.
 
-## Supplementary Result 23 | The chromosomal mobile compartment, under four denominators
+## Supplementary Result 24 | The chromosomal mobile compartment, under four denominators
 
 This section stood in the main text of V3. It moves here unchanged under the journal's
 word limit; not one word is altered, and no claim it makes is withdrawn.
@@ -1261,7 +1348,7 @@ detections fall within 2 kb; and the host ordering survives the stricter structu
 half of what a plasmid-fraction summary scores as stable is in mobile-associated context.
 Chromosomal location is not fixity.
 
-## Supplementary Result 24 | Re-analysis of Jia et al. 2026
+## Supplementary Result 25 | Re-analysis of Jia et al. 2026
 
 Jia et al. conclude that AMR mobility is dictated by gene function rather than by the host
 bacterium. Their deposited data (OSF `10.17605/OSF.IO/WE3TX`, MIT licence) were re-analysed
@@ -1309,7 +1396,7 @@ occurrences: chromosomal and non-mobile in 75.8% of *A. baumannii* occurrences (
 > be collapsed at study level in that dataset by us or by anyone.
 
 
-## Supplementary Result 25 | The matching unit, and pooling under heterogeneity
+## Supplementary Result 26 | The matching unit, and pooling under heterogeneity
 
 Registered in `NM_V4C_MATCHING_UNIT_AMENDMENT_003.json` before either question was computed.
 
@@ -1368,7 +1455,7 @@ the more misleading choice, not because it is the better estimator.
 ---
 
 
-## Supplementary Result 26 | Provenance of the headline quantities
+## Supplementary Result 27 | Provenance of the headline quantities
 
 Each value below is traced to the file that holds it, the arithmetic that produces it, and the
 script that computed it. Two entries carry an explicit provenance caveat rather than a clean chain;

@@ -1,0 +1,218 @@
+{
+ "receipt": "NM-C1-009 accessory-context arms",
+ "amendment_sha256_of_body": "e1b331b9cd2b543a103d435e3bf0738e8f15423ce420c2670b62104eb4b958ee",
+ "amendment_sha256_of_file": "fb514596d9c7e2b0ff24ccbb158d94341698ef4a9b5e0d76a0ae09018375cdea",
+ "inputs": {
+  "c1_4_matrices.npz": "8fe3f580447ae72d66f95b8b7dee5d4fe520ec079cf9174bb2c3b031f5db86d8",
+  "genome_wide_is_elements.tsv": "4b8f3d043b66ce3ed8ffe2f87b4cc2ea2064152047d99da0cab973647e807997",
+  "NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv": "955c2c7cabbc0adb347922e19503dc06ee83b4335c66960e25a8f7b8a81880ae"
+ },
+ "island_definition": {
+  "gap_bp": 10000,
+  "min_occurrences": 3,
+  "island_occurrences": 9498,
+  "total_occurrences": 35140
+ },
+ "ARM_ISL": {
+  "A. baumannii": {
+   "island": {
+    "n": 4384,
+    "observed": 0.630703,
+    "expected": 0.034429,
+    "null_ci95": [
+     0.028969,
+     0.039918
+    ],
+    "excludes_null": true,
+    "enrichment": 18.3191
+   },
+   "isolated": {
+    "n": 3621,
+    "observed": 0.515603,
+    "expected": 0.033977,
+    "null_ci95": [
+     0.028169,
+     0.040044
+    ],
+    "excludes_null": true,
+    "enrichment": 15.1753
+   }
+  },
+  "Klebsiella group": {
+   "island": {
+    "n": 1612,
+    "observed": 0.472084,
+    "expected": 0.022817,
+    "null_ci95": [
+     0.015509,
+     0.029777
+    ],
+    "excludes_null": true,
+    "enrichment": 20.69
+   },
+   "isolated": {
+    "n": 13956,
+    "observed": 0.080037,
+    "expected": 0.018772,
+    "null_ci95": [
+     0.016552,
+     0.020995
+    ],
+    "excludes_null": true,
+    "enrichment": 4.2637
+   }
+  },
+  "P. aeruginosa": {
+   "island": {
+    "n": 2457,
+    "observed": 0.247456,
+    "expected": 0.013807,
+    "null_ci95": [
+     0.009361,
+     0.018315
+    ],
+    "excludes_null": true,
+    "enrichment": 17.9224
+   },
+   "isolated": {
+    "n": 4693,
+    "observed": 0.016407,
+    "expected": 0.008862,
+    "null_ci95": [
+     0.006392,
+     0.01172
+    ],
+    "excludes_null": true,
+    "enrichment": 1.8514
+   }
+  },
+  "Enterobacter group": {
+   "island": {
+    "n": 327,
+    "observed": 0.461774,
+    "expected": 0.018674,
+    "null_ci95": [
+     0.006116,
+     0.033639
+    ],
+    "excludes_null": true,
+    "enrichment": 24.7277
+   },
+   "isolated": {
+    "n": 2772,
+    "observed": 0.025974,
+    "expected": 0.013921,
+    "null_ci95": [
+     0.00974,
+     0.018398
+    ],
+    "excludes_null": true,
+    "enrichment": 1.8658
+   }
+  }
+ },
+ "ARM_ISL_isolated_AB_over_Klebsiella": 3.559,
+ "ARM_LOC": {
+  "R50000": {
+   "A. baumannii": {
+    "n": 8005,
+    "observed": 0.578638,
+    "expected": 0.132076,
+    "null_ci95": [
+     0.124919,
+     0.139163
+    ],
+    "excludes_null": true,
+    "enrichment": 4.3811
+   },
+   "Klebsiella group": {
+    "n": 15568,
+    "observed": 0.120632,
+    "expected": 0.046519,
+    "null_ci95": [
+     0.043422,
+     0.049526
+    ],
+    "excludes_null": true,
+    "enrichment": 2.5932
+   },
+   "P. aeruginosa": {
+    "n": 7150,
+    "observed": 0.095804,
+    "expected": 0.044247,
+    "null_ci95": [
+     0.039857,
+     0.048675
+    ],
+    "excludes_null": true,
+    "enrichment": 2.1652
+   },
+   "Enterobacter group": {
+    "n": 3099,
+    "observed": 0.071959,
+    "expected": 0.040344,
+    "null_ci95": [
+     0.034205,
+     0.046475
+    ],
+    "excludes_null": true,
+    "enrichment": 1.7836
+   },
+   "AB_over_Klebsiella": 1.689
+  },
+  "R100000": {
+   "A. baumannii": {
+    "n": 8005,
+    "observed": 0.578638,
+    "expected": 0.08044,
+    "null_ci95": [
+     0.074828,
+     0.086571
+    ],
+    "excludes_null": true,
+    "enrichment": 7.1934
+   },
+   "Klebsiella group": {
+    "n": 15568,
+    "observed": 0.120632,
+    "expected": 0.036579,
+    "null_ci95": [
+     0.033916,
+     0.039376
+    ],
+    "excludes_null": true,
+    "enrichment": 3.2979
+   },
+   "P. aeruginosa": {
+    "n": 7150,
+    "observed": 0.095804,
+    "expected": 0.027357,
+    "null_ci95": [
+     0.023636,
+     0.031049
+    ],
+    "excludes_null": true,
+    "enrichment": 3.502
+   },
+   "Enterobacter group": {
+    "n": 3099,
+    "observed": 0.071959,
+    "expected": 0.028217,
+    "null_ci95": [
+     0.022911,
+     0.033559
+    ],
+    "excludes_null": true,
+    "enrichment": 2.5502
+   },
+   "AB_over_Klebsiella": 2.181
+  }
+ },
+ "decision_rule": {
+  "accessory_location_explains_the_effect_if": "A. baumannii's enrichment fails to exclude its null 95% interval under ARM LOC at R = 100 kb, or fails to exclude it among ISOLATED occurrences under ARM ISL, or the A. baumannii / Klebsiella contrast falls below 1.5 in either",
+  "no_threshold_may_move": true,
+  "reported_regardless": "every arm, every radius and every stratum, whatever they show",
+  "thresholds_reused_from": "NM-C1-006, 007 and 008, deliberately, rather than chosen now"
+ },
+ "accessory_location_explains_the_effect": false
+}

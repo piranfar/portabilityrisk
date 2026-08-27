@@ -1,0 +1,37 @@
+{
+ "amendment": "NM-C1-009",
+ "arms": {
+  "ISL": {
+   "name": "resistance-island stratification",
+   "null": "the existing NM-C1-004 matrices, unchanged; no new permutation",
+   "rule": "occurrences on a replicon are single-linkage clustered at a 10000 bp gap; a cluster of >= 3 occurrences is an island, everything else is isolated",
+   "what_it_is_not": "not a core/accessory partition and not AbaR/AbGRI identification by backbone. A structural proxy for multi-gene resistance islands, reported as such."
+  },
+  "LOC": {
+   "both_radii_registered_now": "R = 50 kb and R = 100 kb are fixed here together, so neither can be selected after seeing the other",
+   "deliberate_difference_from_NM_C1_001": "relocated intervals are not forced to be mutually non-overlapping. Within a local window around a resistance-gene cluster the constraint is frequently unsatisfiable, and it does not enter this estimator: each occurrence's distance depends only on its own interval and the frozen element coordinates.",
+   "estimator": "unchanged - F(1 kb) under the NMIS complete-structural element definition, right-censored at 10 kb",
+   "isescan_rerun": false,
+   "name": "local relocation null",
+   "per_chromosome_seed": "SEED XOR int(sha256(replicon_accession)[:16], 16)",
+   "permutations": 2000,
+   "radii_bp": [
+    50000,
+    100000
+   ],
+   "rule": "each chromosomal occurrence is relocated uniformly within +/-R of its own start instead of anywhere on its chromosome; interval length, chromosome, genome, species and BioProject identity preserved; circular chromosomes wrap; linear chromosomes exclude positions whose +/-10 kb window would run past an end, exactly as in NM-C1-001",
+   "seed": 20260827
+  }
+ },
+ "decision_rule": {
+  "accessory_location_explains_the_effect_if": "A. baumannii's enrichment fails to exclude its null 95% interval under ARM LOC at R = 100 kb, or fails to exclude it among ISOLATED occurrences under ARM ISL, or the A. baumannii / Klebsiella contrast falls below 1.5 in either",
+  "no_threshold_may_move": true,
+  "reported_regardless": "every arm, every radius and every stratum, whatever they show",
+  "thresholds_reused_from": "NM-C1-006, 007 and 008, deliberately, rather than chosen now"
+ },
+ "frozen_before_any_outcome_was_scored": true,
+ "raised_by": "the uniform relocation null does not preserve accessory-genome location; resistance genes and insertion sequences may both concentrate in accessory regions, in which case a chromosome-wide null overstates the enrichment",
+ "scope_limit": "no core-genome alignment exists in this project, so no accessory-restricted null was run. ARM LOC is the closest available approximation and is reported as an approximation, not as an accessory-restricted null.",
+ "sha256_of_body": "e1b331b9cd2b543a103d435e3bf0738e8f15423ce420c2670b62104eb4b958ee",
+ "title": "Accessory-context arms for the background-normalised enrichment"
+}

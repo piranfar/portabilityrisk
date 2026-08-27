@@ -70,5 +70,191 @@
    ],
    "scientific_content_altered": false
   }
- ]
+ ],
+ "path_rewrites": {
+  "why": "the same idea as the redactions above, applied to filesystem paths. The private copies of these scripts carried absolute paths on the author's machine. The public copies resolve an environment variable and stop with a message if it is unset, because a path that looks right and is wrong is worse than one that is obviously missing. No plausible substitute path was invented.",
+  "variables": {
+   "PORTABILITYRISK_DEPOSIT_DIR": "the Zenodo deposit, unpacked",
+   "PORTABILITYRISK_C1_DIR": "the genome-wide census working directory",
+   "PORTABILITYRISK_REPO_DIR": "this repository"
+  },
+  "scripts": [
+   {
+    "script": "nmv4c_intrinsic_freeze.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4c_intrinsic_score.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_DEPOSIT_DIR",
+      "names": "the Zenodo deposit, unpacked"
+     },
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4c_lineage_freeze.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4c_lineage_score.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_DEPOSIT_DIR",
+      "names": "the Zenodo deposit, unpacked"
+     },
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4c_referee_freeze.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4c_referee_score.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_DEPOSIT_DIR",
+      "names": "the Zenodo deposit, unpacked"
+     },
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4c_referee_w1_diagnostics.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_DEPOSIT_DIR",
+      "names": "the Zenodo deposit, unpacked"
+     },
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4c_freeze_marginal.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4c_run_marginal.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_DEPOSIT_DIR",
+      "names": "the Zenodo deposit, unpacked"
+     },
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4c_freeze_composite.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmv4c_run_composite.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_DEPOSIT_DIR",
+      "names": "the Zenodo deposit, unpacked"
+     },
+     {
+      "env": "PORTABILITYRISK_C1_DIR",
+      "names": "the genome-wide census working directory"
+     },
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "nmc1_non_st2_enrichment.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_C1_DIR",
+      "names": "the genome-wide census working directory"
+     },
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "build_ed5_figure_deterministic.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "build_manuscript_v5.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "build_supplement_v5.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   },
+   {
+    "script": "renumber_figures_v5.py",
+    "variables": [
+     {
+      "env": "PORTABILITYRISK_REPO_DIR",
+      "names": "this repository"
+     }
+    ]
+   }
+  ]
+ }
 }

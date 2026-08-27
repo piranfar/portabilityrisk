@@ -1,0 +1,109 @@
+{
+ "receipt": "NM_C1_INDEPENDENT_VERIFICATION",
+ "method": "separate code path; nmbg_c1_4_null.py is not imported and every mechanic is re-implemented brute force",
+ "checks": [
+  {
+   "check": "seed is 20260824",
+   "pass": true,
+   "detail": "20260824"
+  },
+  {
+   "check": "B is 2000",
+   "pass": true,
+   "detail": "2000"
+  },
+  {
+   "check": "null matrix shape is (B, n)",
+   "pass": true,
+   "detail": "(2000, 35140)"
+  },
+  {
+   "check": "primary receipt agrees on B and seed",
+   "pass": true,
+   "detail": "B=2000 seed=20260824"
+  },
+  {
+   "check": "no finite observed distance exceeds 10 kb",
+   "pass": true,
+   "detail": "max finite = 9160"
+  },
+  {
+   "check": "no finite null distance exceeds 10 kb",
+   "pass": true,
+   "detail": "max finite = 9551"
+  },
+  {
+   "check": "censored occurrences are infinite, not 10000",
+   "pass": true,
+   "detail": "21902 censored"
+  },
+  {
+   "check": "brute-force observed distance reproduces the primary",
+   "pass": true,
+   "detail": "400/400 agree (397 circular)"
+  },
+  {
+   "check": "wrap arithmetic on a circular origin-spanning window",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "null relocates within a chromosome only, so element sets are untouched",
+   "pass": true,
+   "detail": "6035 chromosomes carry complete elements"
+  },
+  {
+   "check": "chromosomes with no complete element are censored in every permutation",
+   "pass": true,
+   "detail": "155 chromosomes checked, 0 violations"
+  },
+  {
+   "check": "per-chromosome occurrence count matches the frozen manifest",
+   "pass": true,
+   "detail": "0 chromosomes disagree"
+  },
+  {
+   "check": "every occurrence keeps its chromosome (ids encode it)",
+   "pass": true,
+   "detail": "400 sampled"
+  },
+  {
+   "check": "chromosomes with elements yield finite null distances",
+   "pass": true,
+   "detail": "0 of 300 yielded none"
+  },
+  {
+   "check": "every weighting scheme is well formed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "genome_balanced gives each genome unit mass",
+   "pass": true,
+   "detail": "778.000 vs 778 genomes"
+  },
+  {
+   "check": "bioproject_balanced gives each BioProject unit mass",
+   "pass": true,
+   "detail": "268.000 vs 268 BioProjects"
+  },
+  {
+   "check": "all F(d), expectations and p reproduce independently",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "no p is reported as zero",
+   "pass": true,
+   "detail": "min p = 0.000500"
+  },
+  {
+   "check": "p floor equals 1/(B+1)",
+   "pass": true,
+   "detail": "reported 0.000500 == round(1/2001, 6) = 0.000500  (exact floor 0.00049975)"
+  }
+ ],
+ "checks_passed": 20,
+ "checks_total": 20,
+ "verdict": "C1_INDEPENDENTLY_VERIFIED"
+}

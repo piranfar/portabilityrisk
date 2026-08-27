@@ -1,0 +1,108 @@
+{
+ "amendment": "NM_BACKGROUND_ENRICHMENT_AMENDMENT_001",
+ "amends": "NM_BACKGROUND_ENRICHMENT_FROZEN_PROTOCOL_V1.json",
+ "version": "1.0.0",
+ "frozen_utc": "2026-08-23T00:00:00Z",
+ "frozen_before_any_species_outcome_was_computed": true,
+ "parent_protocol_unchanged": "The V1 protocol is not edited. It recorded a STOP because genome-wide sequence was unavailable; owner decision D-C1 authorised acquisition, so the null is now executable and is specified here in full.",
+
+ "why_this_amendment_exists": "V1 was frozen before genome-wide data feasibility was known. Three things are now known that V1 could not state: the exact chromosome set (6,190, frozen and hashed), that the structural census is computed once and permutations read a coordinate table rather than rerunning ISEScan, and that insertion sequences are searched genome-wide rather than only inside ARG windows. Nothing in V1's scientific question, endpoint, gates or contrasts is weakened here.",
+
+ "what_changed_from_V1": [
+  "The null is now executable: the genome-wide structural IS coordinate table replaces the window-only table that made V1 impossible.",
+  "Permutations are explicitly forbidden from rerunning ISEScan. The census is computed once per chromosome; permutations score against the frozen coordinate table. This is a correctness requirement, not only a cost one: rerunning the caller per permutation would let tool stochasticity enter the null.",
+  "The sensitivity list is extended with chromosome-length stratification, genome-wide IS density, IS-family decomposition and leave-one-genome-out, none of which V1 could compute.",
+  "Weighting is enumerated as four named schemes rather than four adjectives."
+ ],
+
+ "primary_null_model": {
+  "name": "within-chromosome uniform coordinate permutation against a frozen genome-wide IS coordinate table",
+  "unit": "one chromosome, independently",
+  "preserved_exactly": [
+   "chromosome identity", "genome identity", "species", "BioProject",
+   "the observed number of chromosomal ARG occurrences on that chromosome",
+   "each occurrence's original interval length"
+  ],
+  "relocation": {
+   "rule": "each occurrence interval is relocated uniformly at random over permissible chromosomal start coordinates",
+   "permissible": "a start is permissible if the whole interval lies within the chromosome and the registered symmetric +/-10 kb window is representable under that chromosome's topology",
+   "circular": "on a circular chromosome the window wraps, so every start is permissible and wrapping is applied exactly as NMIS applies it",
+   "linear": "on a linear chromosome a start whose window would run past either end is not permissible, matching how NMIS treats truncated windows",
+   "overlap": "relocated intervals may not overlap one another on the same chromosome, mirroring the fact that observed ARG occurrences do not overlap",
+   "forbidden": "no occurrence moves between chromosomes, genomes, species or BioProjects"
+  },
+  "scoring": "identical structural distance pipeline as NMIS: nearest structurally complete, fully contained element within the occurrence's own +/-10 kb window; right-censored at 10,000 bp; direct overlap scores zero",
+  "n_permutations": 2000,
+  "seed": 20260824,
+  "determinism": "seeded per chromosome as seed XOR hash(replicon_accession), so a chromosome's permutations replay identically regardless of scheduling order or parallelism"
+ },
+
+ "structural_endpoint": {
+  "primary": "ISEScan type c, complete transposase ORF, bilateral resolved TIRs, fully contained within the occurrence's own +/-10 kb window",
+  "secondary": "the NM-DIST homology-marker endpoint, corroborating only",
+  "unchanged_from_NMIS": ["coordinate conventions", "circular handling", "crossing/containment classification", "censoring horizon"]
+ },
+
+ "primary_endpoints_reported_per_species_and_weighting": [
+  "observed F(1 kb), F(2 kb), F(5 kb), F(10 kb)",
+  "null expected F(d) at the same landmarks",
+  "observed minus expected",
+  "observed/expected enrichment ratio",
+  "empirical 95% interval from the permutation distribution",
+  "empirical p-value",
+  "restricted mean distance, observed and expected, and their difference"
+ ],
+
+ "weightings": {
+  "occurrence": "every chromosomal occurrence counts once",
+  "one_per_block": "deterministic single occurrence per context block",
+  "genome_balanced": "each genome contributes unit mass",
+  "bioproject_balanced": "each BioProject contributes unit mass",
+  "binding_rule": "Each is reported separately and named in every sentence that uses it. It may never be claimed that host ordering is preserved across weightings unless it is preserved for every pair compared; if only the A. baumannii position is preserved, that is what is said. This rule exists because reviewer comment C4 established that exactly this error was made in V3."
+ },
+
+ "primary_contrasts": [
+  "A. baumannii versus Klebsiella group, on enrichment rather than on raw proximity",
+  "A. baumannii versus P. aeruginosa, on enrichment rather than on raw proximity"
+ ],
+
+ "required_sensitivities": [
+  "chromosome-length stratification",
+  "genome-wide structural IS density per species, reported beside every enrichment",
+  "IS-family decomposition, IS6 in particular",
+  "leave-one-BioProject-out",
+  "leave-one-genome-out influence",
+  "exclusion of wrapped and truncated contexts",
+  "class-B homology endpoint as the secondary corroborating analysis"
+ ],
+
+ "decision_gates_carried_forward_unchanged_from_V1": {
+  "SUCCESS": "A. baumannii structural observed/expected enrichment exceeds 1 with an interval excluding 1 at both 1 kb and 2 kb; the background-normalised A. baumannii contrast remains positive against both comparison groups; direction survives BioProject balancing; no single BioProject or genome dominates.",
+  "PARTIAL": "enrichment present but one contrast, landmark or sensitivity does not exclude the null",
+  "REVISE": "raw ordering substantially explained by background IS density, but an occurrence-level or matched-family signal remains",
+  "FAIL": "background normalisation removes the A. baumannii contrast across both structural landmarks and all registered sensitivities",
+  "thresholds_were_set_before_any_species_outcome_was_computed": true
+ },
+
+ "reportable_verdicts": [
+  "BACKGROUND_NORMALISED_HOST_CONDITIONING_SUCCESS",
+  "BACKGROUND_NORMALISED_HOST_CONDITIONING_PARTIAL",
+  "BACKGROUND_EXPLAINS_RAW_HOST_CONTRAST",
+  "C1_NOT_EVALUABLE"
+ ],
+
+ "inputs_that_must_verify_before_scoring": {
+  "NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv": "955c2c7cabbc0adb347922e19503dc06ee83b4335c66960e25a8f7b8a81880ae",
+  "sequence_acquisition_receipt": "NMBG_SEQUENCE_ACQUISITION_RECEIPT_V1.json must read acquisition_complete true",
+  "structural_census_receipt": "every one of the 6,190 chromosomes must carry exactly one completion status",
+  "NMIS_observed_arm": "the genome-wide pipeline must reproduce the frozen NMIS observed structural counts exactly before any expected rate is computed"
+ },
+
+ "binding_statements": [
+  "No species-level enrichment outcome was computed before this amendment was written and hashed.",
+  "Permutations never rerun ISEScan.",
+  "A chromosome that fails annotation is reported, never dropped.",
+  "The 2.4x difference between species in the fraction of chromosome lying inside ARG windows is a property of ARG number and density, which is itself host biology. It is reported as an exposure statistic and is not by itself evidence of confounding; it is the reason a window-only null is impossible, not a result.",
+  "If the verifier does not pass, no number from this analysis is reportable."
+ ]
+}

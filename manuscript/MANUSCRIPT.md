@@ -1,521 +1,781 @@
-# Portability, not presence: replicon-resolved evidence that plasmid fraction underestimates the mobile resistome
+# Replicon-resolved portability of 74,349 acquired resistance-gene occurrences
+across 6,288 closed Gram-negative ESKAPE genomes
 
-**PortabilityRisk — Paper 1. Manuscript draft V1, 2026-08-22.**
+**Vahhab Piranfar**¹
 
-Assembled from frozen results only. Every quantitative statement below traces to a hashed
-artefact registered in `PORTABILITYRISK_CANONICAL_ARTEFACT_MANIFEST_V2.tsv`; the mapping is
-`PORTABILITYRISK_MANUSCRIPT_ASSET_INDEX_V2.tsv`. No number in this draft was computed while
-writing it. Claim-by-claim permission is `PORTABILITYRISK_CLAIM_STATUS_MATRIX_V5.tsv`.
+¹ Iranian Journal of Pathology
 
-**Author.** Vahhab Piranfar.
+ORCID 0000-0003-3653-5739
+
+Correspondence: vahab.p@gmail.com
 
 ---
 
 ## Abstract
 
-Antimicrobial-resistance surveillance is built on gene-presence tables, which record whether a
-resistance gene is there but not whether it can move. We assembled a replicon-resolved
-portability dataset from 6,288 closed complete genomes of Gram-negative ESKAPE pathogens, in
-which each of 74,349 acquired resistance-gene occurrences is assigned to a documented chromosome
-or plasmid using NCBI molecule designations rather than prediction: 100 % resolution, 0
-unmatched, 0 ambiguous, 0 missing coordinates. Every occurrence receives one of five
-evidence-ranked portability classes combining documented location, plasmid mobilization
-machinery, and chromosomal mobile-element context. To our knowledge, this is the first closed,
-occurrence-level framework to resolve the portability of acquired resistance determinants across
-both chromosomal and plasmid architectures using directly documented complete replicons.
-
-We show for the first time that plasmid carriage and chromosomal mobile-element association are
-distinct, largely orthogonal dimensions of portability; that bacterial host identity governs
-which route a matched determinant takes; and that the low plasmid resistance-gene fraction of
-*Acinetobacter baumannii* conceals an exceptionally mobile-element-associated chromosomal
-resistome. One hundred and sixty-four gene families occur in both compartments, so portability
-is a property of the occurrence rather than of the gene. Of chromosomal occurrences, 46.39 % lie
-within 10 kb of a mobile-element marker, and that association is spatially tight rather than
-diffuse: in *A. baumannii* the median distance to the nearest marker is 647 bp. Restricting the
-endpoint to structurally resolved complete insertion sequences — a complete transposase open
-reading frame with bilateral terminal inverted repeats, fully contained in the occurrence's own
-window — reproduces the same host ordering across a 21,955-block census, and corroborates 73.80 %
-of the homology-based calls.
-
-We report no transfer event. The claim is about genomic architecture, not about demonstrated
-mobilization.
-
----
+Whether a resistance gene can leave its host depends on where it sits, and in draft assemblies
+that location is predicted. We assembled an occurrence-level resource over **6,288
+closed Gram-negative ESKAPE genomes**: **74,349 acquired resistance-gene occurrences**, each assigned
+to a chromosome or plasmid documented by NCBI, ranked into five evidence classes, with a
+genome-wide census of **190,999 structurally resolved insertion sequences** across **6,190 ARG-bearing
+chromosomes** and sequence types for the 4,240 genomes behind the primary species contrast. Against a
+null that relocates each occurrence within its own chromosome, resistance genes lie closer to a
+complete insertion sequence than chance allows in every group, and *Acinetobacter baumannii* is
+extreme at **16.91-fold within 1 kb**. Chromosome-wide element density, clonal replication,
+composite-transposon structure and intrinsic determinants each fail to account for it. A 50.29-fold
+species contrast in the same data does not survive the same scrutiny, and we report where it goes.
 
 ## Introduction
 
-Genomic surveillance of antimicrobial resistance answers one question well and a second question
-badly. Whether a resistance determinant is present in an isolate is now routine to establish.
-Whether that determinant is positioned to leave the isolate is not, and it is the second question
-that governs consequence. A carbapenemase fixed in a chromosomal core spreads only as fast as its
-host lineage. The same carbapenemase on a conjugative plasmid, or flanked by an intact insertion
-sequence, is a different epidemiological object.
+Antimicrobial resistance was associated with an estimated 4.95 million deaths in 2019 [@murray2022],
+and the greatest clinical burden falls on Gram-negative species [@who2024bppl] of the group
+named for their capacity to escape antibiotic action [@rice2008]. Genomic surveillance answers one
+question about them well and a second badly. Whether a resistance determinant is present is
+routine to establish; whether it is positioned to leave the isolate is not, and the second
+question governs consequence. A carbapenemase fixed in a chromosomal core spreads only as fast as its host lineage;
+the same carbapenemase on a conjugative plasmid, or flanked by an intact insertion sequence, is a
+different epidemiological object [@partridge2018].
 
-The gap has persisted for a structural reason rather than a conceptual one. Assigning a gene to a
-chromosome or a plasmid requires knowing which molecule the contig carrying it belongs to, and in
-draft assemblies that molecule is unknown. It must be predicted, by tools whose outputs carry an
-error rate that propagates into every downstream statement about mobility. Large mobilome–resistome
-association studies are consequently built on a location layer that is an estimate. Plasmid-centric
-studies avoid the problem by making plasmids the unit of analysis, which is rigorous about one
-compartment and silent about the other. Gene-presence resistome tables sidestep it entirely.
+The gap has persisted for a structural reason rather than a conceptual one. Assigning a gene to a chromosome or a plasmid requires knowing which molecule its contig belongs
+to, and in a draft assembly that molecule must be predicted, by tools whose error rate propagates
+into every downstream statement about mobility [@arredondoalonso2017; @teixeira2025]; a controlled
+benchmark places plasmid identification precision at 0.57 and insertion-sequence sensitivity at
+0.58 [@kerkvliet2024]. Large mobilome–resistome studies are consequently built on a location layer
+that is an estimate [@khedkar2022]. Plasmid-centric studies make plasmids the unit of analysis,
+which is rigorous about one compartment and silent about the other [@redondo2020; @smillie2010;
+@conjsurvival2026]. Gene-presence tables sidestep the problem entirely, and the limits of reading
+risk from gene inventories alone are under active discussion [@larsson2026; @klumper2025]; the
+largest analysis of that kind so far reported works from predicted genomic islands [@jia2026]
+rather than the documented replicon location used here.
 
-Closed complete genomes remove the estimate. For a closed assembly, NCBI states
-`assigned_molecule_location_type` per molecule; a determinant whose coordinates fall inside that
-molecule is on that molecule. This is documentation, not inference. It also imposes the boundary
-of everything reported here: the results hold for closed genomes and cannot be extrapolated to
-draft-assembly collections.
+Closed complete genomes remove the estimate. Long-read and hybrid assembly now routinely resolves
+bacterial chromosomes and plasmids as separate circular molecules [@wick2017; @wick2023], and for a
+closed assembly NCBI states the molecule type per replicon [@kitts2016; @oleary2016]. A determinant
+whose coordinates fall inside that molecule is on that molecule. This is documentation, not
+inference. It also imposes the boundary of everything reported here: the results hold for closed
+genomes and cannot be extrapolated to draft-assembly collections.
 
 Because plasmid location is easy to summarise, plasmid fraction became the default proxy for
-mobilization potential. Its failure mode is the subject of this paper. Plasmid fraction measures
-one of two routes by which a resistance gene can be portable, and it is blind to the other:
-chromosomal insertion in mobile-element context. If the two routes were correlated across hosts,
-the proxy would be adequate. They are not.
+mobilization potential, and its failure mode is the subject of this paper. It measures one of two
+routes by which a resistance gene can be portable and is blind to the other: chromosomal insertion
+in mobile-element context, a route across which exchange between compartments is structured rather
+than free [@wangdagan2021]. Frameworks that do quantify mobility aggregate contexts into a per-gene
+score [@ellabaan2022; @jia2026]; if the two routes were correlated across hosts that aggregation
+would be harmless. They are not.
 
-We report a five-class, occurrence-level portability framework applied to 74,349 acquired
-resistance-gene occurrences in 6,288 closed genomes; evidence that portability is a property of
-the occurrence and not of the gene; a quantification of the chromosomal mobile compartment under
-four denominators, a spatial distance distribution, and a structural insertion-sequence endpoint;
-and an independently confirmed demonstration that the two portability routes are non-redundant
-and can invert.
+In this study, **portability** denotes an evidence-ranked genomic property inferred from documented
+replicon location, mobile-element-associated chromosomal context, structurally resolved insertion
+sequences and plasmid mobility-marker architecture. It does not denote observed transfer,
+conjugation, transposition or element activity, none of which was measured here. We report a five-class, occurrence-level portability framework applied to 74,349 resistance-gene
+occurrences in 6,288 closed genomes; evidence that portability is a property of the occurrence,
+not of the gene; the chromosomal mobile compartment under four denominators, a distance
+distribution and a structural insertion-sequence endpoint; and a demonstration, fitted where the
+pattern was not noticed, that the two routes are non-redundant.
 
 ---
 
 ## Results
 
-### R1 — A location layer with zero missingness
+### What the resource contains
 
-The cohort comprises 6,288 closed complete genomes of Gram-negative ESKAPE pathogens. Determinant
-calling and denominator construction reduce 184,538 raw determinant records to a PRIMARY
-denominator of **74,349 acquired resistance-gene occurrences** (Fig. 1). Each occurrence is joined
-to the replicon whose coordinate interval contains it.
+Assigning a resistance gene to a chromosome or a plasmid requires knowing which molecule its contig
+belongs to, and in a closed genome it is documented rather than predicted. The resource is
+built on that distinction. Across **6,288 closed complete genomes** of Gram-negative ESKAPE
+pathogens, **74,349 acquired resistance-gene occurrences** were each assigned to a documented
+replicon, with 0 unmatched (Methods; Fig. 1; Supplementary Table 1). Every occurrence carries a
+five-class portability rank, a plasmid mobility call, and, for the 35,140 chromosomal occurrences,
+the distance to the nearest mobile-element marker inside its own ±10 kb window.
 
-Every occurrence resolved: **39,209 plasmid-borne and 35,140 chromosomal, 0 unmatched, 0
-ambiguous, 0 missing coordinates, 100.000 %**. Fifteen independent verification checks on the
-denominator flow returned 0 disagreements.
+Three layers were built here and existed in no prior public record. A **genome-wide structural 
+insertion-sequence census** annotated all **6,190 ARG-bearing chromosomes** under one pinned toolchain,
+recovering **190,999 elements**, of which 145,779 meet a complete-structural definition: a complete transposase
+open reading frame with bilateral resolved terminal inverted repeats. A **within-chromosome
+permutation null** supplies the expectation against which those distances are read. **Sequence types**
+were called for the 4,240 genomes contributing to the primary species contrast, which makes clonal structure visible.
 
-Plasmid share is **52.736 %** occurrence-weighted. Collapsed to genome-level events it is
-**36.586 %**, and that figure needs its denominator stated precisely, because two plausible
-readings give different numbers. A *genome-collapsed event* is one event per (genome,
-compartment): each of the 6,288 genomes contributes at most one plasmid event and at most one
-chromosomal event, however many resistance genes it carries in that compartment. That yields
-**3,569 plasmid events and 6,186 chromosomal events, 9,755 in total, and 3,569 / 9,755 =
-36.586 %**. It is **not** the mean of per-genome plasmid percentages, which is 35.932 % — a
-different statistic answering a different question.
+The layer is deposited under CC BY 4.0 (Data availability). What follows is what it supports, and
+what it does not.
 
-Both figures are correct, and the divergence is the first of four denominator effects that recur
-throughout this work. An occurrence-weighted figure describes the resistome; a genome-collapsed
-figure describes how often a compartment is used at all.
+### Portability is a property of the occurrence, not the gene
 
-### R2 — Five evidence-ranked portability classes
+**One hundred and sixty-four gene families occur in both compartments** (Fig. 2a). Of the 158
+families with ≥20 occurrences, 144 show a significant compartment preference at Benjamini–Hochberg
+*q* < 0.05 [@benjamini1995], and **95 (66.0%)** retain a Mantel–Haenszel interval excluding 1 after
+species adjustment [@mantel1959] (Fig. 2b,c).
 
-Each occurrence receives exactly one class (Fig. 2):
-
-| class | evidence | n | % of 74,349 |
-|---|---|---:|---:|
-| A | chromosomal, no MGE marker within ±10 kb | 18,837 | 25.34 |
-| B | chromosomal, ≥1 MGE marker within ±10 kb | 16,303 | 21.93 |
-| C | plasmid, no mobility marker | 7,170 | 9.64 |
-| D | plasmid, mobilization-consistent (relaxase) | 6,043 | 8.13 |
-| E | plasmid, conjugation-consistent (relaxase and MPF) | 25,996 | 34.97 |
-
-A + B + C + D + E = 74,349 = 100.000 %, reconciled independently.
-
-Class E subdivides into a nested evidence tier: **E1 (16,397 occurrences on 2,828 replicons)**
-carries relaxase and MPF; **E2 (9,599 occurrences on 1,109 replicons)** additionally carries a
-detected *oriT*. E2 is 36.92 % of class E and 24.48 % of all plasmid-borne occurrences. The tiers
-are nested, not competing: E2 is a subset of E1's evidential requirement plus one more marker.
-
-Three separately labelled evidence layers — documented location, predicted plasmid mobility,
-sequence-annotated chromosomal MGE context — are kept separable and ranked, so that a revision of
-the mobility marker database moves C/D/E without touching A/B or the location layer.
-
-### R3 — Portability is a property of the occurrence, not of the gene
-
-**One hundred and sixty-four gene families occur in both compartments** (Fig. 3). Of the 158
-families with ≥20 occurrences, 144 show a significant compartment preference at BH *q* < 0.05,
-and **95 (66.0 %)** retain a Mantel–Haenszel interval excluding 1 after species adjustment.
-
-The direction of these preferences is biologically correct and was recovered without any prior:
-*qnr*, *bla*CMY, *sul3* and *tmexCD* fall out plasmid-side; *bla*PDC, *bla*ACT, *bla*LEN, *fosA*
-and *oqxAB* fall out chromosome-side. That the pipeline reproduces known determinant biology blind
-is the internal-validity argument for trusting it where the answer is not already known.
-
-The 49 families that do not survive species adjustment are composition-driven, not refuted; 43 are
-flagged lineage-dominated and are reported as flagged.
+The direction of these preferences agrees with what is independently known of these
+determinants, and was recovered without any prior:
+*qnr*, *bla*CMY, *sul3* and *tmexCD* fall out plasmid-side; *bla*PDC, *bla*ACT, *bla*LEN, *fosA* and
+*oqxAB* fall out chromosome-side. That the pipeline reproduces known determinant biology blind is
+the internal-validity argument for trusting it where the answer is not already known. The
+argument is weaker than it looks: the same literature informs the database curation, so the
+agreement is not fully independent of the annotation. The 49
+families that do not survive species adjustment are composition-driven, not refuted; 43 are flagged
+lineage-dominated and reported as flagged.
 
 The consequence is structural. A gene-presence table cannot express this result, because the same
-family name appears in both compartments and the table has no field in which the difference could
-be written down.
+family name appears in both compartments and the table has no field in which the difference could be
+written down.
 
-### R4 — The chromosomal mobile compartment, under four denominators
+### Five evidence-ranked portability classes
 
-**46.39 % of chromosomal acquired resistance-gene occurrences (16,303 / 35,140) lie within 10 kb
-of an IS, transposase, integrase or integron marker** (Fig. 4). At ±5 kb the figure is 40.51 %;
-0.26 % of occurrences overlap a marker directly. The marker inventory holds 32,364 features:
-29,331 IS/transposase and 3,033 integrase/integron.
+Each occurrence receives exactly one class (Fig. 3a): **A**, chromosomal with no mobile-element
+marker within ±10 kb (18,837); **B**, chromosomal with at least one marker (16,303); **C**, plasmid
+with no mobility marker (7,170); **D**, plasmid carrying a relaxase (6,043); **E**, plasmid carrying
+relaxase and mating-pair formation machinery (25,996). A + B + C + D + E = 74,349, reconciled
+independently (Supplementary Table 2). Plasmid mobility was typed with MOB-suite [@robertson2018]
+under the relaxase classification scheme [@garcillanbarcia2009].
 
-This figure is occurrence-weighted, and the weighting is not incidental. Computed over the 21,955
-unique context blocks, **6,617 blocks (30.14 %) contain at least one MGE feature**. The gap arises
-because marker-positive blocks carry 2.46 ARGs on average against 1.23 for marker-negative blocks,
-a 2.01× ratio: mobile-element context and multi-gene context co-occur, so occurrence weighting
-counts the same neighbourhood more than once.
+Class E subdivides further by mobility evidence, and the three evidence layers — documented
+location, predicted plasmid mobility, sequence-annotated chromosomal context — are kept separable
+and ranked, so a revision of the mobility marker database moves C/D/E without touching A/B or
+the location layer (Fig. 3b; Supplementary Results 1 and 2).
 
-A one-block discrepancy inside that figure is worth stating, because it is the block-level
-signature of a real phenomenon rather than an error. Blocks containing ≥1 MGE feature number
-6,617; blocks containing ≥1 class-B occurrence number **6,616**. Exactly one block carries a
-marker that lies more than 10 kb from every resistance-gene occurrence in it. The
-occurrence-level counterpart is larger: 111 occurrences sit in a block that contains a marker
-which falls outside that occurrence's own ±10 kb window, and those are censored rather than
-counted (Methods).
-
-Both weightings are reported throughout. A single-number version of this result would be the
-manuscript's largest referee risk, and the two numbers answer different questions: 46.39 % is the
-share of the chromosomal resistome in mobile context, 30.14 % is the share of chromosomal
-neighbourhoods that are mobile.
-
-Nearly half of what a plasmid-fraction summary scores as "stable" is in demonstrably
-mobile-associated context. Chromosomal location is not fixity.
-
-### R5 — The association is short-range, and it is insertion sequences
+### The association is short-range, structural, and specific to insertion sequences
 
 Converting the ±10 kb threshold into a distance distribution changes the interpretation
-qualitatively (Fig. 5). Using weighted cumulative detection *F*(*d*) with right-censoring at
-10 kb and block-balanced weights:
+qualitatively. Using weighted cumulative detection *F*(*d*) with right-censoring at 10 kb and
+block-balanced weights, *A. baumannii* reaches *F*(1 kb) = 0.5224 against 0.1039 for the
+*Klebsiella* group and 0.0993 for *P. aeruginosa*, with a **median distance of 647 bp** — not
+reached within 10 kb in either comparator (Fig. 4d; Supplementary Table 3, Supplementary Result 3). The typical acquired resistance gene in *A.
+baumannii* is not merely in a neighbourhood containing a marker; it is adjacent to one.
 
-| group | *F*(1 kb) | *F*(2 kb) | *F*(10 kb) | restricted mean distance | median |
-|---|---:|---:|---:|---:|---|
-| ***A. baumannii*** | **0.5224** | 0.5878 | 0.6323 | 4,180 bp | **647 bp** |
-| *Klebsiella* group | 0.1039 | 0.1227 | 0.2390 | 8,365 bp | not reached |
-| *P. aeruginosa* | 0.0993 | 0.1256 | 0.1717 | 8,595 bp | not reached |
+The decomposition narrows the result to one marker class; it remains observational, and
+proximity to an insertion sequence is not evidence that the element mobilises the gene. An insertion sequence–only
+endpoint reproduces the primary result; an integrase/integron-only endpoint shows no *A. baumannii*
+excess (Extended Data Fig. 1a; Supplementary Result 4). The chromosomal mobile context of this
+cohort is insertion sequences, close in, in one host.
 
-A median of 647 bp means that in *A. baumannii* the typical acquired resistance gene is not merely
-"in a neighbourhood containing" a mobile-element marker; it is adjacent to one.
+Homology markers establish that a transposase-like protein is nearby; they do not establish that an
+intact element is present. We therefore applied a stricter sequence-structural endpoint,
+reconstructing elements with ISEScan [@xie2017] over all **21,955 context blocks** — no tool
+failures, 14,426 elements resolved (Supplementary Table 4, Supplementary Result 5) — and restricted
+the endpoint to a structurally complete insertion sequence: a complete transposase open reading
+frame with bilateral resolved terminal inverted repeats, fully contained within the occurrence's own
+±10 kb window.
 
-The decomposition is what makes the result mechanistic rather than descriptive. An
-**IS/transposase-only** endpoint reproduces the primary result. An **integrase/integron-only**
-endpoint shows no *A. baumannii* excess at all (−0.0136 at 10 kb). The chromosomal mobile context
-of this cohort is not a general "some MGE is nearby" effect. It is insertion sequences, close in,
-in one host.
+Under this stricter endpoint the host ordering is unchanged (Fig. 4a; Supplementary Table 5): *A. baumannii* *F*(1 kb) =
+0.3531 against 0.0633 and 0.0276. Both registered contrasts are positive with confidence intervals
+excluding zero at every landmark — *A. baumannii* − *Klebsiella* +0.2898 at 1 kb, *A. baumannii* −
+*P. aeruginosa* +0.3255 — all Holm-adjusted *P* ≤ 0.002 [@holm1979] (Fig. 4b;
+Supplementary Table 6). Intervals throughout
+are 95% percentile intervals from a BioProject cluster bootstrap.
 
-### R6 — The signature survives a structural endpoint at census scale
+Across the chromosomal compartment, 12,034 of 35,140 occurrences carry a structurally complete,
+fully contained insertion sequence; 12,032 of those are class B, so **73.80% of class-B occurrences
+are structurally corroborated**, rising to **86.01% in *A. baumannii*** (Fig. 4c; Supplementary
+Result 6). The difference between 12,034 and
+12,032 is two *Enterobacter* occurrences that are structurally positive while homology-negative;
+neither falls in a headline species group, and why their transposases missed the profile threshold
+was not tested (Supplementary Table 7). IS*6*
+retains 90.4% of its elements through the structural gate, the highest of any abundant family
+(Extended Data Fig. 1b; Supplementary Table 8, Supplementary Result 7).
 
-Homology markers establish that a transposase-like protein is nearby. They do not establish that
-an intact element is there. We therefore ran a full structural reconstruction over all **21,955
-context blocks** — 0 tool failures, 14,426 elements resolved — and restricted the endpoint to a
-**structurally complete insertion sequence: a complete transposase open reading frame with
-bilateral resolved terminal inverted repeats, fully contained within that occurrence's own ±10 kb
-window** (Fig. 6).
+The 26.20% of class-B occurrences without a contained complete element are not reclassified: a
+homology marker without a resolved element is still evidence of context. The structural endpoint
+is stricter, not a correction, and it is not independent — both run over the same blocks and
+occurrences, and ISEScan itself uses profile homology. What it adds is a requirement for element
+architecture (Supplementary Result 5, Supplementary Table 9).
 
-Under this strictest available endpoint the host ordering is unchanged:
+### Resistance genes sit closer to intact insertion sequences than chance allows
 
-| group | *F*(1 kb) | *F*(2 kb) | *F*(10 kb) |
-|---|---:|---:|---:|
-| ***A. baumannii*** | **0.3531** | 0.3956 | 0.4555 |
-| *Klebsiella* group | 0.0633 | 0.0736 | 0.1435 |
-| *P. aeruginosa* | 0.0276 | 0.0493 | 0.0954 |
+Testing whether a host simply carries more insertion sequences requires a background, and none 
+existed: elements had only ever been searched inside the ±10 kb windows around resistance genes,
+1.57% of chromosomal sequence. Each occurrence was compared with a null relocating it uniformly
+**within its own chromosome**, which preserves that chromosome's element density exactly, so
+enrichment is density-normalised by construction. Design, permutation count, seed and thresholds
+were registered before any species outcome existed.
 
-Both registered contrasts are positive with confidence intervals excluding zero at 1 kb and 2 kb
-and at every landmark: *A. baumannii* − *Klebsiella* **+0.2898** at 1 kb and +0.3221 at 2 kb;
-*A. baumannii* − *P. aeruginosa* **+0.3255** and **+0.3463**. All eight Holm-adjusted *p* = 0.001.
+**Resistance genes lie closer to a complete insertion sequence than chance allows in every group
+tested** (Fig. 5). Within 1 kb, *A. baumannii* shows an observed detection fraction of 0.579 against an
+expected 0.034 — a **16.91-fold enrichment**, with the observed value outside the null 95% interval and
+an empirical *P* ≤ 0.0005 at the resolution floor of 1/2001. The restricted mean distance is 2,930 bp
+observed against 9,151 bp expected. All seven registered sensitivities support it (Supplementary Result 8), and the census is reconciled against the window-limited endpoint species by species (Supplementary
+Result 9).
 
-Across the whole chromosomal compartment, **12,034 of 35,140 occurrences** carry a structurally
-complete, fully contained insertion sequence. **12,032 of those are class B**, so **73.80 % of
-class-B occurrences (12,032 / 16,303) are structurally corroborated**, rising to **86.01 % in
-*A. baumannii*** against 65.46 % in *Klebsiella* and 64.24 % in *P. aeruginosa*.
+**Three further explanations were tested and none accounts for the effect.** *Clonal replication*: 48.2%
+of the *A. baumannii* genomes belong to sequence type 2, and 63% of its chromosomal occurrences
+sit on those genomes; removing them leaves **12.74-fold**, still 2.02 times the *Klebsiella* group
+(Supplementary Result 10). *Composite-transposon structure*: where a resistance gene is the cargo of a
+composite element its distance to an insertion sequence is near zero by construction, but only 4,324 of
+33,822 chromosomal occurrences (12.8%) are flanked by a same-family pair of complete elements, and among
+those that are not the enrichment is **13.58-fold**, 4.05 times the *Klebsiella* group — higher than
+the unstratified ratio, not lower. *Intrinsic determinants*: species-core genes are excluded from the
+matched analyses by the registered eligibility rule, and removing the intrinsic *bla*OXA alleles at
+allele level does not reduce any contrast (Supplementary Result 11).
 
-The difference between 12,034 and 12,032 is **exactly two occurrences that are structurally
-positive while homology-negative**, and they are worth naming rather than rounding away:
-`blaACT-102` in *Enterobacter kobei* (assembly GCF_015135855.1, replicon NZ_AP022446.1), with a
-complete element at 4,334 bp, and `oqxB` in *Enterobacter hormaechei* (GCF_009738085.1,
-NZ_CP033102.1), at 4,031 bp. Both are class A — homology-censored — so their transposases produced
-no profile hit passing the frozen threshold, most plausibly because they are divergent or
-unclassified transposases that the structural caller resolves from element architecture rather
-than sequence similarity. Two consequences follow. The structural call set is *very nearly, but
-not exactly*, a subset of the homology set, and in both discordant cases the structural method is
-the more sensitive one. And neither occurrence falls in a headline species group — both are in
-`other` — so the 73.80 % corroboration rate and every species contrast are unaffected.
+### A species contrast that the same data do not support
 
-**IS6 retains 90.4 % of its elements through the structural gate** (4,385 / 4,848), the highest of
-any abundant family, while IS1380 retains none.
+The resource also permits a matched-family contrast: among gene families present in both hosts,
+the odds that a determinant is chromosomal-and-mobile **rather than plasmid-borne**. Pooled by
+Mantel–Haenszel it is **50.29-fold higher in *A. baumannii* than in *Klebsiella*** across 58 families,
+56 of which point the same way (Supplementary Result 12). We report it, and that it does not carry the weight the number suggests.
 
-Short-range concentration sharpens rather than dilutes: **86.9 % of *A. baumannii* structural
-detections fall within 2 kb**, against 51.7 % for *P. aeruginosa* and 51.3 % for *Klebsiella*.
+Three things qualify it. Between-family heterogeneity is high (*I*² = 83.6%), so the fixed-effect
+summary is reported with its random-effects companion, **42.78 (95% CI 30.80–59.41)**. The analytic
+interval assumes 74,349 independent occurrences; resampling lineages instead gives **11.93–130.52**, an
+order of magnitude wider, because *A. baumannii* carries an effective **3.88** lineages. And the
+endpoint multiplies two effects — how often a host puts determinants on plasmids at all, and how
+often a chromosomal determinant sits near a marker — so a host extreme on both produces a large odds
+ratio partly by construction.
 
-The 26.20 % of class-B occurrences without a contained complete element are **not** reclassified.
-A homology marker without a fully resolved element remains valid evidence of mobile-element
-context under the frozen class definitions; the structural endpoint is an orthogonal, stricter
-measurement, not a correction.
+Separating them does not work in this cohort. The within-chromosome contrast, class B against class
+A, returns 0.48 (0.33–0.70), but one family carries 64% of the pooled weight against a registered
+ceiling of 30%, only 11 of 49 families are informative because the rest have no class-A occurrences
+in one host or the other, and removing the intrinsic *bla*OXA alleles moves it to 3.68. **The
+within-chromosome question is not estimable at this project's registered standard**, and we report
+that rather than a number. The marginal rates are stable — 80.9% of *A. baumannii* chromosomal
+occurrences are marker-adjacent against 34.2% in *Klebsiella* — but direct standardisation shows
+composition accounts for the whole gap: the families that differ are the species-core genes each host
+carries and the other does not (Supplementary Result 13).
 
-### R7 — Plasmid fraction and chromosomal MGE association are non-redundant
+What does survive is narrower and worth stating plainly: the contrast keeps its direction under
+lineage adjustment (**21.76**, 17.49–27.07), with the dominant clone removed (**18.56**, 16.66–20.69), and with
+*bla*OXA and *bla*SHV removed outright (**51.53**). *A. baumannii* keeps acquired resistance on the
+chromosome where *Klebsiella* keeps it on plasmids, and plasmid fraction alone does not see that.
 
-The two portability routes diverge across hosts (Fig. 7):
+### Plasmid fraction and chromosomal mobile-element association are non-redundant
 
-| species | plasmid share (occ.) | chromosomal MGE (occ.) | chromosomal MGE (block) |
-|---|---:|---:|---:|
-| *A. baumannii* | **13.96 %** | **80.91 %** | 63.29 % |
-| *K. pneumoniae* | 67.23 % | 36.74 % | 25.75 % |
-| *P. aeruginosa* | 12.28 % | 40.01 % | 17.65 % |
-| *E. hormaechei* | 66.75 % | 24.01 % | 15.86 % |
+The two portability routes diverge across hosts. *A. baumannii* has the cohort's lowest plasmid
+share (13.96%) and its highest chromosomal mobile-element association (80.91% occurrence-weighted);
+*K. pneumoniae* is its mirror (67.23%, 36.74%); *E. hormaechei* resembles *K. pneumoniae* (66.75%,
+24.01%). *P. aeruginosa* is the decisive comparator: its plasmid share is as low as *A. baumannii*'s
+(12.28%) but its chromosomal association is mid-range (40.01%), so the *A. baumannii* architecture
+is not a mechanical consequence of low plasmid fraction.
 
-*P. aeruginosa* is the decisive comparator. It has a plasmid share as low as *A. baumannii*
-(12.28 % against 13.96 %) but a mid-range chromosomal MGE association. The *A. baumannii*
-architecture is therefore not a mechanical consequence of low plasmid fraction.
-
-Because the principle was discovered in *A. baumannii*, testing it on *A. baumannii* would be
-circular. We therefore fitted the relationship between plasmid share and chromosomal MGE
-association on **eight confirmation species only**, none of which was used to articulate the
-principle, and then asked where *A. baumannii* falls. Its plasmid share lies inside the
-confirmation range, so it is not an extrapolation. Its observed block-weighted MGE association is
-**0.6329**; the value predicted from its plasmid share is **0.1725**. The residual is **2.1126 on
-the logit scale, bootstrap CI 1.8065–2.4376, excluding zero**.
+Because the pattern was noticed in *A. baumannii*, testing it there would be circular. We fitted the
+relationship between plasmid share and chromosomal mobile-element association on **eight
+confirmation species only**, excluding both species in which it was noticed, and then asked where
+*A. baumannii* falls (Fig. 6a). Its plasmid share lies inside the confirmation range, so this is
+interpolation rather than extrapolation. Its observed block-weighted association is 0.6329; the
+value predicted from its plasmid share is 0.1725. The residual is **2.1126 on the logit scale (95%
+bootstrap CI 1.8065–2.4376)** (Fig. 6c).
 
 The fit itself is the second half of the argument. Across the eight confirmation species, plasmid
-share explains almost none of the variance in chromosomal MGE association: in-sample *R*² =
-**0.0275**, and the slope's bootstrap interval **includes zero** (−0.0588 to 0.2287). A low *R*²
-here is not a weak result — it is the result. If the two axes measured one latent quantity, the
-slope would be steep and the residual small. Both are the opposite.
+share explains almost none of the variance in chromosomal association: in-sample *R*² = **0.0275**,
+and the slope's bootstrap interval includes zero (−0.0588 to 0.2287) (Fig. 6b). A low *R*² is what a two-axis structure would produce, but with eight species it demonstrates
+non-redundancy within this panel rather than independence in general; a slope that cannot be
+distinguished from zero is not evidence that it is zero. If the two axes measured one latent quantity, the slope would
+be steep and the residual small; both are the opposite. Direct contrast of the two low-plasmid
+species gives a chromosomal association gap of 0.4548 (95% CI 0.4021–0.5039). The fit, the residual
+and every diagnostic behind it are reported in full in Supplementary Result 14.
 
-Direct contrast of the two low-plasmid species gives a chromosomal MGE gap of **0.4548
-(CI 0.4021–0.5039)**, excluding zero.
+### Conjugation-consistent replicons carry the convergent cargo
 
-### R8 — Host identity governs which route a matched determinant takes
+Of 6,621 resistance-gene-bearing plasmids typed, **3,937 are conjugation-consistent, 1,211
+mobilization-consistent and 1,473 marker-negative** (Extended Data Fig. 2a). Cargo convergence tracks that
+architecture: plasmids carrying ≥3 drug classes are 61.54% of conjugative replicons against 42.94%
+of mobilizable and 41.68% of marker-negative ones (difference +19.86 percentage points, 95%
+BioProject-clustered CI 14.16–25.41) (Extended Data Fig. 2b,d). **That difference is confounded with
+plasmid length**: conjugative replicons are larger, and larger replicons carry more of everything.
+Stratifying by replicon length and pooling across strata leaves +8.10 percentage points, and the
+strata disagree in sign (-13.8, -14.3, +34.1, -4.7, +8.7), so the crude figure should not be read as a size-independent
+effect. Metal-resistance co-location follows the same order
+(44.42%/27.99%/25.93%) (Extended Data Fig. 2c) [@cooccurrence2026], as does median resistance-gene
+count (5/4/2), and 1,455 of 6,621 replicons (21.98%) combine conjugation-consistency, three or more
+drug classes and a metal or virulence determinant. Convergence here means present on the same
+documented replicon: not co-transfer, not co-selection, and not evidence of cause.
 
-The species-level result could still be a composition artefact if *A. baumannii* simply carries
-different gene families. It does not. Restricting to families present in both hosts and pooling by
-Mantel–Haenszel across matched families, the odds that a determinant of the same family is
-chromosomal-and-mobile rather than plasmid-borne is **50.29-fold higher in *A. baumannii* than in
-*Klebsiella* (CI 45.61–55.45)** across 58 eligible families, with 56 of 58 families pointing the
-same way. Collapsing to one genome per BioProject the estimate is **21.95 (CI 18.92–25.47)** over
-49 families.
+### Validation, and what the resource cannot be used for
 
-Against *P. aeruginosa* the same analysis gives **OR 1.26 (CI 1.11–1.43)**: the interval excludes
-1, but the effect is small and families split 24 up against 22 down. This contrast is reported as
-**qualified**. The host-conditioning result is strong against *Klebsiella* and weak against
-*P. aeruginosa*, and the manuscript states it that way.
+The chromosomal mobile-element layer was validated by blinded manual adjudication.
+**The adjudicator was the author**, working from panels with the methods de-identified and blind to
+species, study, gene identity and prior classification. The frozen design had required an
+adjudicator not involved in building the pipeline; none was recruited, so that criterion is
+recorded as **not met** and this audit is internal rather than independent. On 120 stratified blocks with methods de-identified, design-weighted agreement between the
+automated state and the adjudicator was **0.9920 (95% CI 0.9761–1.0000)** against a registered gate
+of ≥ 0.90, with one disagreement, and it validates the MOBILE versus QUIESCENT discrimination
+only. An earlier round failed at 62/120 and stands as a FAIL: the annotation path under test was
+visible to the adjudicator but excluded from the rule engine. The corrected audit removed that
+asymmetry and drew fresh cases (Supplementary Method 1).
 
-A three-architecture partition (chromosomal-quiescent 18,837, chromosomal-mobile 16,303,
-plasmid-borne 39,209) reproduces the direction — *A. baumannii* versus *P. aeruginosa*, OR 16.54
-(CI 11.88–23.01) — but one family accounts for 50.5 % of the pooled weight. That sub-analysis is
-therefore reported as **partial**: the direction is consistent, the pooled magnitude is not
-family-robust, and the pre-registered sub-claim that no family would exceed a weight ceiling is
-**false**.
+Class assignments are invariant to tool and database version — re-running the plasmid mobility
+layer under a different MOB-suite version and marker database produced **no class transitions** —
+and an independent implementation, CONJScan [@cury2020; @cury2017] within MacSyFinder
+[@neron2023; @abby2014], agrees on class E at **κ = 0.875**, neither tool treated as a truth
+standard. Leave-one-BioProject-out across the 1,195 projects behind the *A. baumannii*/*K. pneumoniae*
+ratio moves it by at most 5.50% against a prespecified 15% ceiling. **BioProject balancing addresses project-level sampling structure but
+is not equivalent to clonal-lineage adjustment**: a BioProject is a submission unit and a clone is a
+descent unit. We therefore typed every genome contributing to the headline contrast. *A. baumannii*
+is dominated by one lineage — 780 genomes fall in 120 sequence types, but sequence type 2 alone holds
+**48.2%** of them and the effective number of lineages is **3.88** by inverse Herfindahl–Hirschman
+index; the *Klebsiella* group is broader at 3,460 genomes, 715 sequence types and an effective **20.76**.
 
-### R9 — Conjugation-consistent replicons carry the convergent cargo
+**The contrast survives lineage adjustment but is roughly halved by it.** Collapsing to one genome
+per sequence type gives an odds ratio of **21.76 (95% CI 17.49–27.07)** across 49 families, 47 of them
+concordant; dropping untypeable genomes gives 21.33 (16.37–27.80) and lineage-balanced weighting 22.05
+(17.74–27.41). Every arm keeps its direction with an interval excluding 1, and the adjusted interval
+does not overlap the crude one. Leave-one-sequence-type-out across 1,308 lineages moves ln(OR) by up
+to **25.4%**, above the 15% ceiling borrowed from the BioProject arm, and the lineage responsible is
+sequence type 2. The effect is therefore real and lineage-sensitive, and is reported as an
+association with host rather than as a host effect (Supplementary Result 15).
 
-Of 6,621 ARG-bearing plasmids typed, **3,937 are conjugation-consistent, 1,211
-mobilization-consistent, and 1,473 marker-negative**. Cargo convergence tracks that architecture:
-plasmids carrying ≥3 drug classes are **61.54 %** of conjugative replicons against 42.94 % of
-mobilizable and 41.68 % of marker-negative ones (conjugative − marker-negative **+19.86
-percentage points, BioProject-clustered CI 14.16–25.41**). Metal-resistance co-location follows
-the same order (44.42 % / 27.99 % / 25.93 %), as does median ARG count (5 / 4 / 2). **1,455
-replicons (21.98 %)** meet the high-concern architecture definition.
-
-"Convergence" here means present on the same documented replicon. It is not co-transfer, not
-co-selection, and not evidence that conjugative plasmids cause accumulation.
-
-### R10 — Robustness
-
-**The chromosomal MGE layer was validated by blinded expert adjudication.** On 120 stratified
-blocks presented with methods de-identified, design-weighted agreement between the automated
-MOBILE/QUIESCENT state and the adjudicator was **0.9920 (CI 0.9761–1.0000)**; 119 of 120 agreed,
-with perfect agreement on QUIESCENT (60/60) and one disagreement on MOBILE (59/60). The scope
-validated is MOBILE versus QUIESCENT and nothing wider. An earlier round of the same audit
-**failed at 62/120** and is retained in the record: it diagnosed the instrument, not the
-classifier — the casebook had presented evidence too thin to adjudicate — and the corrected
-instrument produced the result above.
-
-**Class assignments are invariant to tool and database version.** Re-running the plasmid mobility
-layer under a different MOB-suite version and a different marker database produced **0.0000 %
-class transitions**: C→C 1,473, D→D 1,211, E→E 3,937, and E1/E2 identical to the digit.
-
-**An independent implementation corroborates class E.** CONJScan, which shares no code with
-MOB-suite, agrees on the class E definition at **κ = 0.875** (relaxase κ = 0.883, MPF κ = 0.740);
-**61.24 % of plasmid-borne occurrences sit on replicons both tools call conjugation-consistent.**
-Neither tool is treated as a truth standard, and the comparison is reported as concordance.
-CONJScan has no *oriT* model, so this arm covers class E fully and classes C and D only in part.
-
-**The species contrast survives clustering and lineage collapse.** The *A. baumannii* /
-*K. pneumoniae* block-weighted ratio is **2.4577** at baseline, 2.4590 collapsing to one genome
-per BioSample and **2.1504** collapsing to one genome per BioProject. Leave-one-BioProject-out
-across 1,195 BioProjects moves it between 2.3224 and 2.4832 — a maximum relative change of
-**5.50 %**, with **no BioProject moving it by more than 15 %**. BioProject cluster bootstrap gives
-2.4378 (CI 2.1565–2.8021) at full weighting and 2.1497 (CI 2.0286–2.2821) collapsed.
-
-**The structural census was independently verified.** Thirty-five checks re-deriving the published
-NMIS quantities from raw tool output returned **0 disagreements**; a further 43 checks on the
-consolidated result tables returned 0.
+The complementary objection, that these determinants might be intrinsic chromosomal genes rather
+than acquired ones, does not hold. Five of the determinants most often named as intrinsic —
+*fosA*, *oqxA*, *oqxB*, *bla*PDC, *bla*ACT — are absent from the matched set because a species-core gene
+cannot meet the registered three-species eligibility rule. Two eligible families do carry intrinsic
+members, and removing them changes little: excluding the *bla*OXA-51-like alleles at allele level
+gives 48.45 (43.94–53.41), and excluding the *bla*OXA and *bla*SHV families outright gives 51.53
+(46.28–57.37), above the unadjusted estimate rather than below it (Supplementary Result 11). The validation programme is reported in Supplementary Result 16.
 
 ---
+
+The chromosomal mobile-compartment estimate depends on its denominator, and the host ordering is
+preserved under each of them (Extended Data Fig. 3); all four denominators and their reconciliation
+are reported in Supplementary Results 17 and 18.
 
 ## Discussion
 
-**Portability is measurable, and the unit is the occurrence.** The central result of this work is
-not a number but a change of unit. Once 164 gene families are observed in both compartments, a
-per-gene mobility score is no longer well defined: it averages over occurrences that differ in
-exactly the property being scored. Gene-level frameworks are the closest prior art, and this is
-the limitation they carry; occurrence-level resolution is what removes it.
+**Portability-relevant genomic architecture is measurable, and the unit is the occurrence.** Once 164 gene families are observed
+in both compartments, a per-gene mobility score is not well defined: it averages over occurrences
+differing in exactly the property being scored. Gene-level frameworks carry that limitation
+[@ellabaan2022], as do studies that resolve one family but predict its location [@liu2026] and
+plasmid-only surveys that never allocate a chromosomal occurrence [@hou2026; @coluzzi2025;
+@ecoli9700]. Occurrence-level resolution removes it.
 
-**The chromosomal mobile compartment is half the resistome and is under-instrumented.** Plasmid
-biology has decades of dedicated method development. The chromosomal half — insertion sequences,
-transposons, integrons in resistance context — is measured mostly as a by-product. Yet 46.39 % of
-chromosomal occurrences here sit within 10 kb of a marker, in *A. baumannii* at a median of 647 bp,
-and three quarters of those calls survive a structural endpoint requiring a complete element with
-resolved terminal inverted repeats. Instrumenting only the plasmid compartment discards a large,
-spatially tight, structurally real fraction of the mobile resistome.
+**The chromosomal compartment is 47.26% of the resistome — 35,140 of 74,349 occurrences — and its
+mobile fraction is under-instrumented.** Plasmid biology has decades of dedicated method
+development [@smillie2010; @redondo2020]; the chromosomal half is mostly a by-product, even where
+transposable elements drive adaptation in their own right [@efaecium2026]. Yet 46.39% of chromosomal occurrences sit within 10 kb of a marker, in
+*A. baumannii* at a median of 647 bp, and roughly three quarters survive a stricter structural
+endpoint. That *A. baumannii* carries chromosomal resistance islands is long established
+[@fournier2006; @hamidian2018; @nigro2012; @nigro2013]; new here is the multi-species quantification
+showing this architecture is invisible to the plasmid-based proxy.
 
-**Two proxies, not one latent quantity.** The strongest evidence in this paper is negative:
-plasmid share explains 2.75 % of the variance in chromosomal MGE association across the eight
-confirmation species, and the slope relating them cannot be distinguished from zero. Against that
-background the *A. baumannii* residual of 2.11 logits is not an outlier to be explained away; it
-is what a genuinely two-dimensional space looks like when it is projected onto one axis. The
-practical corollary is direct: ranking species, lineages or isolates by plasmid fraction alone
-systematically misranks exactly the organisms whose resistance genes travel by the other route.
+**Two proxies, not one latent quantity, and allocation is host-associated.** The strongest evidence here is negative: across eight confirmation species plasmid share explains
+2.75% of the variance in chromosomal association and the slope cannot be distinguished from zero.
+The *A. baumannii* residual of 2.11 logits is large, which is what a two-dimensional space
+projected onto one axis produces; a mechanistic duality between routes has been reported for carbapenem
+resistance [@carbapenemMobilome], and draft-assembly work reaches related conclusions by prediction
+rather than documented location [@swineecoli2026]. The same determinant family occupies different
+routes depending on its host, roughly 50-fold between *A. baumannii* and *Klebsiella*: what
+gene-level scores average away is host-associated structure, not noise. We do not identify the
+mechanism producing it, the contrast against *P. aeruginosa* is weak, and we claim no generality
+across all Gram-negative hosts; a single-species correlational result has been reported
+independently [@yaikhan2026], and the multi-species comparison is what distinguishes an architecture
+from an anecdote. Ranking by plasmid fraction alone omits a distinct chromosomal-context axis, so an organism
+whose resistance genes sit in that context is ranked as though it had none. No external true
+ranking of portability was defined, and none is claimed here.
 
-**Host, not gene, allocates the vehicle.** The matched-family analysis shows that the same
-determinant family is routed differently depending on the host that carries it — 50-fold between
-*A. baumannii* and *Klebsiella*. This positions the result against gene-level mobility scores: what
-those scores average away is not noise but a host effect. The contrast against *P. aeruginosa* is
-weak, and we do not claim it is general across all Gram-negative hosts.
+**What this design cannot claim, and where it stops.** No transfer event was observed; co-location is not co-transfer, and independent acquisition
+produces an identical record. No transposition was assayed: a complete insertion sequence is a structure, not an event.
+Absence of a marker is a statement about a database, so class C plasmids are not non-mobilizable and
+class A occurrences are not immobile. There is no phenotype and no outcome data, so no clinical risk
+claim is available, and the cohort supports no prevalence estimate. Everything rests on documented
+replicon assignment, which exists only for closed assemblies: that gives zero missingness and
+equally forbids extrapolation to draft collections. Comparable closed collections exist
+[@closed16622], whole-assembly screening recovers cargo that chromosome-only analyses miss
+[@fullassembly2026], and applying this framework at draft scale requires a prediction step whose
+error rate must itself be measured [@arredondoalonso2017; @teixeira2025; @camargo2024]. Which hosts
+an element actually reaches requires a different class of evidence, such as proximity ligation
+[@hic2025].
 
-**What this design cannot claim.** No transfer, conjugation or horizontal-gene-transfer event was
-observed. Co-location on a replicon is not co-transfer, and independent acquisition produces an
-identical genomic record. No transposition or element activity was assayed; a structurally complete
-insertion sequence is a structure, not an event. Absence of a marker is a statement about a marker
-database, not about biology: class C plasmids are not "non-mobilizable" and class A occurrences are
-not "immobile". There is no phenotype, no MIC and no outcome data here, so no clinical risk claim
-is available. The cohort is a convenience sample of public closed genomes and supports no
-prevalence estimate.
+The chromosome-wide density objection is answered on its own terms: a null relocating each
+occurrence within its own chromosome preserves that chromosome's insertion-sequence density
+exactly, leaves the *A. baumannii* contrast intact, and is supported by every registered
+sensitivity. A uniform relocation null does not preserve coding versus intergenic position,
+accessory versus core status, local gene density, recombination hotspots or resistance-island
+structure, so local genomic-compartment confounding is not addressed by it and is not claimed
+to be. It cannot establish causation — host species is confounded with lineage,
+clinical context and sampling source, and proximity to a complete element is not evidence that it
+has moved. The genome-wide census also differs from the frozen window-limited endpoint by 1,204
+occurrences pooled, three quarters of them elements the extracted windows previously truncated, a
+limitation the earlier protocol declared. That window-limited endpoint remains this work's frozen
+structural measure; the genome-wide census is the background against which it is normalised, not a
+replacement.
 
-**The closed-genome boundary.** Everything reported rests on documented replicon assignment, which
-exists only for closed assemblies. That restriction is what gives the location layer zero
-missingness, and it is equally what forbids extrapolating any of these fractions to draft-assembly
-collections. Applying this framework at draft scale requires a prediction step, with an error rate
-that must be measured — which is a different paper.
-
----
-
-## Limitations
-
-1. **Closed genomes only.** No result generalises to draft assemblies.
-2. **Detection-limited endpoints.** The MGE layer is bounded by profile homology; the structural
-   layer by ISEScan under a frozen definition, HMMER 3.3.2 profiles and a ±10 kb window. A shorter
-   window truncates large elements, which is why 2,384 structurally complete elements were classed
-   as crossing the occurrence window and excluded from the primary structural endpoint.
-3. **Censored by construction.** 716 occurrences have a complete element in their block that
-   crosses their own window; 111 occurrences have an in-block marker beyond their own window. Both
-   are censored, reported separately, and not counted as positive.
-4. **Medians unreachable under the structural endpoint** in every group, because *F*(10 kb) < 0.5
-   everywhere; restricted mean distance is reported instead.
-5. **The *P. aeruginosa* matched-family contrast is weak** (OR 1.26) and the three-architecture
-   sub-analysis is family-dominated (one family, 50.5 % of weight). Both are labelled accordingly.
-6. **Convenience sampling.** BioProject structure is uneven; every species-level estimate is
-   accompanied by a clustered interval and a collapse analysis for that reason.
-7. **No lineage typing.** cgMLST or clonal-complex control for the *A. baumannii* result is not
-   included; BioProject collapse and leave-one-out are the available substitutes.
-
----
+A recent large-scale analysis reached the opposite conclusion, holding that AMR mobility is "largely
+dictated by gene function rather than the host bacterium" across 39,089 RefSeq accessions
+[@jia2026]. That holds pooled across thousands of species but not within their own data: re-analysed under
+their own mobility definition, all six pairwise contrasts among the four ESKAPE Gram-negative
+genera exclude 1 and span 0.078 to 16.2 (Supplementary Result 19), where a gene-intrinsic model
+predicts unity. OXA β-lactamase is non-mobile in 75.8% of *A. baumannii* occurrences and mobile in
+94.8% of *K. pneumoniae* ones. The divergence is instrumental: genomic-island prediction "will not
+predict very small mobile genetic entities" [@jia2026], and an ISAba1-flanked gene lies far below
+that scale. The two analyses measure different objects and neither refutes the other.
 
 ## Methods
 
-**Cohort and frozen protocol.** 6,288 closed complete Gram-negative ESKAPE genomes. The context
-protocol was frozen and hashed before any outcome column was read
-(`FROZEN_PORTABILITY_CONTEXT_PROTOCOL_V1.json`,
-`ddb155707dea1331b82d6ee5bf59ca2bf188fc8ad7bcb35ead2d7b08af8142ef`), as were the class definitions
-(`frozen_portability_class_definitions.json`).
+### Definitions used throughout
 
-**Denominator construction.** 184,538 raw determinant records reduce to 85,507 and then to the
-PRIMARY denominator of 74,349 acquired occurrences. Point mutations, intrinsic determinants and
-`Scope=plus` records are excluded from PRIMARY; *mcr-9* is `Scope=plus` and is analysed only in
-sensitivity set S1.
+Four terms carry the analysis and are used in one sense only.
 
-**Direct replicon join.** Each occurrence is assigned to the replicon whose coordinate interval
-contains it, using NCBI `assigned_molecule_location_type`. No prediction step is involved. 0
-unmatched, 0 ambiguous, 0 missing coordinates.
+An **occurrence** is one qualifying determinant record at one coordinate interval on one replicon of
+one assembly. It is the unit of every primary count.
 
-**Plasmid mobility typing.** MOB-suite relaxase, MPF and *oriT* models define classes C (no
-marker), D (relaxase) and E (relaxase and MPF), with E2 the nested subset additionally carrying
-*oriT*.
+A **compartment** is chromosome or plasmid, taken from the molecule type NCBI documents for the
+replicon. It is never predicted.
 
-**Neighbourhood construction.** Chromosomal occurrences are merged into shared context blocks; each
-block spans the union of the ±10 kb windows of the occurrences it contains. Circular replicons are
-handled topologically, with wrapped coordinates resolved rather than clipped (57 wrapped blocks, 5
-truncated). 21,955 blocks in total.
+A **context block** is the union of the ±10 kb windows of a set of chromosomal occurrences that are
+within 20 kb of one another. It is the unit of block weighting and the unit that nests within a
+BioProject.
 
-**MGE annotation.** Profile-homology annotation of IS/transposase and integrase/integron features
-within blocks: 32,364 features (29,331 IS/transposase, 3,033 integrase/integron). An occurrence is
-class B if ≥1 feature lies within its own ±10 kb window. Block-level marker positivity is a
-different quantity and is reported separately: 6,617 blocks contain a feature; 6,616 contain a
-class-B occurrence.
+**Portability** is an evidence-ranked genomic property inferred from documented replicon location,
+mobile-element-associated chromosomal context, structurally resolved insertion sequences and plasmid
+mobility-marker architecture, expressed as one of five ranked classes. It does not denote observed
+transfer, conjugation, transposition or element activity, none of which was measured. It is not
+transfer capability, and it is not a rate.
 
-**Distance analysis.** Weighted cumulative detection *F*(*d*) with right-censoring at 10 kb;
-block-balanced weights (1/*m* per occurrence, summing to 21,955); restricted mean distance computed
-as E[min(*D*, *L*)]; BioProject cluster bootstrap, *B* = 2,000, seed 20260822, 2,248 BioProjects,
-effective count by 1/HHI = 136.9. Holm correction across the registered contrast family.
+Three plasmid-share figures appear and are not interchangeable: 52.736% is occurrence-weighted and
+counts genes; 36.586% is genome-collapsed events and counts (genome, compartment) pairs; 35.932% is
+the mean of per-genome percentages. Each is reported with its denominator throughout, and the same
+distinction separates the 46.39% occurrence-weighted and 30.14% block-weighted chromosomal figures
+(Supplementary Method 2).
 
-**Structural insertion-sequence census.** ISEScan 1.7.3 under a pinned environment (HMMER 3.3.2,
-BLAST 2.17.0, FragGeneScan 1.32) over all 21,955 blocks, one thread per block, no reruns. An
-element is structurally complete if it is `type c` with a complete transposase ORF and bilateral
-resolved terminal inverted repeats. The primary endpoint additionally requires **full containment
-within the individual occurrence's own ±10 kb window**; elements complete in the shared block but
-crossing that boundary form a separate, explicitly reported category. This containment rule was
-registered as a numbered amendment, hashed before any benchmark block was scored.
+### Cohort and frozen protocol
 
-**Statistics.** Family-matched contrasts use Mantel–Haenszel pooling with Cochran's *Q* and *I*²
-reported; species-level contrasts use BioProject cluster bootstrap. Confirmation-species fits
-exclude both discovery species. No outcome column was inspected to choose a feature, threshold,
-species or hyperparameter.
+The cohort comprises 6,288 closed complete genome assemblies of Gram-negative ESKAPE pathogens
+retrieved from NCBI [@kitts2016; @oleary2016] with accession.version recorded and a SHA-256 digest
+stored per downloaded file. An assembly was eligible if its assembly level was "Complete Genome", if
+every replicon carried an `assigned_molecule_location_type` of Chromosome or Plasmid, and if the
+organism fell within the frozen ESKAPE Gram-negative scope. No assembly was excluded after any
+outcome column was inspected (Supplementary Method 3).
 
-**Validation programme.** Blinded expert adjudication of the MGE layer (n = 120, stratified);
-lineage and BioProject robustness; tool-version, database-version and independent-implementation
-arms; a discovery/confirmation split for the discordance principle; a distance analysis; and a
-structural census. Each ran under its own protocol, frozen and hashed before outcomes were read,
-with an independent verifier that re-derives the published numbers and reports its own
-disagreement count.
+The analysis protocol and the class definitions were written and hashed **before any outcome column
+was read**, and are published with the deposit. Every subsequent module follows the same three-stage
+structure: a freeze stage writes a protocol and hashes it; a scoring stage verifies those digests
+and aborts on mismatch; an independent verification stage re-derives the published quantities and
+reports its own disagreement count. Independence here means a separate code path that does not
+import the primary analysis; it was written and run by the same investigator and is not
+independent scientific replication. Changes after a freeze are numbered amendments, themselves
+hashed before use. No feature, threshold, species grouping or hyperparameter was chosen by
+inspecting an outcome.
 
-**Reproducibility.** All frozen protocols, receipts, result tables and analysis code carry full
-64-character SHA-256 digests and are versioned rather than overwritten. Superseded versions are
-retained.
+### Determinant calling and denominator construction
+
+Acquired resistance determinants were called with AMRFinderPlus 4.2.7, reference gene catalogue
+version 2026-08-07.1 [@feldgarden2021; @feldgarden2022]. The tool returned 184,538 records across
+the cohort. The primary denominator retains only records of type AMR with scope "core" and excludes,
+in this order: point mutations and disrupted point mutations, which are not acquired genes and were
+searched only where an organism flag existed; efflux-class records, retained as sensitivity set S2;
+`Scope=plus` non-efflux records, retained as sensitivity set S1; and the metal, biocide, stress and
+virulence layers, which are not antibiotic resistance. This leaves **74,349 acquired resistance-gene
+occurrences**. Each exclusion is arithmetic and prespecified; the layer inventory with row counts is
+published with the deposit (Supplementary Method 4, Supplementary Table 1). *mcr-9* is `Scope=plus`
+and therefore appears only in S1, never in a primary result.
+
+**The matching unit is the gene family, and it is not the AMRFinderPlus family field.** A family is
+derived from the `Element symbol` by removing a trailing allele designator at the last hyphen
+when that tail is a number, a short roman numeral or one to three letters, so `blaTEM-1` becomes
+`blaTEM` and `sul1` is unchanged. The rule exists because the question is whether the same
+determinant takes different routes in different hosts, and at allele resolution most alleles occur
+in one host only. It is also a choice that could merge determinants of genuinely different
+mobility, so it was tested rather than assumed: repeating the contrast on the raw symbol, with no
+collapsing at all, gives **56.40 (95% CI 50.37–63.15)** over 68 symbols, and the same analysis with one
+genome per sequence type gives 23.18 (18.04–29.78) (Supplementary Result 20).
+
+One occurrence is one qualifying record, identified by assembly accession, sequence accession and
+coordinate interval. This composite is unique across the cohort: the deposited dataset has zero
+duplicate keys.
+
+### Direct replicon assignment
+
+Each occurrence was assigned to the replicon whose coordinate interval contains it. Replicon
+metadata was retrieved from the NCBI Datasets v2alpha `sequence_reports` endpoint (run receipt
+2026-08-21T00:57:40Z; 7,216 assemblies, 23,129 replicon records, zero fetch failures), and the
+molecule assignment is the `assigned_molecule_location_type` field, accepted only where it reads
+exactly `Chromosome` or `Plasmid`. A direct location call requires all four of: the genome is in the
+frozen complete-genome cohort; the AMRFinderPlus contig identifier maps exactly to one documented
+replicon record; that replicon is explicitly designated Chromosome or Plasmid; and the gene
+coordinates lie within that sequence's stated length. Matching tries the full accession.version
+first and falls back to the accession with the version suffix stripped, recording which rule fired
+in a per-row `join_method` field. Containment is 1-based and inclusive at both bounds, evaluated on
+the minimum and maximum of Start and Stop so that reversed coordinates cannot cause a spurious
+failure. The replicon unit is a unique sequence accession **within a versioned assembly**, so a
+replicon accession is never matched across assemblies; most assemblies carry several plasmid
+replicons. A replicon record found but carrying an empty molecule type becomes unclassified and
+unresolved — it is never defaulted to chromosome — and an unmatched identifier is never inferred to
+be chromosomal. No prediction step is involved and no plasmid-classification tool contributes to the
+location layer. Within the closed-genome cohort the join produced zero unmatched, zero ambiguous and
+zero missing-coordinate assignments: 39,209 plasmid and 35,140 chromosome. Location evidence is
+recorded per occurrence in a dedicated field so that the layer can be audited separately from the
+mobility and context layers.
+
+**Denominator flow and completeness of assignment.**
+
+The cohort comprises 6,288 closed complete genomes of Gram-negative ESKAPE pathogens. Determinant
+calling with AMRFinderPlus [@feldgarden2019; @feldgarden2021; @feldgarden2022] and denominator
+construction reduce 184,538 raw determinant records to a primary denominator of **74,349 acquired
+resistance-gene occurrences** (Extended Data Fig. 4a). Each occurrence is joined to the replicon whose coordinate
+interval contains it.
+
+Every occurrence received a documented assignment: **39,209 plasmid-borne and 35,140 chromosomal, 0
+unmatched, 0 ambiguous, 0 missing coordinates within the closed-genome cohort** (Extended Data Fig. 4b). This is
+complete computational assignment to a documented replicon, not biological certainty about any
+individual locus. Fifteen independent verification checks on the denominator flow returned no
+disagreements.
+
+Plasmid share is **52.736%** occurrence-weighted. Collapsed to genome-level events it is
+**36.586%**, and that figure needs its denominator stated precisely. A genome-collapsed event is one
+event per (genome, compartment): each genome contributes at most one plasmid event and at most one
+chromosomal event, however many resistance genes it carries in that compartment. That yields 3,569
+plasmid and 6,186 chromosomal events, 9,755 in total, and 3,569/9,755 = 36.586% (Extended Data Fig. 4c). It is a
+count of events after collapse, not the mean of per-genome percentages, which is 35.93%. Both
+figures are correct and answer different questions: an occurrence-weighted figure describes the
+resistome, a genome-collapsed figure describes how often a compartment is used at all.
+
+### Plasmid mobility typing
+
+Resistance-gene-bearing plasmid replicons (n = 6,621) were typed with MOB-suite 3.1.9 using database
+v3.1.8 [@robertson2018], which detects relaxase families under the MOB classification scheme
+[@garcillanbarcia2009], mating-pair formation systems, and origins of transfer. Class C is a plasmid
+with no detected mobility marker, class D carries a relaxase, and class E carries both relaxase and
+mating-pair formation machinery. Class E2 is the nested subset additionally carrying a detected
+origin of transfer; E1 is the remainder of E. A negative result is a statement about the marker
+database and is reported as such throughout.
+
+### Chromosomal context construction and mobile-element annotation
+
+Chromosomal occurrences were merged into shared context blocks. Each block spans the union of the
+±10 kb windows of the occurrences it contains, so an occurrence with a neighbour within 20 kb shares
+a block with it. Circular replicons were handled topologically: windows crossing the origin were
+resolved by wrapping rather than clipping (57 wrapped blocks), and windows truncated by a replicon
+end were recorded as truncated (5 blocks). This yielded **21,955 blocks** spanning up to 62,349 bp
+(Supplementary Method 5).
+
+Blocks were annotated by profile-homology search for insertion sequence and transposase markers
+[@siguier2014; @siguier2006] and for integrase and integron markers [@gillings2014; @escudero2015],
+giving **32,364 features** (29,331 and 3,033 respectively). An occurrence is class B if at least one
+feature lies within **its own** ±10 kb window; block-level marker positivity is a different quantity
+and is reported separately throughout, because the two differ (6,617 versus 6,616 blocks) and
+conflating them was the single most likely misreading of this analysis.
+
+### Distance analysis
+
+For each chromosomal occurrence the distance to the nearest qualifying marker within its own window
+was computed, with direct overlaps scored as zero. Occurrences with no qualifying marker in-window
+were right-censored at 10,000 bp and never imputed. The primary estimand is weighted cumulative
+detection *F*(*d*), the block-balanced share of occurrences whose nearest element lies within *d*.
+Block balancing assigns weight 1/*m* to each occurrence in a block of *m*, so weights sum to 21,955
+and a gene-dense neighbourhood does not count more than a sparse one. Restricted mean distance is
+E[min(*D*, 10,000)]; medians are reported as "not reached" wherever *F*(10 kb) < 0.5 rather than
+extrapolated (Supplementary Method 6).
+
+A documented exception: 111 occurrences lie in a marker-positive block whose nearest in-block
+feature falls outside that occurrence's own window (10,231–16,931 bp away). Using the out-of-window
+feature would manufacture a distance the design declares unavailable, so these are censored at 10
+kb. The arithmetic reconciles exactly: 16,414 block-positive − 111 = 16,303 window-positive = class
+B.
+
+### Structural insertion-sequence census
+
+All 21,955 blocks were processed with ISEScan 1.7.3 [@xie2017] under a pinned environment — HMMER
+3.3.2 [@eddy2011], BLAST+ 2.17.0 [@camacho2009], FragGeneScan 1.32 [@rho2010], Biopython 1.88
+[@cock2009] — one thread per block, with no reruns and no per-block parameter variation. HMMER was
+pinned to 3.3.2 because transposase open-reading-frame detection is sensitive to the profile search
+version, and an earlier module had used 3.3.2; a default environment solve returned 3.4 and the
+environment was rebuilt before the census rather than after. The census completed with no tool
+failures and resolved 14,426 elements.
+
+Three cohort counts differ and are not inconsistent. The cohort holds **6,288 genomes**. Of these,
+**6,186 carry at least one chromosomal resistance gene** and contribute a genome-collapsed
+chromosomal event; the remaining 102 carry resistance genes only on plasmids. Those 6,186
+assemblies hold **6,190 ARG-bearing chromosomes**, because four of them carry two such
+chromosomes rather than one.
+
+An element is structurally complete if ISEScan reports it as type `c` with a complete transposase
+open reading frame and bilateral resolved terminal inverted repeats. The primary structural endpoint
+additionally requires **full containment within the individual occurrence's own ±10 kb window**.
+Elements complete in the shared block but crossing that boundary form a separate, explicitly
+reported category (2,384 elements, 716 occurrences) and are censored, because a window shorter than
+an element truncates it by construction. This containment rule was registered as a numbered
+amendment and hashed before any block was scored (Supplementary Method 7).
+
+### Genome-wide background null
+
+Insertion sequences were annotated across all 6,190 ARG-bearing chromosomes with ISEScan 1.7.3 under
+the pinned environment described above, one chromosome at a time, yielding 190,999 elements. Element
+completeness follows the definition used for the window-limited census without change: type `c` with
+a complete transposase open reading frame and bilateral resolved terminal inverted repeats.
+
+The null relocates each chromosomal occurrence uniformly at random within its own chromosome,
+preserving chromosome, genome, species and BioProject identity, the number of occurrences on that
+chromosome, and each occurrence's interval length. Relocated intervals may not overlap. On circular
+chromosomes the ±10 kb window wraps; on linear chromosomes a start whose window would run past
+either end is not permissible, matching how truncated windows are treated in the observed data.
+Permutations never rerun ISEScan: they score against the frozen coordinate table. B = 2,000, seed
+20260824, seeded per chromosome as seed XOR hash(accession) so that a chromosome replays identically
+regardless of scheduling order.
+
+Empirical *P* is (#{null ≥ observed} + 1)/(B + 1). With B = 2,000 the floor is 1/2001 ≈ 0.0005 and
+is reported as ≤ 0.0005; *P* = 0 is never reported. Enrichment is the observed detection fraction
+divided by its null expectation at the same landmark, with a 95% interval taken as the 2.5th and
+97.5th percentiles of the null distribution.
+
+The design, the permutation count, the seed, the four weighting schemes, the seven sensitivities and
+the decision thresholds were registered in a frozen amendment before any species outcome was
+computed, and the order in which the cohort was fixed and the outcome read is set out in
+Extended Data Fig. 5. The analysis was verified through a separate code path that re-implements every mechanic
+independently, including topology-aware distance on circular chromosomes, censoring, permutation
+logic, all four weightings and the empirical *P* calculation; 20 of 20 checks passed. The census
+itself was verified by 36 independent ISEScan re-runs, all of which reproduced the recorded element
+count exactly.
+### Cargo convergence on documented replicons
+
+The unit of this analysis is the replicon, not the occurrence. Every plasmid carrying at least one
+acquired resistance gene was typed for mobility as above, giving 6,621 plasmids in three mutually
+exclusive categories: conjugation-consistent (3,937), mobilization-consistent (1,211) and
+marker-negative (1,473).
+
+Cargo breadth is the number of distinct AMRFinderPlus drug classes represented among the acquired
+resistance-gene occurrences lying on that replicon, and a replicon is multi-class if it carries at
+least three. A determinant contributes its own class only, so a replicon carrying five genes of one
+class is not multi-class. Metal-tolerance and virulence co-location use the STRESS, BIOCIDE, METAL
+and VIRULENCE records that the primary denominator excludes; those layers are retained for this
+analysis alone, and a replicon counts as co-locating when at least one such record lies on it.
+Median resistance-gene count is the per-replicon count of primary-denominator occurrences.
+
+Differences between mobility categories are reported with 95% percentile intervals from a cluster
+bootstrap over BioProjects, B = 2,000, seed 20260822; replicon-clustered intervals were computed
+alongside and are recorded in the result receipt. Four mobility-rule variants were run, differing in
+whether mating-pair formation alone, or an origin of transfer, is sufficient evidence; the ordering
+of the three categories is preserved under all four. These are associations on a shared replicon.
+No transfer was observed, and co-location is not co-transfer.
+
+### Statistics
+
+Family-matched contrasts use Mantel–Haenszel pooling across matched gene families [@mantel1959],
+with Cochran's *Q* and *I*² reported and the largest single-family weight share stated, so that a
+pooled estimate dominated by one family is visible as such. Per-family compartment enrichment uses
+Fisher's exact test with Benjamini–Hochberg control of the false discovery rate [@benjamini1995].
+
+Uncertainty is estimated by a cluster bootstrap [@efron1979; @field2007; @davison1997] resampling
+**BioProjects**, not occurrences or blocks, with B = 2,000. Blocks nest within exactly one
+BioProject, so the resampling unit is well defined. Two interval methods are used and they are not interchangeable. Detection fractions, contrasts,
+differences in proportions and the discordance residual carry **95% percentile** intervals from
+the cluster bootstrap, taken as the 2.5th and 97.5th percentiles; no bias-corrected, accelerated
+or studentized interval is used anywhere. The pooled Mantel–Haenszel odds ratios carry an
+**analytic 95% Wald interval on ln(OR) with Robins–Breslow–Greenland variance**, not a bootstrap
+interval. Each reported interval names its own method. Seeds are recorded for
+reproducibility and carry no statistical justification. The chromosomal analysis set spans **2,248**
+BioProjects whose effective number by the inverse Herfindahl–Hirschman index is **136.9**; the full
+6,288-genome cohort spans 2,283 BioProjects at an effective 114.3. Both the nominal and the
+effective count are reported wherever an interval is, because the nominal count overstates the
+independence available. Multiplicity within each registered contrast family is controlled by Holm's
+procedure [@holm1979]. The smallest attainable two-sided bootstrap *P* is 2/B = 0.001 — twice the one-sided floor,
+because a two-sided value doubles the smaller tail — so a Holm-adjusted value of 0.002 across
+the two primary contrasts is the resolution floor and is reported as *P* ≤ 0.002. An earlier
+version of this manuscript quoted 1/B and a floor of 0.001; that overstated the attainable
+resolution by a factor of two (Supplementary Method 8).
+
+The discordance analysis fits the relationship between plasmid share and block-weighted chromosomal
+association on the eight confirmation species only, excluding both species in which the pattern was
+noticed, and evaluates the discovery species against that fit. This discovery/confirmation split was
+registered before the fit was run.
+
+The family-matched contrast is two-way. The numerator state is a chromosomal occurrence with a
+mobile-element marker inside its own ±10 kb window (class B); the comparator is any plasmid-borne
+occurrence (classes C, D and E). Chromosomal occurrences with no marker (class A) are excluded
+rather than pooled with either state, because the endpoint asks how a determinant that is already
+chromosomal is positioned, not whether it is chromosomal. The exclusion makes the contrast
+asymmetric: every plasmid occurrence qualifies as a comparator, whereas a chromosomal occurrence
+qualifies as a case only when a marker is detected. The three-state decomposition reported
+alongside it does not impose that asymmetry, and the two are not interchangeable.
+
+### Lineage typing and lineage adjustment
+
+Sequence types were called with mlst 2.35.0 against the PubMLST schemes bundled with that
+release, on every assembly contributing to the headline contrast (4240 genomes; 780 in
+*A. baumannii*, 3460 in the *Klebsiella* group). Reconciliation was exact: 4240 accessions in,
+4240 typed, no failures. The scheme was **forced per host** — Pasteur `abaumannii_2` for
+*A. baumannii* and `klebsiella` for the *Klebsiella* species complex — because *A. baumannii*
+has two PubMLST schemes and per-genome auto-detection would mix Oxford with Pasteur types and
+return sequence types that are not comparable with one another. A genome the scheme cannot
+resolve is untypeable; untypeable genomes are not silently dropped, and both handlings are
+reported.
+
+Three adjustment arms and one influence arm were registered before any of them was computed
+(`NM_V4C_LINEAGE_ADJUSTMENT_AMENDMENT_002.json`), together with the three outcomes the result
+could take and what each would require of the manuscript. One outcome specified that the
+claim be relabelled from host-conditioned to host-associated; that is the outcome that
+occurred, and the relabelling follows the rule rather than a judgement made afterwards. The
+estimator is unchanged from the primary analysis: only which occurrences enter, and with what
+weight, differs. Sequence type is a seven-locus surrogate for lineage, not a phylogeny — two
+genomes sharing a type are not clones, and the adjustment should be read as removing clonal
+replication, not as controlling descent.
+
+The intrinsic-determinant sensitivity was registered the same way
+(`NM_V4C_INTRINSIC_SENSITIVITY_AMENDMENT_001.json`). Family membership for allele-level
+exclusion was taken from the AMRFinderPlus reference protein database at version 2026-08-07.1,
+the version that produced the calls, rather than assigned by hand.
+
+### Validation programme
+
+Five modules were executed under separate frozen protocols: blinded manual adjudication of the
+chromosomal mobile-element layer (n = 120 stratified blocks, methods de-identified as X/Y/Z, the
+adjudicator blind to species, study, gene identity and prior classification, and the adjudicator
+being the author — the registered criterion of an uninvolved adjudicator was not met); lineage and
+BioProject robustness including leave-one-BioProject-out; tool-version, database-version and
+independent-implementation arms for the plasmid mobility layer, the last using CONJScan [@cury2020;
+@cury2017] within MacSyFinder [@neron2023; @abby2014] and reported as concordance because neither
+tool is a truth standard; a discovery/confirmation split for the discordance principle; and the
+structural census described above. Each emitted an independent verification report stating its own
+disagreement count. The sensitivity sets applied to the window-limited endpoint are defined in Supplementary Method 9.
+
+### Reproducibility
+
+All frozen protocols, receipts, result tables and analysis code carry full 64-character SHA-256
+digests and are versioned rather than overwritten; superseded versions are retained. Figures are
+regenerated from digest-verified inputs by a generator that verifies every input hash before drawing
+and records every output hash. Three quantities quoted in this manuscript were recomputed
+independently during figure generation and agreed exactly. Each headline quantity is traced to its source artefact in Supplementary Result 21, and tool and reference database versions are
+listed in Supplementary Table 10.
+
+### Use of AI tools
+
+Large language models were used to assist with code development, quality-control documentation and
+manuscript drafting under the author's direction. All analyses, outputs, citations and scientific
+claims were checked by the author, who accepts full responsibility for the work.
+
+No figure in this paper was drawn by a generative model. An early draft of the schematic in Extended Data Fig. 5 was, from a written specification, and it was replaced: the submitted figure is redrawn
+by a script that reads every value from the result receipts, so it is reproducible rather than
+trusted, and the model-drawn draft is retained separately as a record. No estimate, statistic or
+scientific conclusion in this paper was produced by a generative model.
 
 ---
 
-## Data and code availability
+## Data availability
 
-All inputs are public NCBI records and remain governed by NCBI's terms.
+The occurrence-level dataset — 74,349 acquired resistance-gene occurrences with their replicon
+assignment and portability class — and the genome-wide insertion-sequence annotation of 190,999
+structurally resolved elements across 6,190 chromosomes are deposited in Zenodo at
+https://doi.org/10.5281/zenodo.22116987 (version 2.0.0; the concept DOI
+https://doi.org/10.5281/zenodo.22065541 resolves to the latest version, and version 1.0.0 at
+https://doi.org/10.5281/zenodo.22065542 remains available under its original terms). The deposit
+includes the frozen chromosome accession manifest, the frozen background-null design, the primary
+estimates, the seven registered sensitivities, the gate evaluation, the independent verification
+report and the reconciliation against the window-limited endpoint, together with a data dictionary
+defining every field, denominator and evidence-level dictionaries, JSON Schemas for every table, a
+provenance map, pinned software and database versions, per-file SHA-256 checksums, and a standalone
+verification script that re-derives every headline denominator from the archive alone. Raw
+chromosome sequence is not redistributed: the accession manifest names every chromosome by
+accession.version with its expected length and NCBI source, which regenerates the exact input.
+Result and summary tables, frozen protocols, receipts and validation records are available at
+https://github.com/piranfar/portabilityrisk. The deposited data are licensed CC BY 4.0. The primary
+inputs are public NCBI records and remain governed by NCBI's own terms, which nothing here alters.
 
-**Data.** The occurrence-level dataset — 74,349 acquired resistance-gene occurrences with their
-replicon assignment and portability class — is deposited in Zenodo at
-**https://doi.org/10.5281/zenodo.22065542** (version 1.0.0; concept DOI
-https://doi.org/10.5281/zenodo.22065541 resolves to the latest version). The deposit includes a
-full data dictionary defining every field, denominator and evidence-level dictionaries, JSON
-Schemas for every table, a provenance map, pinned software and database versions, per-file SHA-256
-checksums, and a standalone verification script that re-derives every headline denominator from the
-archive alone and reports its own disagreement count.
+## Code availability
 
-Result and summary tables, frozen protocols, receipts and validation records are available now at
-https://github.com/piranfar/portabilityrisk, which also carries the deposit's dictionaries,
-schemas, checksums and access instructions. The occurrence-level dataset itself is not held in
-that repository.
+Analysis code is available at https://github.com/piranfar/portabilityrisk under the Apache
+License 2.0, versioned and hashed, with the exact commands. The occurrence-level dataset the
+scripts consume is the Zenodo deposit above; because that deposit is now published under
+CC BY 4.0, the scripts that require it can be run and not merely read. The release carries the
+frozen protocol amendments and result receipts for the genome-wide background null, the
+lineage adjustment, the intrinsic-determinant sensitivity and the matching-unit sensitivity,
+each with the script that produced it.
 
-**Code.** Analysis code is at the same repository, versioned and hashed, with the exact commands.
-Each module follows a freeze / score / verify structure: the protocol is hashed before any outcome
-is read, the scorer aborts on a digest mismatch, and an independent verifier re-derives the
-published numbers. Of 61 published scripts, 7 run against that repository alone; the remainder
-require the Zenodo deposit and are published as the method of record.
+## Acknowledgements
 
-Sequence caches and conda environments are not deposited; both are regenerable, from receipts
-carrying accession.version with per-file digests and from the pinned environment lock.
+This work was performed without collaborators.
 
-**Licence.** The dataset and its metadata are licensed CC BY-NC-ND 4.0. Analysis code is licensed
-Apache-2.0. Third-party data and software retain their own terms; no licence is applied to them by
-this work.
+## Author contributions
 
-**Outstanding before submission:** confirmation of journal-specific data and code availability
-wording, which could not be retrieved from an official page.
+V.P. conceived the study, designed and implemented the analysis, performed the validation, and wrote
+the manuscript.
 
-## Licence
+## Competing interests
 
-This preprint is made available under the Creative Commons Attribution-NonCommercial-NoDerivatives
-4.0 International licence.
+The author declares no competing interests.
 
 ## Funding
 
@@ -523,49 +783,85 @@ This research received no specific grant from any funding agency in the public, 
 not-for-profit sectors. Cloud-computing resources were supported through promotional credits
 provided by Oracle Cloud Infrastructure.
 
-## Competing interests
-
-The author declares no competing interests.
-
 ---
 
-## Figures
+## Figure legends
 
-All eight are drawn, in SVG, PNG and PDF, under
-`docs/nature_microbiology/figures/manuscript/`. Figures 1–4 and 6–8 are produced by
-`portabilityrisk_figures.py`, which verifies all fifteen input digests before drawing anything and
-writes every output digest to `PORTABILITYRISK_FIGURE_RECEIPT_V1.json`. Figure 5 is the NM-DIST
-four-panel figure, produced under the NM-DIST frozen protocol and reused unchanged.
+**Fig. 1 | The same gene family takes different routes in different hosts.** **a**, per-family log
+odds ratio for chromosomal-and-mobile against plasmid-borne across the 58 matched families, point
+area proportional to Mantel–Haenszel weight share; the dotted line is the pooled estimate. Per-family
+confidence intervals were never computed or stored by the frozen run and are therefore not drawn.
+**b**, the same contrast under all three weighting arms with 95% percentile intervals; the fraction
+beneath each point is the number of families favouring *A. baumannii*.
 
-| Figure | title | file stem |
-|---|---|---|
-| 1 | Cohort, denominator flow and the resolution guarantee | `figure1_cohort_and_resolution` |
-| 2 | The five-class portability architecture, with E1/E2 nesting | `figure2_five_class_architecture` |
-| 3 | Portability is a property of the occurrence, not the gene | `figure3_occurrence_not_gene` |
-| 4 | The chromosomal mobile compartment under four denominators | `figure4_chromosomal_mobile_compartment` |
-| 5 | Distance to the nearest marker, by host, with the IS/integron decomposition | `figure5_distance_to_mge` |
-| 6 | The structural insertion-sequence endpoint at census scale | `figure6_structural_is_endpoint` |
-| 7 | The discordance principle and its independent confirmation | `figure7_discordance_principle` |
-| 8 | Conjugation-consistent replicons carry the convergent cargo | `figure8_convergence_by_mobility` |
+**Fig. 2 | Portability is a property of the occurrence, not the gene.** **a**, 164 gene families
+occur in both compartments, distributed by the share of occurrences in their minority compartment.
+**b**, compartment preference by family against family size; colour denotes significance after
+Benjamini–Hochberg correction and survival of Mantel–Haenszel species adjustment. **c**, attrition
+from 164 both-context families to the 95 that survive adjustment.
 
-Three quantities in the text were recomputed by the figure generator from the frozen tables, and
-agree exactly: 144 families significant after BH, 95 surviving species adjustment, and the
-6,617 / 6,616 block pair of Result R4.
+**Fig. 3 | The five-class portability architecture.** **a**, each occurrence takes exactly one of
+five evidence-ranked classes; the five sum to 74,349. **b**, class E subdivides into nested evidence
+tiers, E2 additionally carrying a detected origin of transfer.
 
-Demoted to supplementary: plasmid replicon-type distribution; geography, source and clinical
-status (irreducibly confounded with sequencing programme); evidence-hierarchy integration figures
-belonging to a different manuscript's scope.
+**Fig. 4 | Spatial and structural evidence for the chromosomal route.** **a**, weighted cumulative
+detection against distance; solid lines the structural endpoint, dashed the homology endpoint, over
+identical rows. **b**, both registered structural contrasts at four landmarks, with BioProject
+cluster-bootstrap intervals; all exclude zero. **c**, share of class-B occurrences corroborated by a
+structurally complete, fully contained element. **d**, median distance to the nearest homology
+marker; not reached within 10 kb in either comparator.
 
----
+**Fig. 5 | Resistance genes sit closer to a complete insertion sequence than the genome background
+allows.** **a**, weighted cumulative detection *F*(*d*) at 1, 2, 5 and 10 kb, observed (bars) against
+the permutation-null expectation (horizontal marks, with the null 95% interval), per group. **b**,
+enrichment (observed / expected) at the two registered gate landmarks; the dashed line marks no
+enrichment. **c**, the null distribution of *F*(1 kb) for *A. baumannii* over 2,000
+within-chromosome permutations with the observed value marked; no permutation reaches it, so the
+empirical *P* sits at the 1/2001 resolution floor and is reported as ≤ 0.0005. **d**, genome-wide
+density of complete structural insertion sequences against enrichment; with four groups this cannot
+establish independence, but *P. aeruginosa* carries the fewest elements per Mb and ranks second by
+enrichment. The null relocates each occurrence within its own chromosome, so that chromosome's own
+insertion-sequence density is preserved exactly in every permutation and enrichment is
+density-normalised by construction.
 
-## Prohibited claims
+**Fig. 6 | Plasmid fraction and chromosomal mobile-element association are non-redundant.** **a**,
+the two axes, with the fit on eight confirmation species (grey) and the two discovery species
+coloured; the arrow marks the *A. baumannii* residual. **b**, variance in chromosomal association
+explained by plasmid share. **c**, both registered effects with bootstrap intervals.
 
-Reproduced here so that no revision reintroduces one: demonstrated conjugation or mobilization ·
-observed HGT or transfer · demonstrated transposition or element activity · causal co-selection ·
-clinical risk prediction · population prevalence · "class C plasmids are non-mobilizable" · "class
-A occurrences are immobile" · homology-only detections described as false positives · any
-extrapolation of these fractions to draft assemblies · any *mcr-9* statement on the PRIMARY
-denominator · any predictive-model result from a different paper in this programme.
+**Extended Data Fig. 1 | Marker-type decomposition and insertion-sequence family retention.** **a**,
+an insertion sequence–only endpoint reproduces the primary result while an integrase/integron-only
+endpoint shows no *A. baumannii* excess. **b**, retention of elements through the structural gate by
+insertion-sequence family.
 
-Cohort size is never used as a novelty claim: several published closed-genome collections are
-larger. The priority claims concern the framework and the propositions.
+**Extended Data Fig. 2 | Mobilization architecture tracks cargo convergence on documented
+replicons.** **a**, 6,621 resistance-gene-bearing plasmids typed by mobility class:
+conjugation-consistent 3,937, mobilization-consistent 1,211, marker-negative 1,473. **b**, share
+carrying ≥3 drug classes and **c**, share co-locating a metal-tolerance determinant — in both panels
+the denominator is the plasmid count of that mobility class, printed inside the bar, not 6,621.
+**d**, BioProject-clustered difference between conjugation-consistent and marker-negative replicons,
+95% percentile interval. Association, not co-transfer.
+
+**Extended Data Fig. 3 | The chromosomal mobile compartment under four denominators.** **a**, the
+estimate depends on the denominator: 46.39% occurrence-weighted at ±10 kb against 30.14%
+block-weighted. **b**, the host ordering is preserved under both weightings. **c**, two block-level
+quantities that differ by exactly one block.
+
+**Extended Data Fig. 4 | Cohort and replicon resolution.** **a**, 184,538 determinant records reduce
+to the primary denominator of 74,349 acquired resistance-gene occurrences. **b**, every occurrence
+resolves to a documented replicon: 39,209 plasmid, 35,140 chromosome, none unresolved. **c**, plasmid
+share on two denominators — occurrence-weighted and genome-collapsed.
+
+**Extended Data Fig. 5 | Registration and verification.** The order in which the analysis was
+governed, from frozen design to verdict. **Stage 1**, the protocol — null model, permutation count,
+seed, weightings, the seven sensitivities and the four possible verdicts — was registered and
+hashed before any outcome was computed; the analysis aborts if the hash does not match. **Stage 2**,
+the genome-wide census was run under a pinned toolchain and checked by 36 independent re-runs on a
+seeded selection written to disk before the first re-run, all of which reproduced the recorded
+element count exactly. **Stage 3**, the cohort was built and its receipt written to disk before any
+estimate existed; the dashed line marks the point beyond which the outcome could not be read, and
+the amber card marks where reading it became permitted. **Stage 4**, the four gates were applied
+mechanically against thresholds unchanged from registration, and every mechanic was re-implemented
+through a separate code path that does not import the primary analysis. The figure reports
+governance, not results: no value in it is an estimate, and the verdict shown is one of four
+registered in advance.

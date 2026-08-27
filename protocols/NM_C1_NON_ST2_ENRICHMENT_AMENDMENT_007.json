@@ -1,0 +1,18 @@
+{
+ "amendment": "NM-C1-007",
+ "arms": {
+  "E1": "enrichment at 1 kb for A. baumannii genomes whose sequence type is not 2, with Klebsiella and P. aeruginosa unchanged",
+  "E2": "E1 restricted further to occurrences that are not composite-flanked, so both alternative explanations are removed at once"
+ },
+ "decision_rule": {
+  "effect_is_GC2_specific_if": "non-ST2 A. baumannii enrichment falls below 8.46, or the A. baumannii / Klebsiella ratio falls below 1.5",
+  "no_threshold_may_move": true,
+  "reported_regardless": "both arms and the occurrence counts, whatever they show",
+  "thresholds_reused_from": "NM-C1-006, deliberately, rather than chosen now"
+ },
+ "estimator": "unchanged; observed and expected read from the saved null matrices c1_4_matrices.npz, subset by column",
+ "frozen_before_any_outcome_was_scored": true,
+ "raised_by": "the owner's decision framework: whether the effect holds in non-ST2 A. baumannii decides where this paper goes",
+ "sha256_of_body": "b6baa6466f04a91f4e2816b5e0e3d00ca20936cbed63800130174a373b7ab7f9",
+ "title": "Genome-wide enrichment with the GC2 lineage removed"
+}

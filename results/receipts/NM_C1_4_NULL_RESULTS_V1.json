@@ -1,0 +1,1010 @@
+{
+ "receipt": "NM_C1_4_BACKGROUND_NULL",
+ "version": "1.0.0",
+ "amendment": "NM_BACKGROUND_ENRICHMENT_AMENDMENT_001",
+ "n_permutations": 2000,
+ "seed": 20260824,
+ "horizon_bp": 10000,
+ "landmarks_bp": [
+  1000,
+  2000,
+  5000,
+  10000
+ ],
+ "input_digests": {
+  "NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv": "955c2c7cabbc0adb347922e19503dc06ee83b4335c66960e25a8f7b8a81880ae",
+  "genome_wide_is_elements.tsv": "4b8f3d043b66ce3ed8ffe2f87b4cc2ea2064152047d99da0cab973647e807997",
+  "portabilityrisk_occurrence_portability_v1.tsv": "957e529ae56c79593f85c45fe95cb8592fc111ffadb6dbfc1b22857faa88d564",
+  "nmis_occurrence_endpoints.tsv": "1fc2a6748f2a15a156d36ddb69d33b6d4225dd26798c2e680341f0df83a9c827",
+  "NM_BACKGROUND_ENRICHMENT_AMENDMENT_001.json": "711f9a5a62f1f8af8388ad9ff81703b2409865af76fea8ecebc831d424b52ee7"
+ },
+ "elements_total": 190999,
+ "elements_complete_structural": 145779,
+ "chromosomal_occurrences_scored": 35140,
+ "occurrences_joined_to_nmis_endpoints": 35140,
+ "permutation_overlap_giveups": 0,
+ "results": {
+  "A. baumannii": {
+   "n_occurrences": 8005,
+   "n_observed_within_10kb": 6184,
+   "n_censored_at_10kb": 1821,
+   "occurrence": {
+    "F_1000": {
+     "observed": 0.578638,
+     "expected": 0.034224,
+     "null_ci95": [
+      0.030356,
+      0.038104
+     ],
+     "difference": 0.544414,
+     "enrichment": 16.9073,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.678576,
+     "expected": 0.048398,
+     "null_ci95": [
+      0.043598,
+      0.053092
+     ],
+     "difference": 0.630178,
+     "enrichment": 14.0207,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.749282,
+     "expected": 0.08737,
+     "null_ci95": [
+      0.081574,
+      0.093567
+     ],
+     "difference": 0.661912,
+     "enrichment": 8.576,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.772517,
+     "expected": 0.132161,
+     "null_ci95": [
+      0.125172,
+      0.139663
+     ],
+     "difference": 0.640356,
+     "enrichment": 5.8453,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 2929.98,
+     "expected_bp": 9151.04,
+     "difference_bp": -6221.06,
+     "null_ci95": [
+      9097.96,
+      9200.83
+     ]
+    },
+    "effective_weight_total": 8005.0
+   },
+   "one_per_block": {
+    "F_1000": {
+     "observed": 0.51191,
+     "expected": 0.034032,
+     "null_ci95": [
+      0.029249,
+      0.038983
+     ],
+     "difference": 0.477878,
+     "enrichment": 15.0422,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.550563,
+     "expected": 0.04831,
+     "null_ci95": [
+      0.04267,
+      0.054047
+     ],
+     "difference": 0.502252,
+     "enrichment": 11.3964,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.582778,
+     "expected": 0.08773,
+     "null_ci95": [
+      0.080404,
+      0.095116
+     ],
+     "difference": 0.495048,
+     "enrichment": 6.6429,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.60728,
+     "expected": 0.133064,
+     "null_ci95": [
+      0.124184,
+      0.141725
+     ],
+     "difference": 0.474215,
+     "enrichment": 4.5638,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 4331.93,
+     "expected_bp": 9147.5,
+     "difference_bp": -4815.57,
+     "null_ci95": [
+      9085.07,
+      9210.35
+     ]
+    },
+    "effective_weight_total": 4138.0
+   },
+   "genome_balanced": {
+    "F_1000": {
+     "observed": 0.494352,
+     "expected": 0.032843,
+     "null_ci95": [
+      0.028318,
+      0.037707
+     ],
+     "difference": 0.46151,
+     "enrichment": 15.052,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.568098,
+     "expected": 0.046734,
+     "null_ci95": [
+      0.041332,
+      0.05213
+     ],
+     "difference": 0.521364,
+     "enrichment": 12.156,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.626743,
+     "expected": 0.085066,
+     "null_ci95": [
+      0.078149,
+      0.092277
+     ],
+     "difference": 0.541677,
+     "enrichment": 7.3677,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.654728,
+     "expected": 0.129004,
+     "null_ci95": [
+      0.120881,
+      0.137446
+     ],
+     "difference": 0.525724,
+     "enrichment": 5.0752,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 4039.64,
+     "expected_bp": 9173.79,
+     "difference_bp": -5134.15,
+     "null_ci95": [
+      9112.93,
+      9232.76
+     ]
+    },
+    "effective_weight_total": 778.0
+   },
+   "bioproject_balanced": {
+    "F_1000": {
+     "observed": 0.425105,
+     "expected": 0.030461,
+     "null_ci95": [
+      0.023522,
+      0.038175
+     ],
+     "difference": 0.394644,
+     "enrichment": 13.9556,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.490285,
+     "expected": 0.043417,
+     "null_ci95": [
+      0.035162,
+      0.052321
+     ],
+     "difference": 0.446868,
+     "enrichment": 11.2924,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.539688,
+     "expected": 0.079158,
+     "null_ci95": [
+      0.06822,
+      0.090661
+     ],
+     "difference": 0.46053,
+     "enrichment": 6.8179,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.581317,
+     "expected": 0.12022,
+     "null_ci95": [
+      0.107477,
+      0.133774
+     ],
+     "difference": 0.461097,
+     "enrichment": 4.8354,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 4833.47,
+     "expected_bp": 9231.16,
+     "difference_bp": -4397.68,
+     "null_ci95": [
+      9135.1,
+      9321.81
+     ]
+    },
+    "effective_weight_total": 268.0
+   }
+  },
+  "Klebsiella group": {
+   "n_occurrences": 15568,
+   "n_observed_within_10kb": 3839,
+   "n_censored_at_10kb": 11729,
+   "occurrence": {
+    "F_1000": {
+     "observed": 0.120632,
+     "expected": 0.019191,
+     "null_ci95": [
+      0.017085,
+      0.02139
+     ],
+     "difference": 0.101442,
+     "enrichment": 6.286,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.14973,
+     "expected": 0.027278,
+     "null_ci95": [
+      0.024666,
+      0.029742
+     ],
+     "difference": 0.122452,
+     "enrichment": 5.4891,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.198741,
+     "expected": 0.050302,
+     "null_ci95": [
+      0.046889,
+      0.053828
+     ],
+     "difference": 0.148439,
+     "enrichment": 3.951,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.246596,
+     "expected": 0.077583,
+     "null_ci95": [
+      0.073484,
+      0.081835
+     ],
+     "difference": 0.169013,
+     "enrichment": 3.1785,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 8111.44,
+     "expected_bp": 9508.19,
+     "difference_bp": -1396.76,
+     "null_ci95": [
+      9478.92,
+      9536.85
+     ]
+    },
+    "effective_weight_total": 15568.0
+   },
+   "one_per_block": {
+    "F_1000": {
+     "observed": 0.074523,
+     "expected": 0.018161,
+     "null_ci95": [
+      0.015928,
+      0.020351
+     ],
+     "difference": 0.056362,
+     "enrichment": 4.1035,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.089907,
+     "expected": 0.026158,
+     "null_ci95": [
+      0.02344,
+      0.028814
+     ],
+     "difference": 0.063749,
+     "enrichment": 3.4371,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.119445,
+     "expected": 0.049055,
+     "null_ci95": [
+      0.045439,
+      0.052779
+     ],
+     "difference": 0.07039,
+     "enrichment": 2.4349,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.165361,
+     "expected": 0.076284,
+     "null_ci95": [
+      0.071927,
+      0.080809
+     ],
+     "difference": 0.089078,
+     "enrichment": 2.1677,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 8819.32,
+     "expected_bp": 9520.19,
+     "difference_bp": -700.87,
+     "null_ci95": [
+      9489.32,
+      9550.59
+     ]
+    },
+    "effective_weight_total": 10887.0
+   },
+   "genome_balanced": {
+    "F_1000": {
+     "observed": 0.079267,
+     "expected": 0.018864,
+     "null_ci95": [
+      0.016568,
+      0.02118
+     ],
+     "difference": 0.060403,
+     "enrichment": 4.202,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.095675,
+     "expected": 0.026872,
+     "null_ci95": [
+      0.024095,
+      0.029656
+     ],
+     "difference": 0.068803,
+     "enrichment": 3.5604,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.132807,
+     "expected": 0.049857,
+     "null_ci95": [
+      0.046161,
+      0.053735
+     ],
+     "difference": 0.082951,
+     "enrichment": 2.6638,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.180163,
+     "expected": 0.077209,
+     "null_ci95": [
+      0.072841,
+      0.081788
+     ],
+     "difference": 0.102954,
+     "enrichment": 2.3334,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 8709.89,
+     "expected_bp": 9512.11,
+     "difference_bp": -802.21,
+     "null_ci95": [
+      9480.07,
+      9543.94
+     ]
+    },
+    "effective_weight_total": 3426.0
+   },
+   "bioproject_balanced": {
+    "F_1000": {
+     "observed": 0.10178,
+     "expected": 0.018757,
+     "null_ci95": [
+      0.015276,
+      0.022374
+     ],
+     "difference": 0.083023,
+     "enrichment": 5.4263,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.120844,
+     "expected": 0.026892,
+     "null_ci95": [
+      0.022872,
+      0.031381
+     ],
+     "difference": 0.093952,
+     "enrichment": 4.4937,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.159649,
+     "expected": 0.050161,
+     "null_ci95": [
+      0.044834,
+      0.056103
+     ],
+     "difference": 0.109488,
+     "enrichment": 3.1827,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.196993,
+     "expected": 0.077837,
+     "null_ci95": [
+      0.07136,
+      0.085018
+     ],
+     "difference": 0.119156,
+     "enrichment": 2.5308,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 8474.81,
+     "expected_bp": 9509.26,
+     "difference_bp": -1034.45,
+     "null_ci95": [
+      9460.11,
+      9555.52
+     ]
+    },
+    "effective_weight_total": 1153.0
+   }
+  },
+  "P. aeruginosa": {
+   "n_occurrences": 7150,
+   "n_observed_within_10kb": 2010,
+   "n_censored_at_10kb": 5140,
+   "occurrence": {
+    "F_1000": {
+     "observed": 0.095804,
+     "expected": 0.010561,
+     "null_ci95": [
+      0.008252,
+      0.013007
+     ],
+     "difference": 0.085243,
+     "enrichment": 9.0712,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.153846,
+     "expected": 0.015023,
+     "null_ci95": [
+      0.012308,
+      0.017902
+     ],
+     "difference": 0.138823,
+     "enrichment": 10.2409,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.241119,
+     "expected": 0.027375,
+     "null_ci95": [
+      0.023497,
+      0.031189
+     ],
+     "difference": 0.213744,
+     "enrichment": 8.8079,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.281119,
+     "expected": 0.04094,
+     "null_ci95": [
+      0.036503,
+      0.045734
+     ],
+     "difference": 0.240179,
+     "enrichment": 6.8666,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 7845.71,
+     "expected_bp": 9734.68,
+     "difference_bp": -1888.96,
+     "null_ci95": [
+      9701.38,
+      9766.54
+     ]
+    },
+    "effective_weight_total": 7150.0
+   },
+   "one_per_block": {
+    "F_1000": {
+     "observed": 0.035323,
+     "expected": 0.009136,
+     "null_ci95": [
+      0.006718,
+      0.011744
+     ],
+     "difference": 0.026188,
+     "enrichment": 3.8664,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.059491,
+     "expected": 0.013074,
+     "null_ci95": [
+      0.01018,
+      0.016024
+     ],
+     "difference": 0.046417,
+     "enrichment": 4.5503,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.088887,
+     "expected": 0.02407,
+     "null_ci95": [
+      0.020045,
+      0.028315
+     ],
+     "difference": 0.064816,
+     "enrichment": 3.6928,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.107665,
+     "expected": 0.036229,
+     "null_ci95": [
+      0.031403,
+      0.041217
+     ],
+     "difference": 0.071435,
+     "enrichment": 2.9718,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 9190.1,
+     "expected_bp": 9766.49,
+     "difference_bp": -576.39,
+     "null_ci95": [
+      9730.09,
+      9800.53
+     ]
+    },
+    "effective_weight_total": 4102.0
+   },
+   "genome_balanced": {
+    "F_1000": {
+     "observed": 0.047892,
+     "expected": 0.008504,
+     "null_ci95": [
+      0.006372,
+      0.010821
+     ],
+     "difference": 0.039388,
+     "enrichment": 5.6319,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.078193,
+     "expected": 0.012138,
+     "null_ci95": [
+      0.009524,
+      0.014864
+     ],
+     "difference": 0.066055,
+     "enrichment": 6.4422,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.123039,
+     "expected": 0.022336,
+     "null_ci95": [
+      0.018805,
+      0.026014
+     ],
+     "difference": 0.100703,
+     "enrichment": 5.5085,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.146644,
+     "expected": 0.03369,
+     "null_ci95": [
+      0.029357,
+      0.038105
+     ],
+     "difference": 0.112954,
+     "enrichment": 4.3528,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 8897.57,
+     "expected_bp": 9783.04,
+     "difference_bp": -885.46,
+     "null_ci95": [
+      9752.23,
+      9813.78
+     ]
+    },
+    "effective_weight_total": 884.0
+   },
+   "bioproject_balanced": {
+    "F_1000": {
+     "observed": 0.055809,
+     "expected": 0.008677,
+     "null_ci95": [
+      0.00574,
+      0.011861
+     ],
+     "difference": 0.047132,
+     "enrichment": 6.4315,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.090442,
+     "expected": 0.012345,
+     "null_ci95": [
+      0.008817,
+      0.015935
+     ],
+     "difference": 0.078098,
+     "enrichment": 7.3265,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.129001,
+     "expected": 0.022618,
+     "null_ci95": [
+      0.017895,
+      0.027527
+     ],
+     "difference": 0.106383,
+     "enrichment": 5.7035,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.152318,
+     "expected": 0.033986,
+     "null_ci95": [
+      0.027991,
+      0.040025
+     ],
+     "difference": 0.118332,
+     "enrichment": 4.4818,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 8825.33,
+     "expected_bp": 9780.38,
+     "difference_bp": -955.04,
+     "null_ci95": [
+      9737.91,
+      9820.8
+     ]
+    },
+    "effective_weight_total": 425.0
+   }
+  },
+  "Enterobacter group": {
+   "n_occurrences": 3099,
+   "n_observed_within_10kb": 556,
+   "n_censored_at_10kb": 2543,
+   "occurrence": {
+    "F_1000": {
+     "observed": 0.071959,
+     "expected": 0.014423,
+     "null_ci95": [
+      0.010326,
+      0.018716
+     ],
+     "difference": 0.057536,
+     "enrichment": 4.9893,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.100032,
+     "expected": 0.019908,
+     "null_ci95": [
+      0.015166,
+      0.024847
+     ],
+     "difference": 0.080124,
+     "enrichment": 5.0246,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.150048,
+     "expected": 0.034963,
+     "null_ci95": [
+      0.029042,
+      0.041626
+     ],
+     "difference": 0.115086,
+     "enrichment": 4.2917,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.179413,
+     "expected": 0.05226,
+     "null_ci95": [
+      0.044853,
+      0.060019
+     ],
+     "difference": 0.127153,
+     "enrichment": 3.4331,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 8629.45,
+     "expected_bp": 9660.04,
+     "difference_bp": -1030.59,
+     "null_ci95": [
+      9605.04,
+      9711.96
+     ]
+    },
+    "effective_weight_total": 3099.0
+   },
+   "one_per_block": {
+    "F_1000": {
+     "observed": 0.037808,
+     "expected": 0.013613,
+     "null_ci95": [
+      0.009542,
+      0.018052
+     ],
+     "difference": 0.024195,
+     "enrichment": 2.7773,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.057613,
+     "expected": 0.019014,
+     "null_ci95": [
+      0.014209,
+      0.024122
+     ],
+     "difference": 0.038599,
+     "enrichment": 3.0301,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.09158,
+     "expected": 0.033802,
+     "null_ci95": [
+      0.027686,
+      0.04049
+     ],
+     "difference": 0.057778,
+     "enrichment": 2.7093,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.119819,
+     "expected": 0.050811,
+     "null_ci95": [
+      0.043226,
+      0.058762
+     ],
+     "difference": 0.069007,
+     "enrichment": 2.3581,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 9141.22,
+     "expected_bp": 9671.37,
+     "difference_bp": -530.14,
+     "null_ci95": [
+      9615.46,
+      9725.45
+     ]
+    },
+    "effective_weight_total": 2152.0
+   },
+   "genome_balanced": {
+    "F_1000": {
+     "observed": 0.037303,
+     "expected": 0.014736,
+     "null_ci95": [
+      0.010115,
+      0.019904
+     ],
+     "difference": 0.022567,
+     "enrichment": 2.5315,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.059949,
+     "expected": 0.020349,
+     "null_ci95": [
+      0.015033,
+      0.025927
+     ],
+     "difference": 0.0396,
+     "enrichment": 2.946,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.096637,
+     "expected": 0.035911,
+     "null_ci95": [
+      0.028973,
+      0.0431
+     ],
+     "difference": 0.060726,
+     "enrichment": 2.691,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.124887,
+     "expected": 0.053821,
+     "null_ci95": [
+      0.045465,
+      0.062778
+     ],
+     "difference": 0.071066,
+     "enrichment": 2.3204,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 9105.5,
+     "expected_bp": 9650.75,
+     "difference_bp": -545.24,
+     "null_ci95": [
+      9589.11,
+      9709.44
+     ]
+    },
+    "effective_weight_total": 695.0
+   },
+   "bioproject_balanced": {
+    "F_1000": {
+     "observed": 0.041325,
+     "expected": 0.014401,
+     "null_ci95": [
+      0.008038,
+      0.022323
+     ],
+     "difference": 0.026923,
+     "enrichment": 2.8695,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.062811,
+     "expected": 0.019826,
+     "null_ci95": [
+      0.012029,
+      0.028283
+     ],
+     "difference": 0.042985,
+     "enrichment": 3.168,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_5000": {
+     "observed": 0.102506,
+     "expected": 0.035132,
+     "null_ci95": [
+      0.025483,
+      0.045969
+     ],
+     "difference": 0.067375,
+     "enrichment": 2.9178,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "F_10000": {
+     "observed": 0.133836,
+     "expected": 0.052712,
+     "null_ci95": [
+      0.041244,
+      0.065267
+     ],
+     "difference": 0.081124,
+     "enrichment": 2.539,
+     "interval_excludes_observed": true,
+     "empirical_p_one_sided": 0.0005
+    },
+    "restricted_mean_distance": {
+     "observed_bp": 9060.55,
+     "expected_bp": 9658.25,
+     "difference_bp": -597.7,
+     "null_ci95": [
+      9569.7,
+      9744.21
+     ]
+    },
+    "effective_weight_total": 270.0
+   }
+  }
+ },
+ "isescan_rerun_during_permutation": false,
+ "note": "Decision gates were registered in the amendment before any species outcome was computed and are evaluated separately in C1-6; this file reports estimates only."
+}

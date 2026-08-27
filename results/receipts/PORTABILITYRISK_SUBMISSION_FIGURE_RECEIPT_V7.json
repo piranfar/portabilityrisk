@@ -1,0 +1,58 @@
+{
+ "receipt": "submission figures, v7 (V5 Resource numbering)",
+ "why": "the Resource restructure changed the order in which figures are first cited, so they are renumbered to follow the text. The mapping is derived from the manuscript, not chosen.",
+ "map": {
+  "main": {
+   "1": 1,
+   "2": 2,
+   "3": 4,
+   "4": 5,
+   "5": 3,
+   "6": 6
+  },
+  "ed": {
+   "1": 4,
+   "2": 1,
+   "3": 2,
+   "4": 3,
+   "5": 5
+  }
+ },
+ "v4_figures_untouched": true,
+ "extended_data_caveat": "Nature Microbiology lists Extended Data for Articles and Brief Communications but not for Resources. Whether Extended Data is permitted here must be confirmed with the editorial office; if not, these five become Supplementary Figures.",
+ "outputs_sha256": {
+  "docs/nature_microbiology/figures/submission_v5/Figure_1_matched_family_host_contrast.pdf": "485ac14d7934724b74d37eae3f16727e9f058a1e2afbf242c8ee91c616f4ca5b",
+  "docs/nature_microbiology/figures/submission_v5/Figure_1_matched_family_host_contrast.png": "3fe20d46dfde68aab74ea48cdc10f86cbba7b69a2ea0e1a56a3f2db82ea0e18a",
+  "docs/nature_microbiology/figures/submission_v5/Figure_1_matched_family_host_contrast_600dpi.png": "384db7bdf20f9388222a628bb5effbefb0f685e875867a60adeed519fb0211fc",
+  "docs/nature_microbiology/figures/submission_v5/Figure_2_occurrence_not_gene.pdf": "e138da240f7146d3147c7adc96ee6d6ab28e4ec5529b167353d75f5eeb4c9cf0",
+  "docs/nature_microbiology/figures/submission_v5/Figure_2_occurrence_not_gene.png": "6d834be3aba49919e9272e7bea2eeff72100c68a0306690cf3ba62693f4d2d4b",
+  "docs/nature_microbiology/figures/submission_v5/Figure_2_occurrence_not_gene_600dpi.png": "8f5cfdd88dca1d052ce6b08cc08f798f482965600f9f09c1b305df6000e7c3f3",
+  "docs/nature_microbiology/figures/submission_v5/Figure_4_spatial_and_structural.pdf": "c72504fa1c170d236cc152bea27209a7a725c8dc5faa32919ac9613cb13a608b",
+  "docs/nature_microbiology/figures/submission_v5/Figure_4_spatial_and_structural.png": "f97c2a9a3fddc16d05e56f1d641588f9869f94ced4a833c4aff14691311f5dfd",
+  "docs/nature_microbiology/figures/submission_v5/Figure_4_spatial_and_structural_600dpi.png": "ce9c71c7b9e347761533fcdbb878456c0a54659be0ce9361850c8f11394342f1",
+  "docs/nature_microbiology/figures/submission_v5/Figure_5_genome_background_null.pdf": "85b3e4c8abf1deb1fab210b009556fcbe352df5aa7ce14c764798425885b360b",
+  "docs/nature_microbiology/figures/submission_v5/Figure_5_genome_background_null.png": "e121928915a0ff3ef4f857ebad790e0db1baedc8ecd7a18c82b5659a2daca646",
+  "docs/nature_microbiology/figures/submission_v5/Figure_5_genome_background_null_600dpi.png": "d2f8a668c9c7fa5b2cf3daca357e2813f3e96106637af8bf08292274f9bc9c49",
+  "docs/nature_microbiology/figures/submission_v5/Figure_3_five_class_architecture.pdf": "097fb0e22765e8b8cb4548352eaea4edc69c2c087e8782434546aa68159a36fe",
+  "docs/nature_microbiology/figures/submission_v5/Figure_3_five_class_architecture.png": "2b6135044f40d05c4b634f56ee8b0d016946e6ce66bd6a385fecc39591589964",
+  "docs/nature_microbiology/figures/submission_v5/Figure_3_five_class_architecture_600dpi.png": "5e7ad3e34909fa7326061a2a9866c4d058a5e6316953362ca5a46d1d46b61af3",
+  "docs/nature_microbiology/figures/submission_v5/Figure_6_plasmid_fraction_non_redundant.pdf": "4ca0bb37d1df2148406c612f01cda6d519cbdea56edf710657ba8efcea2c03b0",
+  "docs/nature_microbiology/figures/submission_v5/Figure_6_plasmid_fraction_non_redundant.png": "539071f83a2d9c1d8a70af2d431a9703c2eb68e1e194e9cdd1bc56487fe84d04",
+  "docs/nature_microbiology/figures/submission_v5/Figure_6_plasmid_fraction_non_redundant_600dpi.png": "48dbd91dda06548e6dca708627e216faa40c4090454a9daaea8d9e1103341ac6",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_4_cohort_and_denominators.pdf": "8d30fe68afa56ef48266d0f1e1466f006c83b6b801a67141d2bdf00276fa4261",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_4_cohort_and_denominators.png": "dcdf74f445280111e2b5a0315a63d00c3976270d452cdff48bdc13674a58e4c8",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_4_cohort_and_denominators_600dpi.png": "11b7cce2c950eae17c461152bd829fcdc02bb032a66222a704615f2bf2f2a70a",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_1_marker_type_and_IS_family.pdf": "0864be42816144f42ac8907f2eb0c3965976a2eec1a5e9153231fffc84b276ee",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_1_marker_type_and_IS_family.png": "cff1ad5245f678aecc56a349c51be8817263ced40581b7471c9a617c72dbbb61",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_1_marker_type_and_IS_family_600dpi.png": "5ecb5a2c3b322e5556493e08e180a5bc633a4b1e1c1a7f32ba9f4fa3e1ba0032",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_2_cargo_convergence.pdf": "6a05ceb9b988a11101654fd290e2f8dc0fbf2b01d39ce643cb05f016eb332177",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_2_cargo_convergence.png": "0dea78f5e4d1c8e5b3960114fa029dbd208317d49468bbab76b4f920bca4cb39",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_2_cargo_convergence_600dpi.png": "e10c7d028f8f4a1317a0ec814df8e4bc731c4000086880f564234eb338852dd6",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_3_four_denominators.pdf": "57794c5a216d7d7538c65cfae7d9b15f4f383fbf6a996293f54d5735d934b635",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_3_four_denominators.png": "83ea85225df1814edd6a536214d0dd970d1ec577abde88d93c66e13cee192173",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_3_four_denominators_600dpi.png": "cee995bfdbd20b04e0b48e375528e6d5b6bd0e25c917274a7269cf0fba450a20",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_5_registration_and_verification.pdf": "8955b2ee3d107e8cdbc78da0322f1826c63e55663991b870e880f5a688e412ff",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_5_registration_and_verification.png": "48ae30490ae4b5bc5d3c5d0ed43f8ab52846c4f661432c65c2d490ff8645ed9e",
+  "docs/nature_microbiology/figures/submission_v5/Extended_Data_Fig_5_registration_and_verification_600dpi.png": "3c763a374ff3e885ba2e33378698c733d9cafa26153a638e8762897280167658"
+ }
+}

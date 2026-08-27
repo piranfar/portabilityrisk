@@ -1,0 +1,71 @@
+{
+ "amendment": "NM-V4C-001",
+ "arms": {
+  "S8a": {
+   "name": "allele-level intrinsic exclusion",
+   "nodes_excluded": [
+    "blaOXA-51_fam",
+    "blaOXA-134_fam",
+    "blaOXA-213_fam"
+   ],
+   "rule": "drop every occurrence whose AMRFinderPlus family node is a recognised species-intrinsic chromosomal node of an Acinetobacter species",
+   "unmapped_alleles": "bare 'blaOXA' calls carry no node and are RETAINED in this arm; they are removed in S8b, which drops the family whole",
+   "why_these": "blaOXA-51_fam is the intrinsic chromosomal class D beta-lactamase of A. baumannii; blaOXA-134_fam and blaOXA-213_fam are the corresponding intrinsic families of other Acinetobacter species. Node membership is taken from AMRProt.fa in AMRFinderPlus database 2026-08-07.1, the same version that produced the calls."
+  },
+  "S8b": {
+   "name": "whole-family exclusion, conservative",
+   "rule": "drop the blaOXA and blaSHV families entirely from the matched set",
+   "why": "it needs no allele taxonomy at all and removes the acquired members along with the intrinsic ones, so it can only understate the effect. It is the arm that answers the objection without relying on any classification of ours."
+  },
+  "S8c": {
+   "expected": "no change relative to S8b, because none of these except fosA3 is among the 58. The arm is run to demonstrate that rather than to assert it. fosA3 is the acquired plasmid-borne variant and is screened here only because its name collides with intrinsic fosA.",
+   "name": "species-core screen",
+   "rule": "S8b, and additionally drop any matched family whose name matches a known species-core determinant of the four study hosts",
+   "screen": [
+    "fosA",
+    "fosA3",
+    "fosA5",
+    "fosA6",
+    "oqxA",
+    "oqxB",
+    "blaADC",
+    "blaPDC",
+    "blaACT",
+    "blaMIR",
+    "blaLEN",
+    "blaOKP",
+    "blaOXY",
+    "catB7",
+    "aph(3')-IIb"
+   ]
+  }
+ },
+ "cohort": {
+  "contrast": "Acinetobacter baumannii against the Klebsiella group",
+  "endpoint": "two-way: class B against classes C, D and E; class A excluded",
+  "family_eligibility": ">=3 species AND >=10 BioProjects AND >=20 occurrences AND class B observable, unchanged from the original freeze",
+  "source_table": "portabilityrisk_occurrence_portability_v1.tsv (deposit v2)"
+ },
+ "decision_rule": {
+  "fails": "if any arm loses the direction or its interval covers 1, the headline claim is revised, not defended",
+  "no_threshold_may_move": "these criteria may not be changed after the arms are computed",
+  "reported_regardless": "all three arms, with family counts, concordance and interval, are reported whatever they show",
+  "survives": "the claim that a matched determinant family occupies different portability routes across hosts survives if, in EVERY arm, the MH odds ratio keeps its direction and its 95% interval excludes 1"
+ },
+ "estimator": {
+  "concordance_count": "families with Woolf log odds ratio > 0 under the Haldane-Anscombe 0.5 correction, as in the baseline",
+  "method": "Mantel-Haenszel across matched gene families, Robins-Breslow-Greenland variance, 95% Wald interval on ln(OR)",
+  "source": "imported unchanged from nmv4c_score.mh, the module that produced the published baseline, so only the row filter differs between baseline and sensitivity"
+ },
+ "frozen_before_any_outcome_was_scored": true,
+ "known_limits": [
+  "blaSHV cannot be split into intrinsic and acquired alleles from the database, so S8a does not attempt it and S8b removes the family whole",
+  "this sensitivity addresses the matched-family contrast only. The distance analysis, the 46.39% chromosomal association and the genome-wide null are not family-matched and are not covered by these arms",
+  "excluding a family shrinks the matched set, so a wider interval in an arm is expected and is not by itself evidence against the effect"
+ ],
+ "raised_by": "Reviewer 1, major concern 1: intrinsic versus acquired determinants are not separated, so host-specific architecture could reflect species-core chromosomal genes",
+ "sha256_of_body": "a9768cf1d064125c472d72176927d3d831e095772731fc7361c67f47bc366e62",
+ "title": "Intrinsic-determinant sensitivity for the matched-family host contrast",
+ "written_after": "the baseline was reproduced (58 families, MH OR 50.2912) and the 58 family names and their AMRFinderPlus family nodes were read",
+ "written_before": "any sensitivity odds ratio was computed"
+}

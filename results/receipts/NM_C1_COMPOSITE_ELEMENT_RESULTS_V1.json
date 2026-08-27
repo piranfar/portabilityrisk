@@ -1,0 +1,143 @@
+{
+ "receipt": "NM-C1-006 composite-element stratification",
+ "amendment_sha256_of_body": "b2616a909693662cf33efc5951919ef4350c67b22bffafb9c752f46a9e0dffa9",
+ "amendment_sha256_of_file": "726fccf28cd415bc1455acc3f169e9cf1b2b002b20e3a95817016f99b6c344e9",
+ "inputs": {
+  "null_matrices": "8fe3f580447ae72d66f95b8b7dee5d4fe520ec079cf9174bb2c3b031f5db86d8",
+  "is_elements": "4b8f3d043b66ce3ed8ffe2f87b4cc2ea2064152047d99da0cab973647e807997"
+ },
+ "complete_structural_elements_indexed": 145779,
+ "results": {
+  "D_10000": {
+   "A. baumannii": {
+    "flanked": {
+     "n": 2544,
+     "observed": 0.842,
+     "expected": 0.0356,
+     "enrichment": 23.64
+    },
+    "non-flanked": {
+     "n": 5461,
+     "observed": 0.456,
+     "expected": 0.0336,
+     "enrichment": 13.58
+    }
+   },
+   "Klebsiella group": {
+    "flanked": {
+     "n": 1316,
+     "observed": 0.7546,
+     "expected": 0.026,
+     "enrichment": 29.02
+    },
+    "non-flanked": {
+     "n": 14252,
+     "observed": 0.0621,
+     "expected": 0.0186,
+     "enrichment": 3.35
+    }
+   },
+   "P. aeruginosa": {
+    "flanked": {
+     "n": 280,
+     "observed": 0.4,
+     "expected": 0.0213,
+     "enrichment": 18.8
+    },
+    "non-flanked": {
+     "n": 6870,
+     "observed": 0.0834,
+     "expected": 0.0101,
+     "enrichment": 8.24
+    }
+   },
+   "Enterobacter group": {
+    "flanked": {
+     "n": 184,
+     "observed": 0.7446,
+     "expected": 0.024,
+     "enrichment": 31.06
+    },
+    "non-flanked": {
+     "n": 2915,
+     "observed": 0.0295,
+     "expected": 0.0138,
+     "enrichment": 2.13
+    }
+   }
+  },
+  "D_5000": {
+   "A. baumannii": {
+    "flanked": {
+     "n": 1779,
+     "observed": 0.882,
+     "expected": 0.0362,
+     "enrichment": 24.35
+    },
+    "non-flanked": {
+     "n": 6226,
+     "observed": 0.492,
+     "expected": 0.0337,
+     "enrichment": 14.62
+    }
+   },
+   "Klebsiella group": {
+    "flanked": {
+     "n": 1103,
+     "observed": 0.825,
+     "expected": 0.0264,
+     "enrichment": 31.24
+    },
+    "non-flanked": {
+     "n": 14465,
+     "observed": 0.0669,
+     "expected": 0.0186,
+     "enrichment": 3.59
+    }
+   },
+   "P. aeruginosa": {
+    "flanked": {
+     "n": 129,
+     "observed": 0.5891,
+     "expected": 0.0161,
+     "enrichment": 36.7
+    },
+    "non-flanked": {
+     "n": 7021,
+     "observed": 0.0867,
+     "expected": 0.0105,
+     "enrichment": 8.29
+    }
+   },
+   "Enterobacter group": {
+    "flanked": {
+     "n": 134,
+     "observed": 0.9328,
+     "expected": 0.025,
+     "enrichment": 37.25
+    },
+    "non-flanked": {
+     "n": 2965,
+     "observed": 0.0331,
+     "expected": 0.0139,
+     "enrichment": 2.37
+    }
+   }
+  }
+ },
+ "non_flanked_summary": {
+  "AB_enrichment": 13.58,
+  "AB_over_Klebsiella": 4.054,
+  "AB_over_Pseudomonas": 1.648
+ },
+ "decision_rule": {
+  "enrichment_is_substantially_composite_structure_if": "A. baumannii's enrichment among non-flanked occurrences falls below half the published 16.91, i.e. below 8.46",
+  "host_contrast_is_composite_structure_if": "the A. baumannii / Klebsiella enrichment ratio in the non-flanked stratum falls below 1.5, against the published 2.69, or loses direction",
+  "no_threshold_may_move": "8.46 and 1.5 are fixed here and may not be changed after any arm runs",
+  "objection_answered_if": "both the non-flanked enrichment and the non-flanked host ratio stay above those values, in which case the signal is not carried by cargo occurrences and the referee's objection does not hold for this cohort",
+  "reported_regardless": "both strata, both distances, and the number of occurrences in each, whatever they show"
+ },
+ "substantially_composite_structure": false,
+ "host_contrast_is_composite_structure": false,
+ "referee_objection_answered": true
+}

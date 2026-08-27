@@ -1,0 +1,639 @@
+{
+ "receipt": "NM_C1_5C_IS_FAMILY_DECOMPOSITION",
+ "version": "1.0.0",
+ "n_permutations": 2000,
+ "seed": 20260824,
+ "selection_rule": "share >= 5%% of complete structural elements, plus IS6 because the amendment names it; fixed before results were read",
+ "family_counts": {
+  "IS3": 34728,
+  "IS5": 33763,
+  "ISNCY": 21320,
+  "IS4": 14734,
+  "IS1": 8070,
+  "IS6": 4627
+ },
+ "complete_structural_total": 145779,
+ "p_convention": "(#{null>=obs}+1)/(B+1); floor 1/2001",
+ "families": {
+  "IS3": {
+   "A. baumannii": {
+    "n": 8005,
+    "F_1000": {
+     "observed": 0.005247,
+     "expected": 0.001887,
+     "enrichment": 2.7802,
+     "null_ci95": [
+      0.000999,
+      0.002873
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.005996,
+     "expected": 0.00277,
+     "enrichment": 2.1648,
+     "null_ci95": [
+      0.001624,
+      0.003998
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "Klebsiella group": {
+    "n": 15568,
+    "F_1000": {
+     "observed": 0.002377,
+     "expected": 0.005197,
+     "enrichment": 0.4573,
+     "null_ci95": [
+      0.004111,
+      0.006359
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    },
+    "F_2000": {
+     "observed": 0.003019,
+     "expected": 0.007469,
+     "enrichment": 0.4042,
+     "null_ci95": [
+      0.006166,
+      0.0088
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    }
+   },
+   "P. aeruginosa": {
+    "n": 7150,
+    "F_1000": {
+     "observed": 0.001119,
+     "expected": 0.003717,
+     "enrichment": 0.301,
+     "null_ci95": [
+      0.002378,
+      0.005175
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    },
+    "F_2000": {
+     "observed": 0.001958,
+     "expected": 0.005493,
+     "enrichment": 0.3565,
+     "null_ci95": [
+      0.003916,
+      0.007273
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    }
+   },
+   "Enterobacter group": {
+    "n": 3099,
+    "F_1000": {
+     "observed": 0.001936,
+     "expected": 0.00349,
+     "enrichment": 0.5548,
+     "null_ci95": [
+      0.001613,
+      0.005808
+     ],
+     "excludes_null": false,
+     "p": 0.955522
+    },
+    "F_2000": {
+     "observed": 0.006131,
+     "expected": 0.004917,
+     "enrichment": 1.2469,
+     "null_ci95": [
+      0.002581,
+      0.007422
+     ],
+     "excludes_null": false,
+     "p": 0.197401
+    }
+   }
+  },
+  "IS5": {
+   "A. baumannii": {
+    "n": 8005,
+    "F_1000": {
+     "observed": 0.029232,
+     "expected": 0.003773,
+     "enrichment": 7.748,
+     "null_ci95": [
+      0.002498,
+      0.005125
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.050094,
+     "expected": 0.005586,
+     "enrichment": 8.9678,
+     "null_ci95": [
+      0.003998,
+      0.007245
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "Klebsiella group": {
+    "n": 15568,
+    "F_1000": {
+     "observed": 0.012718,
+     "expected": 0.004735,
+     "enrichment": 2.6861,
+     "null_ci95": [
+      0.003661,
+      0.005845
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.020298,
+     "expected": 0.006863,
+     "enrichment": 2.9578,
+     "null_ci95": [
+      0.005588,
+      0.008158
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "P. aeruginosa": {
+    "n": 7150,
+    "F_1000": {
+     "observed": 0.000839,
+     "expected": 0.000697,
+     "enrichment": 1.2032,
+     "null_ci95": [
+      0.00014,
+      0.001399
+     ],
+     "excludes_null": false,
+     "p": 0.378311
+    },
+    "F_2000": {
+     "observed": 0.002517,
+     "expected": 0.001022,
+     "enrichment": 2.4644,
+     "null_ci95": [
+      0.00042,
+      0.001818
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "Enterobacter group": {
+    "n": 3099,
+    "F_1000": {
+     "observed": 0.010649,
+     "expected": 0.003085,
+     "enrichment": 3.4521,
+     "null_ci95": [
+      0.001291,
+      0.005163
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.014521,
+     "expected": 0.004367,
+     "enrichment": 3.3253,
+     "null_ci95": [
+      0.002259,
+      0.006776
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   }
+  },
+  "ISNCY": {
+   "A. baumannii": {
+    "n": 8005,
+    "F_1000": {
+     "observed": 0.0,
+     "expected": 2e-05,
+     "enrichment": 0.0,
+     "null_ci95": [
+      0.0,
+      0.000125
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    },
+    "F_2000": {
+     "observed": 0.000625,
+     "expected": 2.9e-05,
+     "enrichment": 21.4592,
+     "null_ci95": [
+      0.0,
+      0.000125
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "Klebsiella group": {
+    "n": 15568,
+    "F_1000": {
+     "observed": 0.001606,
+     "expected": 0.005188,
+     "enrichment": 0.3096,
+     "null_ci95": [
+      0.004047,
+      0.006359
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    },
+    "F_2000": {
+     "observed": 0.002698,
+     "expected": 0.007448,
+     "enrichment": 0.3622,
+     "null_ci95": [
+      0.006102,
+      0.0088
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    }
+   },
+   "P. aeruginosa": {
+    "n": 7150,
+    "F_1000": {
+     "observed": 0.0,
+     "expected": 0.00016,
+     "enrichment": 0.0,
+     "null_ci95": [
+      0.0,
+      0.000559
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    },
+    "F_2000": {
+     "observed": 0.0,
+     "expected": 0.000227,
+     "enrichment": 0.0,
+     "null_ci95": [
+      0.0,
+      0.000559
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    }
+   },
+   "Enterobacter group": {
+    "n": 3099,
+    "F_1000": {
+     "observed": 0.0,
+     "expected": 0.000303,
+     "enrichment": 0.0,
+     "null_ci95": [
+      0.0,
+      0.000968
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    },
+    "F_2000": {
+     "observed": 0.005163,
+     "expected": 0.000402,
+     "enrichment": 12.8514,
+     "null_ci95": [
+      0.0,
+      0.001291
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   }
+  },
+  "IS4": {
+   "A. baumannii": {
+    "n": 8005,
+    "F_1000": {
+     "observed": 0.225734,
+     "expected": 0.017824,
+     "enrichment": 12.6645,
+     "null_ci95": [
+      0.014866,
+      0.020862
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.238101,
+     "expected": 0.026047,
+     "enrichment": 9.1413,
+     "null_ci95": [
+      0.022736,
+      0.029482
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "Klebsiella group": {
+    "n": 15568,
+    "F_1000": {
+     "observed": 0.002312,
+     "expected": 0.00024,
+     "enrichment": 9.6373,
+     "null_ci95": [
+      6.4e-05,
+      0.000514
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.004239,
+     "expected": 0.000342,
+     "enrichment": 12.413,
+     "null_ci95": [
+      6.4e-05,
+      0.000642
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "P. aeruginosa": {
+    "n": 7150,
+    "F_1000": {
+     "observed": 0.00028,
+     "expected": 8e-05,
+     "enrichment": 3.4874,
+     "null_ci95": [
+      0.0,
+      0.00028
+     ],
+     "excludes_null": false,
+     "p": 0.112444
+    },
+    "F_2000": {
+     "observed": 0.000559,
+     "expected": 0.000118,
+     "enrichment": 4.745,
+     "null_ci95": [
+      0.0,
+      0.00042
+     ],
+     "excludes_null": true,
+     "p": 0.008496
+    }
+   },
+   "Enterobacter group": {
+    "n": 3099,
+    "F_1000": {
+     "observed": 0.002581,
+     "expected": 0.001044,
+     "enrichment": 2.4718,
+     "null_ci95": [
+      0.0,
+      0.002259
+     ],
+     "excludes_null": true,
+     "p": 0.016992
+    },
+    "F_2000": {
+     "observed": 0.00484,
+     "expected": 0.001476,
+     "enrichment": 3.2794,
+     "null_ci95": [
+      0.000323,
+      0.002904
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   }
+  },
+  "IS1": {
+   "A. baumannii": {
+    "n": 8005,
+    "F_1000": {
+     "observed": 0.0,
+     "expected": 1.5e-05,
+     "enrichment": 0.0,
+     "null_ci95": [
+      0.0,
+      0.000125
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    },
+    "F_2000": {
+     "observed": 0.0,
+     "expected": 2.4e-05,
+     "enrichment": 0.0,
+     "null_ci95": [
+      0.0,
+      0.000125
+     ],
+     "excludes_null": false,
+     "p": 1.0
+    }
+   },
+   "Klebsiella group": {
+    "n": 15568,
+    "F_1000": {
+     "observed": 0.003469,
+     "expected": 0.001236,
+     "enrichment": 2.8073,
+     "null_ci95": [
+      0.000707,
+      0.001799
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.004239,
+     "expected": 0.001859,
+     "enrichment": 2.2808,
+     "null_ci95": [
+      0.00122,
+      0.002569
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "P. aeruginosa": {
+    "n": 7150,
+    "F_1000": {
+     "observed": 0.00014,
+     "expected": 1e-06,
+     "enrichment": 95.2381,
+     "null_ci95": [
+      0.0,
+      0.0
+     ],
+     "excludes_null": true,
+     "p": 0.010995
+    },
+    "F_2000": {
+     "observed": 0.00014,
+     "expected": 2e-06,
+     "enrichment": 64.5161,
+     "null_ci95": [
+      0.0,
+      0.0
+     ],
+     "excludes_null": true,
+     "p": 0.015992
+    }
+   },
+   "Enterobacter group": {
+    "n": 3099,
+    "F_1000": {
+     "observed": 0.002904,
+     "expected": 0.002327,
+     "enrichment": 1.2478,
+     "null_ci95": [
+      0.000645,
+      0.004195
+     ],
+     "excludes_null": false,
+     "p": 0.317841
+    },
+    "F_2000": {
+     "observed": 0.004518,
+     "expected": 0.003399,
+     "enrichment": 1.3289,
+     "null_ci95": [
+      0.001613,
+      0.005486
+     ],
+     "excludes_null": false,
+     "p": 0.174913
+    }
+   }
+  },
+  "IS6": {
+   "A. baumannii": {
+    "n": 8005,
+    "F_1000": {
+     "observed": 0.061212,
+     "expected": 0.001744,
+     "enrichment": 35.0902,
+     "null_ci95": [
+      0.000874,
+      0.002748
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.089194,
+     "expected": 0.002368,
+     "enrichment": 37.6602,
+     "null_ci95": [
+      0.001374,
+      0.003498
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "Klebsiella group": {
+    "n": 15568,
+    "F_1000": {
+     "observed": 0.082798,
+     "expected": 0.000872,
+     "enrichment": 94.94,
+     "null_ci95": [
+      0.00045,
+      0.001349
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.100206,
+     "expected": 0.001199,
+     "enrichment": 83.5744,
+     "null_ci95": [
+      0.000707,
+      0.001799
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "P. aeruginosa": {
+    "n": 7150,
+    "F_1000": {
+     "observed": 0.028531,
+     "expected": 0.000566,
+     "enrichment": 50.4326,
+     "null_ci95": [
+      0.00014,
+      0.001119
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.051608,
+     "expected": 0.000857,
+     "enrichment": 60.2252,
+     "null_ci95": [
+      0.00028,
+      0.001538
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   },
+   "Enterobacter group": {
+    "n": 3099,
+    "F_1000": {
+     "observed": 0.040658,
+     "expected": 0.000727,
+     "enrichment": 55.9503,
+     "null_ci95": [
+      0.0,
+      0.001613
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    },
+    "F_2000": {
+     "observed": 0.051307,
+     "expected": 0.000998,
+     "enrichment": 51.4064,
+     "null_ci95": [
+      0.0,
+      0.002259
+     ],
+     "excludes_null": true,
+     "p": 0.0005
+    }
+   }
+  }
+ },
+ "a_baumannii_families_enriched_and_excluding_null": [
+  "IS3",
+  "IS5",
+  "IS4",
+  "IS6"
+ ],
+ "n_families_tested": 6,
+ "not_driven_by_single_family": true
+}

@@ -1,0 +1,50 @@
+{
+ "amendment": "NM-V4C-003",
+ "arms": {
+  "M1": {
+   "expectation_recorded": "the matched set will shrink, because most alleles are host-restricted. A wider interval is expected and is not evidence against the effect",
+   "name": "exact symbol, no collapsing",
+   "rule": "repeat the matched contrast using the raw `Element symbol` as the matching unit, with the registered eligibility rule (>=3 species, >=10 BioProjects, >=20 occurrences, class B observable) applied to symbols instead of families"
+  },
+  "M2": {
+   "name": "exact symbol, lineage-adjusted",
+   "rule": "M1 with one genome per sequence type, so the two corrections the review asks for are seen together rather than one at a time"
+  },
+  "R1": {
+   "estimator": "DerSimonian-Laird on the Woolf log odds ratios with the Haldane-Anscombe 0.5 correction, 95% Wald interval",
+   "name": "random-effects pooling of the family-matched contrast",
+   "reported_with": "I2 and the fixed-effect Mantel-Haenszel estimate, always together, never one without the other"
+  },
+  "R2": {
+   "name": "random-effects pooling after lineage adjustment",
+   "rule": "R1 applied to the one-genome-per-sequence-type cohort"
+  }
+ },
+ "decision_rule": {
+  "fails": "if M1 loses direction or covers 1, the effect depends on the collapsing rule and the claim is rewritten to say so",
+  "no_threshold_may_move": "these criteria may not be changed after any arm is run",
+  "random_effects_rule": "wherever the fixed-effect pooled odds ratio appears in the manuscript, the random-effects estimate and I2 appear with it. This is a reporting rule, not a significance test, and it applies whichever is larger",
+  "reported_regardless": "all four arms are reported whatever they show",
+  "survives": "the claim that a matched determinant occupies different portability routes across hosts survives if M1 and M2 keep direction with a 95% interval excluding 1"
+ },
+ "frozen_before_any_outcome_was_scored": true,
+ "known_limits": [
+  "at exact-symbol resolution the eligibility rule bites much harder, so M1 measures a different and smaller set of determinants than the family analysis; it is a robustness check on the matching unit, not a replacement estimand",
+  "DerSimonian-Laird is a moment estimator and is known to underestimate between-study variance when the number of strata is small",
+  "this amendment covers the matched contrast only"
+ ],
+ "matching_unit": {
+  "as_used": "gene family, derived from the AMRFinderPlus `Element symbol` by stripping a trailing allele designator at the last hyphen when that tail matches ^(?:\\d+[A-Za-z'\"]*|[IVX]+[a-z]?|[A-Za-z]{1,3})$",
+  "why_it_exists": "the question is whether the same determinant occupies different routes in different hosts. At allele resolution most alleles occur in one host only, and there is nothing to match.",
+  "why_it_must_be_tested": "collapsing alleles could merge determinants with genuinely different mobility - blaOXA-51-like is chromosomal and blaOXA-23 is transposon-borne, and the rule puts both in blaOXA",
+  "worked_examples": {
+   "aac(6')-Ib3": "aac(6')-Ib",
+   "blaOXA-51": "blaOXA",
+   "blaTEM-1": "blaTEM",
+   "sul1": "sul1 (no hyphen, unchanged)"
+  }
+ },
+ "raised_by": "final review: the gene-family definition is undocumented and derived by regular expression rather than from the AMRFinderPlus family field; and a fixed-effect pooled estimate is reported at I2 = 83.63% without a random-effects companion",
+ "sha256_of_body": "a069196382ce2f7ae48da189b3429402070527a3601179d2dc7138d8bcaaa781",
+ "title": "Matching-unit sensitivity and random-effects reporting"
+}

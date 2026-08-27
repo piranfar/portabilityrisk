@@ -1,0 +1,61 @@
+{
+ "amendment": "NM-V4C-002",
+ "arms": {
+  "L1": {
+   "name": "one genome per sequence type per host",
+   "purpose": "removes clonal replication entirely; the strongest single test",
+   "rule": "within each (host, ST), retain exactly one genome, chosen deterministically as the smallest SHA-256 of its assembly accession - the same tie-break rule the original freeze used for collapsing to one genome per BioProject"
+  },
+  "L1u": {
+   "name": "L1, untypeable genomes excluded",
+   "rule": "L1 after dropping every genome with ST '-'"
+  },
+  "L2": {
+   "ceiling": 0.15,
+   "name": "leave-one-sequence-type-out",
+   "rule": "drop each ST in turn from both hosts and recompute; report the maximum relative change in ln(OR)",
+   "why_this_ceiling": "it is the ceiling the original freeze set for leave-one-BioProject-out. ST is the analogous clustering unit, so the threshold is borrowed rather than chosen now. Borrowing is stated explicitly because choosing a threshold after seeing data is what freezing forbids."
+  },
+  "L2u": {
+   "name": "L2, untypeable genomes treated as one pooled lineage",
+   "rule": "every ST '-' genome is assigned to a single synthetic lineage and that lineage is subject to leave-one-out like any other"
+  },
+  "L3": {
+   "name": "lineage-balanced weighting",
+   "note": "weights are applied to the 2x2 cell counts before pooling; the Mantel-Haenszel estimator is unchanged",
+   "rule": "each occurrence is weighted by 1/g, where g is the number of genomes of its own (host, ST) in the cohort, so a heavily sequenced clone contributes no more than a singleton"
+  }
+ },
+ "decision_rule": {
+  "fails": "any arm loses direction or covers 1. Then the host claim is withdrawn and rewritten as an association within this closed-genome cohort",
+  "no_threshold_may_move": "these three outcomes and the 0.15 ceiling may not be changed after any arm is computed",
+  "survives_fully": "every arm keeps direction with a 95% interval excluding 1, AND leave-one-ST-out maximum relative change stays at or below 0.15",
+  "survives_partly": "arms keep direction and exclude 1 but leave-one-ST-out exceeds 0.15. Then the effect is real but lineage-sensitive, and the title must move from 'host-conditioned' to 'host-associated'"
+ },
+ "descriptive_reporting_required": [
+  "the number of genomes, distinct STs, untypeable genomes and effective number of STs by inverse Herfindahl-Hirschman index, per host",
+  "the share of each host's genomes held by its single largest ST",
+  "these are reported whatever the arms show, because the reviewer also asked for cohort composition to be visible in the main text"
+ ],
+ "estimator": "nmv4c_score.mh, Mantel-Haenszel with Robins-Breslow-Greenland variance, imported unchanged from the module that produced the baseline. Only the row filter or weighting differs between arms.",
+ "frozen_before_any_outcome_was_scored": true,
+ "known_limits": [
+  "MLST is a seven-locus scheme. Two genomes sharing an ST are not clones, and two genomes differing at one locus may be near-identical. ST is a lineage surrogate, not a phylogeny, and the result must be reported as such",
+  "the Klebsiella group spans K. pneumoniae, K. quasipneumoniae and K. variicola; the KpSC scheme covers all three but ST numbering is shared, so an ST is interpreted within its species",
+  "this arm covers the matched-family contrast only. The distance analysis and the genome-wide null are not lineage-adjusted by it",
+  "no MLST scheme existed in this project before this amendment, so nothing here revises a previously reported lineage result - it replaces a NOT EVALUABLE"
+ ],
+ "raised_by": "Reviewer 1, major concern 2: host effects are not separated from lineage and database-sampling structure, and 'host-conditioned' asserts more than the design supports",
+ "sha256_of_body": "b7174232fc344088d46aec529209b5eeb64912a68a7dbd65d994f85311d15996",
+ "supersedes_status": "the manuscript reports leave-one-major-lineage-out as NOT EVALUABLE because no lineage assignment existed. This amendment makes it evaluable and commits to reporting the result whichever way it falls",
+ "title": "Lineage adjustment of the matched-family host contrast using MLST",
+ "typing": {
+  "scheme_forced_per_host": {
+   "Acinetobacter baumannii": "abaumannii_2 (Pasteur)",
+   "Klebsiella group": "klebsiella (KpSC, Pasteur)"
+  },
+  "tool": "mlst 2.35.0, PubMLST schemes bundled with that release",
+  "untypeable": "a genome whose scheme returns ST '-' is untypeable. It is NOT dropped by default; both handlings are registered as L1u and L2u below, because dropping them silently would remove exactly the divergent genomes least likely to belong to a dominant clone.",
+  "why_forced": "A. baumannii has two PubMLST schemes. Auto-detection would pick per genome and mix Oxford with Pasteur types, producing sequence types that are not comparable with one another."
+ }
+}

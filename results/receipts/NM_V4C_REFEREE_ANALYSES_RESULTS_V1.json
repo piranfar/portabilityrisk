@@ -1,0 +1,159 @@
+{
+ "receipt": "NM-V4C-004 referee-requested analyses",
+ "amendment_sha256_of_body": "02c82ef032c650c6475251a09d9c19b6bfe2bd7649bf9db019cd8654723725ff",
+ "amendment_sha256_of_file": "2088e510700ec2468d9a32047b472e35f86314b5a81ee16ad522dd8a9deb38de",
+ "inputs": {
+  "occurrence_table": "957e529ae56c79593f85c45fe95cb8592fc111ffadb6dbfc1b22857faa88d564",
+  "mlst_calls": "89dcfb39733e8afd9094ec91393c95a89aa967a1067bd1839a17e9d938965abd"
+ },
+ "baseline_reproduced": true,
+ "results": {
+  "baseline_two_way": {
+   "arm": "baseline two-way",
+   "estimable": true,
+   "n_families": 58,
+   "or": 50.2912,
+   "ci_lo": 45.6138,
+   "ci_hi": 55.4482,
+   "excludes_1": true,
+   "direction": "A. baumannii",
+   "concordant": 56
+  },
+  "W1": {
+   "arm": "W1 within-chromosome, B vs A",
+   "estimable": true,
+   "n_families": 49,
+   "or": 0.4848,
+   "ci_lo": 0.3344,
+   "ci_hi": 0.7028,
+   "excludes_1": true,
+   "direction": "Klebsiella",
+   "concordant": 27
+  },
+  "W2": {
+   "arm": "W2 within-chromosome, one genome per ST",
+   "estimable": true,
+   "n_families": 36,
+   "or": 0.7387,
+   "ci_lo": 0.3842,
+   "ci_hi": 1.4202,
+   "excludes_1": false,
+   "direction": "Klebsiella",
+   "concordant": 20
+  },
+  "N1": {
+   "arm": "N1 two-way, non-ST2 A. baumannii",
+   "estimable": true,
+   "n_families": 55,
+   "or": 18.5648,
+   "ci_lo": 16.6556,
+   "ci_hi": 20.6928,
+   "excludes_1": true,
+   "direction": "A. baumannii",
+   "concordant": 52
+  },
+  "N2": {
+   "arm": "N2 within-chromosome, non-ST2 A. baumannii",
+   "estimable": true,
+   "n_families": 46,
+   "or": 0.3229,
+   "ci_lo": 0.2176,
+   "ci_hi": 0.4791,
+   "excludes_1": true,
+   "direction": "Klebsiella",
+   "concordant": 23
+  },
+  "C1": {
+   "arm": "C1 BioProject-clustered",
+   "clusters": 1404,
+   "replicates": 2000,
+   "ci_lo": 34.2579,
+   "ci_hi": 74.0752,
+   "median": 50.0395,
+   "excludes_1": true
+  },
+  "C2": {
+   "arm": "C2 lineage-clustered",
+   "clusters": 1308,
+   "replicates": 2000,
+   "ci_lo": 11.9326,
+   "ci_hi": 130.5158,
+   "median": 48.2445,
+   "excludes_1": true
+  }
+ },
+ "decision_rule": {
+  "abstract_must_change_if": "W1 is materially smaller than the two-way estimate, defined in advance as a point estimate below half of 50.29",
+  "finding_is_reframed_if": "N1 or N2 loses direction or its interval covers 1, in which case the result is a property of ST2/GC2 and the paper must say so in the title and abstract",
+  "interval_replaced_if": "the cluster-bootstrap interval from C1 or C2 is wider than the analytic one, in which case the widest of the three becomes the reported interval",
+  "no_threshold_may_move": "these criteria may not be changed after any arm runs",
+  "primary_becomes": "if W1 is estimable, the within-chromosome odds ratio becomes the primary result for the title's claim and the two-way estimate is reported beside it as a different question, not as the headline",
+  "reported_regardless": "every arm is reported whatever it shows, including any arm that is not estimable and why"
+ },
+ "abstract_must_change": true,
+ "reframe_as_ST2_specific": true,
+ "W1_diagnostics": {
+  "why": "W1 reversed direction. Before reporting that, two checks registered BEFORE this arm existed were applied: the G2 weight ceiling from the original frozen design, and the intrinsic-OXA exclusion from NM-V4C-001.",
+  "G2_ceiling": 0.3,
+  "G2_source": "NMV4C_FROZEN_DESIGN.json, gates.G2_multiple_families",
+  "sparsity_note": "a family in which BOTH hosts have zero class-A occurrences contributes zero to both Mantel-Haenszel sums and disappears without comment; those are counted here rather than left inside the family total",
+  "arms": [
+   {
+    "arm": "W1 as the referee specified it",
+    "families_in_table": 49,
+    "families_carrying_zero_weight": 38,
+    "families_actually_informative": 11,
+    "largest_weight_family": "blaOXA",
+    "largest_weight_share": 0.6389,
+    "passes_registered_G2_ceiling": false,
+    "or": 0.4848,
+    "ci_lo": 0.3344,
+    "ci_hi": 0.7028,
+    "direction": "Klebsiella",
+    "concordant": 27
+   },
+   {
+    "arm": "W1 minus intrinsic Acinetobacter OXA (NM-V4C-001 exclusion)",
+    "families_in_table": 49,
+    "families_carrying_zero_weight": 38,
+    "families_actually_informative": 11,
+    "largest_weight_family": "aph(3')",
+    "largest_weight_share": 0.3943,
+    "passes_registered_G2_ceiling": false,
+    "or": 3.6831,
+    "ci_lo": 2.1301,
+    "ci_hi": 6.3682,
+    "direction": "A. baumannii",
+    "concordant": 27
+   },
+   {
+    "arm": "W1 minus the whole blaOXA family",
+    "families_in_table": 48,
+    "families_carrying_zero_weight": 38,
+    "families_actually_informative": 10,
+    "largest_weight_family": "aph(3')",
+    "largest_weight_share": 0.4638,
+    "passes_registered_G2_ceiling": false,
+    "or": 6.1108,
+    "ci_lo": 2.9291,
+    "ci_hi": 12.7486,
+    "direction": "A. baumannii",
+    "concordant": 27
+   },
+   {
+    "arm": "W1 minus intrinsic OXA and minus ST2",
+    "families_in_table": 46,
+    "families_carrying_zero_weight": 37,
+    "families_actually_informative": 9,
+    "largest_weight_family": "aph(3')",
+    "largest_weight_share": 0.4378,
+    "passes_registered_G2_ceiling": false,
+    "or": 2.5102,
+    "ci_lo": 1.4079,
+    "ci_hi": 4.4757,
+    "direction": "A. baumannii",
+    "concordant": 23
+   }
+  ]
+ }
+}

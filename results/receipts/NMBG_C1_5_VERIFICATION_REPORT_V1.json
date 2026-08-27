@@ -1,0 +1,560 @@
+{
+ "receipt": "NMBG_C1_5_INDEPENDENT_VERIFICATION",
+ "version": "1.0.0",
+ "method": "separate code path; imports nothing from the census orchestrator and re-derives every quantity from the delivered tables",
+ "input_digests": {
+  "manifest": "955c2c7cabbc0adb347922e19503dc06ee83b4335c66960e25a8f7b8a81880ae",
+  "elements": "4b8f3d043b66ce3ed8ffe2f87b4cc2ea2064152047d99da0cab973647e807997",
+  "status": "3fcb44119631934144757dcf84ac0a3e517092db1d1836cb62a2b6451436511b",
+  "nmis_endpoints": "1fc2a6748f2a15a156d36ddb69d33b6d4225dd26798c2e680341f0df83a9c827",
+  "nmis_receipt": "3725c18716ecd4228e5c5ca1cd261ffafb7d5e18d8ab2a93d72f765decc2b8cc"
+ },
+ "element_rows": 190999,
+ "distinct_is_families": 25,
+ "checks": [
+  {
+   "check": "element table parses",
+   "pass": true,
+   "detail": "190,999 rows, 30 columns"
+  },
+  {
+   "check": "no malformed coordinates",
+   "pass": true,
+   "detail": "0 malformed"
+  },
+  {
+   "check": "all coordinates inside chromosome length",
+   "pass": true,
+   "detail": "0 outside"
+  },
+  {
+   "check": "no duplicate element rows",
+   "pass": true,
+   "detail": "0 duplicates"
+  },
+  {
+   "check": "status rows == manifest chromosomes",
+   "pass": true,
+   "detail": "6190 vs 6190"
+  },
+  {
+   "check": "no duplicate status rows",
+   "pass": true,
+   "detail": "0 duplicates"
+  },
+  {
+   "check": "every manifest chromosome has a status",
+   "pass": true,
+   "detail": "0 missing"
+  },
+  {
+   "check": "no status outside the manifest",
+   "pass": true,
+   "detail": "0 extra"
+  },
+  {
+   "check": "status element sum == element table rows",
+   "pass": true,
+   "detail": "190,999 vs 190,999"
+  },
+  {
+   "check": "per-chromosome counts agree row by row",
+   "pass": true,
+   "detail": "0 chromosomes disagree"
+  },
+  {
+   "check": "zero-element chromosomes absent from element table",
+   "pass": true,
+   "detail": "6 zero-element chromosomes"
+  },
+  {
+   "check": "occurrence endpoint states reproduce",
+   "pass": true,
+   "detail": "4 states, all match"
+  },
+  {
+   "check": "occurrence total reproduces",
+   "pass": true,
+   "detail": "35140 vs 35140"
+  },
+  {
+   "check": "per-species observed/censored counts reproduce",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "genome-wide count exceeds window-restricted",
+   "pass": true,
+   "detail": "190,999 vs 14,426"
+  },
+  {
+   "check": "random spot checks all agree",
+   "pass": true,
+   "detail": "30/30 agree"
+  },
+  {
+   "check": "zero-yield spot checks all agree",
+   "pass": true,
+   "detail": "6/6 agree"
+  },
+  {
+   "check": "at least 30 spot checks",
+   "pass": true,
+   "detail": "36 checks"
+  }
+ ],
+ "checks_passed": 18,
+ "checks_total": 18,
+ "spot_checks": {
+  "receipt": "NMBG_C1_5_SPOT_CHECKS",
+  "method": "independent re-run of ISEScan through a separate code path; srv_census.py is not imported and its annotate() is not used",
+  "seed": 20260826,
+  "selection_written_before_first_rerun": true,
+  "random_set": {
+   "n": 30,
+   "agree": 30,
+   "disagree": 0
+  },
+  "zero_yield_set": {
+   "n": 6,
+   "agree": 6,
+   "disagree": 0
+  },
+  "wall_minutes": 33.0,
+  "checks": [
+   {
+    "accession": "CP050401.1",
+    "species": "Acinetobacter baumannii",
+    "length": 3943808,
+    "census_elements": 36,
+    "rerun_elements": 36,
+    "agree": true,
+    "seconds": 1239.7,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP061592.1",
+    "species": "Acinetobacter seifertii",
+    "length": 4199968,
+    "census_elements": 36,
+    "rerun_elements": 36,
+    "agree": true,
+    "seconds": 1279.4,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP061620.1",
+    "species": "Acinetobacter seifertii",
+    "length": 4177548,
+    "census_elements": 27,
+    "rerun_elements": 27,
+    "agree": true,
+    "seconds": 1275.1,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP087317.1",
+    "species": "Acinetobacter baumannii",
+    "length": 4058693,
+    "census_elements": 48,
+    "rerun_elements": 48,
+    "agree": true,
+    "seconds": 1294.1,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP090067.1",
+    "species": "Acinetobacter sp.",
+    "length": 3384782,
+    "census_elements": 29,
+    "rerun_elements": 29,
+    "agree": true,
+    "seconds": 1150.6,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP099795.1",
+    "species": "Acinetobacter baumannii",
+    "length": 3874873,
+    "census_elements": 38,
+    "rerun_elements": 38,
+    "agree": true,
+    "seconds": 1203.4,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP119214.1",
+    "species": "Acinetobacter soli",
+    "length": 3254383,
+    "census_elements": 30,
+    "rerun_elements": 30,
+    "agree": true,
+    "seconds": 1014.1,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP127923.1",
+    "species": "Acinetobacter chinensis",
+    "length": 3605690,
+    "census_elements": 4,
+    "rerun_elements": 4,
+    "agree": true,
+    "seconds": 1194.4,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP128690.1",
+    "species": "Klebsiella pneumoniae",
+    "length": 5229845,
+    "census_elements": 33,
+    "rerun_elements": 33,
+    "agree": true,
+    "seconds": 1490.2,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP128759.1",
+    "species": "Klebsiella pneumoniae",
+    "length": 5306763,
+    "census_elements": 39,
+    "rerun_elements": 39,
+    "agree": true,
+    "seconds": 1519.6,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP134562.1",
+    "species": "Acinetobacter baumannii",
+    "length": 4150573,
+    "census_elements": 38,
+    "rerun_elements": 38,
+    "agree": true,
+    "seconds": 1294.1,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP144249.1",
+    "species": "Acinetobacter baumannii",
+    "length": 3962015,
+    "census_elements": 37,
+    "rerun_elements": 37,
+    "agree": true,
+    "seconds": 1239.6,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP152631.1",
+    "species": "Klebsiella pneumoniae",
+    "length": 5255436,
+    "census_elements": 49,
+    "rerun_elements": 49,
+    "agree": true,
+    "seconds": 1514.3,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP153347.1",
+    "species": "Klebsiella pneumoniae",
+    "length": 5301067,
+    "census_elements": 22,
+    "rerun_elements": 22,
+    "agree": true,
+    "seconds": 1518.1,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP168228.1",
+    "species": "Acinetobacter bereziniae",
+    "length": 4568429,
+    "census_elements": 22,
+    "rerun_elements": 22,
+    "agree": true,
+    "seconds": 1517.9,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP174025.1",
+    "species": "Klebsiella pneumoniae",
+    "length": 5372676,
+    "census_elements": 24,
+    "rerun_elements": 24,
+    "agree": true,
+    "seconds": 1531.2,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_AP025827.1",
+    "species": "Enterobacter hormaechei",
+    "length": 4698554,
+    "census_elements": 19,
+    "rerun_elements": 19,
+    "agree": true,
+    "seconds": 1370.6,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP050348.1",
+    "species": "Klebsiella pneumoniae",
+    "length": 5438841,
+    "census_elements": 55,
+    "rerun_elements": 55,
+    "agree": true,
+    "seconds": 1554.2,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP077816.1",
+    "species": "Klebsiella pneumoniae",
+    "length": 5508566,
+    "census_elements": 28,
+    "rerun_elements": 28,
+    "agree": true,
+    "seconds": 1582.5,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP079131.1",
+    "species": "Klebsiella pneumoniae",
+    "length": 5364339,
+    "census_elements": 34,
+    "rerun_elements": 34,
+    "agree": true,
+    "seconds": 1531.8,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP099513.1",
+    "species": "Klebsiella sp.",
+    "length": 5676798,
+    "census_elements": 8,
+    "rerun_elements": 8,
+    "agree": true,
+    "seconds": 1662.5,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP103512.1",
+    "species": "Klebsiella pneumoniae",
+    "length": 5459963,
+    "census_elements": 24,
+    "rerun_elements": 24,
+    "agree": true,
+    "seconds": 1550.2,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP110368.1",
+    "species": "Pseudomonas aeruginosa",
+    "length": 6433752,
+    "census_elements": 10,
+    "rerun_elements": 10,
+    "agree": true,
+    "seconds": 1781.2,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP115481.1",
+    "species": "Pseudomonas aeruginosa",
+    "length": 7076089,
+    "census_elements": 19,
+    "rerun_elements": 19,
+    "agree": true,
+    "seconds": 1978.1,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP116934.1",
+    "species": "Pseudomonas aeruginosa",
+    "length": 6930946,
+    "census_elements": 41,
+    "rerun_elements": 41,
+    "agree": true,
+    "seconds": 1920.0,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP128544.1",
+    "species": "Pseudomonas mosselii",
+    "length": 6396213,
+    "census_elements": 98,
+    "rerun_elements": 98,
+    "agree": true,
+    "seconds": 1808.3,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP137379.1",
+    "species": "Klebsiella pneumoniae",
+    "length": 5393100,
+    "census_elements": 23,
+    "rerun_elements": 23,
+    "agree": true,
+    "seconds": 1539.6,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP138357.1",
+    "species": "Pseudomonas putida",
+    "length": 6362594,
+    "census_elements": 64,
+    "rerun_elements": 64,
+    "agree": true,
+    "seconds": 1791.4,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP143705.1",
+    "species": "Enterobacter hormaechei",
+    "length": 4820467,
+    "census_elements": 19,
+    "rerun_elements": 19,
+    "agree": true,
+    "seconds": 1424.7,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "NZ_CP152571.1",
+    "species": "Klebsiella variicola",
+    "length": 5377873,
+    "census_elements": 35,
+    "rerun_elements": 35,
+    "agree": true,
+    "seconds": 1529.9,
+    "returncode": 0,
+    "error": "",
+    "set": "random"
+   },
+   {
+    "accession": "CP043909.1",
+    "species": "Acinetobacter suaedae",
+    "length": 3373643,
+    "census_elements": 0,
+    "rerun_elements": 0,
+    "agree": true,
+    "seconds": 1066.1,
+    "returncode": 0,
+    "error": "",
+    "set": "zero_yield"
+   },
+   {
+    "accession": "CP070518.1",
+    "species": "Acinetobacter calcoaceticus",
+    "length": 3915231,
+    "census_elements": 0,
+    "rerun_elements": 0,
+    "agree": true,
+    "seconds": 1209.8,
+    "returncode": 0,
+    "error": "",
+    "set": "zero_yield"
+   },
+   {
+    "accession": "CP077205.1",
+    "species": "Acinetobacter pittii",
+    "length": 3838032,
+    "census_elements": 0,
+    "rerun_elements": 0,
+    "agree": true,
+    "seconds": 1188.4,
+    "returncode": 0,
+    "error": "",
+    "set": "zero_yield"
+   },
+   {
+    "accession": "CP139248.1",
+    "species": "Acinetobacter pittii",
+    "length": 4066238,
+    "census_elements": 0,
+    "rerun_elements": 0,
+    "agree": true,
+    "seconds": 1264.0,
+    "returncode": 0,
+    "error": "",
+    "set": "zero_yield"
+   },
+   {
+    "accession": "CP162643.1",
+    "species": "Acinetobacter lactucae",
+    "length": 3875873,
+    "census_elements": 0,
+    "rerun_elements": 0,
+    "agree": true,
+    "seconds": 1193.0,
+    "returncode": 0,
+    "error": "",
+    "set": "zero_yield"
+   },
+   {
+    "accession": "CP167121.1",
+    "species": "Acinetobacter sp.",
+    "length": 3939837,
+    "census_elements": 0,
+    "rerun_elements": 0,
+    "agree": true,
+    "seconds": 1215.6,
+    "returncode": 0,
+    "error": "",
+    "set": "zero_yield"
+   }
+  ]
+ },
+ "verdict": "C1_5_VERIFIED"
+}

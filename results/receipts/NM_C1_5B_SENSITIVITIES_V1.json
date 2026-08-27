@@ -1,0 +1,2077 @@
+{
+ "receipt": "NM_C1_5B_SENSITIVITIES",
+ "version": "1.0.0",
+ "n_permutations": 2000,
+ "seed": 20260824,
+ "p_convention": "(#{null>=observed}+1)/(B+1); floor 1/2001 = 0.0005, reported as <=0.0005, never 0",
+ "input_digests": {
+  "c1_4_matrices.npz": "8fe3f580447ae72d66f95b8b7dee5d4fe520ec079cf9174bb2c3b031f5db86d8",
+  "NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv": "955c2c7cabbc0adb347922e19503dc06ee83b4335c66960e25a8f7b8a81880ae",
+  "genome_wide_is_elements.tsv": "4b8f3d043b66ce3ed8ffe2f87b4cc2ea2064152047d99da0cab973647e807997",
+  "nmis_occurrence_endpoints.tsv": "1fc2a6748f2a15a156d36ddb69d33b6d4225dd26798c2e680341f0df83a9c827"
+ },
+ "primary": {
+  "A. baumannii": {
+   "occurrence": {
+    "n": 8005,
+    "weight_total": 8005.0,
+    "F_1000": {
+     "observed": 0.578638,
+     "expected": 0.034224,
+     "enrichment": 16.9073,
+     "null_ci95": [
+      0.030356,
+      0.038104
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.678576,
+     "expected": 0.048398,
+     "enrichment": 14.0207,
+     "null_ci95": [
+      0.043598,
+      0.053092
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.749282,
+     "expected": 0.08737,
+     "enrichment": 8.576,
+     "null_ci95": [
+      0.081574,
+      0.093567
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.772517,
+     "expected": 0.132161,
+     "enrichment": 5.8453,
+     "null_ci95": [
+      0.125172,
+      0.139663
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "one_per_block": {
+    "n": 8005,
+    "weight_total": 4138.0,
+    "F_1000": {
+     "observed": 0.51191,
+     "expected": 0.034032,
+     "enrichment": 15.0422,
+     "null_ci95": [
+      0.029249,
+      0.038983
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.550563,
+     "expected": 0.04831,
+     "enrichment": 11.3964,
+     "null_ci95": [
+      0.04267,
+      0.054047
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.582778,
+     "expected": 0.08773,
+     "enrichment": 6.6429,
+     "null_ci95": [
+      0.080404,
+      0.095116
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.60728,
+     "expected": 0.133064,
+     "enrichment": 4.5638,
+     "null_ci95": [
+      0.124184,
+      0.141725
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "genome_balanced": {
+    "n": 8005,
+    "weight_total": 778.0,
+    "F_1000": {
+     "observed": 0.494352,
+     "expected": 0.032843,
+     "enrichment": 15.052,
+     "null_ci95": [
+      0.028318,
+      0.037707
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.568098,
+     "expected": 0.046734,
+     "enrichment": 12.156,
+     "null_ci95": [
+      0.041332,
+      0.05213
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.626743,
+     "expected": 0.085066,
+     "enrichment": 7.3677,
+     "null_ci95": [
+      0.078149,
+      0.092277
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.654728,
+     "expected": 0.129004,
+     "enrichment": 5.0752,
+     "null_ci95": [
+      0.120881,
+      0.137446
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "bioproject_balanced": {
+    "n": 8005,
+    "weight_total": 268.0,
+    "F_1000": {
+     "observed": 0.425105,
+     "expected": 0.030461,
+     "enrichment": 13.9556,
+     "null_ci95": [
+      0.023522,
+      0.038175
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.490285,
+     "expected": 0.043417,
+     "enrichment": 11.2924,
+     "null_ci95": [
+      0.035162,
+      0.052321
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.539688,
+     "expected": 0.079158,
+     "enrichment": 6.8179,
+     "null_ci95": [
+      0.06822,
+      0.090661
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.581317,
+     "expected": 0.12022,
+     "enrichment": 4.8354,
+     "null_ci95": [
+      0.107477,
+      0.133774
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   }
+  },
+  "Klebsiella group": {
+   "occurrence": {
+    "n": 15568,
+    "weight_total": 15568.0,
+    "F_1000": {
+     "observed": 0.120632,
+     "expected": 0.019191,
+     "enrichment": 6.286,
+     "null_ci95": [
+      0.017085,
+      0.02139
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.14973,
+     "expected": 0.027278,
+     "enrichment": 5.4891,
+     "null_ci95": [
+      0.024666,
+      0.029742
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.198741,
+     "expected": 0.050302,
+     "enrichment": 3.951,
+     "null_ci95": [
+      0.046889,
+      0.053828
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.246596,
+     "expected": 0.077583,
+     "enrichment": 3.1785,
+     "null_ci95": [
+      0.073484,
+      0.081835
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "one_per_block": {
+    "n": 15568,
+    "weight_total": 10887.0,
+    "F_1000": {
+     "observed": 0.074523,
+     "expected": 0.018161,
+     "enrichment": 4.1035,
+     "null_ci95": [
+      0.015928,
+      0.020351
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.089907,
+     "expected": 0.026158,
+     "enrichment": 3.4371,
+     "null_ci95": [
+      0.02344,
+      0.028814
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.119445,
+     "expected": 0.049055,
+     "enrichment": 2.4349,
+     "null_ci95": [
+      0.045439,
+      0.052779
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.165361,
+     "expected": 0.076284,
+     "enrichment": 2.1677,
+     "null_ci95": [
+      0.071927,
+      0.080809
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "genome_balanced": {
+    "n": 15568,
+    "weight_total": 3426.0,
+    "F_1000": {
+     "observed": 0.079267,
+     "expected": 0.018864,
+     "enrichment": 4.202,
+     "null_ci95": [
+      0.016568,
+      0.02118
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.095675,
+     "expected": 0.026872,
+     "enrichment": 3.5604,
+     "null_ci95": [
+      0.024095,
+      0.029656
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.132807,
+     "expected": 0.049857,
+     "enrichment": 2.6638,
+     "null_ci95": [
+      0.046161,
+      0.053735
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.180163,
+     "expected": 0.077209,
+     "enrichment": 2.3334,
+     "null_ci95": [
+      0.072841,
+      0.081788
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "bioproject_balanced": {
+    "n": 15568,
+    "weight_total": 1153.0,
+    "F_1000": {
+     "observed": 0.10178,
+     "expected": 0.018757,
+     "enrichment": 5.4263,
+     "null_ci95": [
+      0.015276,
+      0.022374
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.120844,
+     "expected": 0.026892,
+     "enrichment": 4.4937,
+     "null_ci95": [
+      0.022872,
+      0.031381
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.159649,
+     "expected": 0.050161,
+     "enrichment": 3.1827,
+     "null_ci95": [
+      0.044834,
+      0.056103
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.196993,
+     "expected": 0.077837,
+     "enrichment": 2.5308,
+     "null_ci95": [
+      0.07136,
+      0.085018
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   }
+  },
+  "P. aeruginosa": {
+   "occurrence": {
+    "n": 7150,
+    "weight_total": 7150.0,
+    "F_1000": {
+     "observed": 0.095804,
+     "expected": 0.010561,
+     "enrichment": 9.0712,
+     "null_ci95": [
+      0.008252,
+      0.013007
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.153846,
+     "expected": 0.015023,
+     "enrichment": 10.2409,
+     "null_ci95": [
+      0.012308,
+      0.017902
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.241119,
+     "expected": 0.027375,
+     "enrichment": 8.8079,
+     "null_ci95": [
+      0.023497,
+      0.031189
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.281119,
+     "expected": 0.04094,
+     "enrichment": 6.8666,
+     "null_ci95": [
+      0.036503,
+      0.045734
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "one_per_block": {
+    "n": 7150,
+    "weight_total": 4102.0,
+    "F_1000": {
+     "observed": 0.035323,
+     "expected": 0.009136,
+     "enrichment": 3.8664,
+     "null_ci95": [
+      0.006718,
+      0.011744
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.059491,
+     "expected": 0.013074,
+     "enrichment": 4.5503,
+     "null_ci95": [
+      0.01018,
+      0.016024
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.088887,
+     "expected": 0.02407,
+     "enrichment": 3.6928,
+     "null_ci95": [
+      0.020045,
+      0.028315
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.107665,
+     "expected": 0.036229,
+     "enrichment": 2.9718,
+     "null_ci95": [
+      0.031403,
+      0.041217
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "genome_balanced": {
+    "n": 7150,
+    "weight_total": 884.0,
+    "F_1000": {
+     "observed": 0.047892,
+     "expected": 0.008504,
+     "enrichment": 5.6319,
+     "null_ci95": [
+      0.006372,
+      0.010821
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.078193,
+     "expected": 0.012138,
+     "enrichment": 6.4422,
+     "null_ci95": [
+      0.009524,
+      0.014864
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.123039,
+     "expected": 0.022336,
+     "enrichment": 5.5085,
+     "null_ci95": [
+      0.018805,
+      0.026014
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.146644,
+     "expected": 0.03369,
+     "enrichment": 4.3528,
+     "null_ci95": [
+      0.029357,
+      0.038105
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "bioproject_balanced": {
+    "n": 7150,
+    "weight_total": 425.0,
+    "F_1000": {
+     "observed": 0.055809,
+     "expected": 0.008677,
+     "enrichment": 6.4315,
+     "null_ci95": [
+      0.00574,
+      0.011861
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.090442,
+     "expected": 0.012345,
+     "enrichment": 7.3265,
+     "null_ci95": [
+      0.008817,
+      0.015935
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.129001,
+     "expected": 0.022618,
+     "enrichment": 5.7035,
+     "null_ci95": [
+      0.017895,
+      0.027527
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.152318,
+     "expected": 0.033986,
+     "enrichment": 4.4818,
+     "null_ci95": [
+      0.027991,
+      0.040025
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   }
+  },
+  "Enterobacter group": {
+   "occurrence": {
+    "n": 3099,
+    "weight_total": 3099.0,
+    "F_1000": {
+     "observed": 0.071959,
+     "expected": 0.014423,
+     "enrichment": 4.9893,
+     "null_ci95": [
+      0.010326,
+      0.018716
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.100032,
+     "expected": 0.019908,
+     "enrichment": 5.0246,
+     "null_ci95": [
+      0.015166,
+      0.024847
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.150048,
+     "expected": 0.034963,
+     "enrichment": 4.2917,
+     "null_ci95": [
+      0.029042,
+      0.041626
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.179413,
+     "expected": 0.05226,
+     "enrichment": 3.4331,
+     "null_ci95": [
+      0.044853,
+      0.060019
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "one_per_block": {
+    "n": 3099,
+    "weight_total": 2152.0,
+    "F_1000": {
+     "observed": 0.037808,
+     "expected": 0.013613,
+     "enrichment": 2.7773,
+     "null_ci95": [
+      0.009542,
+      0.018052
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.057613,
+     "expected": 0.019014,
+     "enrichment": 3.0301,
+     "null_ci95": [
+      0.014209,
+      0.024122
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.09158,
+     "expected": 0.033802,
+     "enrichment": 2.7093,
+     "null_ci95": [
+      0.027686,
+      0.04049
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.119819,
+     "expected": 0.050811,
+     "enrichment": 2.3581,
+     "null_ci95": [
+      0.043226,
+      0.058762
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "genome_balanced": {
+    "n": 3099,
+    "weight_total": 695.0,
+    "F_1000": {
+     "observed": 0.037303,
+     "expected": 0.014736,
+     "enrichment": 2.5315,
+     "null_ci95": [
+      0.010115,
+      0.019904
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.059949,
+     "expected": 0.020349,
+     "enrichment": 2.946,
+     "null_ci95": [
+      0.015033,
+      0.025927
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.096637,
+     "expected": 0.035911,
+     "enrichment": 2.691,
+     "null_ci95": [
+      0.028973,
+      0.0431
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.124887,
+     "expected": 0.053821,
+     "enrichment": 2.3204,
+     "null_ci95": [
+      0.045465,
+      0.062778
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   },
+   "bioproject_balanced": {
+    "n": 3099,
+    "weight_total": 270.0,
+    "F_1000": {
+     "observed": 0.041325,
+     "expected": 0.014401,
+     "enrichment": 2.8695,
+     "null_ci95": [
+      0.008038,
+      0.022323
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_2000": {
+     "observed": 0.062811,
+     "expected": 0.019826,
+     "enrichment": 3.168,
+     "null_ci95": [
+      0.012029,
+      0.028283
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_5000": {
+     "observed": 0.102506,
+     "expected": 0.035132,
+     "enrichment": 2.9178,
+     "null_ci95": [
+      0.025483,
+      0.045969
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    },
+    "F_10000": {
+     "observed": 0.133836,
+     "expected": 0.052712,
+     "enrichment": 2.539,
+     "null_ci95": [
+      0.041244,
+      0.065267
+     ],
+     "excludes_null": true,
+     "p": 0.0005,
+     "p_at_floor": true
+    }
+   }
+  }
+ },
+ "S1_chromosome_length_stratification": {
+  "A. baumannii": {
+   "tertile_bounds_bp": [
+    3943808,
+    4014226
+   ],
+   "strata": {
+    "short": {
+     "n": 2678,
+     "weight_total": 2678.0,
+     "F_1000": {
+      "observed": 0.571695,
+      "expected": 0.034522,
+      "enrichment": 16.5605,
+      "null_ci95": [
+       0.027633,
+       0.041449
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.660941,
+      "expected": 0.048974,
+      "enrichment": 13.4958,
+      "null_ci95": [
+       0.040693,
+       0.057132
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    },
+    "mid": {
+     "n": 2671,
+     "weight_total": 2671.0,
+     "F_1000": {
+      "observed": 0.609135,
+      "expected": 0.035329,
+      "enrichment": 17.2416,
+      "null_ci95": [
+       0.028828,
+       0.042306
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.712093,
+      "expected": 0.050202,
+      "enrichment": 14.1845,
+      "null_ci95": [
+       0.042306,
+       0.058405
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    },
+    "long": {
+     "n": 2656,
+     "weight_total": 2656.0,
+     "F_1000": {
+      "observed": 0.55497,
+      "expected": 0.032813,
+      "enrichment": 16.9133,
+      "null_ci95": [
+       0.026355,
+       0.039533
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.662651,
+      "expected": 0.046003,
+      "enrichment": 14.4045,
+      "null_ci95": [
+       0.038027,
+       0.05384
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    }
+   }
+  },
+  "Klebsiella group": {
+   "tertile_bounds_bp": [
+    5309987,
+    5435124
+   ],
+   "strata": {
+    "short": {
+     "n": 5192,
+     "weight_total": 5192.0,
+     "F_1000": {
+      "observed": 0.040447,
+      "expected": 0.015943,
+      "enrichment": 2.537,
+      "null_ci95": [
+       0.012712,
+       0.019453
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.053544,
+      "expected": 0.022563,
+      "enrichment": 2.3731,
+      "null_ci95": [
+       0.01849,
+       0.026579
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    },
+    "mid": {
+     "n": 5190,
+     "weight_total": 5190.0,
+     "F_1000": {
+      "observed": 0.105973,
+      "expected": 0.019178,
+      "enrichment": 5.5258,
+      "null_ci95": [
+       0.015607,
+       0.022929
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.132948,
+      "expected": 0.027336,
+      "enrichment": 4.8635,
+      "null_ci95": [
+       0.023117,
+       0.031985
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    },
+    "long": {
+     "n": 5186,
+     "weight_total": 5186.0,
+     "F_1000": {
+      "observed": 0.21558,
+      "expected": 0.022455,
+      "enrichment": 9.6007,
+      "null_ci95": [
+       0.018699,
+       0.026417
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.262823,
+      "expected": 0.03194,
+      "enrichment": 8.2286,
+      "null_ci95": [
+       0.027189,
+       0.036642
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    }
+   }
+  },
+  "P. aeruginosa": {
+   "tertile_bounds_bp": [
+    6740159,
+    6978549
+   ],
+   "strata": {
+    "short": {
+     "n": 2399,
+     "weight_total": 2399.0,
+     "F_1000": {
+      "observed": 0.022093,
+      "expected": 0.005243,
+      "enrichment": 4.2135,
+      "null_ci95": [
+       0.002501,
+       0.008337
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.036682,
+      "expected": 0.007588,
+      "enrichment": 4.8341,
+      "null_ci95": [
+       0.004168,
+       0.011255
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    },
+    "mid": {
+     "n": 2375,
+     "weight_total": 2375.0,
+     "F_1000": {
+      "observed": 0.115368,
+      "expected": 0.011388,
+      "enrichment": 10.1307,
+      "null_ci95": [
+       0.007158,
+       0.016
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.189474,
+      "expected": 0.016233,
+      "enrichment": 11.6724,
+      "null_ci95": [
+       0.011368,
+       0.021474
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    },
+    "long": {
+     "n": 2376,
+     "weight_total": 2376.0,
+     "F_1000": {
+      "observed": 0.150673,
+      "expected": 0.015105,
+      "enrichment": 9.9753,
+      "null_ci95": [
+       0.010522,
+       0.020202
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.236532,
+      "expected": 0.02132,
+      "enrichment": 11.0946,
+      "null_ci95": [
+       0.015993,
+       0.027778
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    }
+   }
+  },
+  "Enterobacter group": {
+   "tertile_bounds_bp": [
+    4737286,
+    4854488
+   ],
+   "strata": {
+    "short": {
+     "n": 1033,
+     "weight_total": 1033.0,
+     "F_1000": {
+      "observed": 0.055179,
+      "expected": 0.008973,
+      "enrichment": 6.1492,
+      "null_ci95": [
+       0.003872,
+       0.014521
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.062924,
+      "expected": 0.012427,
+      "enrichment": 5.0633,
+      "null_ci95": [
+       0.006776,
+       0.019361
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    },
+    "mid": {
+     "n": 1033,
+     "weight_total": 1033.0,
+     "F_1000": {
+      "observed": 0.052275,
+      "expected": 0.013787,
+      "enrichment": 3.7917,
+      "null_ci95": [
+       0.007744,
+       0.021297
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.084221,
+      "expected": 0.019087,
+      "enrichment": 4.4124,
+      "null_ci95": [
+       0.011617,
+       0.028074
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    },
+    "long": {
+     "n": 1033,
+     "weight_total": 1033.0,
+     "F_1000": {
+      "observed": 0.108422,
+      "expected": 0.020508,
+      "enrichment": 5.2869,
+      "null_ci95": [
+       0.012585,
+       0.03001
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     },
+     "F_2000": {
+      "observed": 0.152953,
+      "expected": 0.028211,
+      "enrichment": 5.4218,
+      "null_ci95": [
+       0.019337,
+       0.038722
+      ],
+      "excludes_null": true,
+      "p": 0.0005,
+      "p_at_floor": true
+     }
+    }
+   }
+  }
+ },
+ "S2_genome_wide_is_density": {
+  "A. baumannii": {
+   "complete_structural_elements": 26120,
+   "chromosomal_bp": 3075391409,
+   "density_per_Mb": 8.4932,
+   "enrichment_F1000_occurrence": 16.9073
+  },
+  "P. aeruginosa": {
+   "complete_structural_elements": 12311,
+   "chromosomal_bp": 5933048273,
+   "density_per_Mb": 2.075,
+   "enrichment_F1000_occurrence": 9.0712
+  },
+  "Klebsiella group": {
+   "complete_structural_elements": 81984,
+   "chromosomal_bp": 18436925108,
+   "density_per_Mb": 4.4467,
+   "enrichment_F1000_occurrence": 6.286
+  },
+  "Enterobacter group": {
+   "complete_structural_elements": 11558,
+   "chromosomal_bp": 3334144326,
+   "density_per_Mb": 3.4666,
+   "enrichment_F1000_occurrence": 4.9893
+  }
+ },
+ "S2_note": "Density is reported beside every enrichment, as required. Enrichment is already density-normalised by construction: the null relocates occurrences within the SAME chromosome, so each chromosome's own IS density is preserved exactly.",
+ "S4_leave_one_bioproject_out": {
+  "A. baumannii": {
+   "baseline_enrichment_F1000": 16.9073,
+   "n_bioprojects": 268,
+   "n_refits": 268,
+   "max_excursion": {
+    "dropped": "PRJNA789460",
+    "n_dropped": 660,
+    "enrichment_without": 16.5782,
+    "pct_change": -1.95
+   },
+   "all_refits_remain_above_1": true
+  },
+  "Klebsiella group": {
+   "baseline_enrichment_F1000": 6.286,
+   "n_bioprojects": 1153,
+   "n_refits": 1153,
+   "max_excursion": {
+    "dropped": "PRJNA1098507",
+    "n_dropped": 1802,
+    "enrichment_without": 6.8912,
+    "pct_change": 9.63
+   },
+   "all_refits_remain_above_1": true
+  },
+  "P. aeruginosa": {
+   "baseline_enrichment_F1000": 9.0712,
+   "n_bioprojects": 425,
+   "n_refits": 425,
+   "max_excursion": {
+    "dropped": "PRJNA938808",
+    "n_dropped": 84,
+    "enrichment_without": 8.7146,
+    "pct_change": -3.93
+   },
+   "all_refits_remain_above_1": true
+  },
+  "Enterobacter group": {
+   "baseline_enrichment_F1000": 4.9893,
+   "n_bioprojects": 270,
+   "n_refits": 270,
+   "max_excursion": {
+    "dropped": "PRJNA605147",
+    "n_dropped": 191,
+    "enrichment_without": 5.4523,
+    "pct_change": 9.28
+   },
+   "all_refits_remain_above_1": true
+  }
+ },
+ "S5_leave_one_genome_out": {
+  "A. baumannii": {
+   "baseline_enrichment_F1000": 16.9073,
+   "n_genomes": 778,
+   "n_refits": 200,
+   "note": "the 200 genomes carrying the most occurrences",
+   "max_excursion": {
+    "dropped": "GCA_021484905.1",
+    "n_dropped": 93,
+    "enrichment_without": 17.0458,
+    "pct_change": 0.82
+   },
+   "all_refits_remain_above_1": true
+  },
+  "Klebsiella group": {
+   "baseline_enrichment_F1000": 6.286,
+   "n_genomes": 3426,
+   "n_refits": 200,
+   "note": "the 200 genomes carrying the most occurrences",
+   "max_excursion": {
+    "dropped": "GCF_024918475.1",
+    "n_dropped": 32,
+    "enrichment_without": 6.2378,
+    "pct_change": -0.77
+   },
+   "all_refits_remain_above_1": true
+  },
+  "P. aeruginosa": {
+   "baseline_enrichment_F1000": 9.0712,
+   "n_genomes": 884,
+   "n_refits": 200,
+   "note": "the 200 genomes carrying the most occurrences",
+   "max_excursion": {
+    "dropped": "GCF_016925475.1",
+    "n_dropped": 25,
+    "enrichment_without": 8.8837,
+    "pct_change": -2.07
+   },
+   "all_refits_remain_above_1": true
+  },
+  "Enterobacter group": {
+   "baseline_enrichment_F1000": 4.9893,
+   "n_genomes": 695,
+   "n_refits": 200,
+   "note": "the 200 genomes carrying the most occurrences",
+   "max_excursion": {
+    "dropped": "GCF_038627095.1",
+    "n_dropped": 18,
+    "enrichment_without": 4.7789,
+    "pct_change": -4.22
+   },
+   "all_refits_remain_above_1": true
+  }
+ },
+ "S6_exclude_wrapped_truncated": {
+  "A. baumannii": {
+   "n_all": 8005,
+   "n_wrapped_or_truncated": 39,
+   "n_retained": 7966,
+   "enrichment_all_F1000": 16.9073,
+   "enrichment_retained_F1000": 16.8722,
+   "enrichment_retained_F2000": 14.0061,
+   "retained_excludes_null_F1000": true,
+   "retained_excludes_null_F2000": true
+  },
+  "Klebsiella group": {
+   "n_all": 15568,
+   "n_wrapped_or_truncated": 28,
+   "n_retained": 15540,
+   "enrichment_all_F1000": 6.286,
+   "enrichment_retained_F1000": 6.2541,
+   "enrichment_retained_F2000": 5.459,
+   "retained_excludes_null_F1000": true,
+   "retained_excludes_null_F2000": true
+  },
+  "P. aeruginosa": {
+   "n_all": 7150,
+   "n_wrapped_or_truncated": 9,
+   "n_retained": 7141,
+   "enrichment_all_F1000": 9.0712,
+   "enrichment_retained_F1000": 9.0295,
+   "enrichment_retained_F2000": 10.2156,
+   "retained_excludes_null_F1000": true,
+   "retained_excludes_null_F2000": true
+  },
+  "Enterobacter group": {
+   "n_all": 3099,
+   "n_wrapped_or_truncated": 2,
+   "n_retained": 3097,
+   "enrichment_all_F1000": 4.9893,
+   "enrichment_retained_F1000": 4.9925,
+   "enrichment_retained_F2000": 5.0116,
+   "retained_excludes_null_F1000": true,
+   "retained_excludes_null_F2000": true
+  }
+ },
+ "S7_homology_secondary": {
+  "per_group": {
+   "A. baumannii": {
+    "n": 8005,
+    "F_1000": 0.633479,
+    "F_2000": 0.77614,
+    "F_10000": 0.809119,
+    "median_bp": 326.0
+   },
+   "Klebsiella group": {
+    "n": 15568,
+    "F_1000": 0.166367,
+    "F_2000": 0.199512,
+    "F_10000": 0.342048,
+    "median_bp": 1050.0
+   },
+   "P. aeruginosa": {
+    "n": 7150,
+    "F_1000": 0.248531,
+    "F_2000": 0.327972,
+    "F_10000": 0.40014,
+    "median_bp": 810.0
+   },
+   "Enterobacter group": {
+    "n": 3099,
+    "F_1000": 0.128429,
+    "F_2000": 0.156179,
+    "F_10000": 0.236205,
+    "median_bp": 869.0
+   }
+  },
+  "host_ordering_F1000": [
+   "A. baumannii",
+   "P. aeruginosa",
+   "Klebsiella group",
+   "Enterobacter group"
+  ],
+  "a_baumannii_ranks_first": true,
+  "LIMITATION": "Observed only. No genome-wide homology-marker null exists: the census annotated structurally complete insertion sequences genome-wide, not homology markers, so the homology endpoint cannot be background-normalised here. It corroborates host ORDERING, not enrichment."
+ },
+ "S3_is_family_decomposition": {
+  "receipt": "NM_C1_5C_IS_FAMILY_DECOMPOSITION",
+  "version": "1.0.0",
+  "n_permutations": 2000,
+  "seed": 20260824,
+  "selection_rule": "share >= 5%% of complete structural elements, plus IS6 because the amendment names it; fixed before results were read",
+  "family_counts": {
+   "IS3": 34728,
+   "IS5": 33763,
+   "ISNCY": 21320,
+   "IS4": 14734,
+   "IS1": 8070,
+   "IS6": 4627
+  },
+  "complete_structural_total": 145779,
+  "p_convention": "(#{null>=obs}+1)/(B+1); floor 1/2001",
+  "families": {
+   "IS3": {
+    "A. baumannii": {
+     "n": 8005,
+     "F_1000": {
+      "observed": 0.005247,
+      "expected": 0.001887,
+      "enrichment": 2.7802,
+      "null_ci95": [
+       0.000999,
+       0.002873
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.005996,
+      "expected": 0.00277,
+      "enrichment": 2.1648,
+      "null_ci95": [
+       0.001624,
+       0.003998
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "Klebsiella group": {
+     "n": 15568,
+     "F_1000": {
+      "observed": 0.002377,
+      "expected": 0.005197,
+      "enrichment": 0.4573,
+      "null_ci95": [
+       0.004111,
+       0.006359
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     },
+     "F_2000": {
+      "observed": 0.003019,
+      "expected": 0.007469,
+      "enrichment": 0.4042,
+      "null_ci95": [
+       0.006166,
+       0.0088
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     }
+    },
+    "P. aeruginosa": {
+     "n": 7150,
+     "F_1000": {
+      "observed": 0.001119,
+      "expected": 0.003717,
+      "enrichment": 0.301,
+      "null_ci95": [
+       0.002378,
+       0.005175
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     },
+     "F_2000": {
+      "observed": 0.001958,
+      "expected": 0.005493,
+      "enrichment": 0.3565,
+      "null_ci95": [
+       0.003916,
+       0.007273
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     }
+    },
+    "Enterobacter group": {
+     "n": 3099,
+     "F_1000": {
+      "observed": 0.001936,
+      "expected": 0.00349,
+      "enrichment": 0.5548,
+      "null_ci95": [
+       0.001613,
+       0.005808
+      ],
+      "excludes_null": false,
+      "p": 0.955522
+     },
+     "F_2000": {
+      "observed": 0.006131,
+      "expected": 0.004917,
+      "enrichment": 1.2469,
+      "null_ci95": [
+       0.002581,
+       0.007422
+      ],
+      "excludes_null": false,
+      "p": 0.197401
+     }
+    }
+   },
+   "IS5": {
+    "A. baumannii": {
+     "n": 8005,
+     "F_1000": {
+      "observed": 0.029232,
+      "expected": 0.003773,
+      "enrichment": 7.748,
+      "null_ci95": [
+       0.002498,
+       0.005125
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.050094,
+      "expected": 0.005586,
+      "enrichment": 8.9678,
+      "null_ci95": [
+       0.003998,
+       0.007245
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "Klebsiella group": {
+     "n": 15568,
+     "F_1000": {
+      "observed": 0.012718,
+      "expected": 0.004735,
+      "enrichment": 2.6861,
+      "null_ci95": [
+       0.003661,
+       0.005845
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.020298,
+      "expected": 0.006863,
+      "enrichment": 2.9578,
+      "null_ci95": [
+       0.005588,
+       0.008158
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "P. aeruginosa": {
+     "n": 7150,
+     "F_1000": {
+      "observed": 0.000839,
+      "expected": 0.000697,
+      "enrichment": 1.2032,
+      "null_ci95": [
+       0.00014,
+       0.001399
+      ],
+      "excludes_null": false,
+      "p": 0.378311
+     },
+     "F_2000": {
+      "observed": 0.002517,
+      "expected": 0.001022,
+      "enrichment": 2.4644,
+      "null_ci95": [
+       0.00042,
+       0.001818
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "Enterobacter group": {
+     "n": 3099,
+     "F_1000": {
+      "observed": 0.010649,
+      "expected": 0.003085,
+      "enrichment": 3.4521,
+      "null_ci95": [
+       0.001291,
+       0.005163
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.014521,
+      "expected": 0.004367,
+      "enrichment": 3.3253,
+      "null_ci95": [
+       0.002259,
+       0.006776
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    }
+   },
+   "ISNCY": {
+    "A. baumannii": {
+     "n": 8005,
+     "F_1000": {
+      "observed": 0.0,
+      "expected": 2e-05,
+      "enrichment": 0.0,
+      "null_ci95": [
+       0.0,
+       0.000125
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     },
+     "F_2000": {
+      "observed": 0.000625,
+      "expected": 2.9e-05,
+      "enrichment": 21.4592,
+      "null_ci95": [
+       0.0,
+       0.000125
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "Klebsiella group": {
+     "n": 15568,
+     "F_1000": {
+      "observed": 0.001606,
+      "expected": 0.005188,
+      "enrichment": 0.3096,
+      "null_ci95": [
+       0.004047,
+       0.006359
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     },
+     "F_2000": {
+      "observed": 0.002698,
+      "expected": 0.007448,
+      "enrichment": 0.3622,
+      "null_ci95": [
+       0.006102,
+       0.0088
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     }
+    },
+    "P. aeruginosa": {
+     "n": 7150,
+     "F_1000": {
+      "observed": 0.0,
+      "expected": 0.00016,
+      "enrichment": 0.0,
+      "null_ci95": [
+       0.0,
+       0.000559
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     },
+     "F_2000": {
+      "observed": 0.0,
+      "expected": 0.000227,
+      "enrichment": 0.0,
+      "null_ci95": [
+       0.0,
+       0.000559
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     }
+    },
+    "Enterobacter group": {
+     "n": 3099,
+     "F_1000": {
+      "observed": 0.0,
+      "expected": 0.000303,
+      "enrichment": 0.0,
+      "null_ci95": [
+       0.0,
+       0.000968
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     },
+     "F_2000": {
+      "observed": 0.005163,
+      "expected": 0.000402,
+      "enrichment": 12.8514,
+      "null_ci95": [
+       0.0,
+       0.001291
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    }
+   },
+   "IS4": {
+    "A. baumannii": {
+     "n": 8005,
+     "F_1000": {
+      "observed": 0.225734,
+      "expected": 0.017824,
+      "enrichment": 12.6645,
+      "null_ci95": [
+       0.014866,
+       0.020862
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.238101,
+      "expected": 0.026047,
+      "enrichment": 9.1413,
+      "null_ci95": [
+       0.022736,
+       0.029482
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "Klebsiella group": {
+     "n": 15568,
+     "F_1000": {
+      "observed": 0.002312,
+      "expected": 0.00024,
+      "enrichment": 9.6373,
+      "null_ci95": [
+       6.4e-05,
+       0.000514
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.004239,
+      "expected": 0.000342,
+      "enrichment": 12.413,
+      "null_ci95": [
+       6.4e-05,
+       0.000642
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "P. aeruginosa": {
+     "n": 7150,
+     "F_1000": {
+      "observed": 0.00028,
+      "expected": 8e-05,
+      "enrichment": 3.4874,
+      "null_ci95": [
+       0.0,
+       0.00028
+      ],
+      "excludes_null": false,
+      "p": 0.112444
+     },
+     "F_2000": {
+      "observed": 0.000559,
+      "expected": 0.000118,
+      "enrichment": 4.745,
+      "null_ci95": [
+       0.0,
+       0.00042
+      ],
+      "excludes_null": true,
+      "p": 0.008496
+     }
+    },
+    "Enterobacter group": {
+     "n": 3099,
+     "F_1000": {
+      "observed": 0.002581,
+      "expected": 0.001044,
+      "enrichment": 2.4718,
+      "null_ci95": [
+       0.0,
+       0.002259
+      ],
+      "excludes_null": true,
+      "p": 0.016992
+     },
+     "F_2000": {
+      "observed": 0.00484,
+      "expected": 0.001476,
+      "enrichment": 3.2794,
+      "null_ci95": [
+       0.000323,
+       0.002904
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    }
+   },
+   "IS1": {
+    "A. baumannii": {
+     "n": 8005,
+     "F_1000": {
+      "observed": 0.0,
+      "expected": 1.5e-05,
+      "enrichment": 0.0,
+      "null_ci95": [
+       0.0,
+       0.000125
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     },
+     "F_2000": {
+      "observed": 0.0,
+      "expected": 2.4e-05,
+      "enrichment": 0.0,
+      "null_ci95": [
+       0.0,
+       0.000125
+      ],
+      "excludes_null": false,
+      "p": 1.0
+     }
+    },
+    "Klebsiella group": {
+     "n": 15568,
+     "F_1000": {
+      "observed": 0.003469,
+      "expected": 0.001236,
+      "enrichment": 2.8073,
+      "null_ci95": [
+       0.000707,
+       0.001799
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.004239,
+      "expected": 0.001859,
+      "enrichment": 2.2808,
+      "null_ci95": [
+       0.00122,
+       0.002569
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "P. aeruginosa": {
+     "n": 7150,
+     "F_1000": {
+      "observed": 0.00014,
+      "expected": 1e-06,
+      "enrichment": 95.2381,
+      "null_ci95": [
+       0.0,
+       0.0
+      ],
+      "excludes_null": true,
+      "p": 0.010995
+     },
+     "F_2000": {
+      "observed": 0.00014,
+      "expected": 2e-06,
+      "enrichment": 64.5161,
+      "null_ci95": [
+       0.0,
+       0.0
+      ],
+      "excludes_null": true,
+      "p": 0.015992
+     }
+    },
+    "Enterobacter group": {
+     "n": 3099,
+     "F_1000": {
+      "observed": 0.002904,
+      "expected": 0.002327,
+      "enrichment": 1.2478,
+      "null_ci95": [
+       0.000645,
+       0.004195
+      ],
+      "excludes_null": false,
+      "p": 0.317841
+     },
+     "F_2000": {
+      "observed": 0.004518,
+      "expected": 0.003399,
+      "enrichment": 1.3289,
+      "null_ci95": [
+       0.001613,
+       0.005486
+      ],
+      "excludes_null": false,
+      "p": 0.174913
+     }
+    }
+   },
+   "IS6": {
+    "A. baumannii": {
+     "n": 8005,
+     "F_1000": {
+      "observed": 0.061212,
+      "expected": 0.001744,
+      "enrichment": 35.0902,
+      "null_ci95": [
+       0.000874,
+       0.002748
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.089194,
+      "expected": 0.002368,
+      "enrichment": 37.6602,
+      "null_ci95": [
+       0.001374,
+       0.003498
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "Klebsiella group": {
+     "n": 15568,
+     "F_1000": {
+      "observed": 0.082798,
+      "expected": 0.000872,
+      "enrichment": 94.94,
+      "null_ci95": [
+       0.00045,
+       0.001349
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.100206,
+      "expected": 0.001199,
+      "enrichment": 83.5744,
+      "null_ci95": [
+       0.000707,
+       0.001799
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "P. aeruginosa": {
+     "n": 7150,
+     "F_1000": {
+      "observed": 0.028531,
+      "expected": 0.000566,
+      "enrichment": 50.4326,
+      "null_ci95": [
+       0.00014,
+       0.001119
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.051608,
+      "expected": 0.000857,
+      "enrichment": 60.2252,
+      "null_ci95": [
+       0.00028,
+       0.001538
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    },
+    "Enterobacter group": {
+     "n": 3099,
+     "F_1000": {
+      "observed": 0.040658,
+      "expected": 0.000727,
+      "enrichment": 55.9503,
+      "null_ci95": [
+       0.0,
+       0.001613
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     },
+     "F_2000": {
+      "observed": 0.051307,
+      "expected": 0.000998,
+      "enrichment": 51.4064,
+      "null_ci95": [
+       0.0,
+       0.002259
+      ],
+      "excludes_null": true,
+      "p": 0.0005
+     }
+    }
+   }
+  },
+  "a_baumannii_families_enriched_and_excluding_null": [
+   "IS3",
+   "IS5",
+   "IS4",
+   "IS6"
+  ],
+  "n_families_tested": 6,
+  "not_driven_by_single_family": true
+ }
+}

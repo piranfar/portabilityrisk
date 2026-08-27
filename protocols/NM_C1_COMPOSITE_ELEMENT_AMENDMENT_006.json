@@ -1,0 +1,43 @@
+{
+ "amendment": "NM-C1-006",
+ "arms": {
+  "P1": {
+   "estimator": "unchanged; observed and expected read from the saved null matrices c1_4_matrices.npz, subset by column",
+   "name": "enrichment among composite-flanked occurrences"
+  },
+  "P2": {
+   "name": "enrichment among occurrences that are NOT composite-flanked"
+  },
+  "P3": {
+   "name": "the host contrast within the non-flanked stratum",
+   "quantity": "A. baumannii enrichment divided by the Klebsiella group's, and by P. aeruginosa's, at 1 kb"
+  },
+  "P4": {
+   "name": "the same stratification at D = 5 kb"
+  }
+ },
+ "decision_rule": {
+  "enrichment_is_substantially_composite_structure_if": "A. baumannii's enrichment among non-flanked occurrences falls below half the published 16.91, i.e. below 8.46",
+  "host_contrast_is_composite_structure_if": "the A. baumannii / Klebsiella enrichment ratio in the non-flanked stratum falls below 1.5, against the published 2.69, or loses direction",
+  "no_threshold_may_move": "8.46 and 1.5 are fixed here and may not be changed after any arm runs",
+  "objection_answered_if": "both the non-flanked enrichment and the non-flanked host ratio stay above those values, in which case the signal is not carried by cargo occurrences and the referee's objection does not hold for this cohort",
+  "reported_regardless": "both strata, both distances, and the number of occurrences in each, whatever they show"
+ },
+ "definition": {
+  "D_primary": 10000,
+  "D_secondary": 5000,
+  "complete_structural": "unchanged from the primary analysis: ISEScan type c, complete transposase open reading frame, bilateral resolved terminal inverted repeats",
+  "composite_flanked": "a chromosomal resistance-gene occurrence is composite-flanked when, on its own replicon, there is at least one complete-structural insertion sequence of family F lying entirely upstream of the gene within D bp of its start, AND at least one complete-structural insertion sequence of the SAME family F lying entirely downstream of the gene within D bp of its end",
+  "not_claimed": "this identifies a flanking ARRANGEMENT consistent with a composite element. It does not demonstrate that the element is intact, mobile, or that it moved. Tn2006 is not called by name here and no transposon database is consulted",
+  "why_same_family": "a composite transposon is bounded by two copies of the same element. Requiring the same family is what separates 'flanked by a pair' from 'sits in an IS-dense neighbourhood', and the second is the thing the paper claims to measure"
+ },
+ "frozen_before_any_outcome_was_scored": true,
+ "known_limits": [
+  "a flanking pair of the same family is necessary but not sufficient for a composite transposon; some flanked occurrences will be coincidental and some true composites will be missed where one copy is degenerate and fails the complete-structural filter",
+  "the two strata are not independent samples of one population: cargo status is a property of the determinant as much as of the host",
+  "this tests the genome-wide null only. It says nothing about the matched-family contrasts"
+ ],
+ "raised_by": "referee point 4: the IS-proximity enrichment is partly tautological where the resistance gene is the cargo of a composite transposon",
+ "sha256_of_body": "b2616a909693662cf33efc5951919ef4350c67b22bffafb9c752f46a9e0dffa9",
+ "title": "Composite-element stratification of the genome-wide background null"
+}

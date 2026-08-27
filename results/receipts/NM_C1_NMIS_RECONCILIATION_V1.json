@@ -1,0 +1,380 @@
+{
+ "receipt": "NM_C1_NMIS_RECONCILIATION",
+ "version": "1.0.0",
+ "statement": "NMIS remains the frozen window-contained endpoint of the manuscript. C1 is the genome-wide background analysis. C1 does not replace NMIS and the two must not be presented as one measurement.",
+ "mechanisms": {
+  "BOUNDARY": "NMIS could not call the element complete-and-contained because the extracted block truncated it or it crossed the window boundary; whole-chromosome annotation removes the truncation. NMIS declared this limitation in its own protocol.",
+  "CONTEXT": "the ISEScan prediction itself differs between block and whole-chromosome scope, because gene prediction and element clustering see different neighbours. Runs in both directions."
+ },
+ "input_digests": {
+  "c1_4_matrices.npz": "8fe3f580447ae72d66f95b8b7dee5d4fe520ec079cf9174bb2c3b031f5db86d8",
+  "nmis_occurrence_endpoints.tsv": "1fc2a6748f2a15a156d36ddb69d33b6d4225dd26798c2e680341f0df83a9c827",
+  "NMIS_RESULT_RECEIPT_V1.json": "3725c18716ecd4228e5c5ca1cd261ffafb7d5e18d8ab2a93d72f765decc2b8cc"
+ },
+ "occurrences_unmatched_to_nmis": 0,
+ "per_species": {
+  "Acinetobacter baumannii": {
+   "n_occurrences": 8005,
+   "nmis_complete_and_contained": 5571,
+   "c1_detected": 6184,
+   "net_change": 613,
+   "gains_boundary": 496,
+   "gains_context": 213,
+   "gains_total": 709,
+   "losses_context": 96,
+   "transition_table": {
+    "complete_and_fully_contained -> censored": 96,
+    "complete_and_fully_contained -> detected": 5475,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 38,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> detected": 41,
+    "no_structurally_resolved_IS -> censored": 1610,
+    "no_structurally_resolved_IS -> detected": 213,
+    "partial_or_boundary_limited -> censored": 77,
+    "partial_or_boundary_limited -> detected": 455
+   }
+  },
+  "Acinetobacter pittii": {
+   "n_occurrences": 179,
+   "nmis_complete_and_contained": 31,
+   "c1_detected": 37,
+   "net_change": 6,
+   "gains_boundary": 5,
+   "gains_context": 1,
+   "gains_total": 6,
+   "losses_context": 0,
+   "transition_table": {
+    "complete_and_fully_contained -> detected": 31,
+    "no_structurally_resolved_IS -> censored": 141,
+    "no_structurally_resolved_IS -> detected": 1,
+    "partial_or_boundary_limited -> censored": 1,
+    "partial_or_boundary_limited -> detected": 5
+   }
+  },
+  "Acinetobacter sp.": {
+   "n_occurrences": 114,
+   "nmis_complete_and_contained": 55,
+   "c1_detected": 58,
+   "net_change": 3,
+   "gains_boundary": 5,
+   "gains_context": 1,
+   "gains_total": 6,
+   "losses_context": 3,
+   "transition_table": {
+    "complete_and_fully_contained -> censored": 3,
+    "complete_and_fully_contained -> detected": 52,
+    "no_structurally_resolved_IS -> censored": 49,
+    "no_structurally_resolved_IS -> detected": 1,
+    "partial_or_boundary_limited -> censored": 4,
+    "partial_or_boundary_limited -> detected": 5
+   }
+  },
+  "Enterobacter asburiae": {
+   "n_occurrences": 245,
+   "nmis_complete_and_contained": 43,
+   "c1_detected": 49,
+   "net_change": 6,
+   "gains_boundary": 6,
+   "gains_context": 3,
+   "gains_total": 9,
+   "losses_context": 3,
+   "transition_table": {
+    "complete_and_fully_contained -> censored": 3,
+    "complete_and_fully_contained -> detected": 40,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 6,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> detected": 1,
+    "no_structurally_resolved_IS -> censored": 179,
+    "no_structurally_resolved_IS -> detected": 3,
+    "partial_or_boundary_limited -> censored": 8,
+    "partial_or_boundary_limited -> detected": 5
+   }
+  },
+  "Enterobacter cloacae": {
+   "n_occurrences": 312,
+   "nmis_complete_and_contained": 81,
+   "c1_detected": 89,
+   "net_change": 8,
+   "gains_boundary": 8,
+   "gains_context": 1,
+   "gains_total": 9,
+   "losses_context": 1,
+   "transition_table": {
+    "complete_and_fully_contained -> censored": 1,
+    "complete_and_fully_contained -> detected": 80,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 4,
+    "no_structurally_resolved_IS -> censored": 212,
+    "no_structurally_resolved_IS -> detected": 1,
+    "partial_or_boundary_limited -> censored": 6,
+    "partial_or_boundary_limited -> detected": 8
+   }
+  },
+  "Enterobacter hormaechei": {
+   "n_occurrences": 1749,
+   "nmis_complete_and_contained": 320,
+   "c1_detected": 326,
+   "net_change": 6,
+   "gains_boundary": 13,
+   "gains_context": 2,
+   "gains_total": 15,
+   "losses_context": 9,
+   "transition_table": {
+    "complete_and_fully_contained -> censored": 9,
+    "complete_and_fully_contained -> detected": 311,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 9,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> detected": 1,
+    "no_structurally_resolved_IS -> censored": 1383,
+    "no_structurally_resolved_IS -> detected": 2,
+    "partial_or_boundary_limited -> censored": 22,
+    "partial_or_boundary_limited -> detected": 12
+   }
+  },
+  "Enterobacter kobei": {
+   "n_occurrences": 107,
+   "nmis_complete_and_contained": 16,
+   "c1_detected": 17,
+   "net_change": 1,
+   "gains_boundary": 1,
+   "gains_context": 0,
+   "gains_total": 1,
+   "losses_context": 0,
+   "transition_table": {
+    "complete_and_fully_contained -> detected": 16,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 5,
+    "no_structurally_resolved_IS -> censored": 83,
+    "partial_or_boundary_limited -> censored": 2,
+    "partial_or_boundary_limited -> detected": 1
+   }
+  },
+  "Enterobacter ludwigii": {
+   "n_occurrences": 149,
+   "nmis_complete_and_contained": 7,
+   "c1_detected": 7,
+   "net_change": 0,
+   "gains_boundary": 0,
+   "gains_context": 0,
+   "gains_total": 0,
+   "losses_context": 0,
+   "transition_table": {
+    "complete_and_fully_contained -> detected": 7,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 1,
+    "no_structurally_resolved_IS -> censored": 136,
+    "partial_or_boundary_limited -> censored": 5
+   }
+  },
+  "Enterobacter roggenkampii": {
+   "n_occurrences": 170,
+   "nmis_complete_and_contained": 27,
+   "c1_detected": 30,
+   "net_change": 3,
+   "gains_boundary": 3,
+   "gains_context": 0,
+   "gains_total": 3,
+   "losses_context": 0,
+   "transition_table": {
+    "complete_and_fully_contained -> detected": 27,
+    "no_structurally_resolved_IS -> censored": 137,
+    "partial_or_boundary_limited -> censored": 3,
+    "partial_or_boundary_limited -> detected": 3
+   }
+  },
+  "Enterobacter sp.": {
+   "n_occurrences": 129,
+   "nmis_complete_and_contained": 16,
+   "c1_detected": 16,
+   "net_change": 0,
+   "gains_boundary": 0,
+   "gains_context": 0,
+   "gains_total": 0,
+   "losses_context": 0,
+   "transition_table": {
+    "complete_and_fully_contained -> detected": 16,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 2,
+    "no_structurally_resolved_IS -> censored": 110,
+    "partial_or_boundary_limited -> censored": 1
+   }
+  },
+  "Klebsiella aerogenes": {
+   "n_occurrences": 351,
+   "nmis_complete_and_contained": 44,
+   "c1_detected": 43,
+   "net_change": -1,
+   "gains_boundary": 0,
+   "gains_context": 0,
+   "gains_total": 0,
+   "losses_context": 1,
+   "transition_table": {
+    "complete_and_fully_contained -> censored": 1,
+    "complete_and_fully_contained -> detected": 43,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 2,
+    "no_structurally_resolved_IS -> censored": 295,
+    "partial_or_boundary_limited -> censored": 10
+   }
+  },
+  "Klebsiella michiganensis": {
+   "n_occurrences": 298,
+   "nmis_complete_and_contained": 95,
+   "c1_detected": 101,
+   "net_change": 6,
+   "gains_boundary": 3,
+   "gains_context": 5,
+   "gains_total": 8,
+   "losses_context": 2,
+   "transition_table": {
+    "complete_and_fully_contained -> censored": 2,
+    "complete_and_fully_contained -> detected": 93,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 2,
+    "no_structurally_resolved_IS -> censored": 183,
+    "no_structurally_resolved_IS -> detected": 5,
+    "partial_or_boundary_limited -> censored": 10,
+    "partial_or_boundary_limited -> detected": 3
+   }
+  },
+  "Klebsiella ornithinolytica": {
+   "n_occurrences": 133,
+   "nmis_complete_and_contained": 11,
+   "c1_detected": 12,
+   "net_change": 1,
+   "gains_boundary": 0,
+   "gains_context": 1,
+   "gains_total": 1,
+   "losses_context": 0,
+   "transition_table": {
+    "complete_and_fully_contained -> detected": 11,
+    "no_structurally_resolved_IS -> censored": 118,
+    "no_structurally_resolved_IS -> detected": 1,
+    "partial_or_boundary_limited -> censored": 3
+   }
+  },
+  "Klebsiella oxytoca": {
+   "n_occurrences": 191,
+   "nmis_complete_and_contained": 25,
+   "c1_detected": 28,
+   "net_change": 3,
+   "gains_boundary": 0,
+   "gains_context": 3,
+   "gains_total": 3,
+   "losses_context": 0,
+   "transition_table": {
+    "complete_and_fully_contained -> detected": 25,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 4,
+    "no_structurally_resolved_IS -> censored": 154,
+    "no_structurally_resolved_IS -> detected": 3,
+    "partial_or_boundary_limited -> censored": 5
+   }
+  },
+  "Klebsiella pneumoniae": {
+   "n_occurrences": 13082,
+   "nmis_complete_and_contained": 3217,
+   "c1_detected": 3527,
+   "net_change": 310,
+   "gains_boundary": 273,
+   "gains_context": 70,
+   "gains_total": 343,
+   "losses_context": 33,
+   "transition_table": {
+    "complete_and_fully_contained -> censored": 33,
+    "complete_and_fully_contained -> detected": 3184,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 50,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> detected": 19,
+    "no_structurally_resolved_IS -> censored": 8978,
+    "no_structurally_resolved_IS -> detected": 70,
+    "partial_or_boundary_limited -> censored": 494,
+    "partial_or_boundary_limited -> detected": 254
+   }
+  },
+  "Klebsiella quasipneumoniae": {
+   "n_occurrences": 573,
+   "nmis_complete_and_contained": 38,
+   "c1_detected": 53,
+   "net_change": 15,
+   "gains_boundary": 13,
+   "gains_context": 2,
+   "gains_total": 15,
+   "losses_context": 0,
+   "transition_table": {
+    "complete_and_fully_contained -> detected": 38,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 1,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> detected": 1,
+    "no_structurally_resolved_IS -> censored": 506,
+    "no_structurally_resolved_IS -> detected": 2,
+    "partial_or_boundary_limited -> censored": 13,
+    "partial_or_boundary_limited -> detected": 12
+   }
+  },
+  "Klebsiella variicola": {
+   "n_occurrences": 646,
+   "nmis_complete_and_contained": 16,
+   "c1_detected": 30,
+   "net_change": 14,
+   "gains_boundary": 13,
+   "gains_context": 1,
+   "gains_total": 14,
+   "losses_context": 0,
+   "transition_table": {
+    "complete_and_fully_contained -> detected": 16,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> detected": 1,
+    "no_structurally_resolved_IS -> censored": 599,
+    "no_structurally_resolved_IS -> detected": 1,
+    "partial_or_boundary_limited -> censored": 17,
+    "partial_or_boundary_limited -> detected": 12
+   }
+  },
+  "Pseudomonas aeruginosa": {
+   "n_occurrences": 7150,
+   "nmis_complete_and_contained": 1838,
+   "c1_detected": 2010,
+   "net_change": 172,
+   "gains_boundary": 278,
+   "gains_context": 70,
+   "gains_total": 348,
+   "losses_context": 176,
+   "transition_table": {
+    "complete_and_fully_contained -> censored": 176,
+    "complete_and_fully_contained -> detected": 1662,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 212,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> detected": 188,
+    "no_structurally_resolved_IS -> censored": 4498,
+    "no_structurally_resolved_IS -> detected": 70,
+    "partial_or_boundary_limited -> censored": 254,
+    "partial_or_boundary_limited -> detected": 90
+   }
+  },
+  "Pseudomonas sp.": {
+   "n_occurrences": 137,
+   "nmis_complete_and_contained": 55,
+   "c1_detected": 64,
+   "net_change": 9,
+   "gains_boundary": 9,
+   "gains_context": 0,
+   "gains_total": 9,
+   "losses_context": 0,
+   "transition_table": {
+    "complete_and_fully_contained -> detected": 55,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 1,
+    "complete_in_shared_block_but_crosses_occurrence_window_boundary -> detected": 3,
+    "no_structurally_resolved_IS -> censored": 47,
+    "partial_or_boundary_limited -> censored": 25,
+    "partial_or_boundary_limited -> detected": 6
+   }
+  }
+ },
+ "pooled": {
+  "n_occurrences": 35140,
+  "nmis_complete_and_contained": 12034,
+  "c1_detected": 13238,
+  "net_change": 1204,
+  "gains_boundary": 1154,
+  "gains_context": 384,
+  "gains_total": 1538,
+  "losses_context": 334,
+  "transition_table": {
+   "complete_and_fully_contained -> censored": 334,
+   "complete_and_fully_contained -> detected": 11700,
+   "complete_in_shared_block_but_crosses_occurrence_window_boundary -> censored": 446,
+   "complete_in_shared_block_but_crosses_occurrence_window_boundary -> detected": 270,
+   "no_structurally_resolved_IS -> censored": 20104,
+   "no_structurally_resolved_IS -> detected": 384,
+   "partial_or_boundary_limited -> censored": 1018,
+   "partial_or_boundary_limited -> detected": 884
+  }
+ }
+}

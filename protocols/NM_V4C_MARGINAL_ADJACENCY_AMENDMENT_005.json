@@ -1,0 +1,48 @@
+{
+ "amendment": "NM-V4C-005",
+ "arms": {
+  "M1": {
+   "intervals": "percentile bootstrap, B = 2,000, seed 20260827, resampling BioProjects; and separately resampling (host, sequence type) lineages",
+   "name": "crude rate per host"
+  },
+  "M2": {
+   "name": "rate under one genome per sequence type",
+   "rule": "the deterministic selection registered in NM-V4C-002"
+  },
+  "M3": {
+   "name": "directly standardised rates",
+   "purpose": "to measure how much of the crude gap is family composition rather than within-family difference. This is the caveat quantified, not a second estimate of the effect",
+   "rule": "apply each host's family-specific rates to the OTHER host's family distribution, over families present in both, and report both directions"
+  },
+  "M4": {
+   "name": "rate difference and rate ratio",
+   "rule": "A. baumannii minus the Klebsiella group, and their ratio, with the same two bootstrap clusterings"
+  }
+ },
+ "decision_rule": {
+  "claim_is_compositional_if": "direct standardisation removes more than half the crude gap, in which case the manuscript must say the difference is substantially a difference in which families each host carries, not in how those families sit",
+  "claim_supported": "the within-chromosome claim is supported if the rate difference keeps its direction with a 95% interval excluding zero under BOTH clusterings AND under the one-genome-per-sequence-type arm",
+  "claim_withdrawn_if": "the difference loses direction or its interval covers zero under any registered clustering",
+  "no_threshold_may_move": "these criteria may not be changed after any arm runs",
+  "reported_regardless": "all four arms, both standardisation directions, and the failed matched-family arms are reported. Removing an analysis because it failed is the omission this manuscript has already been criticised for"
+ },
+ "estimand": {
+  "definition": "among chromosomal acquired resistance-gene occurrences of a host, the proportion whose own +-10 kb window contains at least one mobile-element marker; that is class B / (class A + class B)",
+  "hosts": [
+   "Acinetobacter baumannii",
+   "Klebsiella group"
+  ],
+  "not_adjusted_for": "gene-family composition, by construction",
+  "unit": "occurrence"
+ },
+ "frozen_before_any_outcome_was_scored": true,
+ "known_limits": [
+  "a marginal rate cannot separate architecture from composition; that is what M3 measures and why M3 is not optional",
+  "the two hosts differ in how much of their resistome is chromosomal at all (86% against 34%), so these rates are computed on different-sized and differently-composed denominators",
+  "class B means a marker within 10 kb. It is not evidence that the element mobilises the gene"
+ ],
+ "post_hoc_and_labelled_as_such": "this estimand was chosen AFTER seeing that the matched-family arm was unstable. That is a post-hoc change of estimand and is labelled post hoc wherever it appears. What is not post hoc is the direction of the conclusion: the rule below fixes what each outcome requires before any interval is computed.",
+ "sha256_of_body": "f7b26ed10d9eef8b743c95de9102eb857a21f5f757c012d3f91bbb8b2711f160",
+ "title": "Within-chromosome marker adjacency as a marginal rate, with direct standardisation for gene-family composition",
+ "why_this_replaces_the_matched_contrast": "the matched-family odds ratio for the within-chromosome endpoint fails the weight-concentration gate G2 registered in NMV4C_FROZEN_DESIGN.json in every variant, and its sign depends on one family. A marginal rate is estimable where the pooled odds ratio is not."
+}

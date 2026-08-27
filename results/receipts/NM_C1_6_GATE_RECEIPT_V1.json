@@ -1,0 +1,165 @@
+{
+ "receipt": "NM_C1_6_GATE_EVALUATION",
+ "version": "1.0.0",
+ "gates_as_registered": {
+  "SUCCESS": "A. baumannii structural observed/expected enrichment exceeds 1 with an interval excluding 1 at both 1 kb and 2 kb; the background-normalised A. baumannii contrast remains positive against both comparison groups; direction survives BioProject balancing; no single BioProject or genome dominates.",
+  "PARTIAL": "enrichment present but one contrast, landmark or sensitivity does not exclude the null",
+  "REVISE": "raw ordering substantially explained by background IS density, but an occurrence-level or matched-family signal remains",
+  "FAIL": "background normalisation removes the A. baumannii contrast across both structural landmarks and all registered sensitivities",
+  "thresholds_were_set_before_any_species_outcome_was_computed": true
+ },
+ "thresholds_set_before_outcome": true,
+ "input_digests": {
+  "NM_BACKGROUND_ENRICHMENT_AMENDMENT_001.json": "711f9a5a62f1f8af8388ad9ff81703b2409865af76fea8ecebc831d424b52ee7",
+  "NM_C1_4_NULL_RESULTS_V1.json": "469479111114dd5832075db01537d5274d8e51151b4e1b1808f8164b38219adb",
+  "NM_C1_5B_SENSITIVITIES_V1.json": "a4dad9845a04ee3f6c9d80dd9b824ac1e7e2f2e8a9a592dbc344c4e83924a7c5"
+ },
+ "core_gates": {
+  "G1": {
+   "statement": "A. baumannii enrichment exceeds 1 with an interval excluding 1 at both 1 kb and 2 kb",
+   "detail": {
+    "F_1000": {
+     "enrichment": 16.9073,
+     "observed": 0.578638,
+     "expected": 0.034224,
+     "null_ci95": [
+      0.030356,
+      0.038104
+     ],
+     "enrichment_exceeds_1": true,
+     "observed_outside_null_ci": true,
+     "empirical_p": 0.0005
+    },
+    "F_2000": {
+     "enrichment": 14.0207,
+     "observed": 0.678576,
+     "expected": 0.048398,
+     "null_ci95": [
+      0.043598,
+      0.053092
+     ],
+     "enrichment_exceeds_1": true,
+     "observed_outside_null_ci": true,
+     "empirical_p": 0.0005
+    }
+   },
+   "pass": true
+  },
+  "G2": {
+   "statement": "the background-normalised A. baumannii contrast remains positive against both comparison groups",
+   "detail": {
+    "Klebsiella group": {
+     "F_1000": {
+      "a_baumannii_enrichment": 16.9073,
+      "comparator_enrichment": 6.286,
+      "ratio": 2.6897,
+      "a_baumannii_higher": true
+     },
+     "F_2000": {
+      "a_baumannii_enrichment": 14.0207,
+      "comparator_enrichment": 5.4891,
+      "ratio": 2.5543,
+      "a_baumannii_higher": true
+     }
+    },
+    "P. aeruginosa": {
+     "F_1000": {
+      "a_baumannii_enrichment": 16.9073,
+      "comparator_enrichment": 9.0712,
+      "ratio": 1.8638,
+      "a_baumannii_higher": true
+     },
+     "F_2000": {
+      "a_baumannii_enrichment": 14.0207,
+      "comparator_enrichment": 10.2409,
+      "ratio": 1.3691,
+      "a_baumannii_higher": true
+     }
+    }
+   },
+   "pass": true
+  },
+  "G3": {
+   "statement": "direction survives BioProject balancing",
+   "detail": {
+    "occurrence": {
+     "a_baumannii_enrichment_F1000": 16.9073,
+     "vs_Klebsiella group": {
+      "comparator": 6.286,
+      "a_baumannii_higher": true
+     },
+     "vs_P. aeruginosa": {
+      "comparator": 9.0712,
+      "a_baumannii_higher": true
+     }
+    },
+    "one_per_block": {
+     "a_baumannii_enrichment_F1000": 15.0422,
+     "vs_Klebsiella group": {
+      "comparator": 4.1035,
+      "a_baumannii_higher": true
+     },
+     "vs_P. aeruginosa": {
+      "comparator": 3.8664,
+      "a_baumannii_higher": true
+     }
+    },
+    "genome_balanced": {
+     "a_baumannii_enrichment_F1000": 15.052,
+     "vs_Klebsiella group": {
+      "comparator": 4.202,
+      "a_baumannii_higher": true
+     },
+     "vs_P. aeruginosa": {
+      "comparator": 5.6319,
+      "a_baumannii_higher": true
+     }
+    },
+    "bioproject_balanced": {
+     "a_baumannii_enrichment_F1000": 13.9556,
+     "vs_Klebsiella group": {
+      "comparator": 5.4263,
+      "a_baumannii_higher": true
+     },
+     "vs_P. aeruginosa": {
+      "comparator": 6.4315,
+      "a_baumannii_higher": true
+     }
+    }
+   },
+   "pass": true
+  },
+  "G4": {
+   "statement": "no single BioProject or genome dominates",
+   "ceiling_pct": 20.0,
+   "ceiling_source": "the 20% leave-one-out excursion ceiling already registered by this project and applied to the matched-family analysis in the manuscript; not a new threshold chosen after seeing C1",
+   "detail": {
+    "max_bioproject_excursion_pct": 1.95,
+    "max_genome_excursion_pct": 0.82,
+    "bioproject_refits": 268,
+    "genome_refits": 200,
+    "all_bioproject_refits_above_1": true,
+    "all_genome_refits_above_1": true
+   },
+   "pass": true
+  }
+ },
+ "sensitivity_support": {
+  "S1_all_length_strata_enriched": true,
+  "S2_density_reported": true,
+  "S3_family_decomposition_run": true,
+  "S3_not_driven_by_one_family": true,
+  "S4_bioproject_within_ceiling": true,
+  "S5_genome_within_ceiling": true,
+  "S6_survives_excluding_wrapped_truncated": true,
+  "S7_homology_ordering_corroborates": true
+ },
+ "verdict": "BACKGROUND_NORMALISED_HOST_CONDITIONING_SUCCESS",
+ "verdict_is_one_of": [
+  "BACKGROUND_NORMALISED_HOST_CONDITIONING_SUCCESS",
+  "BACKGROUND_NORMALISED_HOST_CONDITIONING_PARTIAL",
+  "BACKGROUND_EXPLAINS_RAW_HOST_CONTRAST",
+  "C1_NOT_EVALUABLE"
+ ],
+ "note": "This file evaluates registered conditions. It does not choose or adjust a threshold, and no threshold was altered after the results were seen."
+}

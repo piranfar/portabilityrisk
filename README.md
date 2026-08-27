@@ -92,10 +92,12 @@ canonical so the hash still appeared to match would be provenance theatre.
 
 ## What is deliberately not here
 
-- **The upstream occurrence-level dataset** (~95 MB) is withheld pending its schema, dictionary,
-  licence determination and disclosure audit; it is listed in the provenance map as
-  `PRIVATE — pending deposit`. The two occurrence-level *endpoint* tables the manuscript quotes
-  **are** published, with full schemas.
+- **The upstream occurrence-level dataset is no longer withheld.** It is published in the
+  Zenodo deposit under **CC BY 4.0** — https://doi.org/10.5281/zenodo.22116987 (concept DOI
+  https://doi.org/10.5281/zenodo.22065541 resolves to the latest version) — together with its data
+  dictionary, denominator dictionary and evidence-level dictionary. Earlier revisions of
+  this README described it as `PRIVATE — pending deposit`; that was true then and is not
+  true now.
 - **Adjudication material.** Unblinding keys, casebooks and received adjudications would
   retrospectively unblind the expert audits. The **rubric is here**, because an audit whose scoring
   rules are unpublished cannot be checked; the keys are not.
@@ -104,16 +106,18 @@ canonical so the hash still appeared to match would be provenance theatre.
 - **Anything from the other papers in this programme.** Where another paper is named, it is to
   state a boundary.
 
-**Executability, stated honestly:** of 61 published scripts, **7 run against this repository
-alone**; the other 54 need the pending deposit and are published as the method of record.
+**Executability, stated honestly:** scripts that consume the occurrence-level dataset can now be
+run rather than only read, because that dataset is published. They resolve their input directory
+from an environment variable and stop with a message if it is unset — see the `path_rewrites` block in [`REDACTION_MANIFEST.json`](REDACTION_MANIFEST.json).
 [`SCOPE_AUDIT.txt`](SCOPE_AUDIT.txt) lists which is which.
 
 ## Licensing
 
-Code is **Apache-2.0** ([`LICENSE`](LICENSE)). The derived tables are published for inspection,
-verification and reproducibility assessment, and **no licence or permission for redistribution,
-relicensing or commercial reuse is granted** — see [`DATA_LICENSE.md`](DATA_LICENSE.md) and
-[`DATA_NOTICE.md`](DATA_NOTICE.md). Underlying records are public NCBI data under their own terms.
+Code is **Apache-2.0** ([`LICENSE`](LICENSE)). **The deposited dataset is CC BY 4.0** and may be
+redistributed, built on and used commercially under attribution; see the Zenodo record. Tables
+held in this repository that are derivatives of that deposit inherit CC BY 4.0. Anything in this
+tree that is NOT part of the deposit remains under the terms in [`DATA_LICENSE.md`](DATA_LICENSE.md)
+and [`DATA_NOTICE.md`](DATA_NOTICE.md). Underlying records are public NCBI data under their own terms.
 
 ## Status
 

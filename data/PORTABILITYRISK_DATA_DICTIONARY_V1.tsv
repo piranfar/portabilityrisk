@@ -327,3 +327,33 @@ nmis_census_status.tsv	status	text	category	Per-block census outcome; 'ok' for a
 nmis_census_status.tsv	exit	integer	integer	Tool exit code; 0 for all blocks.	context block	no	curated
 nmis_census_status.tsv	rows	integer	integer	ISEScan output rows for the block.	context block	no	curated
 nmis_census_status.tsv	ms	integer	integer	Wall-clock milliseconds for the block.	context block	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	assembly_accession	text	identifier	NCBI assembly accession, without version.	-	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	assembly_version	text	identifier	NCBI assembly accession with its version suffix; the key that joins to the occurrence table.	-	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	replicon_accession	text	identifier	INSDC accession of the chromosome this row describes.	-	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	replicon_name	text	label	Replicon name as NCBI records it.	-	yes	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	replicon_length	integer	length_bp	Chromosome length in base pairs.	-	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	topology	text	category	circular or linear, as documented by NCBI; it decides whether the permutation null wraps.	-	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	species	text	taxon	Harmonised species name.	-	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	genus	text	taxon	Genus of that species.	-	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	bioproject_accession	text	identifier	Submitting BioProject; the cluster unit for the bootstrap.	-	yes	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	n_chromosomal_arg_occurrences	integer	count	Number of chromosomal acquired resistance-gene occurrences on this chromosome. A chromosome enters the census only when this is at least 1.	chromosomal occurrences	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	n_context_blocks	integer	count	Number of context blocks on this chromosome, a block being the union of the ±10 kb windows of occurrences within 20 kb of one another.	context blocks	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	download_url	text	url	The NCBI E-utilities request that regenerates this chromosome's sequence. Sequence itself is not redistributed; this is what makes that unnecessary.	-	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	local_filename	text	label	Filename the sequence is written to when fetched — the accession plus .fna, not a path. No directory from any machine appears in this table.	-	no	curated
+results/NMBG_CHROMOSOME_ACCESSION_MANIFEST_FROZEN_V1.tsv	expected_checksum	text	digest	SHA-256 of the fetched sequence where one was recorded at fetch time. Empty where the census read the sequence without persisting it.	-	yes	curated
+results/NM_V4C_MLST_CALLS_V1.tsv	assembly_version	text	identifier	NCBI assembly accession with version; joins to the occurrence table.	-	no	curated
+results/NM_V4C_MLST_CALLS_V1.tsv	organism	text	taxon	Harmonised organism name, used only to select the scheme.	-	no	curated
+results/NM_V4C_MLST_CALLS_V1.tsv	scheme	text	category	PubMLST scheme applied. Forced per host rather than auto-detected, because A. baumannii has two schemes and mixing them yields sequence types that are not comparable.	-	no	curated
+results/NM_V4C_MLST_CALLS_V1.tsv	st	text	identifier	Sequence type. '-' means the scheme could not resolve one; such genomes are reported, not dropped.	-	no	curated
+results/NM_V4C_MLST_CALLS_V1.tsv	profile	text	composite	The seven allele calls behind the sequence type, comma-separated. A tilde marks an inexact match and a question mark a partial one, as mlst reports them.	-	no	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	key	text	identifier	Citation key used in the manuscript source.	-	no	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	authors	text	label	Author list as published.	-	no	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	title	text	label	Article title as published.	-	no	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	journal	text	label	Journal or preprint server.	-	no	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	year	integer	year	Year of publication.	-	no	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	volume	text	label	Volume, where the venue has one.	-	yes	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	pages	text	label	Page range or article number.	-	yes	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	doi	text	identifier	DOI, dereferenced during verification rather than pattern-matched.	-	yes	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	pmid	text	identifier	PubMed identifier where one exists.	-	yes	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	verification	text	provenance	How and when this entry was checked, and against which registry.	-	no	curated
+data/PORTABILITYRISK_REFERENCES_VERIFIED_V4.tsv	cited_for	text	label	What the manuscript cites this work for, so a reader can check the citation supports the sentence.	-	yes	curated

@@ -1,0 +1,53 @@
+{
+ "receipt": "NM-C1-007 enrichment with GC2 removed",
+ "amendment_sha256_of_body": "b6baa6466f04a91f4e2816b5e0e3d00ca20936cbed63800130174a373b7ab7f9",
+ "amendment_sha256_of_file": "d08eaf950baf111c179b4e19df7b9481a4e98a55f04674be800730d528f117b0",
+ "inputs": {
+  "null_matrices": "8fe3f580447ae72d66f95b8b7dee5d4fe520ec079cf9174bb2c3b031f5db86d8",
+  "mlst_calls": "89dcfb39733e8afd9094ec91393c95a89aa967a1067bd1839a17e9d938965abd"
+ },
+ "results": {
+  "A. baumannii, all": {
+   "n": 8005,
+   "observed": 0.5786,
+   "expected": 0.0342,
+   "enrichment": 16.91
+  },
+  "A. baumannii, ST2 only": {
+   "n": 5047,
+   "observed": 0.6788,
+   "expected": 0.0355,
+   "enrichment": 19.1
+  },
+  "A. baumannii, non-ST2": {
+   "n": 2958,
+   "observed": 0.4077,
+   "expected": 0.032,
+   "enrichment": 12.74
+  },
+  "Klebsiella group": {
+   "n": 15568,
+   "observed": 0.1206,
+   "expected": 0.0192,
+   "enrichment": 6.29
+  },
+  "P. aeruginosa": {
+   "n": 7150,
+   "observed": 0.0958,
+   "expected": 0.0106,
+   "enrichment": 9.07
+  }
+ },
+ "non_ST2_summary": {
+  "enrichment": 12.74,
+  "over_Klebsiella": 2.025,
+  "over_Pseudomonas": 1.405
+ },
+ "decision_rule": {
+  "effect_is_GC2_specific_if": "non-ST2 A. baumannii enrichment falls below 8.46, or the A. baumannii / Klebsiella ratio falls below 1.5",
+  "no_threshold_may_move": true,
+  "reported_regardless": "both arms and the occurrence counts, whatever they show",
+  "thresholds_reused_from": "NM-C1-006, deliberately, rather than chosen now"
+ },
+ "effect_is_GC2_specific": false
+}

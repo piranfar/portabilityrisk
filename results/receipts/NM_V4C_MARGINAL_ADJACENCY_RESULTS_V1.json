@@ -1,0 +1,113 @@
+{
+ "receipt": "NM-V4C-005 within-chromosome marker adjacency as a rate",
+ "amendment_sha256_of_body": "f7b26ed10d9eef8b743c95de9102eb857a21f5f757c012d3f91bbb8b2711f160",
+ "amendment_sha256_of_file": "00d44df05370914b5a2aed5558a6d3267994a911e700263eb3f7dee8bd2dc879",
+ "inputs": {
+  "occurrence_table": "957e529ae56c79593f85c45fe95cb8592fc111ffadb6dbfc1b22857faa88d564",
+  "mlst_calls": "89dcfb39733e8afd9094ec91393c95a89aa967a1067bd1839a17e9d938965abd"
+ },
+ "post_hoc": true,
+ "M1_crude": {
+  "AB": [
+   0.8091,
+   6477,
+   8005
+  ],
+  "KL": [
+   0.342,
+   5325,
+   15568
+  ]
+ },
+ "M1_bootstrap_bioproject": {
+  "clusters": 1404,
+  "replicates": 2000,
+  "AB_ci": [
+   0.7791,
+   0.8332
+  ],
+  "KL_ci": [
+   0.3057,
+   0.3832
+  ],
+  "difference_ci": [
+   0.4156,
+   0.5098
+  ],
+  "ratio_ci": [
+   2.1007,
+   2.6446
+  ]
+ },
+ "M1_bootstrap_lineage": {
+  "clusters": 1308,
+  "replicates": 2000,
+  "AB_ci": [
+   0.6191,
+   0.8519
+  ],
+  "KL_ci": [
+   0.2625,
+   0.4102
+  ],
+  "difference_ci": [
+   0.2619,
+   0.5634
+  ],
+  "ratio_ci": [
+   1.6868,
+   3.1002
+  ]
+ },
+ "M2_one_per_ST": {
+  "AB": 0.6516,
+  "KL": 0.2485,
+  "difference": 0.4031,
+  "bootstrap": {
+   "clusters": 1308,
+   "replicates": 2000,
+   "AB_ci": [
+    0.5917,
+    0.7017
+   ],
+   "KL_ci": [
+    0.223,
+    0.2725
+   ],
+   "difference_ci": [
+    0.3382,
+    0.46
+   ],
+   "ratio_ci": [
+    2.287,
+    2.9898
+   ]
+  }
+ },
+ "M3_standardised": {
+  "AB_rates_on_KL_mix": {
+   "standardised_rate": 0.989,
+   "families_shared": 49,
+   "target_occurrences_covered": 5236,
+   "target_coverage": 0.3363
+  },
+  "KL_rates_on_AB_mix": {
+   "standardised_rate": 0.9779,
+   "families_shared": 49,
+   "target_occurrences_covered": 6367,
+   "target_coverage": 0.7954
+  },
+  "crude_gap": 0.4671,
+  "gap_after_standardisation": -0.1688,
+  "share_of_gap_explained_by_composition": 1.3614
+ },
+ "decision_rule": {
+  "claim_is_compositional_if": "direct standardisation removes more than half the crude gap, in which case the manuscript must say the difference is substantially a difference in which families each host carries, not in how those families sit",
+  "claim_supported": "the within-chromosome claim is supported if the rate difference keeps its direction with a 95% interval excluding zero under BOTH clusterings AND under the one-genome-per-sequence-type arm",
+  "claim_withdrawn_if": "the difference loses direction or its interval covers zero under any registered clustering",
+  "no_threshold_may_move": "these criteria may not be changed after any arm runs",
+  "reported_regardless": "all four arms, both standardisation directions, and the failed matched-family arms are reported. Removing an analysis because it failed is the omission this manuscript has already been criticised for"
+ },
+ "claim_supported": true,
+ "substantially_compositional": true
+}

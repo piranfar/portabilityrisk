@@ -1,0 +1,98 @@
+{
+ "receipt": "NM-V4C-002 lineage adjustment by MLST",
+ "amendment_sha256_of_body": "b7174232fc344088d46aec529209b5eeb64912a68a7dbd65d994f85311d15996",
+ "amendment_sha256_of_file": "1b9e7e21b32ae300dbf61892aeaff9d7f2cd747e8f31b98b08546f930c96153a",
+ "inputs": {
+  "occurrence_table": "957e529ae56c79593f85c45fe95cb8592fc111ffadb6dbfc1b22857faa88d564",
+  "mlst_calls": "89dcfb39733e8afd9094ec91393c95a89aa967a1067bd1839a17e9d938965abd",
+  "mlst_version": "2.35.0",
+  "schemes": {
+   "Acinetobacter baumannii": "abaumannii_2 (Pasteur)",
+   "Klebsiella group": "klebsiella (KpSC, Pasteur)"
+  }
+ },
+ "baseline_reproduced": true,
+ "composition": {
+  "A. baumannii": {
+   "genomes": 780,
+   "distinct_STs": 120,
+   "untypeable_genomes": 26,
+   "effective_STs_1_over_HHI": 3.88,
+   "largest_ST": "2",
+   "largest_ST_genomes": 376,
+   "largest_ST_share": 0.4821
+  },
+  "Klebsiella group": {
+   "genomes": 3460,
+   "distinct_STs": 715,
+   "untypeable_genomes": 447,
+   "effective_STs_1_over_HHI": 20.76,
+   "largest_ST": "11",
+   "largest_ST_genomes": 599,
+   "largest_ST_share": 0.1731
+  }
+ },
+ "results": {
+  "baseline": {
+   "n_families": 58,
+   "or": 50.2912,
+   "ln_or": 3.9178300582038834,
+   "ci_lo": 45.6138,
+   "ci_hi": 55.4482,
+   "excludes_1": true,
+   "direction": "A. baumannii",
+   "families_concordant": 56
+  },
+  "L1": {
+   "n_families": 49,
+   "or": 21.7573,
+   "ln_or": 3.079951348850671,
+   "ci_lo": 17.4872,
+   "ci_hi": 27.0702,
+   "excludes_1": true,
+   "direction": "A. baumannii",
+   "families_concordant": 47
+  },
+  "L1u": {
+   "n_families": 47,
+   "or": 21.3311,
+   "ln_or": 3.0601643605913065,
+   "ci_lo": 16.3665,
+   "ci_hi": 27.8016,
+   "excludes_1": true,
+   "direction": "A. baumannii",
+   "families_concordant": 45
+  },
+  "L3": {
+   "n_families": 58,
+   "or": 22.0516,
+   "ln_or": 3.093385023034762,
+   "ci_lo": 17.7381,
+   "ci_hi": 27.4141,
+   "excludes_1": true,
+   "direction": "A. baumannii",
+   "families_concordant": 54
+  },
+  "L2": {
+   "n_lineages": 1308,
+   "max_relative_ln_or_change": 0.25436642837953627,
+   "worst_lineage": "AB|2",
+   "ceiling": 0.15,
+   "within_ceiling": false
+  },
+  "L2u": {
+   "n_lineages": 837,
+   "max_relative_ln_or_change": 0.25436642837953627,
+   "worst_lineage": "AB|2",
+   "ceiling": 0.15,
+   "within_ceiling": false
+  }
+ },
+ "decision_rule": {
+  "fails": "any arm loses direction or covers 1. Then the host claim is withdrawn and rewritten as an association within this closed-genome cohort",
+  "no_threshold_may_move": "these three outcomes and the 0.15 ceiling may not be changed after any arm is computed",
+  "survives_fully": "every arm keeps direction with a 95% interval excluding 1, AND leave-one-ST-out maximum relative change stays at or below 0.15",
+  "survives_partly": "arms keep direction and exclude 1 but leave-one-ST-out exceeds 0.15. Then the effect is real but lineage-sensitive, and the title must move from 'host-conditioned' to 'host-associated'"
+ },
+ "verdict": "SURVIVES_PARTLY"
+}

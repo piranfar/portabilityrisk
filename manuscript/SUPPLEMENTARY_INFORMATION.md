@@ -1,5 +1,7 @@
 # Supplementary Information
 
+**Version 6.** Supersedes version 5; see `PORTABILITYRISK_CHANGELOG_V5_TO_V6.md`.
+
 **Replicon-resolved portability of 74,349 acquired resistance-gene occurrences across
 6,288 closed Gram-negative ESKAPE genomes**
 
@@ -12,10 +14,9 @@ Vahhab Piranfar
 ## Supplementary Method 1 | Blinded internal adjudication of the chromosomal mobile-element layer
 
 **Design.** 120 chromosomal context blocks were drawn from a frozen 1,283-block sampling frame under
-a stratified design registered before any block was drawn. Strata and allocations were: A (106
-available, 25 drawn), B (157, 34), D (1, 1) and E (316, 60). The frozen protocol states the intended
-balance as MOBILE 60 (A 25 + B 34 + D 1) against QUIESCENT 60 (E 60), chosen for equal power in the
-two states that can be sampled; the delivered package contains exactly MOBILE 60, QUIESCENT 60,
+a stratified design registered before any block was drawn. The four strata pool 580 of those
+1,283 blocks, not all of them: the frame is every block in the sampling universe, while the
+strata contain only the blocks eligible for the state they represent. Strata and allocations were: M1 (106 available, 25 drawn), M2 (157, 34), M4 (1, 1) and Q (316, 60). The frozen protocol states the intended balance as MOBILE 60 (M1 25 + M2 34 + M4 1) against QUIESCENT 60 (Q 60), chosen for equal power in the two states that can be sampled; **these are rule-engine states, not portability classes** — earlier revisions wrote A, B, D and E here, which read as sampling the no-marker chromosomal class into MOBILE and the conjugative plasmid class into QUIESCENT; the delivered package contains exactly MOBILE 60, QUIESCENT 60,
 NON_EVALUABLE 0.
 
 **Weighting.** Strata are sampled at different fractions, so estimates are design-weighted by the
@@ -223,10 +224,9 @@ resample. B = 2,000 throughout. Seeds are recorded for reproducibility and carry
 justification: NM-DIST and NM-IS use 20260822 with BioProject as the unit; NM-V4 uses 20260821 with
 BioProject **within species** as the unit, because that analysis compares species.
 
-Two BioProject counts appear in this study and are not interchangeable. The chromosomal analysis set
+Four BioProject counts appear in this study and are not interchangeable. The chromosomal analysis set
 — the projects contributing context blocks — spans **2,248** BioProjects with an effective number of
-**136.9** by the inverse Herfindahl–Hirschman index. The full 6,288-genome cohort spans **2,283**
-BioProjects at an effective **114.3**. Both the nominal and the effective count are reported
+**136.9** by the inverse Herfindahl–Hirschman index. The full 6,288-genome cohort spans **2,283** BioProjects at an effective **114.3**. The matched-family bootstrap clusters over **1,404** BioProjects, and the leave-one-BioProject-out arm behind the *A. baumannii*/*K. pneumoniae* ratio runs over the **1,195** projects that contribute to it. Each is a different set of projects selected by a different analysis, and no two are interchangeable. Both the nominal and the effective count are reported
 wherever an interval is, because the nominal count materially overstates the independence available.
 
 A Holm-corrected *P* of 0.002 is the **bootstrap resolution floor**, not a smaller value
@@ -238,7 +238,7 @@ across the two primary contrasts doubles it again to 0.002. It is therefore writ
 **Pooling.** Family-matched contrasts use Mantel–Haenszel pooling across matched gene families.
 Cochran's *Q*, *I*² and the largest single-family weight share are reported alongside every pooled
 estimate, so that an estimate dominated by one stratum is visible as such rather than presented as a
-consensus. Where the largest weight share exceeds 50%, the analysis is reported as partial.
+consensus. Where the largest weight share exceeds 50%, the analysis is reported as partial. **This 50% reporting convention is not the registered 30% gate.** NM-V4C's frozen design registers gate G2 — the largest single family carries no more than 30 per cent of the Mantel–Haenszel weight — for the matched-family module only, and a gate failure there is a stronger statement than a partial-reporting flag here. Both are applied to the same statistic and neither is retrofitted to the other: the three-architecture arm at 50.5% is reported partial under this convention, and the within-chromosome arm at 63.9% fails the registered gate.
 
 **Multiplicity.** Within each registered contrast family, Holm's step-down procedure controls the
 family-wise error rate. Per-gene-family compartment enrichment, which involves 158 simultaneous
@@ -264,6 +264,18 @@ confirmation-species range, so the evaluation is an interpolation.
 | **SEC_INT** | endpoint restricted to integrase and integron markers only |
 | **one-per-block** | deterministic single occurrence per block, replacing 1/*m* weighting |
 
+**Other labelled sets in this document, and where they are defined.** They are separate
+namespaces and do not continue this one; S4 here is not BN4, and M1 here is not the M1 of the
+adjudication rule engine.
+
+| label | set | defined in |
+|---|---|---|
+| **BN1–BN7** | the seven background-null sensitivities | Supplementary Result 10 |
+| **S8a–S8c** | the intrinsic-determinant exclusions | Supplementary Result 13 |
+| **M1, M2** | the two matching units of the matched-family contrast | Supplementary Result 21 |
+| **M1–M4, Q, NE1–NE4** | adjudication rule-engine states | Supplementary Method 1 |
+| **G1–G4** | the registered background-null decision gates | Supplementary Result 10 |
+
 ---
 
 
@@ -274,7 +286,7 @@ confirmation-species range, so the evaluation is an interpolation.
 Generated from the deposit directory itself, so it cannot drift from what is published.
 Row counts are read from the files. DOI 10.5281/zenodo.22116987, CC BY 4.0.
 
-### The five data layers
+### The five data layers — four in the deposit, one in the repository
 
 **`portabilityrisk_occurrence_portability_v1.tsv`** — 17,751,843 bytes, 74,349 rows.
 
@@ -365,9 +377,7 @@ about what a marker database contains.
 
 Moved from the main text under the journal's word limit; not one word is altered.
 
-Class E subdivides into a nested evidence tier: **E1** (16,397 occurrences on 2,828 replicons)
-carries relaxase and mating-pair formation machinery; **E2** (9,599 occurrences on 1,109 replicons)
-additionally carries a detected origin of transfer (Fig. 3b). Three evidence layers — documented
+Class E partitions into two evidence tiers, which are disjoint and not nested: **E2** (9,599 occurrences on 1,109 replicons) carries relaxase, mating-pair formation machinery and a detected origin of transfer; **E1** (16,397 occurrences on 2,828 replicons) is the remainder, carrying the first two without a detected origin of transfer (Fig. 3b). They sum to class E — 16,397 + 9,599 = 25,996 occurrences on 2,828 + 1,109 = 3,937 replicons. Three evidence layers — documented
 location, predicted plasmid mobility, sequence-annotated chromosomal mobile-element context — are
 kept separable and ranked, so that a revision of the mobility marker database moves C/D/E without
 touching A/B or the location layer (Supplementary Result 2).
@@ -486,18 +496,20 @@ floor, so by the criterion registered in advance the **absolute** enrichment is 
 substantially lineage-driven. The manuscript says so.
 
 **The contrast is not.** Balancing lowers *Klebsiella* as far as it lowers *A. baumannii*
-— 6.29 to 1.81 — so the ratio between them rises to 4.26, against a registered floor of 1.5.
+— 6.29 to 1.81 — so the ratio between them rises to 4.27, against a registered floor of 1.5.
 
 | adjustment | *A. baumannii* / *Klebsiella* |
 |---|---:|
 | published | 2.69 |
 | composite-flanked removed | 4.05 |
 | ST2 removed | 2.03 |
-| lineage-balanced | 4.26 |
+| lineage-balanced | 4.27 |
 
 The contrast is stable, not monotonically strengthened: removing ST2 lowers it to 2.03 and
-lineage balancing raises it to 4.26. What matters is that across four adjustments acting on
+lineage balancing raises it to 4.27. What matters is that across four adjustments acting on
 four different confounders it never changes direction and never approaches 1.
+
+**These lineage counts are per-occurrence, not per-genome.** 145 and 1,128 count the lineages of genomes carrying at least one *chromosomal* occurrence — 778 of the 780 *A. baumannii* genomes and 3,426 of the 3,460 *Klebsiella* genomes. The per-genome counts elsewhere in this document are larger, 120 + 26 = 146 and 715 + 447 = 1,162, because they include the genomes whose resistance genes are all plasmid-borne.
 
 **Two limits.** Sequence types exist only for the 4,240 genomes of the primary contrast, so
 *P. aeruginosa* and *Enterobacter* are NOT EVALUABLE here rather than omitted; and the
@@ -586,6 +598,10 @@ same chromosome, so that chromosome's density is preserved exactly.
 | P. aeruginosa | 12,311 | 5,933,048,273 | 2.075 | 9.07 |
 | Enterobacter group | 11,558 | 3,334,144,326 | 3.467 | 4.99 |
 
+The four groups hold 131,973 of the 145,779 complete structural elements. The remaining
+13,806 lie on ARG-bearing chromosomes of species outside the four groups, which the genome-wide
+census covers and this table does not.
+
 **BN3 — IS-family decomposition.** Families holding ≥5% of complete structural elements,
 plus IS6 because the amendment names it. Selection fixed before results were read.
 
@@ -604,7 +620,7 @@ as such.
 
 **BN4 — leave-one-BioProject-out** and **BN5 — leave-one-genome-out.** Registered ceiling 20%.
 
-| group | S4 refits | S4 max excursion | S5 refits | S5 max excursion | all refits > 1 |
+| group | BN4 refits | BN4 max excursion | BN5 refits | BN5 max excursion | all refits > 1 |
 |---|---:|---:|---:|---:|---|
 | A. baumannii | 268 | -1.95% | 200 | +0.82% | yes |
 | Klebsiella group | 1153 | +9.63% | 200 | -0.77% | yes |
@@ -621,6 +637,20 @@ as such.
 | Enterobacter group | 2 | 4.9893 | 4.9925 |
 
 **BN7 — homology endpoint, secondary corroboration.**
+
+**BN7 is occurrence-weighted and genome-wide**, and its numbers are therefore not comparable
+row-for-row with Supplementary Tables 3 and 5, which are block-balanced and window-limited. Two
+things differ at once — the weighting and whether the element must lie inside the occurrence's
+own window — so *A. baumannii*'s *F*(1 kb) appears four times in this document at four values:
+
+| estimate | endpoint | weighting | window | *F*(1 kb) |
+|---|---|---|---|---:|
+| Supplementary Table 3 | homology | block-balanced | window-limited | 0.5224 |
+| Supplementary Table 5 | structural | block-balanced | window-limited | 0.3531 |
+| primary background null | structural | occurrence | genome-wide | 0.5786 |
+| BN7 | homology | occurrence | genome-wide | 0.6335 |
+
+The same applies to the medians, 647 bp and 326 bp.
 
 | group | *n* | F(1 kb) | F(2 kb) | median (bp) |
 |---|---:|---:|---:|---:|
@@ -673,6 +703,12 @@ NMIS remains the frozen window-contained endpoint of the manuscript. C1 is the g
 **CONTEXT** — the ISEScan prediction itself differs between block and whole-chromosome scope, because gene prediction and element clustering see different neighbours. Runs in both directions.
 
 ### Per species
+
+The fourteen species with the most chromosomal occurrences, 33,100 of 35,140 (94.2%). The
+cutoff falls between 149 and 137 occurrences; the 2,040 not shown are spread over species with
+fewer than 149 each, three of the largest of which are unresolved `Pseudomonas sp.`,
+`Enterobacter sp.` and `Acinetobacter sp.` labels.
+
 
 | species | *n* | window-limited | genome-wide | net | boundary gains | context losses |
 |---|---:|---:|---:|---:|---:|---:|
@@ -960,8 +996,7 @@ pre-registered weight-ceiling sub-claim is **false**, not merely unsupported.
 
 ### What is not available
 
-Per-family confidence intervals are not stored: the exported table carries the odds ratio, its log
-and its variance, but no interval column, and no file in the study holds them. Per-family
+Per-family confidence intervals are not stored as such: the exported table carries the odds ratio, its log and its variance but no interval column. They are **derivable** from what is stored, and are now derived and drawn — see the next Supplementary Result. An earlier revision said no file in the study held them, which confused *not stored* with *not obtainable*. Per-family
 leave-one-family-out values are likewise not persisted — only the maximum and the count over
 threshold. Cochran's *Q* is reported by NM-V4C but not by the three-architecture module, which
 stores *I*² only. These are limitations of the frozen runs and are stated rather than filled in.
@@ -1039,38 +1074,7 @@ next person does not have to rediscover it.
 ---
 
 
-## Supplementary Result 18 | Leverage in the eight-species fit
-
-The discordance argument rests on an ordinary least-squares fit of logit(*M*) on logit(*P*) over
-eight confirmation species. *P. aeruginosa* sits at logit(*P*) = −1.97 while the other seven lie
-between −0.41 and +0.70, so the fit was checked for a single influential point. It has one.
-
-| species | hat | residual | Cook's *D* | slope without it |
-|---|---:|---:|---:|---:|
-| *Enterobacter asburiae* | 0.1250 | +0.4461 | 0.0870 | +0.0815 |
-| *Enterobacter cloacae* | 0.1777 | +0.4462 | 0.1400 | +0.0243 |
-| *Enterobacter hormaechei* | 0.2535 | -0.3039 | 0.1125 | +0.1467 |
-| *Klebsiella aerogenes* | 0.1250 | -0.4317 | 0.0815 | +0.0812 |
-| *Klebsiella michiganensis* | 0.1643 | +0.4613 | 0.1341 | +0.0311 |
-| *Klebsiella quasipneumoniae* | 0.1667 | -0.4074 | 0.1066 | +0.1258 |
-| *Klebsiella variicola* | 0.1452 | -0.2518 | 0.0337 | +0.0617 |
-| *Pseudomonas aeruginosa* | **0.8425** | +0.0412 | 0.1540 | +0.1809 |
-
-**One point carries 84% of the leverage.** With eight observations the average hat value is
-0.25; *P. aeruginosa* has 0.8425. The slope is +0.0806 with all eight and +0.1809 without it, a
-factor of 2.2, and across the eight leave-one-out fits the slope ranges from +0.024 to +0.181.
-
-**The conclusion is unchanged and the fit is not stable, and both are true.** *R*² is 0.0275 with
-all eight and 0.0252 without *P. aeruginosa*; the slope interval covers zero either way. What the
-diagnostic removes is any reading of the slope itself as an estimate. The published T1 test
-reported leave-one-species-out residuals only, which is why this was not visible before.
-
-The fit reproduces from the published eight-species table to four decimal places, so this
-diagnostic describes the fit the paper reports and not a re-fit of it.
-
----
-
-## Supplementary Result 19 | The discordance analysis in full
+## Supplementary Result 18 | The discordance analysis in full
 
 ### The registered design
 
@@ -1127,6 +1131,22 @@ This is a limitation of the frozen run, not an omission from this table.
 
 ### The three registered tests
 
+**Occurrence-weighted associations, for the four species the manuscript names.** These are a
+different denominator from the block-weighted *M* above and the two must not be read down one
+column: occurrence-weighted counts every chromosomal occurrence once, block-weighted gives each
+context block weight 1. Each value is class B over classes A and B, and every one recomputes
+from the deposited occurrence table.
+
+| species | class A | class B | association, occurrence-weighted | plasmid share |
+|---|---:|---:|---:|---:|
+| *A. baumannii* | 1,528 | 6,477 | **80.91%** | 13.96% |
+| *K. pneumoniae* | 8,276 | 4,806 | **36.74%** | 67.23% |
+| *P. aeruginosa* | 4,289 | 2,861 | **40.01%** | 12.28% |
+| *E. hormaechei* | 1,329 | 420 | **24.01%** | 66.75% |
+
+*A. baumannii*'s block-weighted association is 0.6329 against this 80.91%; the gap is the
+denominator, not a disagreement.
+
 **T2 — the discovery-species residual.** *A. baumannii*'s plasmid share (0.1396) lies inside the
 confirmation range [0.1228, 0.6675], so evaluating it against the fit is interpolation. Predicted
 logit(*M*) = −1.5678 (*M* = 0.1725); observed logit(*M*) = +0.5447 (*M* = 0.6329); residual
@@ -1166,6 +1186,37 @@ plasmid share differ by 45 percentage points in chromosomal association. The pan
 and the fit is unweighted ordinary least squares on eight points; it establishes non-redundancy
 across these species and does not extrapolate to Gram-negative bacteria at large.
 
+
+## Supplementary Result 19 | Leverage in the eight-species fit
+
+The discordance argument rests on an ordinary least-squares fit of logit(*M*) on logit(*P*) over
+eight confirmation species. *P. aeruginosa* sits at logit(*P*) = −1.97 while the other seven lie
+between −0.41 and +0.70, so the fit was checked for a single influential point. It has one.
+
+| species | hat | in-sample residual | Cook's *D* | slope without it |
+|---|---:|---:|---:|---:|
+| *Enterobacter asburiae* | 0.1250 | +0.4461 | 0.0870 | +0.0815 |
+| *Enterobacter cloacae* | 0.1777 | +0.4462 | 0.1400 | +0.0243 |
+| *Enterobacter hormaechei* | 0.2535 | -0.3039 | 0.1125 | +0.1467 |
+| *Klebsiella aerogenes* | 0.1250 | -0.4317 | 0.0815 | +0.0812 |
+| *Klebsiella michiganensis* | 0.1643 | +0.4613 | 0.1341 | +0.0311 |
+| *Klebsiella quasipneumoniae* | 0.1667 | -0.4074 | 0.1066 | +0.1258 |
+| *Klebsiella variicola* | 0.1452 | -0.2518 | 0.0337 | +0.0617 |
+| *Pseudomonas aeruginosa* | **0.8425** | +0.0412 | 0.1540 | +0.1809 |
+
+**One point carries 84% of the leverage.** With eight observations the average hat value is
+0.25; *P. aeruginosa* has 0.8425. The slope is +0.0806 with all eight and +0.1809 without it, a
+factor of 2.2, and across the eight leave-one-out fits the slope ranges from +0.024 to +0.181.
+
+**The conclusion is unchanged and the fit is not stable, and both are true.** *R*² is 0.0275 with
+all eight and 0.0252 without *P. aeruginosa*; the slope interval covers zero either way. What the
+diagnostic removes is any reading of the slope itself as an estimate. The published T1 test
+reported leave-one-species-out residuals only, which is why this was not visible before.
+
+The fit reproduces from the published eight-species table to four decimal places, so this
+diagnostic describes the fit the paper reports and not a re-fit of it.
+
+---
 
 ## Supplementary Result 20 | Cargo convergence is confounded with replicon length
 
@@ -1532,8 +1583,8 @@ The three acquired-AMR layers together number 85,507 records; removing the efflu
 | C | plasmid, no detected mobility marker | 7,170 |
 | D | plasmid, relaxase detected | 6,043 |
 | E | plasmid, relaxase and mating-pair formation detected | 25,996 |
-| — E1 | relaxase and mating-pair formation (2,828 replicons) | 16,397 |
-| — E2 | E1 plus a detected origin of transfer (1,109 replicons) | 9,599 |
+| — E1 | relaxase and mating-pair formation, **no** detected origin of transfer (2,828 replicons) | 16,397 |
+| — E2 | relaxase, mating-pair formation **and** a detected origin of transfer (1,109 replicons) | 9,599 |
 | **total** | | **74,349** |
 
 **Supplementary Table 3 | Weighted cumulative detection under the homology endpoint,
@@ -1612,13 +1663,9 @@ matched to a named family profile. It is a label, not a family.
 | IS*3* | 1,202 | 497 | 41.3% |
 | IS*1380* | 371 | 0 | 0.0% |
 
-**Why IS*6* carries two different counts.** The 4,848 above counts every IS*6* call inside the
-±10 kb windows, complete or not; 4,385 of them survive the structural gate. The genome-wide
-census reported for sensitivity BN3 counts 4,627 *complete* IS*6* elements across whole
-ARG-bearing chromosomes, in a separate ISEScan run covering every species in the cohort rather
-than the four host groups. The comparable pair is therefore **4,385 against 4,627**, not 4,848
-against 4,627. We report no ratio between them: the two runs saw different input sequence and
-their element boundaries need not correspond one to one.
+**Why IS*6* carries two different counts, and why no ratio is taken between them.** The 4,848 above counts every IS*6* call inside the ±10 kb windows, complete or not, of which 4,385 pass the structural gate. Sensitivity BN3 reports 4,627 *complete* IS*6* elements genome-wide. Neither figure exceeds its genome-wide total — the genome-wide census holds 5,249 IS*6* calls of which 4,627 are complete — so the two are not arithmetically inconsistent, but they are also not two views of one count.
+
+Restricting the genome-wide census to the same ±10 kb windows and counting directly gives **3,167** complete IS*6*, against the window census's 4,385. **The two ISEScan runs disagree on the same sequence.** They were run on different inputs — 22 kb extracted blocks in one, whole chromosomes in the other — and ISEScan's copy-number estimate, ORF context and family assignment all depend on what else is in the input. No quantity in this paper is computed across the two censuses, and the near-equality of 4,385 and 4,627 must not be read as a detection rate: the correct within-census statement is that **68.4% of complete genome-wide IS*6* (3,167 of 4,627) lies inside the 1.57% of chromosomal sequence covered by the windows**, against 8.2% for complete elements of all families (12,004 of 145,779).
 
 **Supplementary Table 9 | Sensitivity analyses for the primary contrast at 1 kb** (*A. baumannii* −
 *Klebsiella*, homology endpoint; baseline +0.4186).

@@ -10,6 +10,8 @@ across 6,288 closed Gram-negative ESKAPE genomes
 \* Corresponding author: Vahhab Piranfar, Independent Researcher, Jersey City, NJ, USA.
 Email: vahab.p@gmail.com. ORCID: 0000-0003-3653-5739
 
+**Version 6.** Supersedes version 5. New: a lineage-balanced weighting of the background null, accessory-context arms, per-family intervals and a leverage diagnostic; the claim now rests on the host contrast, 1.69 to 4.27 across five adjustments, not on the absolute enrichment. Twelve corrections of fact and the removal of one unsupported count are listed in `PORTABILITYRISK_CHANGELOG_V5_TO_V6.md`.
+
 ---
 
 ## Abstract
@@ -22,7 +24,7 @@ plasmid documented by NCBI, ranked into five evidence classes, with a genome-wid
 chromosomes** and sequence types for the 4,240 genomes behind the primary contrast. Against a null
 relocating each occurrence within its own chromosome, resistance genes lie closer to a complete
 insertion sequence than chance allows in every group. *Acinetobacter baumannii* is extreme:
-**1.7 to 4.3 times the *Klebsiella* group** at 1 kb, a contrast that holds under adjustment for element density, local accessory context, composite-transposon structure, intrinsic determinants and clonal replication,
+**1.7 to 4.3 times the *Klebsiella* group's enrichment** at 1 kb, a contrast that holds under adjustment for element density, local accessory context, composite-transposon structure, intrinsic determinants and clonal replication,
 though the absolute enrichment does not.
 
 Antimicrobial resistance was associated with an estimated 4.95 million deaths in 2019 [@murray2022],
@@ -85,13 +87,9 @@ species adjustment [@mantel1959] (Fig. 2b,c).
 The direction of these preferences agrees with what is independently known of these
 determinants, and was recovered without any prior:
 *qnr*, *bla*CMY, *sul3* and *tmexCD* fall out plasmid-side; *bla*PDC, *bla*ACT, *bla*LEN, *fosA* and
-*oqxAB* fall out chromosome-side. Reproducing known determinant biology blind is the internal-validity argument for trusting the pipeline where the answer is not known — weaker than it looks, since the same literature informs database curation, so the agreement is not fully independent of the annotation. The 49
-families that do not survive species adjustment are composition-driven, not refuted; 43 are flagged
-lineage-dominated and reported as flagged.
+*oqxAB* fall out chromosome-side. Reproducing known determinant biology blind is the internal-validity argument for trusting the pipeline where the answer is not known — weaker than it looks, since the same literature informs database curation, so the agreement is not fully independent of the annotation. The 49 families that do not survive species adjustment are composition-driven, not refuted.
 
-The consequence is structural. A gene-presence table cannot express this result, because the same
-family name appears in both compartments and the table has no field in which the difference could be
-written down.
+The consequence is structural. A gene-presence table cannot express this result: the same family name appears in both compartments and the table has no field in which the difference could be written.
 
 ### Five evidence-ranked portability classes
 
@@ -113,7 +111,7 @@ Converting the ±10 kb threshold into a distance distribution changes the interp
 *Klebsiella* group and 0.0993 for *P. aeruginosa*, with a **median distance of 647 bp** — not
 reached within 10 kb in either comparator (Fig. 4d; Supplementary Table 3, Supplementary Result 4). The typical acquired resistance gene in *A. baumannii* is not merely near a marker; it is adjacent to one.
 
-The decomposition narrows the result to one marker class; it stays observational, and proximity is not evidence that the element mobilises the gene. An insertion sequence–only
+The decomposition narrows the result to one marker class; it stays observational, and proximity is not evidence of mobilisation. An insertion sequence–only
 endpoint reproduces the primary result; an integrase/integron-only endpoint shows no *A. baumannii*
 excess (Extended Data Fig. 1a; Supplementary Result 5). The chromosomal mobile context of this
 cohort is insertion sequences, close in, in one host.
@@ -154,14 +152,13 @@ were registered before any species outcome existed.
 
 **Resistance genes lie closer to a complete insertion sequence than chance allows in every group
 tested** (Fig. 5). Within 1 kb *A. baumannii* detects at 0.579 against 0.034 expected — **16.91-fold**, outside the null 95% interval at *P* ≤ 0.0005, the 1/2001 floor; restricted mean distance 2,930 bp against 9,151 bp. **That absolute figure is
-inflated by clonal sampling**: weighting each sequence type equally leaves 7.72-fold, and *Klebsiella* falls the same way, 6.29 to 1.81. The quantity that does not
-move is the contrast between them: 4.27 lineage-balanced against 2.69 unweighted (Supplementary
+inflated by clonal sampling**: weighting each sequence type equally leaves 7.72-fold, and *Klebsiella* falls the same way, 6.29 to 1.81. The contrast between them does not change direction: 4.27 lineage-balanced against 2.69 unweighted (Supplementary
 Result 9). All seven registered sensitivities support the enrichment, and the census reconciles against
 the window-limited endpoint species by species (Supplementary Results 10 and 11).
 
 **Four further explanations were tested and none accounts for the effect.** *Clonal replication*: 48.2%
 of the *A. baumannii* genomes belong to sequence type 2, and 63% of its chromosomal occurrences
-sit on those genomes; removing them leaves **12.74-fold**, still 2.02 times the *Klebsiella* group
+sit on those genomes; removing them leaves **12.74-fold**, still 2.03 times the *Klebsiella* group
 (Supplementary Result 12). *Composite-transposon structure*: cargo of a composite element sits at near-zero distance by construction, but only 4,324 of the 33,822 chromosomal occurrences in the four groups (12.8%) are flanked by a same-family pair of complete elements; among *A. baumannii* occurrences that are not, enrichment is **13.58-fold**, 4.05 times the *Klebsiella* group — higher than unstratified, not lower. *Intrinsic determinants*: species-core genes are excluded from the
 matched analyses by the registered eligibility rule, and removing the intrinsic *bla*OXA alleles at allele level does not reduce any contrast
 (Supplementary Result 13). *Accessory-genome location*: the null may place an occurrence anywhere on its chromosome, mostly in element-sparse core. Confining relocation to its own ±100 kb neighbourhood leaves **7.19-fold**, and ±50 kb **4.38-fold**; both exclude the null, with the contrast at 2.18 and 1.69. Outside multi-gene resistance islands the contrast rises to 3.56 — *Klebsiella*'s enrichment is largely an island phenomenon and *A. baumannii*'s is not (Supplementary Result 14).
@@ -196,11 +193,8 @@ chromosome where *Klebsiella* keeps it on plasmids, and plasmid fraction alone d
 
 ### Plasmid fraction and chromosomal mobile-element association are non-redundant
 
-The two portability routes diverge across hosts. *A. baumannii* has the cohort's lowest plasmid
-share (13.96%) and its highest chromosomal mobile-element association (80.91% occurrence-weighted);
-*K. pneumoniae* is its mirror (67.23%, 36.74%); *E. hormaechei* resembles *K. pneumoniae* (66.75%,
-24.01%). *P. aeruginosa* is the decisive comparator: its plasmid share is as low as *A. baumannii*'s
-(12.28%) but its chromosomal association is mid-range (40.01%), so the *A. baumannii* architecture
+The two portability routes diverge across hosts. *A. baumannii* has one of the cohort's two lowest plasmid shares (13.96%) and its highest chromosomal mobile-element association (80.91% occurrence-weighted);
+*K. pneumoniae* is its mirror (67.23%, 36.74%); *E. hormaechei* resembles *K. pneumoniae* (66.75%, 24.01%; Supplementary Result 18). *P. aeruginosa* is the decisive comparator: its plasmid share is lower still (12.28%) but its chromosomal association is mid-range (40.01%), so the *A. baumannii* architecture
 is not a mechanical consequence of low plasmid fraction.
 
 Because the pattern was noticed in *A. baumannii*, testing it there would be circular. We fitted the
@@ -214,9 +208,9 @@ bootstrap CI 1.8065–2.4376)** (Fig. 6c).
 The fit itself is the second half of the argument. Across the eight confirmation species, plasmid
 share explains almost none of the variance in chromosomal association: in-sample *R*² = **0.0275**, and the slope's bootstrap interval includes zero (−0.0588 to 0.2287);
 one species carries 84% of the leverage and the slope doubles without it, so the slope is not an
-estimate here (Supplementary Result 18) (Fig. 6b). A low *R*² is what a two-axis structure would produce, but with eight species it shows non-redundancy within this panel, not independence in general; a slope indistinguishable from zero is not evidence that it is zero. One latent quantity would give a steep slope and a small residual; both are the opposite. Direct contrast of the two low-plasmid
+estimate here (Supplementary Result 19) (Fig. 6b). A low *R*² is what a two-axis structure would produce, but with eight species it shows non-redundancy within this panel, not independence in general; a slope indistinguishable from zero is not evidence that it is zero. One latent quantity would give a steep slope and a small residual; both are the opposite. Direct contrast of the two low-plasmid
 species gives a chromosomal association gap of 0.4548 (95% CI 0.4021–0.5039). The fit, the residual
-and every diagnostic behind it are reported in full in Supplementary Result 19.
+and every diagnostic behind it are reported in full in Supplementary Result 18.
 
 ### Conjugation-consistent replicons carry the convergent cargo
 
@@ -244,7 +238,7 @@ Class assignments are invariant to tool and database version: re-running the pla
 layer under a different MOB-suite version and marker database produced **no class transitions**,
 and CONJScan [@cury2020; @cury2017] within MacSyFinder [@neron2023; @abby2014] agrees on class E
 at **κ = 0.875**, neither tool a truth standard. Leave-one-BioProject-out across the 1,195 projects behind the *A. baumannii*/*K. pneumoniae*
-ratio moves it by at most 5.50% against a prespecified 15% ceiling. **BioProject balancing addresses project-level sampling structure but is not clonal-lineage adjustment**: a BioProject is a submission unit, a clone a descent unit. We therefore typed every genome behind the headline contrast. *A. baumannii* is dominated by one lineage — 780 genomes in 120 sequence types, but sequence type 2 alone holds **48.2%** and the effective number of lineages is **3.88** by inverse Herfindahl–Hirschman index; the *Klebsiella* group is broader at 3,460 genomes, 715 sequence types and an effective **20.76**.
+ratio moves it by at most 5.50% against a prespecified 15% ceiling. **BioProject balancing addresses project-level sampling structure but is not clonal-lineage adjustment**: a BioProject is a submission unit, a clone a descent unit. We therefore typed every genome behind the headline contrast. *A. baumannii* is dominated by one lineage — 780 genomes in 120 sequence types and 26 untypeable, but sequence type 2 alone holds **48.2%** and the effective number of lineages is **3.88** by inverse Herfindahl–Hirschman index; the *Klebsiella* group is broader at 3,460 genomes, 715 sequence types and an effective **20.76**.
 
 **The contrast survives lineage adjustment but is roughly halved by it.** Collapsing to one genome
 per sequence type gives an odds ratio of **21.76 (95% CI 17.49–27.07)** across 49 families, 47 of them
@@ -256,7 +250,7 @@ sequence type 2. The effect is therefore real and lineage-sensitive, and is repo
 association with host rather than as a host effect (Supplementary Result 21).
 
 The complementary objection, that these determinants might be intrinsic chromosomal genes rather
-than acquired ones, does not hold. Five of the determinants most often named as intrinsic —
+than acquired ones, does not hold. Six of the determinants most often named as intrinsic —
 *fosA*, *oqxA*, *oqxB*, *bla*PDC, *bla*ACT and *bla*LEN — are absent from the matched set because a species-core gene
 cannot meet the registered three-species eligibility rule. Two eligible families do carry intrinsic
 members, and removing them changes little: excluding the *bla*OXA-51-like alleles at allele level
@@ -311,9 +305,7 @@ occurrence within its own chromosome preserves that chromosome's insertion-seque
 exactly, leaves the *A. baumannii* contrast intact, and is supported by every registered
 sensitivity. A uniform relocation null preserves neither coding position, accessory status, gene density, recombination hotspots nor resistance-island structure. Two were tested directly: relocating within the occurrence's own ±50–100 kb neighbourhood absorbs most of the enrichment, 16.91 to 4.38–7.19, without abolishing it, and the contrast survives outside resistance islands. The rest remain unaddressed, and no core-genome alignment exists here from which to build a true accessory-restricted null. It cannot establish causation — host species is confounded with lineage,
 clinical context and sampling source, and proximity to a complete element is not evidence that it
-has moved. The genome-wide census also differs from the frozen window-limited endpoint by 1,204
-occurrences pooled, three quarters of them elements the extracted windows previously truncated, a
-limitation the earlier protocol declared. That window-limited endpoint remains this work's frozen
+has moved. The genome-wide census also differs from the frozen window-limited endpoint by a net 1,204 occurrences — 1,538 gains against 334 losses, and three quarters of the gains (1,154) are elements the extracted windows previously truncated, a limitation the earlier protocol declared. That window-limited endpoint remains this work's frozen
 structural measure; the genome-wide census is the background against which it is normalised, not a
 replacement.
 
@@ -453,8 +445,7 @@ Resistance-gene-bearing plasmid replicons (n = 6,621) were typed with MOB-suite 
 v3.1.8 [@robertson2018], which detects relaxase families under the MOB classification scheme
 [@garcillanbarcia2009], mating-pair formation systems, and origins of transfer. Class C is a plasmid
 with no detected mobility marker, class D carries a relaxase, and class E carries both relaxase and
-mating-pair formation machinery. Class E2 is the nested subset additionally carrying a detected
-origin of transfer; E1 is the remainder of E. A negative result is a statement about the marker
+mating-pair formation machinery. E1 and E2 partition class E and are not nested: E2 carries a detected origin of transfer in addition to relaxase and mating-pair formation machinery, E1 is the remainder. A negative result is a statement about the marker
 database and is reported as such throughout.
 
 ### Chromosomal context construction and mobile-element annotation
@@ -626,7 +617,7 @@ alongside it does not impose that asymmetry, and the two are not interchangeable
 ### Lineage typing and lineage adjustment
 
 Sequence types were called with mlst 2.35.0 against the PubMLST schemes bundled with that
-release, on every assembly contributing to the headline contrast (4240 genomes; 780 in
+release, on every assembly contributing to the headline contrast (4,240 genomes; 780 in
 *A. baumannii*, 3460 in the *Klebsiella* group). Reconciliation was exact: 4240 accessions in,
 4240 typed, no failures. The scheme was **forced per host** — Pasteur `abaumannii_2` for
 *A. baumannii* and `klebsiella` for the *Klebsiella* species complex — because *A. baumannii*
@@ -705,8 +696,7 @@ provenance map, pinned software and database versions, per-file SHA-256 checksum
 verification script that re-derives every headline denominator from the archive alone. Raw
 chromosome sequence is not redistributed: the accession manifest names every chromosome by
 accession.version with its expected length and NCBI source, which regenerates the exact input.
-Result and summary tables, frozen protocols, receipts and verification records are available at
-https://github.com/piranfar/portabilityrisk. The deposited data are licensed CC BY 4.0. The primary
+Result and summary tables, frozen protocols, receipts and verification records are available at https://github.com/piranfar/portabilityrisk, which is also where the 4,240 sequence-type calls (`NM_V4C_MLST_CALLS_V1.tsv`) are released: they were produced after version 2 of the Zenodo deposit and will enter the next deposit version rather than being backdated into it. The deposited data are licensed CC BY 4.0. The primary
 inputs are public NCBI records and remain governed by NCBI's own terms, which nothing here alters.
 
 ## Code availability
@@ -745,7 +735,7 @@ not-for-profit sectors.
 **Fig. 1 | The same gene family takes different routes in different hosts.** **a**, per-family log
 odds ratio for chromosomal-and-mobile against plasmid-borne across the 58 matched families, point
 area proportional to Mantel–Haenszel weight share, with 95% Wald intervals; the dotted line is the
-pooled estimate. Intervals covering 1 are drawn in grey — 44 of 58 families exclude 1 individually.
+pooled estimate. Intervals covering zero are drawn in grey — the axis is ln(odds ratio) — and 44 of 58 families exclude zero individually.
 **b**, the same contrast under all three weighting arms with analytic 95% Wald intervals
 (Robins–Breslow–Greenland variance), not bootstrap intervals; the fraction
 beneath each point is the number of families favouring *A. baumannii*.
@@ -757,8 +747,7 @@ Benjamini–Hochberg correction and survival of Mantel–Haenszel species adjust
 from 164 both-context families to the 95 that survive adjustment.
 
 **Fig. 3 | The five-class portability architecture.** **a**, each occurrence takes exactly one of
-five evidence-ranked classes; the five sum to 74,349. **b**, class E subdivides into nested evidence
-tiers, E2 additionally carrying a detected origin of transfer.
+five evidence-ranked classes; the five sum to 74,349. **b**, class E partitions into two evidence tiers, E2 carrying a detected origin of transfer and E1 not.
 
 **Fig. 4 | Spatial and structural evidence for the chromosomal route.** **a**, weighted cumulative
 detection against distance; solid lines the structural endpoint, dashed the homology endpoint, over

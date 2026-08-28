@@ -460,10 +460,7 @@ sequences, not independent biological validation, and it is reported as such thr
 
 ## Supplementary Result 8 | Insertion-sequence family retention
 
-IS*6* retains **90.4%** of its elements through the full structural gate (4,385 of 4,848), the
-highest of any abundant family. IS*5* retains 85.2%, IS*4* 70.4%, IS*91* 53.7%, IS*3* 41.3%, and
-IS*1380* **0%** — 371 elements, none structurally complete under the frozen definition
-(Supplementary Table 8). IS*6* is therefore not merely the most abundant family in this cohort but
+IS*6* retains **90.4%** of its elements through the full structural gate (4,385 of 4,848), the highest of any abundant family. IS*30* follows at 89.1%, then IS*5* 85.2%, IS*4* 70.4%, IS*91* 53.7%, ISEScan's unassigned `new` label 43.3%, IS*3* 41.3%, and IS*1380* **0%** — 371 elements, none structurally complete under the frozen definition (Supplementary Table 8, which lists the eight most abundant families, the same eight plotted in Extended Data Fig. 1b). IS*6* is therefore not merely the most abundant family in this cohort but
 the most consistently completely resolved, and a retention rate of zero for IS*1380* is a statement
 about detectability under this definition, not about that family's biology.
 
